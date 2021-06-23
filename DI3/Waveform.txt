@@ -1,0 +1,7 @@
+Während bei allen anderen Schaltblöcken im Top-Level-Schaltblockbild das konkrete Signale keinen Einfluss auf die bestehende Verzögerung hat, haben große Zahlenwerte
+im Ripple-Carry-Addierer eine verstärkenden Einfluss auf die Verzögerung der Berechnung, da bei größeren Zahlen im Allgemeinen auch mehr Überträge gemacht werden müssen.
+Der kritische Pfad, also der jenige Weg, den ein Signal nimmt, welches das Maximum der Zeit zwischen Eingabe und Ausgabe braucht, ist daher der Weg durch alle Volladdierblöcke
+hindurch. Wählen wir hier zum Beispiel die Verzögerung von 30ns für das Top-Level-Schaltbild als flachen Wert und eine skalierende Verzögerung von 5ns pro Übertrag
+dann erhalten wir mit 12 Überträgen eine Verzögerung von $\Delta t = C \cdot \Delta t_{VA} + \Delta t_{tl} = 12\cdot 5ns + 30ns = 90ns$, wobei C für die Anzahl der Überträge
+$\Delta t$ für die gesamte Verzögerung, $\Delta t_{VA}$ für die Verzögerung von einem Volladdierer pro Übertrag und $\Delta t_{tl}$ für die flache Verzögerung des
+Top-Level-Schaltbildes steht. Wir rechnen nun mit $f_{max} = \frac{1}{\Delta t} = \frac{1}{90ns} = 11,11MHz$ die maximale Frequenz aus, mit der unsere Schaltung ohne Probleme laufen kann.

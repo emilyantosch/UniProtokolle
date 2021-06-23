@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section*.2}{Abbildungsverzeichnis}{}% 1
 \BOOKMARK [1][-]{section.1}{Grundschaltung eines Differenzverst\344rkers}{}% 2
 \BOOKMARK [2][-]{subsection.1.1}{Dimensionierung des RE-Widerstands}{section.1}% 3
-\BOOKMARK [1][-]{section.2}{Differenzverst\344rkung}{}% 4
+\BOOKMARK [1][-]{section.2}{Differenzverst\344rkung HD}{}% 4
 \BOOKMARK [1][-]{section.3}{Gegen- und Gleichtaktverst\344rkung}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Gegentaktverst\344rkung}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Gleichtaktverst\344rkung}{section.3}% 7
@@ -15,4 +15,3 @@
 \BOOKMARK [2][-]{subsection.4.3}{Eingangswiderstand der Schaltung}{section.4}% 15
 \BOOKMARK [2][-]{subsection.4.4}{Ausgangswiderstand der Schaltung}{section.4}% 16
 \BOOKMARK [2][-]{subsection.4.5}{AC-Analyse der Schaltung}{section.4}% 17
-\BOOKMARK [1][-]{section.5}{Literatur}{}% 18

@@ -2,7 +2,7 @@
 \contentsline {section}{Abbildungsverzeichnis}{2}{section*.2}%
 \contentsline {section}{\numberline {1}Grundschaltung eines Differenzverstärkers}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Dimensionierung des $R_E$-Widerstands}{3}{subsection.1.1}%
-\contentsline {section}{\numberline {2}Differenzverstärkung}{4}{section.2}%
+\contentsline {section}{\numberline {2}Differenzverstärkung {$H_{D}$}}{4}{section.2}%
 \contentsline {section}{\numberline {3}Gegen- und Gleichtaktverstärkung}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Gegentaktverstärkung}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Gleichtaktverstärkung}{7}{subsection.3.2}%
@@ -16,4 +16,3 @@
 \contentsline {subsection}{\numberline {4.3}Eingangswiderstand der Schaltung}{12}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Ausgangswiderstand der Schaltung}{14}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}AC-Analyse der Schaltung}{16}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Literatur}{16}{section.5}%

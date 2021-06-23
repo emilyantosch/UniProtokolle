@@ -1,0 +1,11 @@
+\babel@toc {ngerman}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Schaltbild des Senders\relax }}{3}{figure.caption.3}%
+\contentsline {figure}{\numberline {2}{\ignorespaces KV-Diagramm des Senders\relax }}{3}{figure.caption.4}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Schaltbild des Empfängersystems\relax }}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {4}{\ignorespaces KV-Diagramm des Empfängers\relax }}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Sender-VHDL-Beschreibung (Paritätsgenerator)\relax }}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Empfänger-VHDL-Beschreibung\relax }}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Sender-Testbench (Paritätsgenerator)\relax }}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Empfänger-Testbench\relax }}{9}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Waveform des Senders (Paritätsgenerator)\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Waveform des Empfängers\relax }}{10}{figure.caption.14}%

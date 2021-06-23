@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.21)  27 APR 2021 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.21)  30 APR 2021 10:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**ELP2_1.tex
-(./ELP2_1.tex
+**DI1_1.tex
+(./DI1_1.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-03> xparse <2020-03-03>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -819,6 +819,74 @@ aphy)
 Package babel Info: Making " an active character on input line 121.
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.code.tex
+File: tikzlibraryshapes.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
+ric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.c
+ode.tex
+File: pgflibraryshapes.misc.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbol
+s.code.tex
+File: pgflibraryshapes.symbols.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows
+.code.tex
+File: pgflibraryshapes.arrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.callouts.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callou
+ts.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multip
+art.code.tex
+File: pgflibraryshapes.multipart.code.tex 2020/12/01 v3.1.7a (3.1.7a)
+\pgfnodepartlowerbox=\box66
+\pgfnodeparttwobox=\box67
+\pgfnodepartthreebox=\box68
+\pgfnodepartfourbox=\box69
+\pgfnodeparttwentybox=\box70
+\pgfnodepartnineteenbox=\box71
+\pgfnodeparteighteenbox=\box72
+\pgfnodepartseventeenbox=\box73
+\pgfnodepartsixteenbox=\box74
+\pgfnodepartfifteenbox=\box75
+\pgfnodepartfourteenbox=\box76
+\pgfnodepartthirteenbox=\box77
+\pgfnodeparttwelvebox=\box78
+\pgfnodepartelevenbox=\box79
+\pgfnodeparttenbox=\box80
+\pgfnodepartninebox=\box81
+\pgfnodeparteightbox=\box82
+\pgfnodepartsevenbox=\box83
+\pgfnodepartsixbox=\box84
+\pgfnodepartfivebox=\box85
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 arrows.code.tex
 File: tikzlibraryarrows.code.tex 2020/12/01 v3.1.7a (3.1.7a)
 
@@ -847,17 +915,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 (/usr/share/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
-) (./ELP2_1.aux
-
-LaTeX Warning: Label `T' multiply defined.
-
-
-LaTeX Warning: Label `T' multiply defined.
-
-
-LaTeX Warning: Label `T' multiply defined.
-
-)
+) (./DI1_1.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
@@ -874,11 +932,12 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
- (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count322
 \scratchdimen=\dimen304
-\scratchbox=\box66
+\scratchbox=\box86
 \nofMPsegments=\count323
 \nofMParguments=\count324
 \everyMPshowfont=\toks42
@@ -913,7 +972,7 @@ LaTeX Info: Redefining \ref on input line 59.
 LaTeX Info: Redefining \pageref on input line 59.
 LaTeX Info: Redefining \nameref on input line 59.
 
-(./ELP2_1.out) (./ELP2_1.out)
+(./DI1_1.out) (./DI1_1.out)
 \@outlinefile=\write4
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -954,7 +1013,7 @@ Package caption Info: End \AtBeginDocument code.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ELP2_1.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./DI1_1.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -966,297 +1025,178 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
- (./ELP2_1.lof)
+ (./DI1_1.lof)
 \tf@lof=\write6
- [2]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 145.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 146.
-<../assets/images/EL2P1/aufgabe1schalt.png, id=161, 797.98125pt x 621.82312pt>
-File: ../assets/images/EL2P1/aufgabe1schalt.png Graphic file (type png)
-<use ../assets/images/EL2P1/aufgabe1schalt.png>
-Package pdftex.def Info: ../assets/images/EL2P1/aufgabe1schalt.png  used on inp
-ut line 150.
-(pdftex.def)             Requested size: 398.98964pt x 310.9108pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 155.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 155.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 155.
-
-<../assets/images/haw.jpg, id=163, 401.5pt x 281.05pt>
+<../assets/images/haw.jpg, id=91, 401.5pt x 281.05pt>
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 166.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 114.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
 
 Package Fancyhdr Warning: \footskip is too small (33.39996pt): 
 Make it at least 59.80904pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[3 <../assets/images/EL2P1/aufgabe1schalt.png (PNG copy)> <../assets/images/haw
-.jpg>]
+[2 <../assets/images/haw.jpg>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 171.
+(mdframed)              on input line 119.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 173.
-<../assets/images/EL2P1/aufgabe2schalt.png, id=176, 819.8128pt x 653.44125pt>
-File: ../assets/images/EL2P1/aufgabe2schalt.png Graphic file (type png)
-<use ../assets/images/EL2P1/aufgabe2schalt.png>
-Package pdftex.def Info: ../assets/images/EL2P1/aufgabe2schalt.png  used on inp
-ut line 177.
-(pdftex.def)             Requested size: 409.9054pt x 326.71982pt.
+(mdframed)              on input line 120.
+<../assets/images/DI1/SenderSchalt.png, id=110, 380.92313pt x 171.64125pt>
+File: ../assets/images/DI1/SenderSchalt.png Graphic file (type png)
+<use ../assets/images/DI1/SenderSchalt.png>
+Package pdftex.def Info: ../assets/images/DI1/SenderSchalt.png  used on input l
+ine 128.
+(pdftex.def)             Requested size: 430.00462pt x 193.76375pt.
+<../assets/images/DI1/SenderKV.png, id=111, 380.92313pt x 362.85562pt>
+File: ../assets/images/DI1/SenderKV.png Graphic file (type png)
+<use ../assets/images/DI1/SenderKV.png>
+Package pdftex.def Info: ../assets/images/DI1/SenderKV.png  used on input line 
+136.
+(pdftex.def)             Requested size: 129.00269pt x 122.88205pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 194.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 141.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [4 <../assets/images/EL2P1/aufgabe2schalt.png (PNG copy)>]
-<../assets/images/EL2P1/DeepinScreenshot_select-area_20210417230438.png, id=190
-, 1441.63594pt x 332.74312pt>
-File: ../assets/images/EL2P1/DeepinScreenshot_select-area_20210417230438.png Gr
-aphic file (type png)
-<use ../assets/images/EL2P1/DeepinScreenshot_select-area_20210417230438.png>
-Package pdftex.def Info: ../assets/images/EL2P1/DeepinScreenshot_select-area_20
-210417230438.png  used on input line 200.
-(pdftex.def)             Requested size: 432.49413pt x 99.8237pt.
-
-Overfull \hbox (2.4895pt too wide) in paragraph at lines 200--201
- [][] 
- []
-
-<../assets/images/EL2P1/aufgabe2slope.png, id=191, 963.6pt x 446.16687pt>
-File: ../assets/images/EL2P1/aufgabe2slope.png Graphic file (type png)
-<use ../assets/images/EL2P1/aufgabe2slope.png>
-Package pdftex.def Info: ../assets/images/EL2P1/aufgabe2slope.png  used on inpu
-t line 216.
-(pdftex.def)             Requested size: 481.79883pt x 223.08289pt.
-
-Overfull \hbox (51.7942pt too wide) in paragraph at lines 216--217
- [][] 
+ [3 <../assets/images/DI1/SenderSchalt.png> <../assets/images/DI1/SenderKV.png>
+]
+Overfull \hbox (14.91394pt too wide) detected at line 173
+[]
  []
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 228.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 186.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[5 <../assets/images/EL2P1/DeepinScreenshot_select-area_20210417230438.png (PNG
- copy)> <../assets/images/EL2P1/aufgabe2slope.PNG>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 234.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 235.
-<../assets/images/EL2P1/Aufbau 3.1.JPG, id=201, 837.1275pt x 582.67688pt>
-File: ../assets/images/EL2P1/Aufbau 3.1.JPG Graphic file (type jpg)
-<use ../assets/images/EL2P1/Aufbau 3.1.JPG>
-Package pdftex.def Info: ../assets/images/EL2P1/Aufbau 3.1.JPG  used on input l
-ine 239.
-(pdftex.def)             Requested size: 334.84506pt x 233.06662pt.
-<../assets/images/EL2P1/Messung 3.1 Ausgang.JPG, id=202, 1211.27531pt x 313.17p
-t>
-File: ../assets/images/EL2P1/Messung 3.1 Ausgang.JPG Graphic file (type jpg)
-<use ../assets/images/EL2P1/Messung 3.1 Ausgang.JPG>
-Package pdftex.def Info: ../assets/images/EL2P1/Messung 3.1 Ausgang.JPG  used o
-n input line 253.
-(pdftex.def)             Requested size: 423.95271pt x 109.61113pt.
+[4]
+<../assets/images/DI1/ReceiverSchalt.png, id=127, 517.935pt x 231.11343pt>
+File: ../assets/images/DI1/ReceiverSchalt.png Graphic file (type png)
+<use ../assets/images/DI1/ReceiverSchalt.png>
+Package pdftex.def Info: ../assets/images/DI1/ReceiverSchalt.png  used on input
+ line 190.
+(pdftex.def)             Requested size: 430.00462pt x 191.88405pt.
+<../assets/images/DI1/ReceiverKV.png, id=128, 532.99126pt x 397.485pt>
+File: ../assets/images/DI1/ReceiverKV.png Graphic file (type png)
+<use ../assets/images/DI1/ReceiverKV.png>
+Package pdftex.def Info: ../assets/images/DI1/ReceiverKV.png  used on input lin
+e 199.
+(pdftex.def)             Requested size: 171.99922pt x 128.27132pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 257.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 225.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [6 <../assets/images/EL2P1/Aufbau 3.1.JPG> <../assets/images/EL2P1/Messung 3.1
- Ausgang.JPG>]
-<../assets/images/EL2P1/Messung 3.2.JPG, id=208, 881.54344pt x 347.79938pt>
-File: ../assets/images/EL2P1/Messung 3.2.JPG Graphic file (type jpg)
-<use ../assets/images/EL2P1/Messung 3.2.JPG>
-Package pdftex.def Info: ../assets/images/EL2P1/Messung 3.2.JPG  used on input 
-line 264.
-(pdftex.def)             Requested size: 440.77065pt x 173.89926pt.
-
-Overfull \hbox (10.76602pt too wide) in paragraph at lines 264--265
- [] 
- []
-
+ [5 <../assets/images/DI1/ReceiverSchalt.png> <../assets/images/DI1/ReceiverKV.
+png>]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 302.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 235.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[7 <../assets/images/EL2P1/Messung 3.2.JPG>]
+ [6]
+<../assets/images/DI1/sendervhd.PNG, id=140, 326.72063pt x 162.6075pt>
+File: ../assets/images/DI1/sendervhd.PNG Graphic file (type png)
+<use ../assets/images/DI1/sendervhd.PNG>
+Package pdftex.def Info: ../assets/images/DI1/sendervhd.PNG  used on input line
+ 245.
+(pdftex.def)             Requested size: 430.00462pt x 214.00986pt.
+<../assets/images/DI1/receivervhd.PNG, id=142, 338.76563pt x 170.6375pt>
+File: ../assets/images/DI1/receivervhd.PNG Graphic file (type png)
+<use ../assets/images/DI1/receivervhd.PNG>
+Package pdftex.def Info: ../assets/images/DI1/receivervhd.PNG  used on input li
+ne 252.
+(pdftex.def)             Requested size: 430.00462pt x 216.60304pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 323.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 256.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [8]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 328.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 329.
-<../assets/images/EL2P1/abb1.png, id=218, 516.93124pt x 326.55333pt>
-File: ../assets/images/EL2P1/abb1.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb1.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb1.png  used on input line 33
-3.
-(pdftex.def)             Requested size: 258.46498pt x 163.27626pt.
+ [7 <../assets/images/DI1/sendervhd.PNG> <../assets/images/DI1/receivervhd.PNG>
+]
+<../assets/images/DI1/senderTB.PNG, id=150, 456.20438pt x 409.02812pt>
+File: ../assets/images/DI1/senderTB.PNG Graphic file (type png)
+<use ../assets/images/DI1/senderTB.PNG>
+Package pdftex.def Info: ../assets/images/DI1/senderTB.PNG  used on input line 
+264.
+(pdftex.def)             Requested size: 430.00462pt x 385.54749pt.
+<../assets/images/DI1/receiverTB.PNG, id=151, 554.07pt x 422.57875pt>
+File: ../assets/images/DI1/receiverTB.PNG Graphic file (type png)
+<use ../assets/images/DI1/receiverTB.PNG>
+Package pdftex.def Info: ../assets/images/DI1/receiverTB.PNG  used on input lin
+e 271.
+(pdftex.def)             Requested size: 430.00462pt x 327.9594pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 412.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 275.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[9 <../assets/images/EL2P1/abb1.png>]
-<../assets/images/EL2P1/abb2.png, id=231, 802.49812pt x 694.84593pt>
-File: ../assets/images/EL2P1/abb2.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb2.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb2.png  used on input line 41
-7.
-(pdftex.def)             Requested size: 280.87854pt x 243.1997pt.
+[8 <../assets/images/DI1/senderTB.PNG>]
+<../assets/images/DI1/senderTBSim.PNG, id=157, 523.45563pt x 250.9375pt>
+File: ../assets/images/DI1/senderTBSim.PNG Graphic file (type png)
+<use ../assets/images/DI1/senderTBSim.PNG>
+Package pdftex.def Info: ../assets/images/DI1/senderTBSim.PNG  used on input li
+ne 284.
+(pdftex.def)             Requested size: 430.00462pt x 206.14148pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 422.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 291.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
-
- []
-
-<../assets/images/EL2P1/abb3.png, id=237, 197.73875pt x 112.08542pt>
-File: ../assets/images/EL2P1/abb3.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb3.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb3.png  used on input line 43
-0.
-(pdftex.def)             Requested size: 129.00269pt x 73.12317pt.
-<../assets/images/EL2P1/abb4.png, id=238, 195.73125pt x 109.74333pt>
-File: ../assets/images/EL2P1/abb4.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb4.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb4.png  used on input line 43
-5.
-(pdftex.def)             Requested size: 129.00269pt x 72.33368pt.
-<../assets/images/EL2P1/abb5.png, id=239, 346.29375pt x 219.82124pt>
-File: ../assets/images/EL2P1/abb5.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb5.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb5.png  used on input line 46
-9.
-(pdftex.def)             Requested size: 430.00462pt x 272.96794pt.
+[9 <../assets/images/DI1/receiverTB.PNG>]
+<../assets/images/DI1/receiverTBSim.PNG, id=164, 540.0175pt x 279.54437pt>
+File: ../assets/images/DI1/receiverTBSim.PNG Graphic file (type png)
+<use ../assets/images/DI1/receiverTBSim.PNG>
+Package pdftex.def Info: ../assets/images/DI1/receiverTBSim.PNG  used on input 
+line 296.
+(pdftex.def)             Requested size: 430.00462pt x 222.59926pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 472.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 307.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[11 <../assets/images/EL2P1/abb2.png> <../assets/images/EL2P1/abb3.png> <../ass
-ets/images/EL2P1/abb4.png>]
+ [10 <../assets/images/DI1/senderTBSim.PNG> <../assets/images/DI1/receiverTBSim
+.PNG>]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 487.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 316.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [12 <../assets/images/EL2P1/abb5.png>]
-<../assets/images/EL2P1/abb6.png, id=259, 614.295pt x 276.03125pt>
-File: ../assets/images/EL2P1/abb6.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb6.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb6.png  used on input line 49
-2.
-(pdftex.def)             Requested size: 430.00462pt x 193.22476pt.
+ [11]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 498.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 362.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [13 <../assets/images/EL2P1/abb6.png>]
-<../assets/images/EL2P1/abb7.png, id=266, 355.99667pt x 219.82124pt>
-File: ../assets/images/EL2P1/abb7.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb7.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb7.png  used on input line 50
-3.
-(pdftex.def)             Requested size: 430.00462pt x 265.5384pt.
-<../assets/images/EL2P1/abb8.png, id=267, 614.96417pt x 276.03125pt>
-File: ../assets/images/EL2P1/abb8.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb8.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb8.png  used on input line 51
-6.
-(pdftex.def)             Requested size: 430.00462pt x 193.01837pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 520.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-[14 <../assets/images/EL2P1/abb7.png>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 523.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [15 <../assets/images/EL2P1/abb8.png>]
-<../assets/images/EL2P1/abb9.png, id=278, 2859.9347pt x 633.11531pt>
-File: ../assets/images/EL2P1/abb9.png Graphic file (type png)
-<use ../assets/images/EL2P1/abb9.png>
-Package pdftex.def Info: ../assets/images/EL2P1/abb9.png  used on input line 53
-0.
-(pdftex.def)             Requested size: 430.00462pt x 95.18538pt.
-
-(./ELP2_1.bbl)
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 537.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [16 <../assets/images/EL2P1/abb9.png>] (./ELP2_1.aux)
-Package rerunfilecheck Info: File `ELP2_1.out' has not changed.
-(rerunfilecheck)             Checksum: 224F87B3EE8F3DE3F851C5E138A5A353;1346.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+ [12] (./DI1_1.aux)
+Package rerunfilecheck Info: File `DI1_1.out' has not changed.
+(rerunfilecheck)             Checksum: 6FAD8E8A16E5A4BA3B44A23AB7D82660;1036.
  ) 
 Here is how much of TeX's memory you used:
- 34679 strings out of 479383
- 796429 string characters out of 5875830
- 1286508 words of memory out of 5000000
- 51189 multiletter control sequences out of 15000+600000
- 423555 words of font info for 75 fonts, out of 8000000 for 9000
+ 36370 strings out of 479383
+ 847435 string characters out of 5875830
+ 1444364 words of memory out of 5000000
+ 52892 multiletter control sequences out of 15000+600000
+ 414983 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,16n,124p,736b,1008s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 122i,16n,124p,609b,1008s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/cm-sup
-er/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb
-></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/
-type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm
--super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000
-.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on ELP2_1.pdf (16 pages, 970353 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1
+000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+fcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sfti2074.pfb>
+Output written on DI1_1.pdf (12 pages, 438359 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
