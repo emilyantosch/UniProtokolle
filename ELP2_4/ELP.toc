@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {3.1}Vorbereitung}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Duchführung}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Auswertung}{5}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Aufgenommene Leistung, Ausgangsleistung, Verlustleistung}{5}{section.4}%
+\contentsline {section}{\numberline {4}Aufgenommene Leistung, Ausgangsleistung, Verlustleistung}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Vorbereitung}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Durchführung}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Auswertung}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Auswertung}{7}{subsection.4.3}%

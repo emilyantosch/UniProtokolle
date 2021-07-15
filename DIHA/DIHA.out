@@ -1,19 +1,25 @@
-\BOOKMARK [0][-]{chapter*.2}{\376\377\000A\000b\000b\000i\000l\000d\000u\000n\000g\000s\000v\000e\000r\000z\000e\000i\000c\000h\000n\000i\000s}{}% 1
-\BOOKMARK [0][-]{chapter.1}{\376\377\000P\000l\000a\000u\000s\000i\000b\000i\000l\000i\000t\000\344\000t\000s\000p\000r\000\374\000f\000u\000n\000g}{}% 2
-\BOOKMARK [1][-]{section.1.1}{\376\377\000E\000i\000n\000l\000e\000i\000t\000u\000n\000g}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{\376\377\000B\000l\000o\000c\000k\000s\000c\000h\000a\000l\000t\000b\000i\000l\000d}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{\376\377\000L\000\366\000s\000u\000n\000g\000s\000i\000d\000e\000e}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{\376\377\000B\000e\000s\000c\000h\000r\000e\000i\000b\000u\000n\000g\000\040\000i\000n\000\040\000V\000H\000D\000L}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.5}{\376\377\000S\000i\000m\000u\000l\000a\000t\000i\000o\000n\000\040\000d\000e\000r\000\040\000E\000r\000g\000e\000b\000n\000i\000s\000s\000e}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.6}{\376\377\000F\000a\000z\000i\000t}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{\376\377\000B\000e\000r\000e\000c\000h\000n\000u\000n\000g\000\040\000d\000e\000r\000\040\000R\000e\000g\000e\000l\000a\000b\000w\000e\000i\000c\000h\000u\000n\000g}{}% 9
-\BOOKMARK [1][-]{section.2.1}{\376\377\000E\000i\000n\000l\000e\000i\000t\000u\000n\000g}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{\376\377\000B\000l\000o\000c\000k\000s\000c\000h\000a\000l\000t\000b\000i\000l\000d}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{\376\377\000A\000u\000t\000o\000m\000a\000t\000e\000n\000g\000r\000a\000p\000h}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{\376\377\000L\000\366\000s\000u\000n\000g\000s\000i\000d\000e\000e}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.4.1}{\376\377\000C\000a\000r\000r\000y\000-\000L\000o\000o\000k\000a\000h\000e\000a\000d\000-\000A\000d\000d\000i\000e\000r\000e\000r}{section.2.4}% 14
-\BOOKMARK [2][-]{subsection.2.4.2}{\376\377\000Z\000w\000e\000i\000e\000r\000\040\000K\000o\000m\000p\000l\000e\000m\000e\000n\000t}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.3}{\376\377\000T\000a\000k\000t\000s\000y\000n\000c\000h\000r\000o\000n\000i\000t\000\344\000t}{section.2.4}% 16
-\BOOKMARK [1][-]{section.2.5}{\376\377\000B\000e\000s\000c\000h\000r\000e\000i\000b\000u\000n\000g\000\040\000i\000n\000\040\000V\000H\000D\000L}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.6}{\376\377\000S\000i\000m\000u\000l\000a\000t\000i\000o\000n\000\040\000d\000e\000r\000\040\000E\000r\000g\000e\000b\000n\000i\000s\000s\000e}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.7}{\376\377\000F\000a\000z\000i\000t}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter*.2}{Abbildungsverzeichnis}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Plausibilit\344tspr\374fung}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Aufgabe}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Blockschaltbild}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{L\366sungsidee}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Beschreibung in VHDL}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Simulation der Ergebnisse}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Fazit}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Berechnung der Regelabweichung}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Aufgabe}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Blockschaltbild}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Automatengraph}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{L\366sungsidee}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.4.1}{Carry-Lookahead-Addierer}{section.2.4}% 14
+\BOOKMARK [2][-]{subsection.2.4.2}{Zweier Komplement}{section.2.4}% 15
+\BOOKMARK [2][-]{subsection.2.4.3}{Taktsynchronit\344t}{section.2.4}% 16
+\BOOKMARK [1][-]{section.2.5}{Beschreibung in VHDL}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.5.1}{Volladdierer}{section.2.5}% 18
+\BOOKMARK [2][-]{subsection.2.5.2}{Carry-Lookahead-Addierer}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.3}{Substractor}{section.2.5}% 20
+\BOOKMARK [2][-]{subsection.2.5.4}{Vergleicher}{section.2.5}% 21
+\BOOKMARK [1][-]{section.2.6}{Simulation der Ergebnisse}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.6.1}{Kritischer Pfad}{section.2.6}% 23
+\BOOKMARK [1][-]{section.2.7}{Fazit}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{Literaturverzeichnis}{}% 25

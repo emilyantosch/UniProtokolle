@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{vsim} \PYG{n+nn}{work}\PYG{p}{.}\PYG{n}{comparator}
+\PYG{n}{restart}
+\PYG{n}{view} \PYG{n}{wave}
+\PYG{n}{radix} \PYG{n}{bin}
+\PYG{n}{add} \PYG{n}{wave} \PYG{o}{*}
+
+\PYG{n}{force} \PYG{n}{clk} \PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1} \PYG{l+m+mi}{10}\PYG{n}{ns} \PYG{o}{\PYGZhy{}}\PYG{n}{r} \PYG{l+m+mi}{20}\PYG{n}{ns}
+
+\PYG{n}{force} \PYG{n}{reset} \PYG{l+m+mi}{0}
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{l+m+mi}{0}
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{l+m+mi}{0}
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}DELTA} \PYG{l+m+mi}{0}
+\PYG{n}{run} \PYG{l+m+mi}{50}\PYG{n}{ns}
+
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{l+m+mi}{1}
+\PYG{n}{force} \PYG{n}{io} \PYG{l+s}{\PYGZdq{}1111110001\PYGZdq{}}
+\PYG{n}{run} \PYG{l+m+mi}{10}\PYG{n}{ns}
+
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{l+m+mi}{0}
+\PYG{n}{run} \PYG{l+m+mi}{10}\PYG{n}{ns}
+
+
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{l+m+mi}{1}
+\PYG{n}{force} \PYG{n}{io} \PYG{l+s}{\PYGZdq{}0000000001\PYGZdq{}}
+\PYG{n}{run} \PYG{l+m+mi}{10}\PYG{n}{ns}
+
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{l+m+mi}{0}
+\PYG{n}{run} \PYG{l+m+mi}{10}\PYG{n}{ns}
+
+\PYG{n}{noforce} \PYG{n}{io}
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{l+m+mi}{0}
+\PYG{n}{force} \PYG{n}{ST\PYGZus{}DELTA} \PYG{l+m+mi}{1}
+\PYG{n}{run} \PYG{l+m+mi}{100}\PYG{n}{ns}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{thebibliography}{Ger16}
+
+\bibitem[Fit21]{skript}
+Prof. Dr.~Robert Fitz.
+\newblock {\em Digitaltechnik Skript}.
+\newblock HAW, 2021.
+
+\bibitem[Ger16]{DIG}
+Winfried Gerke.
+\newblock {\em Digitaltechnik: Grundlagen}.
+\newblock Springer, 2016.
+
+\bibitem[nan]{nandland}
+nandland.
+\newblock \url{nandland.com}.
+\newblock Zugriff (15.07.2021).
+
+\bibitem[vhd]{vhdlwhiz}
+vhdlwhiz.
+\newblock \url{https://vhdlwhiz.com/}.
+\newblock Zugriff (15.07.2021).
+
+\end{thebibliography}

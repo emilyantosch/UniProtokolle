@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library} \PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.math\PYGZus{}real.}\PYG{k}{all}\PYG{p}{;}
+
+
+\PYG{k}{entity} \PYG{n+nc}{fulladder} \PYG{k}{is}
+  \PYG{k}{port} \PYG{p}{(}
+    \PYG{n}{a}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{b}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{cin}  \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{S}    \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{bit}
+  \PYG{p}{);}
+\PYG{k}{end} \PYG{k}{entity} \PYG{n+nc}{fulladder}\PYG{p}{;}
+
+\PYG{k}{architecture} \PYG{n+nc}{behav} \PYG{k}{of} \PYG{n+nc}{fulladder} \PYG{k}{is}
+
+\PYG{k}{begin}
+  \PYG{n}{S}    \PYG{o}{\PYGZlt{}=} \PYG{n}{To\PYGZus{}STDULOGIC}\PYG{p}{(}\PYG{n}{a} \PYG{k}{xor} \PYG{n}{b} \PYG{k}{xor} \PYG{n}{cin}\PYG{p}{);}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{n}{a} \PYG{k}{and} \PYG{n}{b}\PYG{p}{)} \PYG{k}{or} \PYG{p}{(}\PYG{n}{cin} \PYG{k}{and} \PYG{n}{a}\PYG{p}{)} \PYG{k}{or} \PYG{p}{(}\PYG{n}{cin} \PYG{k}{and} \PYG{n}{b}\PYG{p}{);}
+\PYG{k}{end} \PYG{k}{architecture}\PYG{p}{;}
+\end{Verbatim}

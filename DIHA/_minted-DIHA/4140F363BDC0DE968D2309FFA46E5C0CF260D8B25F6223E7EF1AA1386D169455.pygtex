@@ -1,0 +1,118 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library} \PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.math\PYGZus{}real.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{entity} \PYG{n+nc}{comparator} \PYG{k}{is}
+  \PYG{k}{port} \PYG{p}{(}
+    \PYG{n}{clk}      \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+    \PYG{n}{reset}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+    \PYG{n}{io}       \PYG{o}{:} \PYG{k}{inout} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{l+s}{\PYGZdq{}ZZZZZZZZZZ\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{ST\PYGZus{}B\PYGZus{}X}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{ST\PYGZus{}B\PYGZus{}W}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{ST\PYGZus{}DELTA} \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{EXAKT}    \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{bit}\PYG{p}{;}
+    \PYG{n}{ZU\PYGZus{}KLEIN} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{bit}
+  \PYG{p}{);}
+\PYG{k}{end} \PYG{k}{entity} \PYG{n+nc}{comparator}\PYG{p}{;}
+
+\PYG{k}{architecture} \PYG{n+nc}{rtl} \PYG{k}{of} \PYG{n+nc}{comparator} \PYG{k}{is}
+  \PYG{k}{component} \PYG{n+nc}{subtractor} \PYG{k}{is}
+    \PYG{k}{port} \PYG{p}{(}
+      \PYG{n}{B\PYGZus{}X}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+      \PYG{n}{B\PYGZus{}W}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+      \PYG{n}{DELTA} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{p}{);}
+  \PYG{k}{end} \PYG{k}{component}\PYG{p}{;}
+
+  \PYG{k}{signal} \PYG{n}{result} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{type} \PYG{n}{statetype} \PYG{k}{is} \PYG{p}{(}\PYG{n}{reading\PYGZus{}BX}\PYG{p}{,} \PYG{n}{reading\PYGZus{}BW}\PYG{p}{,} \PYG{n}{calculating}\PYG{p}{,} \PYG{n}{output}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{X}\PYG{p}{,} \PYG{n}{W}       \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{:=} \PYG{l+s}{\PYGZdq{}0000000000\PYGZdq{}}\PYG{p}{;}
+  \PYG{k}{signal} \PYG{n}{state}      \PYG{o}{:} \PYG{n}{statetype}                    \PYG{o}{:=} \PYG{n}{calculating}\PYG{p}{;}
+  \PYG{k}{signal} \PYG{n}{next\PYGZus{}state} \PYG{o}{:} \PYG{n}{statetype}                    \PYG{o}{:=} \PYG{n}{calculating}\PYG{p}{;}
+\PYG{k}{begin}
+
+  \PYG{n}{sub} \PYG{o}{:} \PYG{n}{subtractor}
+  \PYG{k}{port} \PYG{k}{map}\PYG{p}{(}
+    \PYG{n}{B\PYGZus{}X}   \PYG{o}{=\PYGZgt{}} \PYG{n}{X}\PYG{p}{,}
+    \PYG{n}{B\PYGZus{}W}   \PYG{o}{=\PYGZgt{}} \PYG{n}{W}\PYG{p}{,}
+    \PYG{n}{DELTA} \PYG{o}{=\PYGZgt{}} \PYG{n}{result}
+  \PYG{p}{);}
+
+  \PYG{n}{WR} \PYG{o}{:} \PYG{k}{process} \PYG{p}{(}\PYG{n}{state}\PYG{p}{,} \PYG{n}{clk}\PYG{p}{,} \PYG{n}{ST\PYGZus{}DELTA}\PYG{p}{)}
+  \PYG{k}{begin}
+    \PYG{k}{if} \PYG{n}{state} \PYG{o}{=} \PYG{n}{output} \PYG{k}{and} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{io} \PYG{o}{\PYGZlt{}=} \PYG{n}{result}\PYG{p}{;}
+    \PYG{k}{elsif} \PYG{n}{state} \PYG{o}{=} \PYG{n}{calculating} \PYG{k}{and} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{io} \PYG{o}{\PYGZlt{}=} \PYG{p}{(}\PYG{k}{others} \PYG{o}{=\PYGZgt{}} \PYG{l+s+sc}{\PYGZsq{}Z\PYGZsq{}}\PYG{p}{);}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+    \PYG{k}{if} \PYG{n}{result}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{)} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{ZU\PYGZus{}KLEIN} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+    \PYG{k}{elsif} \PYG{n}{X} \PYG{o}{=} \PYG{n}{W} \PYG{k}{then}
+      \PYG{n}{EXAKT} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+    \PYG{k}{else}
+      \PYG{n}{ZU\PYGZus{}KLEIN} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+      \PYG{n}{EXAKT}    \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+  \PYG{n}{RD} \PYG{o}{:} \PYG{k}{process} \PYG{p}{(}\PYG{n}{io}\PYG{p}{,} \PYG{n}{ST\PYGZus{}B\PYGZus{}X}\PYG{p}{,} \PYG{n}{clk}\PYG{p}{)}
+  \PYG{k}{begin}
+    \PYG{k}{if} \PYG{n}{state} \PYG{o}{=} \PYG{n}{reading\PYGZus{}BX} \PYG{k}{and} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{X} \PYG{o}{\PYGZlt{}=} \PYG{n}{io}\PYG{p}{;}
+    \PYG{k}{elsif} \PYG{n}{state} \PYG{o}{=} \PYG{n}{reading\PYGZus{}BW} \PYG{k}{and} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{W} \PYG{o}{\PYGZlt{}=} \PYG{n}{io}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+  \PYG{n}{SW} \PYG{o}{:} \PYG{k}{process} \PYG{p}{(}\PYG{n}{reset}\PYG{p}{,} \PYG{n}{clk}\PYG{p}{)}
+  \PYG{k}{begin}
+    \PYG{k}{if} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{and} \PYG{n}{reset} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+      \PYG{n}{state} \PYG{o}{\PYGZlt{}=} \PYG{n}{calculating}\PYG{p}{;}
+    \PYG{k}{elsif} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{then}
+      \PYG{n}{state} \PYG{o}{\PYGZlt{}=} \PYG{n}{next\PYGZus{}state}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+  \PYG{n}{SN} \PYG{o}{:} \PYG{k}{process} \PYG{p}{(}\PYG{n}{ST\PYGZus{}B\PYGZus{}W}\PYG{p}{,} \PYG{n}{ST\PYGZus{}B\PYGZus{}X}\PYG{p}{,} \PYG{n}{ST\PYGZus{}DELTA}\PYG{p}{,} \PYG{n}{clk}\PYG{p}{)}
+    \PYG{k}{variable} \PYG{n}{counter} \PYG{o}{:} \PYG{k+kt}{integer} \PYG{o}{:=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{begin}
+    \PYG{k}{case} \PYG{n}{state} \PYG{k}{is}
+      \PYG{k}{when} \PYG{n}{calculating} \PYG{o}{=\PYGZgt{}}
+        \PYG{n}{io} \PYG{o}{\PYGZlt{}=} \PYG{l+s}{\PYGZdq{}ZZZZZZZZZZ\PYGZdq{}}\PYG{p}{;}
+        \PYG{k}{if} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{reading\PYGZus{}BX}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{reading\PYGZus{}BW}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}DELTA} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{output}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+      \PYG{k}{when} \PYG{n}{reading\PYGZus{}BX} \PYG{o}{=\PYGZgt{}}
+        \PYG{k}{if} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{calculating}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{reading\PYGZus{}BW}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}DELTA} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{output}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+      \PYG{k}{when} \PYG{n}{reading\PYGZus{}BW} \PYG{o}{=\PYGZgt{}}
+        \PYG{k}{if} \PYG{n}{ST\PYGZus{}B\PYGZus{}W} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{calculating}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}B\PYGZus{}X} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{reading\PYGZus{}BX}\PYG{p}{;}
+        \PYG{k}{elsif} \PYG{n}{ST\PYGZus{}DELTA} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{output}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+      \PYG{k}{when} \PYG{n}{output} \PYG{o}{=\PYGZgt{}}
+        \PYG{k}{if} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+          \PYG{n}{counter} \PYG{o}{:=} \PYG{n}{counter} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+          \PYG{k}{if} \PYG{n}{clk}\PYG{n+na}{\PYGZsq{}event} \PYG{k}{and} \PYG{n}{clk} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{and} \PYG{n}{counter} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{k}{then}
+            \PYG{n}{next\PYGZus{}state} \PYG{o}{\PYGZlt{}=} \PYG{n}{calculating}\PYG{p}{;}
+            \PYG{n}{counter} \PYG{o}{:=} \PYG{l+m+mi}{0}\PYG{p}{;}
+          \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+        \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{case}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+\PYG{k}{end} \PYG{k}{architecture}\PYG{p}{;}
+\end{Verbatim}

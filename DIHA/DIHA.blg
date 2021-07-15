@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: DIHA.aux
+The style file: alpha.bst
+Database file #1: DIHA.bib
+Warning--to sort, need author or key in vhdlwhiz
+Warning--to sort, need author or key in nandland
+You've used 4 entries,
+            2543 wiz_defined-function locations,
+            573 strings with 4621 characters,
+and the built_in function-call counts, 1000 in all, are:
+= -- 92
+> -- 18
+< -- 2
++ -- 4
+- -- 4
+* -- 48
+:= -- 152
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 16
+chr.to.int$ -- 4
+cite$ -- 8
+duplicate$ -- 52
+empty$ -- 105
+format.name$ -- 8
+if$ -- 216
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 6
+pop$ -- 42
+preamble$ -- 1
+purify$ -- 22
+quote$ -- 0
+skip$ -- 34
+stack$ -- 0
+substring$ -- 30
+swap$ -- 4
+text.length$ -- 2
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 24
+warning$ -- 2
+while$ -- 4
+width$ -- 6
+write$ -- 48
+(There were 2 warnings)

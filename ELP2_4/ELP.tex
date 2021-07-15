@@ -186,7 +186,7 @@ Wir stellen eine Betriebsspannung von $U_{B} = 15V$ ein und stellen die Stromver
 Wir erkennen nun, dass wir mit
 
 \begin{equation*}
-  A_{u} = \frac{U_{a}}{U_{e}} = \frac{1,04V}{91,2mV} = 11,04
+  A_{u} = \frac{U_{a}}{U_{e}} = \frac{1,034V}{94,5mV} = 11
 \end{equation*}
 
 eine sehr ähnliche Verstärkung erhalten, wie wir zuerst theoretisch betrachtet hatten.
@@ -241,12 +241,14 @@ Wir wollen zuerst die Signale, also das Ein -und Ausgangssignal mithilfe des Y-T
 \subsection{Auswertung}
 \label{sec:auswertung-1}
 
-Schalterstellung A
+Schalterstellung A: Man erkennt deutlich auf dem U-T-Diagramm die Slew-Rate der Transistoren. Auch unsere
+Vorüberlegung wurde dadurch bestätigt, dass die Spannung unter einem Wert von $55mV$ kaum mehr zu messen ist, da
+die Transistoren nicht mehr vollständig durchsteuern können.
 
-Schalterstellung B
+Schalterstellung B: Die Lissajous-Figur ist eine beinahe perfekte Gerade, da die Rückkopplung viel dazu beiträgt, dass die Endtransistoren
+durchgehend eine entsprechende Spannung $U_{BE}$ bekommt und so eine Ausgangsspannung auch im kleinen $mV$-Bereich zu messen sind.
 
-
-
+\newpage
 \section{Aufgenommene Leistung, Ausgangsleistung, Verlustleistung}
 \label{sec:aufg-leist-ausg}
 
@@ -270,7 +272,7 @@ Wir erwarten dabei die in der Vorlesung erklärten Graphen:
 
 \begin{figure}[h]
   \centering
-
+  \includegraphics[width=\textwidth]{../assets/images/ELP2_4/erwartung.png}
   \caption{Erwartungen von den zu untersuchenden Werten aus der Vorlesung}
   \label{fig:erwartung}
 \end{figure}
@@ -280,8 +282,38 @@ Wir erwarten dabei die in der Vorlesung erklärten Graphen:
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{|c|c|c|c|c|c|c|c|}
-    $U_{e}$& $U_{a}$ & $I_{C1}$& $I_{C2}$&$P_{A}$&$P_{B}$&$P_{V}$& $\eta$\\
+  \begin{tabular}{|c|c|c|c|c|c|}
+    $U_{e}$& $U_{a}$ & $I_{C}$&$P_{A}$&$P_{B}$\\
+    \hline
+    $50mV$ & $516mV$ & $12,7mA$ & $0,0121W$ & $0,3822W$\\
+    \hline
+    $100mV$ & $1,03V$ & $25,63mA$ & $0,0482W$ & $0,7689W$\\
+    \hline
+    $150mV$ & $1,54V$ & $38,6mA$ & $0,1078W$ & $1,15W$\\
+    \hline
+    $200mV$ & $2,07V$ & $51,5mA$ & $0,1948W$ & $1,54W$\\
+    \hline
+    $250mV$ & $2,53V$ & $61,3mV$ & $0,2909W$ & $1,83W$\\
+    \hline
+    $300mV$ & $3,11V$ & $77,2mA$ & $0,4368W$ & $2,31W$\\
+    \hline
+    $350mV$ & $3,6V$ & $89,9mA$ & $0,5891W$ & $2,69W$\\
+    \hline
+    $400mV$ & $4,15V$ & $102mA$ & $0,7828W$ & $3,06W$\\
+    \hline
+    $450mV$& $4,67V$ & $115mA$ & $0,9913W$ & $3,45W$\\
+    \hline
+    $500mV$ & $5,2V$ & $128mA$ & $1,2291W$ & $3,84W$\\
+    \hline
+    $550mV$ & $5,7V$ & $141mA$ & $1,4768W$ & $4,23W$\\
+    \hline
+    $600mV$ & $6,22V$ & $153mA$ & $1,75W$ & $4,59W$\\
+    \hline
+    $650mV$ & $6,74V$ & $166mA$ & $2,069W$ & $4,98W$\\
+    \hline
+    $700mV$ & $7,27V$ & $180mA$ & $2,404W$ & $5,4W$\\
+    \hline
+    $780mV$ & $8,1V$ & $200mA$ &  $2,98W$ & $6W$\\
     \hline
   \end{tabular}
   \caption{Messergebnisse der zu untersuchenden Werte}
@@ -293,7 +325,7 @@ Aus den Messergebnissen können wir folgende Graphen plotten:
 
 \begin{figure}[h]
   \centering
-
+  \includegraphics[width=\textwidth]{../assets/images/ELP2_4/Leistung.png}
   \caption{Plot der Leistungen}
   \label{fig:powerplot}
 \end{figure}
@@ -301,7 +333,7 @@ Aus den Messergebnissen können wir folgende Graphen plotten:
 
 \begin{figure}[h]
   \centering
-
+  \includegraphics[width=\textwidth]{../assets/images/ELP2_4/Wirkungsgrad.png}
   \caption{Plot des Wirkungsgrades}
   \label{fig:eff}
 \end{figure}

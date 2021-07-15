@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library} \PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.math\PYGZus{}real.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{entity} \PYG{n+nc}{plausible} \PYG{k}{is}
+  \PYG{k}{port} \PYG{p}{(}
+    \PYG{n}{G\PYGZus{}X}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{G\PYGZus{}X\PYGZus{}OK} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{bit}
+  \PYG{p}{);}
+\PYG{k}{end} \PYG{n+nc}{plausible}\PYG{p}{;}
+
+\PYG{k}{architecture} \PYG{n+nc}{arch} \PYG{k}{of} \PYG{n+nc}{plausible} \PYG{k}{is}
+
+  \PYG{k}{signal} \PYG{n}{buf}\PYG{p}{,} \PYG{n}{plausible} \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+
+\PYG{k}{begin}
+
+  \PYG{c+c1}{\PYGZhy{}\PYGZhy{} Evaluates the current signal with the buffered previous data}
+  \PYG{n}{eval} \PYG{o}{:} \PYG{k}{process} \PYG{k}{begin}
+    \PYG{k}{wait} \PYG{k}{on} \PYG{n}{G\PYGZus{}X}\PYG{p}{;}
+    \PYG{n}{plausible} \PYG{o}{\PYGZlt{}=} \PYG{n}{buf} \PYG{k}{xor} \PYG{n}{G\PYGZus{}X}\PYG{p}{;}
+    \PYG{n}{buf}       \PYG{o}{\PYGZlt{}=} \PYG{n}{G\PYGZus{}X}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process} \PYG{n+nc}{eval}\PYG{p}{;}
+
+  \PYG{c+c1}{\PYGZhy{}\PYGZhy{} Counts the differences between the evaluated signal and the buffered one}
+  \PYG{n}{count} \PYG{o}{:} \PYG{k}{process}
+    \PYG{k}{variable} \PYG{n}{sum} \PYG{o}{:} \PYG{k+kt}{integer} \PYG{o}{:=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{begin}
+    \PYG{k}{wait} \PYG{k}{on} \PYG{n}{plausible}\PYG{p}{;}
+    \PYG{n}{sum} \PYG{o}{:=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{n}{i} \PYG{k}{in} \PYG{l+m+mi}{0} \PYG{k}{to} \PYG{l+m+mi}{9} \PYG{k}{loop}
+      \PYG{k}{if} \PYG{n}{plausible}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}} \PYG{k}{then}
+        \PYG{n}{sum} \PYG{o}{:=} \PYG{n}{sum} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+      \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{loop}\PYG{p}{;}
+    \PYG{k}{if} \PYG{n}{sum} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{1} \PYG{k}{then}
+      \PYG{n}{G\PYGZus{}X\PYGZus{}OK} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+    \PYG{k}{else}
+      \PYG{n}{G\PYGZus{}X\PYGZus{}OK} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+    \PYG{k}{end} \PYG{k}{if}\PYG{p}{;}
+  \PYG{k}{end} \PYG{k}{process}\PYG{p}{;}
+
+\PYG{k}{end} \PYG{k}{architecture}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library} \PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+
+\PYG{k}{entity} \PYG{n+nc}{carrylookahead} \PYG{k}{is}
+  \PYG{k}{port} \PYG{p}{(}
+    \PYG{n}{add1}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{add2}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{sign}   \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+    \PYG{n}{result} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{8} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{p}{);}
+\PYG{k}{end} \PYG{k}{entity}\PYG{p}{;}
+
+\PYG{k}{architecture} \PYG{n+nc}{behav} \PYG{k}{of} \PYG{n+nc}{carrylookahead} \PYG{k}{is}
+  \PYG{k}{component} \PYG{n+nc}{fulladder}
+    \PYG{k}{port} \PYG{p}{(}
+      \PYG{n}{a}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+      \PYG{n}{b}    \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+      \PYG{n}{cin}  \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit}\PYG{p}{;}
+      \PYG{n}{S}    \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+      \PYG{n}{cout} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{bit}
+    \PYG{p}{);}
+  \PYG{k}{end} \PYG{k}{component}\PYG{p}{;}
+  \PYG{k}{signal} \PYG{n}{carry} \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{sum}   \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{gen}   \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{prop}  \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{10} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{k}{begin}
+  \PYG{n}{clahgen} \PYG{o}{:} \PYG{k}{for} \PYG{n}{i} \PYG{k}{in} \PYG{l+m+mi}{0} \PYG{k}{to} \PYG{l+m+mi}{9} \PYG{k}{generate}
+    \PYG{n}{fulladder\PYGZus{}inst} \PYG{o}{:} \PYG{n}{fulladder}
+    \PYG{k}{port} \PYG{k}{map}\PYG{p}{(}
+      \PYG{n}{a}    \PYG{o}{=\PYGZgt{}} \PYG{n}{add1}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+      \PYG{n}{b}    \PYG{o}{=\PYGZgt{}} \PYG{n}{add2}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+      \PYG{n}{cin}  \PYG{o}{=\PYGZgt{}} \PYG{n}{carry}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+      \PYG{n}{S}    \PYG{o}{=\PYGZgt{}} \PYG{n}{sum}\PYG{p}{(}\PYG{n}{i}\PYG{p}{),}
+      \PYG{n}{cout} \PYG{o}{=\PYGZgt{}} \PYG{k}{open}
+    \PYG{p}{);}
+  \PYG{k}{end} \PYG{k}{generate}\PYG{p}{;}
+
+  \PYG{n}{genprop} \PYG{o}{:} \PYG{k}{for} \PYG{n}{j} \PYG{k}{in} \PYG{l+m+mi}{0} \PYG{k}{to} \PYG{l+m+mi}{9} \PYG{k}{generate}
+    \PYG{n}{gen}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)}       \PYG{o}{\PYGZlt{}=} \PYG{n}{add1}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)} \PYG{k}{and} \PYG{n}{add2}\PYG{p}{(}\PYG{n}{j}\PYG{p}{);}
+    \PYG{n}{prop}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)}      \PYG{o}{\PYGZlt{}=} \PYG{n}{add1}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)} \PYG{k}{or} \PYG{n}{add2}\PYG{p}{(}\PYG{n}{j}\PYG{p}{);}
+    \PYG{n}{carry}\PYG{p}{(}\PYG{n}{j} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{gen}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)} \PYG{k}{or} \PYG{p}{(}\PYG{n}{prop}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)} \PYG{k}{and} \PYG{n}{carry}\PYG{p}{(}\PYG{n}{j}\PYG{p}{));}
+  \PYG{k}{end} \PYG{k}{generate}\PYG{p}{;}
+
+  \PYG{n}{carry}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{;}
+  \PYG{n}{sign}     \PYG{o}{\PYGZlt{}=} \PYG{n}{sum}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{);}
+  \PYG{n}{result}   \PYG{o}{\PYGZlt{}=} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{k}{abs}\PYG{p}{(}\PYG{k+kt}{signed}\PYG{p}{(}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{result}\PYG{n+na}{\PYGZsq{}range}\PYG{p}{))));}
+\PYG{k}{end} \PYG{k}{architecture}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{library} \PYG{n+nn}{ieee}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.std\PYGZus{}logic\PYGZus{}1164.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.numeric\PYGZus{}std.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{use} \PYG{n+nn}{ieee.math\PYGZus{}real.}\PYG{k}{all}\PYG{p}{;}
+\PYG{k}{entity} \PYG{n+nc}{subtractor} \PYG{k}{is}
+  \PYG{k}{port} \PYG{p}{(}
+    \PYG{n}{B\PYGZus{}X}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{B\PYGZus{}W}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{n}{DELTA} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{p}{);}
+\PYG{k}{end} \PYG{k}{entity} \PYG{n+nc}{subtractor}\PYG{p}{;}
+
+\PYG{k}{architecture} \PYG{n+nc}{behav} \PYG{k}{of} \PYG{n+nc}{subtractor} \PYG{k}{is}
+  \PYG{k}{component} \PYG{n+nc}{carrylookahead} \PYG{k}{is}
+    \PYG{k}{port} \PYG{p}{(}
+      \PYG{n}{add1}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+      \PYG{n}{add2}   \PYG{o}{:} \PYG{k}{in} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+      \PYG{n}{sign}   \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+      \PYG{n}{result} \PYG{o}{:} \PYG{k}{out} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{8} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{p}{);}
+  \PYG{k}{end} \PYG{k}{component}\PYG{p}{;}
+
+  \PYG{k}{signal} \PYG{n}{TC\PYGZus{}B\PYGZus{}W}   \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{sA}       \PYG{o}{:} \PYG{k+kt}{bit\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{9} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{sR}       \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic\PYGZus{}vector}\PYG{p}{(}\PYG{l+m+mi}{8} \PYG{k}{downto} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{k}{signal} \PYG{n}{signedBX} \PYG{o}{:} \PYG{k+kt}{std\PYGZus{}logic}\PYG{p}{;}
+
+\PYG{k}{begin}
+
+  \PYG{n}{cla} \PYG{o}{:} \PYG{n}{carrylookahead}
+  \PYG{k}{port} \PYG{k}{map}\PYG{p}{(}
+    \PYG{n}{add1}   \PYG{o}{=\PYGZgt{}} \PYG{n}{sA}\PYG{p}{,}
+    \PYG{n}{add2}   \PYG{o}{=\PYGZgt{}} \PYG{n}{TC\PYGZus{}B\PYGZus{}W}\PYG{p}{,}
+    \PYG{n}{sign}   \PYG{o}{=\PYGZgt{}} \PYG{n}{signedBX}\PYG{p}{,}
+    \PYG{n}{result} \PYG{o}{=\PYGZgt{}} \PYG{n}{sR}
+  \PYG{p}{);}
+  \PYG{n}{sA}     \PYG{o}{\PYGZlt{}=} \PYG{n}{to\PYGZus{}bitvector}\PYG{p}{(}\PYG{n}{B\PYGZus{}X}\PYG{p}{);}
+  \PYG{n}{TC\PYGZus{}B\PYGZus{}W} \PYG{o}{\PYGZlt{}=} \PYG{k}{not}\PYG{p}{(}\PYG{n}{to\PYGZus{}bitvector}\PYG{p}{(}\PYG{n}{B\PYGZus{}W}\PYG{p}{));}
+  \PYG{n}{DELTA}  \PYG{o}{\PYGZlt{}=} \PYG{n}{signedBX} \PYG{o}{\PYGZam{}} \PYG{n}{sR}\PYG{p}{;}
+\PYG{k}{end} \PYG{k}{architecture}\PYG{p}{;}
+\end{Verbatim}
