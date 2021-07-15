@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.24)  15 JUL 2021 13:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.4.24)  15 JUL 2021 16:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -684,7 +684,22 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
- (c:/texlive/2020/texmf-dist/tex/latex/minted/minted.sty
+ (c:/texlive/2020/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (c:/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen294
+\ar@mcellbox=\box66
+\extrarowheight=\dimen295
+\NC@list=\toks42
+\extratabsurround=\skip133
+\backup@length=\skip134
+\ar@cellbox=\box67
+)
+\rotheadsize=\dimen296
+\c@nlinenum=\count322
+\TeXr@lab=\toks43
+) (c:/texlive/2020/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
  (c:/texlive/2020/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
@@ -692,11 +707,11 @@ Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count322
+\FV@CodeLineNo=\count323
 \FV@InFile=\read4
-\FV@TabBox=\box66
-\c@FancyVerbLine=\count323
-\FV@StepNumber=\count324
+\FV@TabBox=\box68
+\c@FancyVerbLine=\count324
+\FV@StepNumber=\count325
 \FV@OutFile=\write4
 ) (c:/texlive/2020/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
@@ -704,56 +719,56 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbat
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )) (c:/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count325
-\output=\toks42
-\linenoprevgraf=\count326
-\linenumbersep=\dimen294
-\linenumberwidth=\dimen295
-\c@linenumber=\count327
-\c@pagewiselinenumber=\count328
-\c@LN@truepage=\count329
-\c@internallinenumber=\count330
-\c@internallinenumbers=\count331
-\quotelinenumbersep=\dimen296
-\bframerule=\dimen297
-\bframesep=\dimen298
-\bframebox=\box67
+\linenopenalty=\count326
+\output=\toks44
+\linenoprevgraf=\count327
+\linenumbersep=\dimen297
+\linenumberwidth=\dimen298
+\c@linenumber=\count328
+\c@pagewiselinenumber=\count329
+\c@LN@truepage=\count330
+\c@internallinenumber=\count331
+\c@internallinenumbers=\count332
+\quotelinenumbersep=\dimen299
+\bframerule=\dimen300
+\bframesep=\dimen301
+\bframebox=\box69
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count332
-\c@FV@TrueTabCounter=\count333
-\FV@TabBox@Group=\box68
-\FV@TmpLength=\skip133
-\c@FV@HighlightLinesStart=\count334
-\c@FV@HighlightLinesStop=\count335
-\FV@LoopCount=\count336
-\FV@NCharsBox=\box69
-\FV@BreakIndent=\dimen299
-\FV@BreakIndentNChars=\count337
-\FV@BreakSymbolSepLeft=\dimen300
-\FV@BreakSymbolSepLeftNChars=\count338
-\FV@BreakSymbolSepRight=\dimen301
-\FV@BreakSymbolSepRightNChars=\count339
-\FV@BreakSymbolIndentLeft=\dimen302
-\FV@BreakSymbolIndentLeftNChars=\count340
-\FV@BreakSymbolIndentRight=\dimen303
-\FV@BreakSymbolIndentRightNChars=\count341
-\c@FancyVerbLineBreakLast=\count342
-\FV@LineBox=\box70
-\FV@LineIndentBox=\box71
-\FV@LineWidth=\dimen304
+\c@FV@TrueTabGroupLevel=\count333
+\c@FV@TrueTabCounter=\count334
+\FV@TabBox@Group=\box70
+\FV@TmpLength=\skip135
+\c@FV@HighlightLinesStart=\count335
+\c@FV@HighlightLinesStop=\count336
+\FV@LoopCount=\count337
+\FV@NCharsBox=\box71
+\FV@BreakIndent=\dimen302
+\FV@BreakIndentNChars=\count338
+\FV@BreakSymbolSepLeft=\dimen303
+\FV@BreakSymbolSepLeftNChars=\count339
+\FV@BreakSymbolSepRight=\dimen304
+\FV@BreakSymbolSepRightNChars=\count340
+\FV@BreakSymbolIndentLeft=\dimen305
+\FV@BreakSymbolIndentLeftNChars=\count341
+\FV@BreakSymbolIndentRight=\dimen306
+\FV@BreakSymbolIndentRightNChars=\count342
+\c@FancyVerbLineBreakLast=\count343
+\FV@LineBox=\box72
+\FV@LineIndentBox=\box73
+\FV@LineWidth=\dimen307
 ) (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count343
-\calc@Bcount=\count344
-\calc@Adimen=\dimen305
-\calc@Bdimen=\dimen306
-\calc@Askip=\skip134
-\calc@Bskip=\skip135
+\calc@Acount=\count344
+\calc@Bcount=\count345
+\calc@Adimen=\dimen308
+\calc@Bdimen=\dimen309
+\calc@Askip=\skip136
+\calc@Bskip=\skip137
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count345
-\calc@Cskip=\skip136
+\calc@Ccount=\count346
+\calc@Cskip=\skip138
 ) (c:/texlive/2020/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Unrestricted shell escape enabled on input line 75.
@@ -764,25 +779,25 @@ Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )) (c:/texlive/2020/texmf-dist/tex/generic/xstring/xstring.sty (c:/texlive/2020/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count346
-\decimalpart=\count347
+\integerpart=\count347
+\decimalpart=\count348
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 ) (c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count348
-\float@exts=\toks43
-\float@box=\box72
-\@float@everytoks=\toks44
-\@floatcapt=\box73
+\c@float@type=\count349
+\float@exts=\toks45
+\float@box=\box74
+\@float@everytoks=\toks46
+\@floatcapt=\box75
 )
 \minted@appexistsfile=\read5
-\minted@bgbox=\box74
+\minted@bgbox=\box76
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count349
-\c@minted@pygmentizecounter=\count350
-\@float@every@listing=\toks45
-\c@listing=\count351
+\c@minted@FancyVerbLineTemp=\count350
+\c@minted@pygmentizecounter=\count351
+\@float@every@listing=\toks47
+\c@listing=\count352
 )
 runsystem(if not exist _minted-DIHA mkdir _minted-DIHA)...executed.
 
@@ -808,48 +823,48 @@ File: pgflibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box75
-\pgfnodeparttwobox=\box76
-\pgfnodepartthreebox=\box77
-\pgfnodepartfourbox=\box78
-\pgfnodeparttwentybox=\box79
-\pgfnodepartnineteenbox=\box80
-\pgfnodeparteighteenbox=\box81
-\pgfnodepartseventeenbox=\box82
-\pgfnodepartsixteenbox=\box83
-\pgfnodepartfifteenbox=\box84
-\pgfnodepartfourteenbox=\box85
-\pgfnodepartthirteenbox=\box86
-\pgfnodeparttwelvebox=\box87
-\pgfnodepartelevenbox=\box88
-\pgfnodeparttenbox=\box89
-\pgfnodepartninebox=\box90
-\pgfnodeparteightbox=\box91
-\pgfnodepartsevenbox=\box92
-\pgfnodepartsixbox=\box93
-\pgfnodepartfivebox=\box94
+\pgfnodepartlowerbox=\box77
+\pgfnodeparttwobox=\box78
+\pgfnodepartthreebox=\box79
+\pgfnodepartfourbox=\box80
+\pgfnodeparttwentybox=\box81
+\pgfnodepartnineteenbox=\box82
+\pgfnodeparteighteenbox=\box83
+\pgfnodepartseventeenbox=\box84
+\pgfnodepartsixteenbox=\box85
+\pgfnodepartfifteenbox=\box86
+\pgfnodepartfourteenbox=\box87
+\pgfnodepartthirteenbox=\box88
+\pgfnodeparttwelvebox=\box89
+\pgfnodepartelevenbox=\box90
+\pgfnodeparttenbox=\box91
+\pgfnodepartninebox=\box92
+\pgfnodeparteightbox=\box93
+\pgfnodepartsevenbox=\box94
+\pgfnodepartsixbox=\box95
+\pgfnodepartfivebox=\box96
 ))) (c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen307
+\arrowsize=\dimen310
 )) (c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count352
-\Gm@cntv=\count353
-\c@Gm@tempcnt=\count354
-\Gm@bindingoffset=\dimen308
-\Gm@wd@mp=\dimen309
-\Gm@odd@mp=\dimen310
-\Gm@even@mp=\dimen311
-\Gm@layoutwidth=\dimen312
-\Gm@layoutheight=\dimen313
-\Gm@layouthoffset=\dimen314
-\Gm@layoutvoffset=\dimen315
-\Gm@dimlist=\toks46
+\Gm@cnth=\count353
+\Gm@cntv=\count354
+\c@Gm@tempcnt=\count355
+\Gm@bindingoffset=\dimen311
+\Gm@wd@mp=\dimen312
+\Gm@odd@mp=\dimen313
+\Gm@even@mp=\dimen314
+\Gm@layoutwidth=\dimen315
+\Gm@layoutheight=\dimen316
+\Gm@layouthoffset=\dimen317
+\Gm@layoutvoffset=\dimen318
+\Gm@dimlist=\toks48
 ) (c:/texlive/2020/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
 )
@@ -864,43 +879,43 @@ LaTeX Warning: Label `T' multiply defined.
 )
 \openout1 = `DIHA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
  ABD: EveryShipout initializing macros (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
-\scratchdimen=\dimen316
-\scratchbox=\box95
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count358
-\MPscratchDim=\dimen317
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count356
+\scratchdimen=\dimen319
+\scratchbox=\box97
+\nofMPsegments=\count357
+\nofMParguments=\count358
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count359
+\MPscratchDim=\dimen320
+\MPnumerator=\count360
+\makeMPintoPDFobject=\count361
+\everyMPtoPDFconversion=\toks50
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box96
-Package hyperref Info: Link coloring OFF on input line 72.
+\AtBeginShipoutBox=\box98
+Package hyperref Info: Link coloring OFF on input line 73.
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -908,11 +923,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count361
+\c@section@level=\count362
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.out) (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.out)
 \@outlinefile=\write6
 \openout6 = `DIHA.out'.
@@ -921,7 +936,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count362
+\c@lstlisting=\count363
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -992,19 +1007,19 @@ Kapitel A.
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 139.
+(mdframed)              on input line 140.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 140.
-<../assets/images/DIHA/blockschaltbilda.png, id=189, 553.06625pt x 382.42876pt>
+(mdframed)              on input line 141.
+<../assets/images/DIHA/blockschaltbilda.png, id=193, 553.06625pt x 382.42876pt>
 File: ../assets/images/DIHA/blockschaltbilda.png Graphic file (type png)
 <use ../assets/images/DIHA/blockschaltbilda.png>
-Package pdftex.def Info: ../assets/images/DIHA/blockschaltbilda.png  used on input line 149.
+Package pdftex.def Info: ../assets/images/DIHA/blockschaltbilda.png  used on input line 150.
 (pdftex.def)             Requested size: 430.00462pt x 297.33621pt.
-<../assets/images/haw.jpg, id=191, 401.5pt x 281.05pt>
+<../assets/images/haw.jpg, id=195, 401.5pt x 281.05pt>
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 161.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 162.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1016,7 +1031,7 @@ This may cause the page layout to be inconsistent, however.
 [6 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/blockschaltbilda.png> <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/haw.jpg>]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 165.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 166.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
  [7]
 \openout4 = `DIHA.pyg'.
@@ -1032,23 +1047,23 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 3
  (c:/texlive/2020/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ))
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 218.
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 219.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 224.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 225.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
  [8]
-<../assets/images/DIHA/simuA.png, id=219, 749.29938pt x 278.03876pt>
+<../assets/images/DIHA/simuA.png, id=223, 749.29938pt x 278.03876pt>
 File: ../assets/images/DIHA/simuA.png Graphic file (type png)
 <use ../assets/images/DIHA/simuA.png>
-Package pdftex.def Info: ../assets/images/DIHA/simuA.png  used on input line 233.
+Package pdftex.def Info: ../assets/images/DIHA/simuA.png  used on input line 234.
 (pdftex.def)             Requested size: 430.00462pt x 159.56133pt.
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/52115EB4B5682FD63847245A81189547F260D8B25F6223E7EF1AA1386D169455.pygtex)
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 272.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 273.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
  [9 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/simuA.png>]
 Kapitel B.
@@ -1057,49 +1072,69 @@ Kapitel B.
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 279.
+(mdframed)              on input line 280.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 281.
+(mdframed)              on input line 282.
+<../assets/images/DIHA/delta.png, id=235, 819.06pt x 722.7pt>
+File: ../assets/images/DIHA/delta.png Graphic file (type png)
+<use ../assets/images/DIHA/delta.png>
+Package pdftex.def Info: ../assets/images/DIHA/delta.png  used on input line 290.
+(pdftex.def)             Requested size: 430.00462pt x 379.42317pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 326.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 296.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [11]
+ [11 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/delta.png>]
+<../assets/images/DIHA/partBauto.png, id=242, 1927.2pt x 1084.05pt>
+File: ../assets/images/DIHA/partBauto.png Graphic file (type png)
+<use ../assets/images/DIHA/partBauto.png>
+Package pdftex.def Info: ../assets/images/DIHA/partBauto.png  used on input line 303.
+(pdftex.def)             Requested size: 430.00462pt x 241.86615pt.
+
+Overfull \hbox (4.12332pt too wide) in paragraph at lines 312--325
+ [][] 
+ []
+
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 341.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 343.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [12]
+[12 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/partBauto.png>]
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 371.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+ [13]
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/C158B2888B420BDE57BF4DCAAD7BE468F260D8B25F6223E7EF1AA1386D169455.pygtex)
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 381.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 411.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [13]
+ [14]
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/0BBEA9C343BEFDA07CF9ADBA8DBB089DF260D8B25F6223E7EF1AA1386D169455.pygtex)
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 441.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [14]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 446.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 471.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
  [15]
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 476.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+ [16]
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/522171A10ABF89CB69BDCF69D1B120AEF260D8B25F6223E7EF1AA1386D169455.pygtex)
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 501.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 531.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [16]
+ [17]
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/4140F363BDC0DE968D2309FFA46E5C0CF260D8B25F6223E7EF1AA1386D169455.pygtex
@@ -1107,44 +1142,53 @@ File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
 Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 57.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [17]
+ [18]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
 Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 111.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [18])
-<../assets/images/DIHA/simuB.png, id=285, 794.46812pt x 311.1625pt>
+ [19])
+<../assets/images/DIHA/simuB.png, id=300, 794.46812pt x 311.1625pt>
 File: ../assets/images/DIHA/simuB.png Graphic file (type png)
 <use ../assets/images/DIHA/simuB.png>
-Package pdftex.def Info: ../assets/images/DIHA/simuB.png  used on input line 635.
+Package pdftex.def Info: ../assets/images/DIHA/simuB.png  used on input line 666.
 (pdftex.def)             Requested size: 430.00462pt x 168.41933pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 642.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 674.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [19 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/simuB.png>]
+ [20 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/simuB.png>]
 \openout4 = `DIHA.pyg'.
 
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/_minted-DIHA/09E40935AAFB7C75E305ACAA6A164E3EF260D8B25F6223E7EF1AA1386D169455.pygtex)
+<../assets/images/DIHA/simuBtimev2.PNG, id=308, 790.45313pt x 304.13625pt>
+File: ../assets/images/DIHA/simuBtimev2.PNG Graphic file (type png)
+<use ../assets/images/DIHA/simuBtimev2.PNG>
+Package pdftex.def Info: ../assets/images/DIHA/simuBtimev2.PNG  used on input line 723.
+(pdftex.def)             Requested size: 430.00462pt x 165.45163pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 695.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 735.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [20] (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.bbl
+[21] (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.bbl
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
 Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 1.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
- [21]
+ [22 <c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/../assets/images/DIHA/simuBtimev2.PNG>]
 Kapitel C.
-) [22
+) [23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 742.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 742.
  (c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 702.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 742.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 742.
 Package rerunfilecheck Info: File `DIHA.out' has not changed.
 (rerunfilecheck)             Checksum: 01DF9437982F62EE27983ED9297705AF;1596.
 
@@ -1153,21 +1197,21 @@ LaTeX Warning: There were multiply-defined labels.
 
 runsystem(del DIHA.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 742.
  ) 
 Here is how much of TeX's memory you used:
- 39850 strings out of 480607
- 910653 string characters out of 5907502
- 1466151 words of memory out of 5000000
- 55003 multiletter control sequences out of 15000+600000
+ 40079 strings out of 480607
+ 913554 string characters out of 5907502
+ 1470113 words of memory out of 5000000
+ 55219 multiletter control sequences out of 15000+600000
  547814 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,15n,76p,1311b,1017s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.pdf (22 pages, 577767 bytes).
+ 68i,16n,76p,1311b,1017s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti2074.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on c:/Users/erica/Documents/Projects/HAW/Semester_3/EL2/ELP2/DIHA/DIHA.pdf (23 pages, 860095 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 

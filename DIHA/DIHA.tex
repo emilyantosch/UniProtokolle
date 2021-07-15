@@ -17,6 +17,7 @@
 \usepackage{../assets/scripts/tex/color-env}
 \usepackage[ngerman]{babel}
 \usepackage{listings}
+\usepackage{makecell}
 \usepackage{minted}
 \setminted{
     linenos=true,
@@ -136,7 +137,7 @@
 \label{sec:einleitung}
 
 \begin{task}
-  TIn dem ersten Teilbereich der Hausarbeit soll das von einem externen Sensor erfasste 10 Bit breite Datenpacket auf hinreichende Abtastung mittels einer Plausibilitätsprüfung überprüft werden. Dabei soll das Signal $G_X$ überprüft und dann mit einem Signal $G_{XOK}$ dargestellt werden, dass das Signal zur Weiterverarbeitung übertragen werden kann.
+  TIn dem ersten Teilbereich der Hausarbeit soll das von einem externen Sensor erfasste 10 Bit breite Datenpacket auf hinreichende Abtastung mittels einer Plausibilitätsprüfung überprüft werden. Dabei soll das Signal $G\_X$ überprüft und dann mit einem Signal $G\_X\_OK$ dargestellt werden, dass das Signal zur Weiterverarbeitung übertragen werden kann.
 \end{task}
 
 \section{Blockschaltbild}
@@ -160,7 +161,7 @@ Wir wollen uns zuerst einmal anschauen, was der Gray-Code überhaupt ist, um ein
 Während bei dem in der Digitaltechnik sehr verbreitetem Binärcode die sogenannte Hamming-Distanz unterschiedlich groß sein kann, ist der Gray-Code so konzipiert, dass diese immer nur genau 1 beträgt. Die Hamming-Distanz beschreibt dabei die Distanz zwischen zwei aufeinanderfolgenden Zahlenwerten charakterisiert als die Differenz in den Ziffern der beiden Zahlen. Die Zahl $n = 3$ und zu der Zahl $n = 4$ haben die binären Darstellungen $n_{B} = 11_{(2)}$ und $n_{B}+1 = 100_{(2)}$. Die Hamming-Distanz ist hier also $3$, da sich drei Stellen der Zahl zu der nächsten ändern. Für die Messung von Messstrecken findet sich so keine einfache Methode, die Richtigkeit bzw. Plausibilität der Werte zu testen. Im Gegensatz dazu findet sich $n_{G} = 010_{(2G)}$ und $n_{G}+1 = 110_{(2G)}$ mit einer Hamming-Distanz von $1$. Hier können wir einfach überprüfen, ob der Wert, der als nächstes eingelesen wird, sich in der Hamming-Distanz um $1$ von dem vorherigen verändert hat. Wenn nicht, so stimmt die Messung nicht vollständig oder die Auflösung ist nicht hoch genug. Besonders bei Messungen von Werten, die keine allzu starken Schwankungen erlauben, ist diese Art der Plausibilitätsprüfung sehr sinnvoll.
 
 \paragraph{Konkrete Idee}
-Wie oben erwähnt, bietet es sich bei der Aufgabe an, mithilfe der Eigenschaften des Gray-Codes eine Überprüfung der Plausibilität durchzuführen. Dafür wollen nehmen wir unser Eingangssignal $G_{X}$ und speichern dies zunächst auf ein Signal buf, um es später mit dem im nächsten Zyklus eingelesenem Eingangssignal zu vergleichen. Basierend auf dem Ergebnis der Hamming-Distanz-Berechnung setzen wir $G_{XOK}$ also entweder auf True oder False. Das eingelesene Signal $G_{X}$ wird das neue buf und der Prozess wiederholt sich.
+Wie oben erwähnt, bietet es sich bei der Aufgabe an, mithilfe der Eigenschaften des Gray-Codes eine Überprüfung der Plausibilität durchzuführen. Dafür wollen nehmen wir unser Eingangssignal $G\_{X}$ und speichern dies zunächst auf ein Signal buf, um es später mit dem im nächsten Zyklus eingelesenem Eingangssignal zu vergleichen. Basierend auf dem Ergebnis der Hamming-Distanz-Berechnung setzen wir $G\_X\_OK$ also entweder auf True oder False. Das eingelesene Signal $G\_{X}$ wird das neue buf und der Prozess wiederholt sich.
 
 \newpage
 
@@ -218,7 +219,7 @@ Wie oben erwähnt, bietet es sich bei der Aufgabe an, mithilfe der Eigenschaften
   \caption{Der Code für die Plausibilitätsprüfung}
   \label{fig:codeA}
 \end{longlisting}
-
+\noindent
 Wir überprüfen zunächst in \textit{eval} die Hammingdistanz zwischen \textit{buf} und \textit{G\_X} und speichern dann in unserem Buffer den derzeitigen Wert von \textit{G\_X}. In \textit{count} benutzen wir eine Integervariable, um die $1$ in dem Signal \textit{plausible} zu zählen, welche das Ergebnis der Hammingdistanz enthält. Wenn dann sum über den Wert $1$ geht, dann ist das Signal nach unserem Verständnis nicht mehr plausibel. 
 
 \newpage
@@ -276,7 +277,7 @@ Wir können anhand unserer Ergebnisse einige Dinge feststellen. Zum einen ist es
 \label{sec:einleitung-1}
 
 \begin{task}
-  TIn der nächsten Aufgabe soll es um die Berechnung der Regelabweichung von zwei Signalen mithilfe eines Carry-Lookahead-Addierers gehen. Dabei ist unser auf Plausibilität geprüfte Signal $B_X$ mit einem Sollwert $B_{W}$ zu vergleichen und die Differenz auf einer bidirektionalen 10-bit breiten Busleitung auszugeben. Ebenfalls sollen die dedizierten Signale EXAKT und ZU\_KLEIN seperat je nach Ergebnis ausgegeben werden.
+  TIn der nächsten Aufgabe soll es um die Berechnung der Regelabweichung von zwei Signalen mithilfe eines Carry-Lookahead-Addierers gehen. Dabei ist unser auf Plausibilität geprüfte Signal $B\_X$ mit einem Sollwert $B\_{W}$ zu vergleichen und die Differenz auf einer bidirektionalen 10-bit breiten Busleitung auszugeben. Ebenfalls sollen die dedizierten Signale EXAKT und ZU\_KLEIN seperat je nach Ergebnis ausgegeben werden.
 
 \end{task}
 
@@ -286,15 +287,44 @@ Wir können anhand unserer Ergebnisse einige Dinge feststellen. Zum einen ist es
 
 \begin{figure}[h]
   \centering
-  %\includegraphics[width=\textwidth]{../assets/images/DIHA/delta.png}
+  \includegraphics[width=\textwidth]{../assets/images/DIHA/delta.png}
   \caption{Blockschaltbild für die Regelabweichung}
   \label{fig:blockregel}
 \end{figure}
 
 
+\newpage
 
 \section{Automatengraph}
 \label{sec:automatengraph}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/DIHA/partBauto.png}
+  \caption{Der Automatengraph für die Berechnung der Regelabweichung}
+  \label{fig:autopartB}
+\end{figure}
+
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    Zustand/Signal & Erklärung \\
+    \hline
+    CALC & \makecell{Der CALC-Zustand stellt die durchgehende Berechnung\\ des Ergebnisses dar. Der zugehörige Übergang $CALC\in\Sigma$\\ stellt die jeweilige Beendigung des anderes Zustands dar. Im Falle\\ von ST\_DELTA z.B. das Ende von zwei Systemtakten.} \\
+    \hline
+    ST\_B\_X & \makecell{In diesem Zustand wird der neue Ist-Wert\\ von Bus eingelesen. Dieses wird von dem Steuersignal ST\_B\_X eingeleitet.}\\
+    \hline
+    ST\_B\_W & \makecell{In diesem Zustand wird der neue Soll-Wert von Bus eingelesen.\\ Dieses wird von dem Steuersignal ST\_B\_W eingeleitet.}\\
+    \hline
+    ST\_DELTA & \makecell{In diesem Zustand wird das Ergebnis auf dem Bus ausgegeben.\\ Dabei gibt das Signal ST\_DELTA das Signal, den Bus zwei Systemtakte lang \\ mit dem Ergebnis zu beschreiben.} \\
+    \hline
+  \end{tabular}
+  \caption{Erklärung der einzelnen Zustände und Übergänge}
+  \label{tab:state}
+\end{table}
 
 
 \section{Lösungsidee}
@@ -625,6 +655,7 @@ Der Substractor behandelt nun implizit die Umrechnung des Sollwerts in das Zweie
   \label{code:comp}
 \end{longlisting}
 
+\noindent
 In diesem Prozess behandeln wir, wie wir die Taktsynchronität, wir in \ref{sec:taktsynchronitat} schon angesprochen haben, umsetzen wollen. Wir verwenden den in \ref{sec:automatengraph} erstellten Graphen, um im Prozess \textit{SN} die Bedingungen für das Ändern des Zustandes wählen. Über das Signal \textit{io}, was den Bus darstellt, werden in den richtigen Momenten die Werte eingelesen. Der Prozess \textit{SW} wechselt vom \textit{state} in den \textit{next\_state}, und zwar immer auf dem Ändern des Clocksignals. Hier wird außerdem noch der Reset eingelesen und verarbeitet. Der Prozess \textit{WR} schreibt, sollte der Zustand auf \textit{output} sein, das Ergebnis des \textit{subtractors} auf den Bus, ansonsten wird dieser auf hochohmig gelegt. Der letzte Prozess \textit{RD} liest bei gegebenen Zustand den des Busses aus. 
 
 \section{Simulation der Ergebnisse}
@@ -637,6 +668,7 @@ In diesem Prozess behandeln wir, wie wir die Taktsynchronität, wir in \ref{sec:
   \label{fig:simuB}
 \end{figure}
 
+\noindent
 Wir erkennen auf der Abbildung, dass wir eine relativ gute Lösung finden konnten, die mit unseren Wünschen und Anforderungen an unser System übereinstimmen. Wir lesen zunächst den Sollwert B\_W nach dem Steuersignal ST\_B\_W ein, gefolgt von dem Ist-Wert B\_X über das ST\_B\_X-Signal. Es wird über unser Substractor-Component, der den Carry-Lookahead-Addierer enthält, ein Ergebnis in unseren result-Buffer geschrieben, der dann zwei Systemtakte lang auf der bidirektionalen Busleitung io ausgegeben wird. Diese wird zwischen den Operationen, und so auch nach der Ausgabe des Ergebnisses, wieder hochohmig (dargestellt durch die blaue Linie). Auch unser Ergebnis von $16_{(10)} = 0000010000_{(2)}$, welches Sie aus der Distanz des Sollwerts $B\_W = -15_{(10)} = 1111110001_{2}$ zu dem Ist-Wert $B\_X = 1_{(10)} = 0000000001_{(2)}$ ergibt.
 
 \newpage 
@@ -684,7 +716,15 @@ Wir erkennen auf der Abbildung, dass wir eine relativ gute Lösung finden konnte
 
 \subsection{Kritischer Pfad}
 
-Der kritische Pfad eines Systems beschreibt denjenigen Pfad eines Signals, welcher die längste Verzögerung von Eingang zu Ausgang bietet. So können beispielsweise große Zahlen in einem Carry-Ripple-Addierer zu größerer Berechnungszeit führen. Der kritische Pfad führt also durch alle Überträge hindurch.
+Der kritische Pfad eines Systems beschreibt denjenigen Pfad eines Signals, welcher die längste Verzögerung von Eingang zu Ausgang bietet. So können beispielsweise große Zahlen in einem Carry-Ripple-Addierer zu größerer Berechnungszeit führen. Der kritische Pfad führt also durch alle Überträge hindurch. Wir haben bei uns, durch den Carry-Lookahead-Addierer nur noch die Verzögerung der Berechnung der Summe im Volladdierer selbst. Wir simulieren hierbei Verzögerung über \textit{after x ns}. Die Umwandlung im CLA und die Berechnung des Carryoverbits durch Generate und Propagate werden auch mit entsprechenden Werten versehen. Allerdings ist der kritische Pfad, den es zu bestimmen gilt, lediglich von der Berechnung selbst abhängig. Wir bekommen mit den Verzögerungen bei unserer Testberechnung eine Verzögerung von $12ns$, den kritischen Pfad konnten wir mit einer pauschalen Verarbeitungszeit der übrigen Schaltungselemente mit $52ns$ mit $\Delta t_g = \Delta t_b + \Delta t_v = 12ns + 40ns = 52ns$ bestimmen. Eine maximale Taktfrequenz, ergibt sich dann mit $f = \frac{1}{\Delta t_g} = \frac{1}{52ns} = 19,23MHz$ bestimmen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/DIHA/simuBtimev2.PNG}
+  \caption{Die Berechnung der Berechnungsverzögerung mithilfe von ModelSim}
+  \label{fig:simuBtime}
+\end{figure}
+
 
 
 

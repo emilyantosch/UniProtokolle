@@ -12,20 +12,20 @@
 \contentsline {chapter}{\numberline {B}Berechnung der Regelabweichung}{10}{chapter.2}%
 \contentsline {section}{\numberline {B.1}Aufgabe}{11}{section.2.1}%
 \contentsline {section}{\numberline {B.2}Blockschaltbild}{11}{section.2.2}%
-\contentsline {section}{\numberline {B.3}Automatengraph}{11}{section.2.3}%
-\contentsline {section}{\numberline {B.4}Lösungsidee}{11}{section.2.4}%
-\contentsline {subsection}{\numberline {B.4.1}Carry-Lookahead-Addierer}{11}{subsection.2.4.1}%
-\contentsline {paragraph}{Generate}{11}{section*.11}%
-\contentsline {paragraph}{Propagate}{11}{section*.12}%
-\contentsline {paragraph}{Absorb}{11}{section*.13}%
-\contentsline {subsection}{\numberline {B.4.2}Zweier Komplement}{11}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {B.4.3}Taktsynchronität}{12}{subsection.2.4.3}%
-\contentsline {section}{\numberline {B.5}Beschreibung in VHDL}{13}{section.2.5}%
-\contentsline {subsection}{\numberline {B.5.1}Volladdierer}{13}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {B.5.2}Carry-Lookahead-Addierer}{14}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {B.5.3}Substractor}{16}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {B.5.4}Vergleicher}{17}{subsection.2.5.4}%
-\contentsline {section}{\numberline {B.6}Simulation der Ergebnisse}{19}{section.2.6}%
-\contentsline {subsection}{\numberline {B.6.1}Kritischer Pfad}{20}{subsection.2.6.1}%
-\contentsline {section}{\numberline {B.7}Fazit}{20}{section.2.7}%
-\contentsline {chapter}{\numberline {C}Literaturverzeichnis}{22}{chapter.3}%
+\contentsline {section}{\numberline {B.3}Automatengraph}{12}{section.2.3}%
+\contentsline {section}{\numberline {B.4}Lösungsidee}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {B.4.1}Carry-Lookahead-Addierer}{12}{subsection.2.4.1}%
+\contentsline {paragraph}{Generate}{13}{section*.13}%
+\contentsline {paragraph}{Propagate}{13}{section*.14}%
+\contentsline {paragraph}{Absorb}{13}{section*.15}%
+\contentsline {subsection}{\numberline {B.4.2}Zweier Komplement}{13}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {B.4.3}Taktsynchronität}{13}{subsection.2.4.3}%
+\contentsline {section}{\numberline {B.5}Beschreibung in VHDL}{14}{section.2.5}%
+\contentsline {subsection}{\numberline {B.5.1}Volladdierer}{14}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {B.5.2}Carry-Lookahead-Addierer}{15}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {B.5.3}Substractor}{17}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {B.5.4}Vergleicher}{18}{subsection.2.5.4}%
+\contentsline {section}{\numberline {B.6}Simulation der Ergebnisse}{20}{section.2.6}%
+\contentsline {subsection}{\numberline {B.6.1}Kritischer Pfad}{21}{subsection.2.6.1}%
+\contentsline {section}{\numberline {B.7}Fazit}{22}{section.2.7}%
+\contentsline {chapter}{\numberline {C}Literaturverzeichnis}{23}{chapter.3}%

@@ -4,5 +4,7 @@
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Die Simulation der Ergebnisse\relax }}{9}{figure.caption.8}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {B.1}{\ignorespaces Blockschaltbild für die Regelabweichung\relax }}{11}{figure.caption.10}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Simulation der Beschreibung in VHDL\relax }}{19}{figure.caption.18}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Der Automatengraph für die Berechnung der Regelabweichung\relax }}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Simulation der Beschreibung in VHDL\relax }}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Die Berechnung der Berechnungsverzögerung mithilfe von ModelSim\relax }}{22}{figure.caption.22}%
 \addvspace {10\p@ }
