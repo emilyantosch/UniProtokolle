@@ -1,0 +1,19 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}Die Temperatur-Regelstrecke}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Einführung}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Vorbereitung}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}V1.1}{5}{subsection.1.2.1}%
+\contentsline {paragraph}{Kennlinienfeld}{5}{section*.1}%
+\contentsline {paragraph}{Arbeitspunkt}{5}{section*.2}%
+\contentsline {paragraph}{stationäres Verhalten}{5}{section*.3}%
+\contentsline {subsection}{\numberline {1.2.2}V1.2}{6}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Aufgabe 1: Binärzähler mit Timer}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Teilaufgabe A}{6}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Teilaufgabe B}{7}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Teilaufgabe C}{7}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Teilaufgabe D}{7}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Programm: Binärzähler mit Timer}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Programm: Interrupts und Interrupthandler}{9}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Ausgabe des Programms}{10}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Gleichzeitige Schaltung beider Eingänge in Port N}{11}{subsection.1.5.2}%

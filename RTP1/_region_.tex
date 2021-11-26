@@ -1,0 +1,96 @@
+\message{ !name(rtp.tex)}\documentclass{report}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage{../assets/scripts/tex/color-env}
+\usepackage[ngerman]{babel}
+\usepackage[Glenn]{fncychap}
+\usepackage{trfsigns}
+\input{../assets/scripts/tex/structure.tex}
+
+
+\usetikzlibrary{shapes}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{arrows.meta,topaths}
+    \usetikzlibrary{bending}
+    \usetikzlibrary{calc}
+\title{Elektrotechnik 1 Praktikum 1}
+
+
+\usepackage[
+  includehead,
+  headheight = 17mm,
+  footskip = \dimexpr\headsep+\ht\strutbox\relax,
+  tmargin = 0mm,
+  bmargin = \dimexpr17mm+2\ht\strutbox\relax,
+]{geometry}
+
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+
+\definecolor{DarkGreenBlue}{HTML}{264653}
+\definecolor{LightGreenBlue}{HTML}{2A9D8F}
+\definecolor{LightOrange}{HTML}{E9C46A}
+\definecolor{DarkOrange}{HTML}{F4A261}
+\definecolor{RedOrange}{HTML}{E76F51}
+\definecolor{BrightRed}{HTML}{D62828}
+\definecolor{DeepBlue}{HTML}{003049}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{code}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=code}
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=0.2]{../assets/images/haw.jpg}}
+\renewcommand\headrulewidth{0.5pt}
+
+
+\begin{document}
+
+\message{ !name(rtp.tex) !offset(152) }
+  \vartheta(t) = K_{s} \cdot P_{0}\cdot \mathcal{L}^{-1}\left\{\frac{1}{s}\cdot e^{-T_{t}s}\cdot\frac{1}{1+T_{s}s}\right\} = K_{s} \cdot P_{0} \cdot \frac{1}{T_{s}} \cdot \mathcal{L}^{-1}\left\{\frac{1}{s}\cdot e^{-T_{t}s}\cdot \frac{1}{\frac{1}{T_{s}}+s}\right\}
+\end{equation}
+Mithilfe des Verschiebungs- und Integrationssatzes erhalten wir:
+
+
+\message{ !name(rtp.tex) !offset(414) }
+
+\end{document}
