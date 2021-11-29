@@ -5,6 +5,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{lettrine}
 \usepackage{hyperref}
@@ -151,9 +155,9 @@
 
   \end{scope}
 
-  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf MP\\[10pt] Praktikum 2}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf RT\\[10pt] Bericht}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
 
-  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Timer und Interrupts}};
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Regelungstechnik}};
 
   \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen 2519584\\[3pt] Emily Antosch 2519935};
 
@@ -166,19 +170,13 @@
 
 \listoffigures
 
-\lstlistoflistings
-
 \newpage
 
 \chapter{Die Temperatur-Regelstrecke}
 
 \section{Einführung}
 
-Im ersten Praktikum wollen wir uns mit dem Evaluation Board TM4C1294NCPDT vertraut machen,
-mit dem wir uns auch in den nächsten Praktika beschäftigen wollen. Dabei richten wir
-über den Projektbrowser und den Projekteigenschaften alle wichtigen Eigenschaften ein,
-testen erste Konsolenausgaben und lassen LEDs in bestimmten Blinkmustern aufleuchten.
-
+Im ersten Praktikum wollen wir uns mit dem stationären und dynamischen Verhalten einer Temperatur-Regelstrecke von einem Heizelement und einem Luftstrom beschäftigen. Dabei wollen wir uns sowohl über die Begriffe Kennlinienfeld, Arbeitspunkt und stationäres Verhalten vertraut machen, als auch verschiedene mathematische Modelle nutzen, um das Verhalten der Regelstrecke vorherzusagen. Im Anschluss gilt es dann, die Vorbereitung mit echten Messungen aus dem Labor zu überprüfen und zu vergleichen und dann schlussendlich alle Ergebnisse auszuwerten.
 
 \section{Vorbereitung}
 
@@ -194,7 +192,7 @@ in einem einzigen Diagramm zur Veranschaulichung der Betriebsmitteleigenschaft u
 \paragraph{stationäres Verhalten} Als stationäres Verhalten beschreiben wir den Zustand, in dem eine Regelstrecke einen festen Zusammenhang zwischen Eingangs- und Ausgangsgröße erreicht hat. Der Endwert des Regelkreises wurde erreicht.
 
 
-\vspace{1emy}
+\vspace{1em}
 \noindent
 Wir wollen nun den Zusammenhang der Kennlinienfelder im Vorfeld bestimmen und das Ergebnis in der Auswertung überprüfen. Aus
 
@@ -250,270 +248,133 @@ Mithilfe des Verschiebungs- und Integrationssatzes erhalten wir:
 Wir bilden nun die Stammfunktion und vereinfachen so weit wie möglich:
 \begin{equation}
   \label{eq:8}
-  \vartheta(t) = K_{s}\cdot P_{0} \cdot \frac{1}{T_{s}} \left[-T_{s}\cdot e^{-\frac{t}{T_{s}}}\right]_{0}^{t-T_{t}}\sigma(t-T_{t}) = K_{s}\cdot P_{0} \cdot \frac{1}{T_{s} }
+  \vartheta(t) = K_{s}\cdot P_{0} \cdot \frac{1}{T_{s}} \left[-T_{s}\cdot e^{-\frac{t}{T_{s}}}\right]_{0}^{t-T_{t}}\sigma(t-T_{t}) = K_{s}\cdot P_{0} \cdot \frac{1}{T_{s}} \cdot T_{s} \left(1-e^{-\frac{t-T_{s}}{T_{s}}}\right) \cdot \sigma(t-T_{t})
 \end{equation}
-
-
-\section{Aufgabe 1: Binärzähler mit Timer}
-
-\subsection{Teilaufgabe A}
-
-Für die zu bewältigende Aufgabe müssen die GPIO-Pins der Register N und F konfiguriert werden, da diese direkt mit den LEDs des Evaluation Boards verbunden sind.
-Dazu verwenden wir folgenden Programmabschnitt, den wir schon aus Praktikum 1 kennen:
-\begin{lstlisting}[language=c, caption={GPIO-Port Konfiguration}, captionpos=b]
-void init() {
-    // Setting the clock to both registers N and F
-    SYSCTL_RCGCGPIO_R = 0x00001020;
-    // Waiting for the clock to be ready
-    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
-    // Setting the direction of the pins to output
-    GPIO_PORTF_AHB_DIR_R = 0x11;
-    GPIO_PORTN_DIR_R = 0x03;
-    // Enabling all of the pins
-    GPIO_PORTN_DEN_R = 0x03;
-    GPIO_PORTF_AHB_DEN_R = 0x11;
-}
-\end{lstlisting}
-
-\subsection{Teilaufgabe B}
-
-Für das Einstellen der Load Value des Timers im 32-bit Modus wollen wir den Befehl
-\begin{verbatim}
-    TIMER0_TAILR_R = 0x00FFFFFF;
-\end{verbatim}
-
-Den einzustellenden Wert errechnen wir aus der Taktfrequenz f des Boards.
+Wir haben dann nun den letzten Schritt erreicht und landen bei der Sprungantwort
 
 \begin{equation}
-    lV = 1s \cdot f = 1s \cdot 16MHz = 16000000_{10}
+  \label{eq:9}
+  \vartheta(t) = K_{s}\cdot P_{0} \left(1-e^{-\frac{t-T_{s}}{T_{s}}}\right)\cdot \sigma(t-T_{t})
 \end{equation}
-Aus den Vorlesungsfolien des Kapitels 5 zu dem 32-bit-Timer haben wir dann den Zahlenwert für die Timerperiode von einer Sekunde gefunden, welche dort mit $0\mathrm{x}00FFFFFF \approx 1,048s$ angegeben ist.
-
-\subsection{Teilaufgabe C}
-
-Mit einem 16-bit-Timer ohne Prescaler kann maximal ein Wert von $T = 65536$ erreicht werden. Dieser entspricht, bei einer Taktfrequenz von $16MHz$, einer Periodendauer von $t = 4,096 ms$. Aus $1s >> 4,096ms$ folgt, dass wir einen Prescaler für das Erreichen unseres Zieles brauchen. Daher rechnen wir:
-\begin{equation}
-    T_{p} = \frac{1s}{2^{16}} = 15,3\mu s \implies \frac{1}{15,3 \mu s} = 65,359kHz = f_p
-\end{equation}
-
-\subsection{Teilaufgabe D}
-
-Wir wollen nun den direkten Wert für unseren Prescaler berechnen, daher rechnen wir:
-
-\begin{equation}
-    p = \frac{16MHz}{f_{p}} = 244,8 \approx 245
-\end{equation}
-
-Um nun die Load Value zu berechnen, nutzen wir eine Formel aus der Vorlesung und schreiben:
-
-\begin{equation}
-    \mathrm{ILR} = (\frac{16M}{245} \cdot 1) - 1 = 65306 - 1
-\end{equation}
-
-Wir schreiben also in unseren Code:
-
-\begin{verbatim}
-    TIMER0_TAPR_R = 245;
-    TIMER0_ TAILR_R = 65306-1;
-\end{verbatim}
-
-
-
-\section{Programm: Binärzähler mit Timer}
-
-%\begin{task}
-%UIn der ersten Aufgabe wollen wir die Ausgabe in der Konsole des Code Composer Studios
-%betrachten.
-%\end{task}
-
-Für das Bearbeiten dieser Aufgabe nutzen wir den folgenden Code:
-
-\begin{lstlisting}[language=c, caption={timer.c}, captionpos=b]
-/*
-Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
-Aufgabe 2
-Autoren: Emily Antosch, Florian Tietjen
-Beschreibung: Implementierung des Timers als Zeitmessung fuer die Darstellung von Binaerzahlen mithilfe von LEDs auf dem Evaluation Board.
-*/
-
-#include<stdint.h>
-#include "inc\tm4c1294ncpdt.h"
-
-void init();
-void timerInit();
-
-int main(void)
-{
-    // Call to the init function
-    init();
-    // Call to the timerInit function
-    timerInit();
-    // Initialization of the variables for the binary number
-    unsigned short displayedValue = 0;
-    // Infinite loop
-
-    while(1)
-    {
-        // Calculating the binary number
-        GPIO_PORTF_AHB_DATA_R = (displayedValue & 0x02) << 3 | (displayedValue & 0x01);
-        GPIO_PORTN_DATA_R = (displayedValue & 0x0C) >> 2;
-        // Incrementing the displayedValue
-        displayedValue == 15 ? displayedValue = 0 : displayedValue++;
-        //Waiting for the timer to reach timeout
-        while ((TIMER0_RIS_R & (1<<0)) == 0);
-        // Clearing the timer timeout flag
-        TIMER0_ICR_R |= (1<<0);
-    }
-}
-// Function to initialize the registers
-void init(){
-    // Setting the clock to both registers N and F
-    SYSCTL_RCGCGPIO_R = 0x00001020;
-    // Waiting for the clock to be ready
-    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
-    // Setting the direction of the pins to output
-    // and enabling the both registers with the pins
-    GPIO_PORTF_AHB_DEN_R = 0x11;
-    GPIO_PORTF_AHB_DIR_R = 0x11;
-    GPIO_PORTN_DEN_R = 0x03;
-    GPIO_PORTN_DIR_R = 0x03;
-
-}
-// Function to initialize the timer
-void timerInit(){
-    // Setting the clock to the timer
-    SYSCTL_RCGCTIMER_R |= (1<<0);
-    // Waiting for the clock to be ready
-    while((SYSCTL_PRTIMER_R & 0x01) == 0);
-    // Disabling the timer
-    TIMER0_CTL_R &= ~(1<<0);
-    // Setting the timer to be in 32-bit mode
-    TIMER0_CFG_R = 0x00;
-    // Setting the timer to be in periodic mode and match enable
-    TIMER0_TAMR_R = 0x02 | (1<<3);
-    // Setting the load value to be equal to about 1 second
-    TIMER0_TAILR_R = 0x00FFFFFF;
-    // Enabling the timer
-    TIMER0_CTL_R |= (1<<0);
-}
-
-\end{lstlisting}
-
-Dabei schließen wir das Evaluation Board an und führen das Programm dann im Debugmodus aus.
-Auf der Konsole erscheint eine schnell wachsende Liste von dem eingegebnen Namen, der Matrikelnummer und der steigenden Zählervariable cnt. Das zeigt uns zum Einen, wie wir die
-printf-Funktion in Code Composer Studio zu nutzen haben, um in größeren Programmen, Fehler finden zu können, zum Anderen haben wir das Setup des Boards richtig gemacht und das Kompilieren und Ausführen von Programmen funktioniert.
-
 
 \newpage
 
-\section{Programm: Interrupts und Interrupthandler}
+\subsection{V1.3}
 
+Um nun die Sprungantwort des Systems auf einen Sprung in der Heizleistung des Heizelements zu simulieren ($\hat{P}_{th} \cdot \sigma(t) = 10W \cdot \sigma(t)$), verwenden wir folgendes SimuLink-Schaubild:
 
-%\begin{task}
-%  UIn der zweiten Aufgabe wollen wir üben, mit der Hardware auf dem Board zu arbeiten und %bestimmte Register anzusprechen.
-%\end{task}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13_2.png}
+  \caption{SimuLink-Darstellung der Simulation für die Sprungantwort}
+  \label{fig:rtp1v13}
+\end{figure}
 
-Dazu verwenden wir den folgenden Code:
+Wir erhalten aus der Simulation dann dieses Ergebnis:
 
-\begin{lstlisting}[language=c, caption={Timer-Interrupt mithilfe des Timers 2 im 32-bit-mode}, captionpos=b]
-/*
-Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
-Aufgabe 2
-Autoren: Emily Antosch, Florian Tietjen
-Beschreibung: Implementierung eines Interrupts durch einen Timer auf der NVIC-Ebene. Darstellung eines Laufmusters mithilfe der LEDs.
-*/
-
-#include<stdio.h>
-#include<stdint.h>
-#include "inc\tm4c1294ncpdt.h"
-
-// Function prototypes
-void init();
-void timerInit(unsigned long period);
-void Timer2A_Handler();
-
-
-// main function
-int main(void){
-    // Call init function
-    init();
-    // Call timerInit function
-    timerInit(0x01EFFFFF);
-    // Enable timer
-    TIMER2_CTL_R |= 0x00000001;
-    // Empty while loop
-    while(1)
-    {
-
-    }
-}
-// Function to initialize the GPIO pins
-void init(){
-    SYSCTL_RCGCGPIO_R |= 0x00001020;
-    while((SYSCTL_PRGPIO_R & 0x00001020)==0);
-    // Initialization of ports by enabling and setting them to output
-    GPIO_PORTF_AHB_DEN_R |= 0x11;
-    GPIO_PORTF_AHB_DIR_R |= 0x11;
-    GPIO_PORTN_DEN_R |= 0x03;
-    GPIO_PORTN_DIR_R |= 0x03;
-}
-// Function to initialize the timer
-void timerInit(unsigned long period){
-    // Set clock to timer 2
-    SYSCTL_RCGCTIMER_R |= 0x04;
-    // Wait for clock to be set up
-    while((SYSCTL_PRTIMER_R&0x04)==0);
-    //Disable timer 2
-    TIMER2_CTL_R &= ~0x01;
-    //Set timer to 32-bit mode
-    TIMER2_CFG_R = 0x00;
-    // Enable periodic mode
-    TIMER2_TAMR_R = 0x02;
-    // Set load value to parameter period - 1
-    TIMER2_TAILR_R = period-1;
-    // Clear timeout flag
-    TIMER2_ICR_R = 0x01;
-    // Enable timer to start an interrupt on timeout flag
-    TIMER2_IMR_R = 0x01;
-    // Enable NVIC to timer 2 to send an interrupt to CPU
-    NVIC_EN0_R |= (1<<23);
-}
-
-// Function to handle the interrupt
-void Timer2A_Handler(){
-    // Create i for delay
-    int i = 0;
-    // Clear timeout flag
-    TIMER2_ICR_R |= 0x01;
-    // Set LED pattern to light up all LEDs
-    GPIO_PORTN_DATA_R = 0x03;
-    GPIO_PORTF_AHB_DATA_R = 0x11;
-    for(i = 0; i < 600000; i++)
-        ;
-    // Clear LEDs to wait for next interrupt
-    GPIO_PORTN_DATA_R = 0x00;
-    GPIO_PORTF_AHB_DATA_R = 0x00;
-}
-
-
-\end{lstlisting}
-
-Dabei verwenden wir die beiden Register F und N, in welchen die Pins für die LEDs auf dem Board sind. Wir setzen alle Pins auf Ausgang und Enablen diese. Im Nachgang setzen wir die jeweiligen Pins im entsprechenden Blinkmuster auf OFF oder ON mit einer Warteschleife dazwischen.
-
-\subsection{Ausgabe des Programms}
-
-Wir erkennen einen durchgängigen Verlauf der LEDs, bei dem die LEDs der Reihe nach aufleuchten und dann wieder ausgehen, sodass immer nur eine
-LED zur Zeit eingeschaltet ist. Es entsteht der Effekt eines "laufenden" Lichts, welches sich immer von links nach rechts bewegt.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13.png}
+  \caption{Ergebnis der Simulation der Sprungantwort des Systems}
+  \label{fig:rtp1v13_2}
+\end{figure}
 
 \newpage
 
-\subsection{Gleichzeitige Schaltung beider Eingänge in Port N}
+\subsection{V1.4}
 
-Um beide LEDs an Port N gleichzeitig zu schalten müssen wir lediglich folgende Programmzeilen verwenden:
-\begin{lstlisting}[language=c, caption={Port N Pins gleichzeitig schalten}, captionpos=b]
-  GPIO_PORTN_DATA_R = 0x03;
-  GPIO_PORTN_DATA_R = 0x00;
-\end{lstlisting}
-Dabei ist die erste Zeile das Schalten beider Pins auf ON, die zweite Zeile schaltet beide auf OFF. Dabei gilt $0x03_{16} = 0011_2$ und $0x00_{16} = 0000_2$, wobei eine $1$ auf einem bestimmten Port ein ON-Signal und eine $0$ ein OFF-Signal darstellt.
+Wir wollen nun das oben verwendete Schaubild erweitern und verschiedene Temperaturanstiege als Antwort auf Sprünge in der Heizleistung $P_{th}$ darstellen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V14_2.png}
+  \caption{SimuLink-Darstellung der Simulation aller drei Sprungantworten}
+  \label{fig:rtp1v14}
+\end{figure}
+
+Wir erkennen nun an dem Feld an Graphen, dass unsere vorher berechneten Grenzwerte korrekt sind.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V14.png}
+  \caption{Ergebnis der Simulation aller drei Graphen}
+  \label{fig:rtp1v14_2}
+\end{figure}
+
+\newpage
+
+\subsection{V1.5}
+
+Als letzten Schritt unserer Vorbereitung möchten wir uns mit den Temperaturverläufen bei einem Sprung von $P_{el} = 10W\cdot \sigma(t)$ anschauen, wenn wir die Strömungsgeschwindigkeit $v$ variieren. Die Punkte, die wir uns dabei anschauen wollen, sind:
+
+\begin{enumerate}[a)]
+   \item $v = v_{L}$
+   \item $v = \frac{v_{L}}{2}$
+   \item $v = 2 \cdot v_{L}$
+\end{enumerate}
+
+Eine Änderung der Strömungsgeschwindigkeit hat einen Einfluss auf die folgenden Parameter:
+
+\begin{align*}
+  \label{eq:10}
+  T_{s} &= \frac{C_{H}}{c_{L}\gamma_{L}Av}\\
+  K_{s} &= \frac{1}{c_{L}\gamma_{L}Av}\\
+  T_{t} &= \frac{l}{v}
+\end{align*}
+
+Wir berechnen nun für jeden Fall die entsprechenden Parameter und Grenzwerte und verwenden dann den Simulationsaufbau von V1.3, um die entsprechenden Graphen zeichnen zu können.
+
+
+
+Wie erwartet erscheint nun hier das entsprechende Diagramm
+
+Unsere Erwartungen wurden bestätigt, da ein langsamerer Luftstrom zu einem längeren Zeitraum führt, in dem die Luft erwärmt werden kann. Außerdem dauert der Prozess nun länger und die Totzeit $T_{t}$ verlängert sich. Gleichzeitig führt ein schnellerer Luftstrom zu einer geringeren Erwärmung der Luft, dadurch dass sich die Luft kürzer aufwärmen kann, und zu einer kürzeren Totzeit, weil die Luft schneller durch das System strömt.
+
+\newpage
+
+\section{Auswertung}
+
+\subsection{Stationäres Verhalten}
+\label{sec:stat-verh}
+
+Für die folgende Auswertung nehmen wir an, dass die Heizleitung $P_{el}$ proportional zur Heizungsansteuerung $u_{uP}$ und die Strömungsgeschwindigkeit der Luft $v_{L}$ proportional zur Lüfteransteuerung $u_{uL}$ ist. Ausgehend von der Gleichung \ref{eq:1} wollen wir nun die Kennlinienfelder zeichnen.
+Zunächst wollen wir uns nun mit dem Kennlinienfeld $u_{y\vartheta} = f(u_{uP})$ mit $u_{uL} \in \{\text{4V, 5V, 6V}\}$ beschäftigen, dazu nehmen wir die Messwerte und tragen sie in unser Diagramm ein:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../assets/images/RTP/kennlinieA11rtp1.png}
+  \caption{Kennlinienfeld $f(u_{uP})$}
+  \label{fig:kennuy}
+\end{figure}
+
+Gleichzeitig wollen wir uns nun auch das Kennlinienfeld zu $u_{y\vartheta} = f(u_{uL})$ mit $u_{uL} \in \{\text{4V, 5V, 6V}\}$ anschauen:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../assets/images/RTP/kennlinieA12rtp1.png}
+  \caption{Kennlinienfeld $f(u_{uL})$}
+  \label{fig:kennux}
+\end{figure}
+
+In beiden Kennlinienfeldern wurde der Arbeitspunkt als violetter Punkt eingezeichnet.
+
+Die Gesamtverstärkung des Systems
+\begin{equation}
+  \label{eq:11}
+  K_{ges} = \frac{\Delta u_{y\vartheta}}{\Delta u_{uP}} = K_{u} \cdot K_{S} \cdot K_{M}
+\end{equation}
+setzt sich aus den Parametern
+
+\begin{itemize}
+  \item $K_{S} = \frac{\Delta \vartheta}{\Delta P_{el}}$
+
+  \item $K_{u} = \frac{\Delta P_{el}}{\Delta u_{uP}}$ und
+  \item $K_{M} = \frac{\Delta u_{y\vartheta}}{\Delta \vartheta}$
+\end{itemize}
+zusammen. Aus den Kennlinienfeld lässt sich nun die Gesamverstärkung als Steigung der mittleren, in rot markierten Gerade berechnen:
+
+\begin{equation*}
+  K_{ges} = \frac{\Delta u_{y\vartheta}}{u_{uP}} = \frac{4,34V - 3,23V}{6V-4V} =
+\end{equation*}
 
 \end{document}

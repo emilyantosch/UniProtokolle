@@ -69,3 +69,19 @@ void Timer2A_Handler(){
 void delay(int n){
     for(int i=0;i<n;i++);
 }
+
+void decimalToBinary(int n){
+
+    // Convert decimal number n to binary using shift-operators
+    int i = 1 << 31;
+    while(i > 0){
+        if(n & i)
+            printf("1");
+        else
+            printf("0");
+        i = i >> 1;
+    }
+
+    // Convert decimal number n to binary and setting it to different registers
+    
+}

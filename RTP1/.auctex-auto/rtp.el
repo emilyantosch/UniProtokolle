@@ -22,6 +22,8 @@
     "fontenc"
     "inputenc"
     "amsmath"
+    "enumerate"
+    "graphicx"
     "fancyhdr"
     "lettrine"
     "hyperref"
@@ -44,7 +46,17 @@
     "eq:5"
     "eq:6"
     "eq:7"
-    "eq:8")
+    "eq:8"
+    "eq:9"
+    "fig:rtp1v13"
+    "fig:rtp1v13_2"
+    "fig:rtp1v14"
+    "fig:rtp1v14_2"
+    "eq:10"
+    "sec:stat-verh"
+    "fig:kennuy"
+    "fig:kennux"
+    "eq:11")
    (LaTeX-add-listings-lstdefinestyles
     "code")
    (LaTeX-add-xcolor-definecolors

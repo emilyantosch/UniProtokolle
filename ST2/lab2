@@ -1,0 +1,11 @@
+VAR
+    EINAUS: BOOL (* Ein/Aus *)
+    AUTOMAN: BOOL (* Automatisch/Manuell *)
+    HAND_BAND_EIN: BOOL; (* Transportband bewegen/stoppen *)
+    HAND_BANDV: WORD; (* Transportband Geschwindigkeit *)
+    HAND_AUSSCHIEBER: BOOL; (* Ausschieber aktiv *)
+    HAND_ARM_ZUM_LAGER: BOOL; (* Arm zum Lager *)
+    HAND_ARM_ZUM_BAND: BOOL; (* Arm zum Band *)
+    HAND_ANSAUGEN: BOOL; (* Werkstück ansaugen *)
+    HAND_LOSLASSEN: BOOL; (* Werkstück loslassen *)
+END_VAR
