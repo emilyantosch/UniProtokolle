@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.7)  29 NOV 2021 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.6.7)  29 NOV 2021 19:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -91,16 +91,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks22
-)
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks22
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
@@ -165,7 +161,7 @@ Package: minifp 2013/12/30 v0.96. Macros for real number operations and a stack
 \LettrineWidth=\dimen166
 \LettrineHeight=\dimen167
 \LettrineDepth=\dimen168
-\Llist@everypar=\toks24
+\Llist@everypar=\toks23
 
 Loading lettrine.cfg
 (/usr/share/texmf-dist/tex/latex/lettrine/lettrine.cfg))
@@ -333,7 +329,7 @@ Package caption Info: hyperref package is loaded.
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks25
+\pgfutil@everybye=\toks24
 \pgfutil@tempdima=\dimen180
 \pgfutil@tempdimb=\dimen181
 
@@ -353,11 +349,11 @@ Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
 Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks26
-\pgfkeys@temptoks=\toks27
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks28
+\pgfkeys@tmptoks=\toks27
 ))
 \pgf@x=\dimen182
 \pgf@y=\dimen183
@@ -375,9 +371,9 @@ Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
 \c@pgf@countb=\count286
 \c@pgf@countc=\count287
 \c@pgf@countd=\count288
-\t@pgf@toka=\toks29
-\t@pgf@tokb=\toks30
-\t@pgf@tokc=\toks31
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
 \pgf@sys@id@count=\count289
 
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
@@ -426,9 +422,9 @@ Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
 \pgfmath@dimen=\dimen192
 \pgfmath@count=\count292
 \pgfmath@box=\box52
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 )
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -549,8 +545,8 @@ Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen275
 \pgffor@skip=\dimen276
-\pgffor@stack=\toks35
-\pgffor@toks=\toks36
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
@@ -596,7 +592,7 @@ Package: cite 2015/02/27  v 5.5
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count306
 \lst@gtempboxa=\box62
-\lst@token=\toks37
+\lst@token=\toks36
 \lst@length=\count307
 \lst@currlwidth=\dimen286
 \lst@column=\count308
@@ -763,15 +759,15 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 (/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks38
-\thm@bodyfont=\toks39
-\thm@headfont=\toks40
-\thm@notefont=\toks41
-\thm@headpunct=\toks42
+\thm@style=\toks37
+\thm@bodyfont=\toks38
+\thm@headfont=\toks39
+\thm@notefont=\toks40
+\thm@headpunct=\toks41
 \thm@preskip=\skip130
 \thm@postskip=\skip131
 \thm@headsep=\skip132
-\dth@everypar=\toks43
+\dth@everypar=\toks42
 )
 \c@prob=\count323
 \c@theo=\count324
@@ -835,6 +831,10 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 44.
+)
+(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks43
 )
 (/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
@@ -1177,10 +1177,10 @@ Overfull \hbox (13.80367pt too wide) in paragraph at lines 179--180
 [4
 
 ]
-<../assets/images/haw.jpg, id=124, 401.5pt x 281.05pt>
+<../assets/images/haw.jpg, id=129, 401.5pt x 281.05pt>
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 260.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 268.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1189,21 +1189,21 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
 [5 <../assets/images/haw.jpg>]
-<../assets/images/RTP/rtp_1_V13_2.png, id=147, 686.565pt x 135.50626pt>
-File: ../assets/images/RTP/rtp_1_V13_2.png Graphic file (type png)
-<use ../assets/images/RTP/rtp_1_V13_2.png>
-Package pdftex.def Info: ../assets/images/RTP/rtp_1_V13_2.png  used on input li
-ne 268.
-(pdftex.def)             Requested size: 430.00462pt x 84.869pt.
-<../assets/images/RTP/rtp_1_V13.png, id=148, 417.05812pt x 293.59688pt>
+<../assets/images/RTP/rtp_1_V13.png, id=153, 1217.2978pt x 351.56343pt>
 File: ../assets/images/RTP/rtp_1_V13.png Graphic file (type png)
 <use ../assets/images/RTP/rtp_1_V13.png>
 Package pdftex.def Info: ../assets/images/RTP/rtp_1_V13.png  used on input line
- 277.
-(pdftex.def)             Requested size: 430.00462pt x 302.72621pt.
+ 276.
+(pdftex.def)             Requested size: 430.00462pt x 124.1863pt.
+<../assets/images/RTP/rtp_1_V13_2.png, id=154, 459.96844pt x 314.67563pt>
+File: ../assets/images/RTP/rtp_1_V13_2.png Graphic file (type png)
+<use ../assets/images/RTP/rtp_1_V13_2.png>
+Package pdftex.def Info: ../assets/images/RTP/rtp_1_V13_2.png  used on input li
+ne 285.
+(pdftex.def)             Requested size: 430.00462pt x 294.1914pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 282.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 290.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1211,37 +1211,17 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[6 <../assets/images/RTP/rtp_1_V13_2.png (PNG copy)> <../assets/images/RTP/rtp_
-1_V13.png (PNG copy)>]
-<../assets/images/RTP/rtp_1_V14_2.png, id=153, 386.19281pt x 163.3603pt>
-File: ../assets/images/RTP/rtp_1_V14_2.png Graphic file (type png)
-<use ../assets/images/RTP/rtp_1_V14_2.png>
-Package pdftex.def Info: ../assets/images/RTP/rtp_1_V14_2.png  used on input li
-ne 290.
-(pdftex.def)             Requested size: 430.00462pt x 181.89291pt.
-<../assets/images/RTP/rtp_1_V14.png, id=154, 423.08063pt x 284.56313pt>
+[6 <../assets/images/RTP/rtp_1_V13.png (PNG copy)> <../assets/images/RTP/rtp_1_
+V13_2.png (PNG copy)>]
+<../assets/images/RTP/rtp_1_V14.png, id=159, 889.07156pt x 485.56406pt>
 File: ../assets/images/RTP/rtp_1_V14.png Graphic file (type png)
 <use ../assets/images/RTP/rtp_1_V14.png>
 Package pdftex.def Info: ../assets/images/RTP/rtp_1_V14.png  used on input line
- 299.
-(pdftex.def)             Requested size: 430.00462pt x 289.23015pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ 314.
+(pdftex.def)             Requested size: 430.00462pt x 234.84628pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 304.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[7 <../assets/images/RTP/rtp_1_V14_2.png (PNG copy)>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 333.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 319.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1249,43 +1229,112 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[8 <../assets/images/RTP/rtp_1_V14.png (PNG copy)>]
-<../assets/images/RTP/kennlinieA11rtp1.png, id=169, 421.21pt x 316.09pt>
+[7 <../assets/images/RTP/rtp_1_V14.png (PNG copy)>]
+<../assets/images/RTP/rtp_1_V14_2.png, id=167, 459.96844pt x 312.41719pt>
+File: ../assets/images/RTP/rtp_1_V14_2.png Graphic file (type png)
+<use ../assets/images/RTP/rtp_1_V14_2.png>
+Package pdftex.def Info: ../assets/images/RTP/rtp_1_V14_2.png  used on input li
+ne 325.
+(pdftex.def)             Requested size: 430.00462pt x 292.07997pt.
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 332.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[8 <../assets/images/RTP/rtp_1_V14_2.png (PNG copy)>]
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 371.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[9]
+<../assets/images/RTP/rtp_1_V15.png, id=180, 880.79062pt x 499.8675pt>
+File: ../assets/images/RTP/rtp_1_V15.png Graphic file (type png)
+<use ../assets/images/RTP/rtp_1_V15.png>
+Package pdftex.def Info: ../assets/images/RTP/rtp_1_V15.png  used on input line
+ 376.
+(pdftex.def)             Requested size: 344.005pt x 195.22975pt.
+<../assets/images/RTP/rtp_1_V15_2.png, id=181, 459.96844pt x 314.67563pt>
+File: ../assets/images/RTP/rtp_1_V15_2.png Graphic file (type png)
+<use ../assets/images/RTP/rtp_1_V15_2.png>
+Package pdftex.def Info: ../assets/images/RTP/rtp_1_V15_2.png  used on input li
+ne 384.
+(pdftex.def)             Requested size: 344.005pt x 235.35312pt.
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 391.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[10 <../assets/images/RTP/rtp_1_V15.png (PNG copy)> <../assets/images/RTP/rtp_1
+_V15_2.png (PNG copy)>]
+<../assets/images/RTP/kennlinieA11rtp1.png, id=187, 421.21pt x 316.09pt>
 File: ../assets/images/RTP/kennlinieA11rtp1.png Graphic file (type png)
 <use ../assets/images/RTP/kennlinieA11rtp1.png>
 Package pdftex.def Info: ../assets/images/RTP/kennlinieA11rtp1.png  used on inp
-ut line 345.
+ut line 403.
 (pdftex.def)             Requested size: 344.005pt x 258.1633pt.
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 408.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
-Overfull \hbox (3.22424pt too wide) in paragraph at lines 350--351
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[11 <../assets/images/RTP/kennlinieA11rtp1.png (PNG copy)>]
+Overfull \hbox (3.22424pt too wide) in paragraph at lines 410--411
 []\T1/cmr/m/n/10 Gleichzeitig wol-len wir uns nun auch das Kenn-li-ni-en-feld z
 u $\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\O
 ML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 mit $\OML/cmm/m/it/10 u[] \
 OMS/cmsy/m/n/10 2 f[]g$
  []
 
-<../assets/images/RTP/kennlinieA12rtp1.png, id=170, 421.21pt x 316.09pt>
+<../assets/images/RTP/kennlinieA12rtp1.png, id=192, 421.21pt x 316.09pt>
 File: ../assets/images/RTP/kennlinieA12rtp1.png Graphic file (type png)
 <use ../assets/images/RTP/kennlinieA12rtp1.png>
 Package pdftex.def Info: ../assets/images/RTP/kennlinieA12rtp1.png  used on inp
-ut line 354.
+ut line 414.
 (pdftex.def)             Requested size: 344.005pt x 258.1633pt.
+./rtp.tex:438: Double subscript.
+l.438   u_{y\vartheta}_
+                       {g} = \Delta u_{y\vartheta} + u_{y\vartheta} = 0.36V ...
+I treat `x_1_2' essentially like `x_1{}_2'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+./rtp.tex:445: Double subscript.
+l.445 also $u_{uP}_
+                   {g} = \Delta u_{uP} + u_{uP} = 0.65V + 6V = 6.65V$
+I treat `x_1_2' essentially like `x_1{}_2'.
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 380.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 461.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[9 <../assets/images/RTP/kennlinieA11rtp1.png (PNG copy)>]
+[12 <../assets/images/RTP/kennlinieA12rtp1.png (PNG copy)>]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 380.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 466.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1293,15 +1342,15 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[10 <../assets/images/RTP/kennlinieA12rtp1.png (PNG copy)>] (./rtp.aux)
+[13] (./rtp.aux)
 Package rerunfilecheck Info: File `rtp.out' has not changed.
 (rerunfilecheck)             Checksum: D1499660FEF1D9CA36AE80DE9C03FC7F;1233.
  ) 
 Here is how much of TeX's memory you used:
- 29786 strings out of 478994
- 548910 string characters out of 5864752
- 906820 words of memory out of 5000000
- 46653 multiletter control sequences out of 15000+600000
+ 29819 strings out of 478994
+ 549585 string characters out of 5864752
+ 908433 words of memory out of 5000000
+ 46673 multiletter control sequences out of 15000+600000
  419944 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  96i,15n,103p,574b,687s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1324,10 +1373,10 @@ ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sfrm3583.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
 r/sfss1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb>
 
-Output written on rtp.pdf (10 pages, 316855 bytes).
+Output written on rtp.pdf (13 pages, 447268 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 194 words of extra memory for PDF output out of 10000 (max. 10000000)
 

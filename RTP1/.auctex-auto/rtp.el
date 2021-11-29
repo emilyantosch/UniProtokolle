@@ -4,16 +4,16 @@
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("fontenc" "T1") ("inputenc" "utf8") ("tocbibind" "nottoc" "numbib") ("babel" "ngerman") ("fncychap" "Glenn") ("geometry" "includehead" "headheight=17mm" "footskip=\\dimexpr\\headsep+\\ht\\strutbox\\relax" "tmargin=0mm" "bmargin=\\dimexpr17mm+2\\ht\\strutbox\\relax" "")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
     "../assets/scripts/tex/structure"
@@ -22,7 +22,6 @@
     "fontenc"
     "inputenc"
     "amsmath"
-    "enumerate"
     "graphicx"
     "fancyhdr"
     "lettrine"
@@ -42,6 +41,7 @@
     "eq:1"
     "eq:2"
     "eq:3"
+    "eq:transfer"
     "eq:4"
     "eq:5"
     "eq:6"
@@ -50,12 +50,19 @@
     "eq:9"
     "fig:rtp1v13"
     "fig:rtp1v13_2"
+    "tab:limpel"
     "fig:rtp1v14"
     "fig:rtp1v14_2"
     "eq:10"
+    "tab:speed"
+    "fig:vl"
+    "fig:vlplot"
     "sec:stat-verh"
     "fig:kennuy"
     "fig:kennux"
+    "eq:12"
+    "eq:13"
+    "eq:14"
     "eq:11")
    (LaTeX-add-listings-lstdefinestyles
     "code")

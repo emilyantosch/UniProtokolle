@@ -2,7 +2,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces SimuLink-Darstellung der Simulation für die Sprungantwort\relax }}{6}{figure.caption.4}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Ergebnis der Simulation der Sprungantwort des Systems\relax }}{6}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces SimuLink-Darstellung der Simulation aller drei Sprungantworten\relax }}{7}{figure.caption.6}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Ergebnis der Simulation aller drei Graphen\relax }}{8}{figure.caption.7}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Kennlinienfeld $f(u_{uP})$\relax }}{9}{figure.caption.8}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Kennlinienfeld $f(u_{uL})$\relax }}{10}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces SimuLink-Darstellung der Simulation aller drei Sprungantworten\relax }}{7}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Ergebnis der Simulation aller drei Graphen\relax }}{8}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Blockschaltbild zur Simulation variabler Strömungsgeschwindigkeit $v_L$\relax }}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Simulationsergebnisse bei variabler Strömungsgeschwindigkeit $v_{L}$\relax }}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Kennlinienfeld $f(u_{uP})$\relax }}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Kennlinienfeld $f(u_{uL})$\relax }}{12}{figure.caption.13}%

@@ -6,7 +6,7 @@
 \usepackage{amsmath}
 
 
-\usepackage{enumerate}
+%\usepackage{enumerate}
 
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -222,7 +222,13 @@ Als nächstes wollen wir die Sprungantwort der Temperaturkurve auf einen Heizlei
   P_{0}\cdot \sigma(t) &\laplace P_{0}\cdot \frac{1}{s}\\
 \end{align}
 
-Wir setzen nun diese Transformation in die Übertragungsfunktion des Grundlagenteils ein:
+Wir setzen nun diese Transformation in die Übertragungsfunktion
+\begin{equation}
+  \label{eq:transfer}
+  G(s) = K_{S} \frac{e^{-T_{t}s}}{1+T_{s}s}
+\end{equation}
+
+des Grundlagenteils ein:
 
 \begin{equation}
   \label{eq:4}
@@ -257,6 +263,8 @@ Wir haben dann nun den letzten Schritt erreicht und landen bei der Sprungantwort
   \vartheta(t) = K_{s}\cdot P_{0} \left(1-e^{-\frac{t-T_{s}}{T_{s}}}\right)\cdot \sigma(t-T_{t})
 \end{equation}
 
+Aus dieser Sprungantwort und auch aus der Übertragungsfunktion (\ref{eq:transfer}) können wir die Eigenschaften des Reglers als $PT_{1}T_{t}$-Glied ($PT_{1}$-Glied mit Totzeit $T_{t}$) erkennen.
+
 \newpage
 
 \subsection{V1.3}
@@ -265,7 +273,7 @@ Um nun die Sprungantwort des Systems auf einen Sprung in der Heizleistung des He
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13_2.png}
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13.png}
   \caption{SimuLink-Darstellung der Simulation für die Sprungantwort}
   \label{fig:rtp1v13}
 \end{figure}
@@ -274,7 +282,7 @@ Wir erhalten aus der Simulation dann dieses Ergebnis:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13.png}
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V13_2.png}
   \caption{Ergebnis der Simulation der Sprungantwort des Systems}
   \label{fig:rtp1v13_2}
 \end{figure}
@@ -284,22 +292,42 @@ Wir erhalten aus der Simulation dann dieses Ergebnis:
 \subsection{V1.4}
 
 Wir wollen nun das oben verwendete Schaubild erweitern und verschiedene Temperaturanstiege als Antwort auf Sprünge in der Heizleistung $P_{th}$ darstellen.
-
-\begin{figure}[h]
+\begin{table}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V14_2.png}
-  \caption{SimuLink-Darstellung der Simulation aller drei Sprungantworten}
-  \label{fig:rtp1v14}
-\end{figure}
+  \begin{tabular}{|c|c|}
+    \hline
+    $P_{0}$ & $\vartheta(t \to \infty)$\\
+    \hline
+    $10W$ & $3K$ \\
+    $20W$ & $6K$ \\
+    $30W$ & $9K$ \\
+    \hline
+  \end{tabular}
+  \caption{Grenzwerte der Sprungantworten der Heizleitung $P_{el}$}
+  \label{tab:limpel}
+\end{table}
 
-Wir erkennen nun an dem Feld an Graphen, dass unsere vorher berechneten Grenzwerte korrekt sind.
+Wir erkennen nun auch den aus der Aufgabe V1.3 simulierten Endwert $y_{\vartheta}(t\to\infty) = 3K$. Mit der SimuLink erstellten Darstellung des Blockschaltbildes wollen wir nun mehrere gestreckte Sprünge darstellen:
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V14.png}
+  \caption{SimuLink-Darstellung der Simulation aller drei Sprungantworten}
+  \label{fig:rtp1v14}
+\end{figure}
+
+\newpage
+
+Wir erkennen nun an dem Feld an Graphen, dass unsere vorher berechneten Grenzwerte korrekt sind. Physikalisch gesehen, erhöhen wir hier über die elektrische Leistung $P_{el}$ gleichzeitig die Heizleistung $P_{th}$. Damit wird die Luft in dem gleichen Zeitrahmen, da die Luft sich nicht schneller durch das Heizelement strömt, die Luft stärker, und kommt dementsprechend auch wärmer am Temperatursensor an. Es verändert sich dadurch allerdings nicht grundlegend die Eigenschaft des Systems.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/RTP/rtp_1_V14_2.png}
   \caption{Ergebnis der Simulation aller drei Graphen}
   \label{fig:rtp1v14_2}
 \end{figure}
+
+Auch hier erkennen wir das Totzeitglied $T_{t}$, auf welches die Heizleistung keinen Einfluss nimmt.
 
 \newpage
 
@@ -324,9 +352,39 @@ Eine Änderung der Strömungsgeschwindigkeit hat einen Einfluss auf die folgende
 
 Wir berechnen nun für jeden Fall die entsprechenden Parameter und Grenzwerte und verwenden dann den Simulationsaufbau von V1.3, um die entsprechenden Graphen zeichnen zu können.
 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c||c|c|c|c|}
+    \hline
+    $v$ & $t_{t}$ & $K_{s}$ & $T_{s}$  & $\vartheta(t\to\infty)$\\
+    \hline
+    $v_{L}$ & $1s$ & $0,3\frac{K}{W}$ & $5s$ & $3K$ \\
+    \hline
+    $\frac{v_{L}}{2}$ & $2s$ & $0,6\frac{K}{W}$ & $10s$ & $6K$ \\
+    \hline
+    $2v_{L}$ & $0,5s$ & $0,15\frac{K}{W}$ & $2,5s$ & $1,5K$\\
+    \hline
+  \end{tabular}
+  \caption{Auswirkung einer Änderung in der Strömungsgeschwindigkeit auf die Parameter}
+  \label{tab:speed}
+\end{table}
+\newpage
+Wir nutzen diese Werte um verschiedene Graphen mithilfe des folgenden Blockschaltbilds in SimuLink zu plotten:
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../assets/images/RTP/rtp_1_V15.png}
+  \caption{Blockschaltbild zur Simulation variabler Strömungsgeschwindigkeit $v_L$}
+  \label{fig:vl}
+\end{figure}
+Wir bekommen dann folgende Simulationsergebnisse:
 
-Wie erwartet erscheint nun hier das entsprechende Diagramm
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../assets/images/RTP/rtp_1_V15_2.png}
+  \caption{Simulationsergebnisse bei variabler Strömungsgeschwindigkeit $v_{L}$}
+  \label{fig:vlplot}
+\end{figure}
 
 Unsere Erwartungen wurden bestätigt, da ein langsamerer Luftstrom zu einem längeren Zeitraum führt, in dem die Luft erwärmt werden kann. Außerdem dauert der Prozess nun länger und die Totzeit $T_{t}$ verlängert sich. Gleichzeitig führt ein schnellerer Luftstrom zu einer geringeren Erwärmung der Luft, dadurch dass sich die Luft kürzer aufwärmen kann, und zu einer kürzeren Totzeit, weil die Luft schneller durch das System strömt.
 
@@ -347,6 +405,8 @@ Zunächst wollen wir uns nun mit dem Kennlinienfeld $u_{y\vartheta} = f(u_{uP})$
   \label{fig:kennuy}
 \end{figure}
 
+\newpage
+
 Gleichzeitig wollen wir uns nun auch das Kennlinienfeld zu $u_{y\vartheta} = f(u_{uL})$ mit $u_{uL} \in \{\text{4V, 5V, 6V}\}$ anschauen:
 
 \begin{figure}[h]
@@ -357,6 +417,32 @@ Gleichzeitig wollen wir uns nun auch das Kennlinienfeld zu $u_{y\vartheta} = f(u
 \end{figure}
 
 In beiden Kennlinienfeldern wurde der Arbeitspunkt als violetter Punkt eingezeichnet.
+
+Wir wollen uns nun einmal anschauen, wie die Spannungen $u_{uP}$ und $u_{y\vartheta}$ bei einer Temperatur von $\vartheta = 46^{\circ}C$ aussehen. Dazu berechnen wir zunächst die Messverstärkung
+
+\begin{equation}
+  \label{eq:12}
+  K_{M} = \frac{\Delta u_{y\vartheta}}{\Delta \vartheta} = \frac{4,34V-3,23V}{44,3^{\circ}C-39,1^{\circ}C} \approx 0.213 \frac{V}{^{\circ}C}
+\end{equation}
+
+und berechnen nun den Spannungswert für $\vartheta = 46^{\circ}C$ über
+
+\begin{equation}
+  \label{eq:13}
+  \Delta u_{y\vartheta} = K_{M} \cdot \Delta \vartheta = 0.213\frac{V}{^{\circ}C} \cdot (46^{\circ}C - 44.3^{\circ}C) = 0.36V
+\end{equation}
+
+Rechnen wir nun diesen Spannungswert $\Delta u_{y\vartheta}$ auf $u_{y\vartheta}$, so erhalten wir
+\begin{equation}
+  \label{eq:14}
+  u_{y\vartheta}_{g} = \Delta u_{y\vartheta} + u_{y\vartheta} = 0.36V + 4.34V = 4.7V.
+\end{equation}
+
+Um nun noch auf $u_{uP}$ zu kommen, rechnen wir
+\begin{equation*}
+  \Delta u_{uP} = \frac{\Delta u_{y\vartheta}}{K_{ges}} = \frac{0.36V}{0.55} \approx 0.65V
+\end{equation*}
+also $u_{uP}_{g} = \Delta u_{uP} + u_{uP} = 0.65V + 6V = 6.65V$
 
 Die Gesamtverstärkung des Systems
 \begin{equation}
@@ -374,7 +460,7 @@ setzt sich aus den Parametern
 zusammen. Aus den Kennlinienfeld lässt sich nun die Gesamverstärkung als Steigung der mittleren, in rot markierten Gerade berechnen:
 
 \begin{equation*}
-  K_{ges} = \frac{\Delta u_{y\vartheta}}{u_{uP}} = \frac{4,34V - 3,23V}{6V-4V} =
+  K_{ges} = \frac{\Delta u_{y\vartheta}}{\Delta u_{uP}} = \frac{4,34V - 3,23V}{6V-4V} = 0.55
 \end{equation*}
 
 \end{document}
