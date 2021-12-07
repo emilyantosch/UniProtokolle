@@ -25,6 +25,7 @@
     "xcolor")
    (LaTeX-add-labels
     "fig:b6"
-    "eq:1"))
+    "eq:1"
+    "eq:2"))
  :latex)
 
