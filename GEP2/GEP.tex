@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
+\usepackage{amsmath}
 \usepackage{fancyhdr}
 \usepackage{lettrine}
 \usepackage{hyperref}
@@ -150,11 +151,11 @@
 
   \end{scope}
 
-  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf MP 1\\[10pt] Praktikum 1}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf GEP\\[10pt] Praktikum 2}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
 
-  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Erste Schritte: TM4C1294NCPDT}};
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont B6-Brücke}};
 
-  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf 3. November 2021}} \\[3pt] Florian Tietjen 2519584\\[3pt] Emily Antosch 2519935};
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf 7. Dezember 2021}} \\[3pt] Emily Antosch 2519935};
 
 \end{tikzpicture}
 
@@ -168,5 +169,29 @@
 \lstlistoflistings
 
 \newpage
+
+\section{Einführung}
+
+In diesem Versuch wollen wir uns mit der netzgeführten B6-Brücke beschäftigen. Dabei wollen wir sowohl eine ohmsche als auch eine ohmsch-induktive Last untersuchen und unsere Ergebnisse mit verschiedenen Messgeräten festhalten. 
+
+\newpage
+
+\section{Vorbereitung}
+
+Wir wollen uns zunächst über den Aufbau der B6-Brücke klar werden:
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../assets/images/GEP2/b6.jpg}
+  \caption{Aufbau der B6-Brücke}
+  \label{fig:b6}
+\end{figure}
+
+Zusätzlich wollen wir uns im Vorfeld überlegen, inwieweit wir sicherstellen können, dass die vorgegebenen Werte eingehalten werden können. Mit $U_{S} = 26V$ und $I_{d,max} = 2A$ können wir nun bei maximaler Aussteuerung der Schaltung, also bei $\alpha = 0^{^{\circ}}$, die maximale Spannung $$U_{i\alpha} = \frac{3\cdot \sqrt{2}}{\pi}\cdot U_{L} \cdot cos(0^{\circ}) = \frac{3\cdot \sqrt{2}}{\pi}\cdot 26V = 60.816V$$
+berechnen. Um nun eine ohmsche Last zu berechnen, die die Schaltung in diesen Werten beschränkt rechnen wir
+
+\begin{equation*}
+  \label{eq:1}
+  R_{L} = \frac{U_{i\alpha}}{I_{d,max}} = \frac{60,816V}{2A} = 30.4 \Omega
+\end{equation*}
 
 \end{document}
