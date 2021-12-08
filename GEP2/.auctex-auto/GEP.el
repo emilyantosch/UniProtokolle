@@ -10,11 +10,11 @@
     "circuitikz"
     "fontenc"
     "inputenc"
+    "subcaption"
     "amsmath"
     "fancyhdr"
     "lettrine"
     "hyperref"
-    "subcaption"
     "tikz"
     "cite"
     "listings"
@@ -29,6 +29,7 @@
     "eq:2"
     "fig:startAngle"
     "tab:mess1"
-    "fig:31_242"))
+    "fig:31_242"
+    "tab:mess2"))
  :latex)
 

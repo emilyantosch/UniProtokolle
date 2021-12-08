@@ -4,7 +4,7 @@
 \usepackage{circuitikz} %Für die Schaltpläne
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
+\usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
 \usepackage{lettrine}
@@ -250,9 +250,73 @@ Beispielhaft wollen wir uns dann auch das Oszilloskopbild mit den Spannungen $U_
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/GEP2/31_Winkel242.png}
-  \caption{Oszilloskopbild für den Winkel $24,2^{\circ}$}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel242.png}
+    \caption{Oszilloskopbild zur Messung 3.1 für den Winkel $24,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel962.png}
+    \caption{Oszilloskopbild zur Messung 3.1 für den Winkel $96,2^{\circ}$}
+  \end{subfigure}
   \label{fig:31_242}
+  \caption{Beispielhafte Bilder vom Oszilloskop}
 \end{figure}
+
+
+\subsection{Messung von verschiedenen Kenndaten der B6-Brücke bei ohmscher Last}
+
+Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, also eine Zusammenschaltung von drei $100\Omega$-Widerständen, verschiedene Kenndaten der B6-Brücke anschauen. Auch hier schauen wir uns die Werte in Abhängigkeit von dem Zündverzögerungswinkel $\alpha$ ausgehend von unserem Offset in $18^{\circ}$-Schritten an. Dabei entsprechen $18^{\circ}$ genau einer Milisekunde Verzögerung.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{i\alpha}$\\
+    \hline
+    $6,2^{\circ}$ & &&&& \\
+    \hline
+    $24,2^{\circ}$ \\
+    \hline
+  \end{tabular}
+  \caption{Kenndaten der B6-Brücke in tabellarischer Form}
+  \label{tab:mess2}
+\end{table}
+
+
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel242.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $24,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel602.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $60,2^{\circ}$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Beispielhafte Bilder vom Oszilloskop}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel962.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $96,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel1142.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $114,2^{\circ}$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Beispielhafte Bilder vom Oszilloskop}
+\end{figure}
+
 
 \end{document}
