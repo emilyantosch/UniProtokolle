@@ -26,6 +26,8 @@
    (LaTeX-add-labels
     "fig:b6"
     "eq:1"
-    "eq:2"))
+    "eq:2"
+    "fig:startAngle"
+    "tab:mess1"))
  :latex)
 

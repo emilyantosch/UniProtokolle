@@ -198,11 +198,32 @@ berechnen. Um nun eine ohmsche Last zu berechnen, die die Schaltung in diesen We
 
 \subsection{Messung der Steuerspannung und der gleichgerichteten Spannung}
 
-Wir wollen zunächst unseren Offset bei der Einstellung unseres Zündverzögerungswinkels ermitteln. Dabei stellen wir unsere Steuerspannung $U_{St} = 10V$ auf das Maximum ein und messen vom Nulldurchgang der Spannung $U_{21}$ zur ersten Zündung. Wir erhalten eine Verzögerung von $3.68ms$, damit rechnen wir
+Wir wollen zunächst unseren Offset bei der Einstellung unseres Zündverzögerungswinkels ermitteln. Dabei stellen wir unsere Steuerspannung $U_{St} = 10V$ auf das Maximum ein und messen vom Nulldurchgang der Spannung $U_{21}$ zur ersten Zündung. Wir erhalten eine Verzögerung von $\Delta t = 3.68ms$, damit rechnen wir
 
 \begin{equation*}
   \label{eq:2}
-
+  \Delta\alpha = \Delta t \cdot 360^{\circ} \cdot \frac{1}{T} - 60^{\circ} = 3.68ms \cdot 360^{\circ} \cdot \frac{1}{20ms} - 60^{\circ} = 6,2^{\circ}
 \end{equation*}
+
+und erhalten damit den Winkel, den wir bei der minimalen Einstellung unseres Zündwinkeltransformators haben. Alle weiteren Messungen basieren dann auf diesem Offset. Der Bild auf dem Oszilloskop ist dann unten noch einmal dargestellt:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/GEP2/startAngle.png}
+  \caption{Startmessung des Winkels bei 10V}
+  \label{fig:startAngle}
+\end{figure}
+
+Wir wollen nun uns die Tabelle der Werte einmal anschauen:
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+    $\alpha$ & $U_{St}$ & $U_{i\alpha}$ \\
+    $6,2^{\circ}$ & & \\
+  \end{tabular}
+  \caption{Messreihe der Steuerspannung und der gleichgerichteten Spannung im Bezug auf den Zündverzögerungswinkel}
+  \label{tab:mess1}
+\end{table}
 
 \end{document}
