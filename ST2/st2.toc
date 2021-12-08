@@ -1,0 +1,6 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}SIPN mit ST}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Einführung}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Vorbereitung}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Programmierung der Anlage in ST durch SIPN}{6}{section.1.3}%
