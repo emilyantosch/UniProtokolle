@@ -10,6 +10,7 @@
     "circuitikz"
     "fontenc"
     "inputenc"
+    "amsmath"
     "fancyhdr"
     "lettrine"
     "hyperref"
@@ -21,6 +22,13 @@
     "babel"
     "geometry"
     "anyfontsize"
-    "xcolor"))
+    "xcolor")
+   (LaTeX-add-labels
+    "fig:b6"
+    "eq:1"
+    "eq:2"
+    "fig:startAngle"
+    "tab:mess1"
+    "fig:31_242"))
  :latex)
 
