@@ -175,7 +175,6 @@
 
 In diesem Versuch wollen wir uns mit der netzgeführten B6-Brücke beschäftigen. Dabei wollen wir sowohl eine ohmsche als auch eine ohmsch-induktive Last untersuchen und unsere Ergebnisse mit verschiedenen Messgeräten festhalten. 
 
-\newpage
 
 \section{Vorbereitung}
 
@@ -285,6 +284,7 @@ Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, 
 \end{table}
 
 
+Um unsere Messungen graphisch zu überprüfen, schauen wir uns die dazugehörigen Oszilloskopbilder auch an. Wir erkennen, dass ein Erhöhung des Zündverzögerungswinkels mit dem Absinken der Leistung einhergeht. Das entspricht auch unseren Vorstellungen. Auch die gleichgerichtete Spannung ist proportional zum Zündverzögerungswinkel.
 
 \begin{figure}[h]
   \centering
@@ -318,5 +318,58 @@ Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, 
   \caption{Beispielhafte Bilder vom Oszilloskop}
 \end{figure}
 
+\subsection{Messung von verschiedenen Kenndaten der B6-Brücke bei ohmsch-induktiver Last}
+
+Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu dem Widerstand noch eine Induktivität mit $L = 50mH$ in Reihe schalten.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{i\alpha}$\\
+    \hline
+    $6,2^{\circ}$ & &&&& \\
+    \hline
+    $24,2^{\circ}$ \\
+    \hline
+  \end{tabular}
+  \caption{Kenndaten der B6-Brücke in tabellarischer Form}
+  \label{tab:mess2}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel242.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $24,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel602.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $60,2^{\circ}$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Beispielhafte Bilder vom Oszilloskop}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel962.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $96,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel1142.png}
+    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $114,2^{\circ}$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Beispielhafte Bilder vom Oszilloskop}
+\end{figure}
+
+
+\section{Auswertung}
 
 \end{document}

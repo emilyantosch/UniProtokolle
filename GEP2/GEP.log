@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Homebrew) (preloaded format=pdflatex 2021.9.30)  8 DEC 2021 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Homebrew) (preloaded format=pdflatex 2021.9.30)  8 DEC 2021 19:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,6 +1132,15 @@ LaTeX Warning: Label `fig:31_242' multiply defined.
 
 LaTeX Warning: Label `fig:31_242' multiply defined.
 
+
+LaTeX Warning: Label `tab:mess2' multiply defined.
+
+
+LaTeX Warning: Label `fig:31_242' multiply defined.
+
+
+LaTeX Warning: Label `fig:31_242' multiply defined.
+
 )
 \openout1 = `GEP.aux'.
 
@@ -1263,7 +1272,7 @@ ftex.map}] (./GEP.toc)
 \tf@lot=\write7
 \openout7 = `GEP.lot'.
 
-<../assets/images/haw.jpg, id=74, 401.5pt x 281.05pt>
+<../assets/images/haw.jpg, id=87, 401.5pt x 281.05pt>
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
 Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 172.
@@ -1275,25 +1284,14 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
 [2 <../assets/images/haw.jpg>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 178.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[3]
-<../assets/images/GEP2/b6.jpg, id=94, 2191.18625pt x 3097.5725pt>
+<../assets/images/GEP2/b6.jpg, id=106, 2191.18625pt x 3097.5725pt>
 File: ../assets/images/GEP2/b6.jpg Graphic file (type jpg)
 <use ../assets/images/GEP2/b6.jpg>
-Package pdftex.def Info: ../assets/images/GEP2/b6.jpg  used on input line 185.
+Package pdftex.def Info: ../assets/images/GEP2/b6.jpg  used on input line 184.
 (pdftex.def)             Requested size: 344.005pt x 486.26324pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 196.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 189.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1301,16 +1299,16 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[4 <../assets/images/GEP2/b6.jpg>]
-<../assets/images/GEP2/startAngle.png, id=105, 803.0pt x 504.88625pt>
+[3 <../assets/images/GEP2/b6.jpg>]
+<../assets/images/GEP2/startAngle.png, id=111, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/startAngle.png Graphic file (type png)
 <use ../assets/images/GEP2/startAngle.png>
 Package pdftex.def Info: ../assets/images/GEP2/startAngle.png  used on input li
-ne 213.
+ne 212.
 (pdftex.def)             Requested size: 430.00462pt x 270.36954pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 218.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 217.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1318,26 +1316,26 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[5 <../assets/images/GEP2/startAngle.png (PNG copy)>]
-<../assets/images/GEP2/31_Winkel242.png, id=112, 803.0pt x 504.88625pt>
+[4 <../assets/images/GEP2/startAngle.png (PNG copy)>]
+<../assets/images/GEP2/31_Winkel242.png, id=124, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/31_Winkel242.png Graphic file (type png)
 <use ../assets/images/GEP2/31_Winkel242.png>
 Package pdftex.def Info: ../assets/images/GEP2/31_Winkel242.png  used on input 
-line 255.
+line 254.
 (pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
-<../assets/images/GEP2/31_Winkel962.png, id=113, 803.0pt x 504.88625pt>
+<../assets/images/GEP2/31_Winkel962.png, id=125, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/31_Winkel962.png Graphic file (type png)
 <use ../assets/images/GEP2/31_Winkel962.png>
 Package pdftex.def Info: ../assets/images/GEP2/31_Winkel962.png  used on input 
-line 260.
+line 259.
 (pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
-<../assets/images/GEP2/32_Winkel242.png, id=114, 803.0pt x 504.88625pt>
+<../assets/images/GEP2/32_Winkel242.png, id=126, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/32_Winkel242.png Graphic file (type png)
 <use ../assets/images/GEP2/32_Winkel242.png>
 Package pdftex.def Info: ../assets/images/GEP2/32_Winkel242.png  used on input 
 line 293.
 (pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
-<../assets/images/GEP2/32_Winkel602.png, id=115, 803.0pt x 504.88625pt>
+<../assets/images/GEP2/32_Winkel602.png, id=127, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/32_Winkel602.png Graphic file (type png)
 <use ../assets/images/GEP2/32_Winkel602.png>
 Package pdftex.def Info: ../assets/images/GEP2/32_Winkel602.png  used on input 
@@ -1347,13 +1345,13 @@ line 298.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../assets/images/GEP2/32_Winkel962.png, id=116, 803.0pt x 504.88625pt>
+<../assets/images/GEP2/32_Winkel962.png, id=128, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/32_Winkel962.png Graphic file (type png)
 <use ../assets/images/GEP2/32_Winkel962.png>
 Package pdftex.def Info: ../assets/images/GEP2/32_Winkel962.png  used on input 
 line 309.
 (pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
-<../assets/images/GEP2/32_Winkel1142.png, id=117, 803.0pt x 504.88625pt>
+<../assets/images/GEP2/32_Winkel1142.png, id=129, 803.0pt x 504.88625pt>
 File: ../assets/images/GEP2/32_Winkel1142.png Graphic file (type png)
 <use ../assets/images/GEP2/32_Winkel1142.png>
 Package pdftex.def Info: ../assets/images/GEP2/32_Winkel1142.png  used on input
@@ -1364,18 +1362,57 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 322.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 338.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[6 <../assets/images/GEP2/31_Winkel242.png (PNG copy)> <../assets/images/GEP2/3
+[5 <../assets/images/GEP2/31_Winkel242.png (PNG copy)> <../assets/images/GEP2/3
 1_Winkel962.png (PNG copy)>]
+File: ../assets/images/GEP2/32_Winkel242.png Graphic file (type png)
+<use ../assets/images/GEP2/32_Winkel242.png>
+Package pdftex.def Info: ../assets/images/GEP2/32_Winkel242.png  used on input 
+line 344.
+(pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
+File: ../assets/images/GEP2/32_Winkel602.png Graphic file (type png)
+<use ../assets/images/GEP2/32_Winkel602.png>
+Package pdftex.def Info: ../assets/images/GEP2/32_Winkel602.png  used on input 
+line 349.
+(pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ../assets/images/GEP2/32_Winkel962.png Graphic file (type png)
+<use ../assets/images/GEP2/32_Winkel962.png>
+Package pdftex.def Info: ../assets/images/GEP2/32_Winkel962.png  used on input 
+line 360.
+(pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
+File: ../assets/images/GEP2/32_Winkel1142.png Graphic file (type png)
+<use ../assets/images/GEP2/32_Winkel1142.png>
+Package pdftex.def Info: ../assets/images/GEP2/32_Winkel1142.png  used on input
+ line 365.
+(pdftex.def)             Requested size: 193.50076pt x 121.6605pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 322.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 375.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[6 <../assets/images/GEP2/32_Winkel242.png (PNG copy)> <../assets/images/GEP2/3
+2_Winkel602.png (PNG copy)> <../assets/images/GEP2/32_Winkel962.png (PNG copy)>
+ <../assets/images/GEP2/32_Winkel1142.png (PNG copy)>]
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 375.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1383,20 +1420,18 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[7 <../assets/images/GEP2/32_Winkel242.png (PNG copy)> <../assets/images/GEP2/3
-2_Winkel602.png (PNG copy)> <../assets/images/GEP2/32_Winkel962.png (PNG copy)>
- <../assets/images/GEP2/32_Winkel1142.png (PNG copy)>] (./GEP.aux)
+[7] (./GEP.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `GEP.out' has not changed.
-(rerunfilecheck)             Checksum: 4D441C9569BBAE8434F95D6404B4472A;1374.
+(rerunfilecheck)             Checksum: 3EE7B502A274269803FCF88364731641;1931.
  ) 
 Here is how much of TeX's memory you used:
- 40662 strings out of 478994
- 925883 string characters out of 5849630
- 1479852 words of memory out of 5000000
- 57560 multiletter control sequences out of 15000+600000
+ 40669 strings out of 478994
+ 925983 string characters out of 5849630
+ 1482862 words of memory out of 5000000
+ 57562 multiletter control sequences out of 15000+600000
  416175 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,130p,512b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1423,10 +1458,10 @@ brew/Cellar/texlive/58837/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488
 -super/sfrm0900.pfb></opt/homebrew/Cellar/texlive/58837/share/texmf-dist/fonts/
 type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cellar/texlive/58837/share/te
 xmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb>
-Output written on GEP.pdf (7 pages, 1129332 bytes).
+Output written on GEP.pdf (7 pages, 1132687 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
