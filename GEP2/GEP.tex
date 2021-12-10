@@ -186,12 +186,12 @@ Wir wollen uns zunächst über den Aufbau der B6-Brücke klar werden:
   \label{fig:b6}
 \end{figure}
 
-Zusätzlich wollen wir uns im Vorfeld überlegen, inwieweit wir sicherstellen können, dass die vorgegebenen Werte eingehalten werden können. Mit $U_{S} = 26V$ und $I_{d,max} = 2A$ können wir nun bei maximaler Aussteuerung der Schaltung, also bei $\alpha = 0^{^{\circ}}$, die maximale Spannung $$U_{i\alpha} = \frac{3\cdot \sqrt{2}}{\pi}\cdot U_{L} \cdot cos(0^{\circ}) = \frac{3\cdot \sqrt{2}}{\pi}\cdot 26V = 60.816V$$
+Zusätzlich wollen wir uns im Vorfeld überlegen, inwieweit wir sicherstellen können, dass die vorgegebenen Werte eingehalten werden können. Mit $U_{S} = 26V$ und $I_{d,max} = 2A$ können wir nun bei maximaler Aussteuerung der Schaltung, also bei $\alpha = 0^{^{\circ}}$, die maximale Spannung $$U_{di\alpha} = \frac{3\cdot \sqrt{2}}{\pi}\cdot U_{L} \cdot cos(0^{\circ}) = \frac{3\cdot \sqrt{2}}{\pi}\cdot 26V = 60.816V$$
 berechnen. Um nun eine ohmsche Last zu berechnen, die die Schaltung in diesen Werten beschränkt rechnen wir
 
 \begin{equation*}
   \label{eq:1}
-  R_{L} = \frac{U_{i\alpha}}{I_{d,max}} = \frac{60,816V}{2A} = 30.4 \Omega
+  R_{L} = \frac{U_{di\alpha}}{I_{d,max}} = \frac{60,816V}{2A} = 30.4 \Omega
 \end{equation*}
 
 \section{Messreihe}
@@ -222,30 +222,30 @@ Wir wollen nun uns die Tabelle der Werte einmal anschauen:
   \centering
   \begin{tabular}{|c|c|c|}
     \hline
-    $\alpha$ & $U_{St}$ & $U_{i\alpha}$ \\
+    $\alpha$ & $U_{St}$ & $U_{di\alpha}$ \\
     \hline
-    $6,2^{\circ}$ & & \\
+    $6,2^{\circ}$ & $56,6V$ & $10,008V$\\
     \hline
-    $24,2^{\circ}$ & & \\
+    $24,2^{\circ}$ &$53,01V$ & $9,058V$\\
     \hline
-    $42,2^{\circ}$ & & \\
+    $42,2^{\circ}$ &$44,1V$ & $8,059V$\\
     \hline
-    $60,2^{\circ}$ & & \\
+    $60,2^{\circ}$ & $31,6V$& $6,976V$\\
     \hline
-    $78,2^{\circ}$ & & \\
+    $78,2^{\circ}$ & $20,23V$& $6,131V$\\
     \hline
-    $96,2^{\circ}$ & & \\
+    $96,2^{\circ}$ & $8,96V$& $5,181V$\\
     \hline
-    $114,2^{\circ}$ & & \\
+    $114,2^{\circ}$ &$1,53V$ & $4,239V$\\
     \hline
-    $132,2^{\circ}$ & & \\
+    $132,2^{\circ}$ & $0,003V$& $3,3V$\\
     \hline
   \end{tabular}
   \caption{Messreihe der Steuerspannung und der gleichgerichteten Spannung im Bezug auf den Zündverzögerungswinkel}
   \label{tab:mess1}
 \end{table}
 
-Beispielhaft wollen wir uns dann auch das Oszilloskopbild mit den Spannungen $U_{21}$ und $U_{i\alpha}$ anschauen:
+Beispielhaft wollen wir uns dann auch das Oszilloskopbild mit den Spannungen $U_{21}$ und $U_{di\alpha}$ anschauen:
 
 \begin{figure}[h]
   \centering
@@ -272,14 +272,26 @@ Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, 
   \centering
   \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{i\alpha}$\\
+    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{di\alpha}$\\
     \hline
-    $6,2^{\circ}$ & &&&& \\
+    $6,2^{\circ}$ & $33,4W$ & $1,39A$ & $25,24V$ & $1,67A$ & $56,3V$\\
     \hline
-    $24,2^{\circ}$ \\
+    $24,2^{\circ}$ & $28,8W$ & $1,297A$ & $25,36V$ & $1,55A$ & $52,2V$\\
+    \hline
+    $42,2^{\circ}$ & $19,75W$ & $1,073A$ & $25,67V$ & $1,26A$ & $42,34V$\\
+    \hline
+    $60,2^{\circ}$ & $10,77W$ & $0,7083A$ & $25,9V$ & $0,866A$ & $28,55V$\\
+    \hline
+    $78,2^{\circ}$ & $4,1W$ & $0,49A$ & $26,3V$ & $0,4512A$ & $15,14V$ \\
+    \hline
+    $96,2^{\circ}$ & $0,728W$ & $0,217A$ & $26,39V$ & $0,1577A$ & $5,204V$\\
+    \hline
+    $114,2^{\circ}$ & $0W$ & $0A$ & $26,6V$ & $0,04A$ & $0,33V$\\
+    \hline
+    $132,2^{\circ}$ & $0W$ & $0A$ & $26,5V$ & $0A$ & $0,08V$\\
     \hline
   \end{tabular}
-  \caption{Kenndaten der B6-Brücke in tabellarischer Form}
+  \caption{Kenndaten der B6-Brücke bei ohmscher Last in tabellarischer Form}
   \label{tab:mess2}
 \end{table}
 
@@ -299,7 +311,7 @@ Um unsere Messungen graphisch zu überprüfen, schauen wir uns die dazugehörige
     \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $60,2^{\circ}$}
   \end{subfigure}
   \label{fig:31_242}
-  \caption{Beispielhafte Bilder vom Oszilloskop}
+  \caption{Zur Messung 3.2: Bilder vom Oszilloskop}
 \end{figure}
 
 \begin{figure}[h]
@@ -315,7 +327,7 @@ Um unsere Messungen graphisch zu überprüfen, schauen wir uns die dazugehörige
     \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $114,2^{\circ}$}
   \end{subfigure}
   \label{fig:31_242}
-  \caption{Beispielhafte Bilder vom Oszilloskop}
+  \caption{Zur Messung 3.2: Bilder vom Oszilloskop}
 \end{figure}
 
 \subsection{Messung von verschiedenen Kenndaten der B6-Brücke bei ohmsch-induktiver Last}
@@ -326,14 +338,26 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
   \centering
   \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{i\alpha}$\\
+    $\alpha$ & $P_{zu}$ & $U_{S}$ & $I_{L}$ & $I_{d}$ & $U_{di\alpha}$\\
     \hline
-    $6,2^{\circ}$ & &&&& \\
+    $6,2^{\circ}$ & $33,15W$ & $1,347A$ & $25,96V$ & $1,626A$ & $58,17V$ \\
     \hline
-    $24,2^{\circ}$ \\
+    $24,2^{\circ}$ & $27,99W$ & $1,236A$ & $26,03V$ & $1,493A$ & $53,26V$\\
+    \hline
+    $42,2^{\circ}$ & $17,75W$ & $0,977A$ & $26,15V$ & $1,192A$ & $42,26V$ \\
+    \hline
+    $60,2^{\circ}$ & $7,49W$ & $0,636A$ & $26,42V$ & $0,77A$ & $27,6V$ \\
+    \hline
+    $78,2^{\circ}$ & $0,936W$ & $0,213A$ & $26,4V$ & $0,26A$ & $9,13V$\\
+    \hline
+    $96,2^{\circ}$ & $55mW$ & $5mA$ & $26,58V$ & $2,2mA$ & $-0,378VV$\\
+    \hline
+    $114,2^{\circ}$ & $0W$ & $0A$ & $26,48V$ & $0,7mA$ & $0V$ \\
+    \hline
+    $132,2^{\circ}$ & $0W$ & $0A$ & $26,58V$ & $0,21mA$ & $0V$ \\
     \hline
   \end{tabular}
-  \caption{Kenndaten der B6-Brücke in tabellarischer Form}
+  \caption{Kenndaten der B6-Brücke bei ohmsch-induktiver Last in tabellarischer Form}
   \label{tab:mess2}
 \end{table}
 
@@ -342,15 +366,15 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel242.png}
-    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $24,2^{\circ}$}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $24,2^{\circ}$}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel602.png}
-    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $60,2^{\circ}$}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $60,2^{\circ}$}
   \end{subfigure}
   \label{fig:31_242}
-  \caption{Beispielhafte Bilder vom Oszilloskop}
+  \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
 \end{figure}
 
 \begin{figure}[h]
@@ -358,18 +382,39 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel962.png}
-    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $96,2^{\circ}$}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $96,2^{\circ}$}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{../assets/images/GEP2/32_Winkel1142.png}
-    \caption{Oszilloskopbild zur Messung 3.2 für den Winkel $114,2^{\circ}$}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $114,2^{\circ}$}
   \end{subfigure}
   \label{fig:31_242}
-  \caption{Beispielhafte Bilder vom Oszilloskop}
+  \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
 \end{figure}
 
 
 \section{Auswertung}
+
+\subsection{Kennlinie von Steuerspannung zu Zündwinkel}
+\label{sec:kennl-von-steu}
+
+Aus der Messreihe 3.1 wollen wir die Kennlinie $\alpha = f(U_{St})$ erstellen:
+
+
+\subsection{Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}
+\label{sec:kennlinie-von-winkel}
+
+
+\subsection{Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmsch-induktiver Last}
+\label{sec:kennlinie-von-winkel-1}
+
+
+
+\section{Konklusion}
+\label{sec:konklusion}
+
+Aus dem Labor konnten wir das Verhalten der B6-Brücke besser verstehen, indem wir verschiedene Schaltvorgänge und Verhalten der Schaltung genauer untersucht haben und selbst mit der Schaltung arbeiten konnten. Wir haben viele Zusammenhänge, die wir in der Vorlesung bereits behandelt haben, besser verinnerlichen können.
+
 
 \end{document}

@@ -30,6 +30,10 @@
     "fig:startAngle"
     "tab:mess1"
     "fig:31_242"
-    "tab:mess2"))
+    "tab:mess2"
+    "sec:kennl-von-steu"
+    "sec:kennlinie-von-winkel"
+    "sec:kennlinie-von-winkel-1"
+    "sec:konklusion"))
  :latex)
 
