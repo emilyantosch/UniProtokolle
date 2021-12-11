@@ -32,8 +32,15 @@
     "fig:31_242"
     "tab:mess2"
     "sec:kennl-von-steu"
+    "fig:alphaust"
     "sec:kennlinie-von-winkel"
+    "fig:udiaalphaohm"
+    "eq:3"
     "sec:kennlinie-von-winkel-1"
+    "fig:udiaalphainduk"
+    "eq:4"
+    "sec:sche-und-leist"
+    "tab:scheinfak"
     "sec:konklusion"))
  :latex)
 

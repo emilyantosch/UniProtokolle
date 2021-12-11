@@ -330,6 +330,8 @@ Um unsere Messungen graphisch zu überprüfen, schauen wir uns die dazugehörige
   \caption{Zur Messung 3.2: Bilder vom Oszilloskop}
 \end{figure}
 
+\newpage
+
 \subsection{Messung von verschiedenen Kenndaten der B6-Brücke bei ohmsch-induktiver Last}
 
 Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu dem Widerstand noch eine Induktivität mit $L = 50mH$ in Reihe schalten.
@@ -401,14 +403,131 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
 
 Aus der Messreihe 3.1 wollen wir die Kennlinie $\alpha = f(U_{St})$ erstellen:
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/GEP2/alpha_ust.png}
+  \caption{Kennlinie der Messung 3.1 mit Winkel zu Steuerspannung}
+  \label{fig:alphaust}
+\end{figure}
+
+Wir erkennen einen anti-proportionalen Zusammenhang zwischen der Steuerspannung $U_{St}$ und dem Winkel $\alpha$. Dabei haben wir einen ungefähre Steigung von
+
+\begin{equation*}
+  m = \frac{\Delta y}{\Delta x} = \frac{6,2^{\circ} - 132,2^{\circ}}{10,008V - 3,3V} = \frac{-126^{\circ}}{6,7V} = -18,8 \frac{Grad}{V}
+\end{equation*}
+
+ermitteln können.
 
 \subsection{Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}
 \label{sec:kennlinie-von-winkel}
 
+Als nächstes vergleichen wir die gemessenen Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmscher Last zu der theoretischen Kennlinie:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/GEP2/udia_alpha_ohm.png}
+  \caption{Gemessene zur theoretischen Kennlinie bei ohmscher Last}
+  \label{fig:udiaalphaohm}
+\end{figure}
+Die gemessene und die theoretische Kennlinie haben am Anfang der Messung zunächst ein kleines Offset, der sich dann aber im Verlauf der Messung immer besser anpasst. Bei hohem Zündverzögerungswinkel sind die beiden Kennlinien beinahe identisch.
+Zur Berechnung der theoretischen Kennlinie sollte bedacht werden, dass eine B6-Brücke bei rein ohmscher Last ab $\alpha > 60^{\circ}$ in einen lückenden Betrieb geht. Es gilt:
+\begin{equation*}
+  a_{th} = \begin{cases}
+    cos(\alpha) & 0^{\circ}\leq\alpha\leq 60^{\circ}\\
+    1 + \frac{cos(\alpha)}{2} - \frac{\sqrt{3}\cdot sin(\alpha)}{2} & 60^{\circ}\leq\alpha\leq 120^{\circ}\\
+  \end{cases}
+\end{equation*}
+mit der Gleichung
+\begin{equation}
+  \label{eq:3}
+  U_{di\alpha, th} = \frac{3\cdot\sqrt{2}}{\pi}\cdot U_{L}\cdot a_{th}
+\end{equation}
+
 
 \subsection{Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmsch-induktiver Last}
 \label{sec:kennlinie-von-winkel-1}
+Wir wiederholen die Analyse jedoch diesmal bei ohmsch-induktiver Last. Die Kennlinien sehen dabei folgendermaßen aus:
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/GEP2/udia_alpha_induk.png}
+  \caption{Gemessene zur theoretischen Kennlinie bei ohmsch-induktiver Last}
+  \label{fig:udiaalphainduk}
+\end{figure}
+Auch hier berechnen wir die theoretische Steuerkennlinie über
+
+\begin{equation*}
+  \label{eq:4}
+  \begin{array}{ll}
+    a_{th} = cos(\alpha) & 0^{\circ} \leq\alpha\leq 120^{\circ}\\
+  \end{array}
+\end{equation*}
+
+mit der Gleichung (\ref{eq:3}).
+
+Diese Kennlinien sind am Beginn der Messung ziemlich nah beieinander, driften jedoch ab einem Winkel von ca. $\alpha = 78,2^{\circ}$ stark voneinader ab. Die theoretische Kennlinie geht dabei auch weit in den negativen Bereich über. Dies lässt sich auf die Speichereigenschaft der Spule zurückführen. In der mathematischen Berechnung erreicht der $cos(\alpha)$ für $\alpha > 90^{\circ}$ den negativen Bereich, weshalb die berechnete Kennlinie hier in den negativen Bereich übergeht.
+
+\subsection{Scheinleistung und Leistungsfaktor}
+\label{sec:sche-und-leist}
+
+Im letzten Teil der Auswertung wollen wir nun die Scheinleistung und den daraus resultierenden Leistungsfaktor berechnen. Die Scheinleistung berechnet sich über
+
+$$S = U_{1N}\cdot I_{L}$$
+
+Für den Leistungsfaktor rechnen wir
+
+\[
+  \begin{array}{ll}
+    \lambda = \frac{P_{zu}}{S} & \text{mit $P_{zu}$ als Wirkleistung}\\
+  \end{array}
+\]
+Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 3.2 und 3.3 entnehmen.
+
+\begin{table}[h]
+  \centering
+  \begin{subtable}{.5\linewidth}
+    \centering
+    \caption{bei ohmscher Last}
+    \begin{tabular}{|c|c|c|}
+      $S$ & $P_{zu}$ & $\lambda$ \\
+      $35,0836VA$ & $33,4W$ & $0,952$\\
+      $32,891VA$ & $28,8W$ & $0,8756$\\
+      $27,5439VA$ & $19,75W$ & $0.717$\\
+      $18,345VA$ & $10.77W$ & $0.5871$\\
+      $12,887VA$ & $4,1W$ & $0,3182$\\
+      $5.7266VA$ & $0.728W$ & $0.1271$\\
+      $0VA$ & $0W$ & $-$\\
+      $0VA$ & $0W$ & $-$\\
+    \end{tabular}
+  \end{subtable}
+  \begin{subtable}{.5\linewidth}
+    \centering
+    \caption{bei ohmsch-induktiver Last}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      $S$ & $P_{zu}$ & $\lambda$ \\
+      \hline
+      $34,9681VA$ & $33,15W$ & $0,948$\\
+      \hline
+      $32,1731VA$ & $27.99W$ & $0,87$\\
+      \hline
+      $25,5485VA$ & $17,75W$ & $0.6948$\\
+      \hline
+      $16,8031VA$ & $7,49W$ & $0,4458$\\
+      \hline
+      $5,6232VA$ & $0.936W$ & $0,1665$\\
+      \hline
+      $0,1329VA$ & $0,055W$ & $0.4138$\\
+      \hline
+      $0VA$ & $0W$ & $-$\\
+      \hline
+      $0VA$ & $0W$ & $-$\\
+      \hline
+    \end{tabular}
+  \end{subtable}
+  \caption{Tabelle der Scheinleistung und des Leistungsfaktors}
+  \label{tab:scheinfak}
+\end{table}
 
 
 \section{Konklusion}
