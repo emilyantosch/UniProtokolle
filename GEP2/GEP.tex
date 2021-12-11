@@ -363,6 +363,8 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
   \label{tab:mess2}
 \end{table}
 
+Wir erkennen eine leichte Veränderung bei den Werten zum ohmschen Versuch. Interessant ist das Messergebnis, in dem die gleichgerichtete Spannung negativ wird. Dies ist ein Verhalten der B6-Brücke, die theoretisch möglich ist, in der Realität aber nur im begrenzten Umfeld auftaucht.
+
 \begin{figure}[h]
   \centering
   \begin{subfigure}{.45\textwidth}
@@ -395,7 +397,7 @@ Wir wiederholen jetzt die Messung mit einer ohmsch-induktiven Last, indem wir zu
   \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
 \end{figure}
 
-
+\newpage
 \section{Auswertung}
 
 \subsection{Kennlinie von Steuerspannung zu Zündwinkel}
@@ -405,7 +407,7 @@ Aus der Messreihe 3.1 wollen wir die Kennlinie $\alpha = f(U_{St})$ erstellen:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/GEP2/alpha_ust.png}
+  \includegraphics[width=.75\textwidth]{../assets/images/GEP2/alpha_ust.png}
   \caption{Kennlinie der Messung 3.1 mit Winkel zu Steuerspannung}
   \label{fig:alphaust}
 \end{figure}
@@ -425,7 +427,7 @@ Als nächstes vergleichen wir die gemessenen Kennlinie von Winkel zu gleichgeric
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/GEP2/udia_alpha_ohm.png}
+  \includegraphics[width=.75\textwidth]{../assets/images/GEP2/udia_alpha_ohm.png}
   \caption{Gemessene zur theoretischen Kennlinie bei ohmscher Last}
   \label{fig:udiaalphaohm}
 \end{figure}
@@ -443,14 +445,14 @@ mit der Gleichung
   U_{di\alpha, th} = \frac{3\cdot\sqrt{2}}{\pi}\cdot U_{L}\cdot a_{th}
 \end{equation}
 
-
+\newpage
 \subsection{Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmsch-induktiver Last}
 \label{sec:kennlinie-von-winkel-1}
 Wir wiederholen die Analyse jedoch diesmal bei ohmsch-induktiver Last. Die Kennlinien sehen dabei folgendermaßen aus:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{../assets/images/GEP2/udia_alpha_induk.png}
+  \includegraphics[width=.75\textwidth]{../assets/images/GEP2/udia_alpha_induk.png}
   \caption{Gemessene zur theoretischen Kennlinie bei ohmsch-induktiver Last}
   \label{fig:udiaalphainduk}
 \end{figure}
@@ -485,22 +487,32 @@ Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 
 
 \begin{table}[h]
   \centering
-  \begin{subtable}{.5\linewidth}
+  \begin{subtable}{.45\linewidth}
     \centering
     \caption{bei ohmscher Last}
     \begin{tabular}{|c|c|c|}
+      \hline
       $S$ & $P_{zu}$ & $\lambda$ \\
+      \hline
       $35,0836VA$ & $33,4W$ & $0,952$\\
+      \hline
       $32,891VA$ & $28,8W$ & $0,8756$\\
+      \hline
       $27,5439VA$ & $19,75W$ & $0.717$\\
+      \hline
       $18,345VA$ & $10.77W$ & $0.5871$\\
+      \hline
       $12,887VA$ & $4,1W$ & $0,3182$\\
+      \hline
       $5.7266VA$ & $0.728W$ & $0.1271$\\
+      \hline
       $0VA$ & $0W$ & $-$\\
+      \hline
       $0VA$ & $0W$ & $-$\\
+      \hline
     \end{tabular}
   \end{subtable}
-  \begin{subtable}{.5\linewidth}
+  \begin{subtable}{.45\linewidth}
     \centering
     \caption{bei ohmsch-induktiver Last}
     \begin{tabular}{|c|c|c|}
@@ -529,7 +541,14 @@ Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 
   \label{tab:scheinfak}
 \end{table}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.75\textwidth]{../assets/images/GEP2/lambda_alpha.png}
+  \caption{Kennlinie der gemessenen und theoretischen Leistungsfaktoren}
+  \label{fig:lambda}
+\end{figure}
 
+Wir können hier erkennen, dass die theoretische Kennlinie sehr der Kennlinie entspricht, die wir auch bei der gleichgerichteten Spannung beobachtet haben. Dadurch, dass die Schaltung nicht rückspeisefähig ist, können wir an der realen Kennlinie zum Leistungsfaktor bei ohmsch-induktiver Last einen Peak gegen Ende der Kennlinie erkennen, die im Gegensatz zu der theoretischen Kennlinie steht, bei die Rückspeisefähigkeit vorausgesetzt wird. Abgesehen davon sind die reale und theoretische Kennlinie sehr nah beieinander und verlaufen mit einem kleinen Offset nebeneinander.
 \section{Konklusion}
 \label{sec:konklusion}
 

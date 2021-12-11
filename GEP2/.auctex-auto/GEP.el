@@ -41,6 +41,7 @@
     "eq:4"
     "sec:sche-und-leist"
     "tab:scheinfak"
+    "fig:lambda"
     "sec:konklusion"))
  :latex)
 
