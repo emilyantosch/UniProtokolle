@@ -8,21 +8,25 @@ unsigned int read_adc();
 
 int main(void){
     
-    unsigned short int da_increase = 0;
+    unsigned short int da_shift = 6;
     unsigned int adc_value = 0;
     unsigned int last_adc_value = 0;
+    GPIO_PORTK_DATA_R = 0x80;
     while (1)
     {
-        ADC0_PSSI_R = 0x0001;
-        last_adc_value = adc_value;
-        adc_value = read_adc();
-        if(adc_value == 0){
-            GPIO_PORTM_DATA_R = (last_adc_value % 10) | (((last_adc_value / 10) % 10) << 4);
-            GPIO_PORTL_DATA_R = ((last_adc_value / 100) % 10) & 0x03;
-        }
         if(GPIO_PORTD_AHB_DATA_R & 0x02 == 0){
-            GPIO_PORTK_DATA_R = da_increase;
-            da_increase++;
+            ADC0_PSSI_R = 0x0001;
+            last_adc_value = adc_value;
+            adc_value = read_adc();
+            if(adc_value == 0){
+                GPIO_PORTK_DATA_R &= ~(1 << da_shift+1);
+            }
+                GPIO_PORTK_DATA_R |= (1 << da_shift);
+            da_shift--;
+            if(da_shift == -1){
+                GPIO_PORTM_DATA_R = (adc_value % 10) | (((adc_value / 10) % 10) << 4);
+                GPIO_PORTL_DATA_R = ((adc_value / 100) % 10) & 0x03;
+            }
         }
     }
 }
