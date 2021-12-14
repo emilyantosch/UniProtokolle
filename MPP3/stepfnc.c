@@ -24,15 +24,17 @@ int main(void){
         // ADC start
         ADC0_PSSI_R = 0x0001;
         // Save last value
-        last_adc_value = adc_value;
         adc_value = read_adc();
+        //delay(480);
         // If adc detectes a near zero value
         if(adc_value <= 0.1){
             //GPIO_PORTM_DATA_R = (last_adc_value % 10) | (((last_adc_value / 10) % 10) << 4);
             //GPIO_PORTL_DATA_R = ((last_adc_value / 100) % 10) & 0x03;
-            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) % 10) | ((((int)(last_adc_value * 19.53125) / 10) % 10) << 4);
-            GPIO_PORTL_DATA_R = (((int)(last_adc_value * 19.53125) / 100) % 10) & 0x03;
             GPIO_PORTL_DATA_R |= 0x04;
+            GPIO_PORTL_DATA_R = 0x02;
+            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 1000 % 10) << 4 | ((((int)(last_adc_value * 19.53125) / 100) % 10));
+            GPIO_PORTL_DATA_R = 0x01;
+            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 10 % 10) << 4;
         }
         // If the button is not pressed
         if(GPIO_PORTD_AHB_DATA_R & 0x02 == 1){
@@ -40,6 +42,7 @@ int main(void){
             GPIO_PORTK_DATA_R = da_increase;
             da_increase++;
         }
+        GPIO_PORTL_DATA_R = 0x00;
     }
 }
 
