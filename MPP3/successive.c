@@ -25,6 +25,7 @@ int main(void){
             if(da_shift == -1){
                 GPIO_PORTM_DATA_R = ((int)(GPIO_PORTK_DATA_R * 19.53125) % 10) | ((((int)(GPIO_PORTK_DATA_R * 19.53125) / 10) % 10) << 4);
                 GPIO_PORTL_DATA_R = (((int)(GPIO_PORTK_DATA_R * 19.53125) / 100) % 10) & 0x03;
+                GPIO_PORTL_DATA_R |= 0x04;
                 //GPIO_PORTM_DATA_R = (adc_value % 10) | (((adc_value / 10) % 10) << 4);
                 //GPIO_PORTL_DATA_R = ((adc_value / 100) % 10) & 0x03;
             }
@@ -54,8 +55,8 @@ void init_port(void){
     
     GPIO_PORTL_DEN_R = 0x07;
     GPIO_PORTL_DIR_R = 0x07;
+    GPIO_PORTL_DATA_R = 0x00;
 }
-
 
 void init_adc(void){
     ADC0_ACTSS_R &= ~0x0F;

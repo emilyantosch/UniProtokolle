@@ -21,6 +21,7 @@ int main(void){
             //GPIO_PORTL_DATA_R = ((last_adc_value / 100) % 10) & 0x03;
             GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) % 10) | ((((int)(last_adc_value * 19.53125) / 10) % 10) << 4);
             GPIO_PORTL_DATA_R = (((int)(last_adc_value * 19.53125) / 100) % 10) & 0x03;
+            GPIO_PORTL_DATA_R |= 0x04;
         }
         if(GPIO_PORTD_AHB_DATA_R & 0x02 == 1){
             GPIO_PORTK_DATA_R = da_increase;
@@ -34,8 +35,7 @@ void init_port(void){
 
     SYSCTL_RCGCGPIO_R |= 0x0E08;
     while((SYSCTL_PRGPIO_R & 0x0E08) == 0){}
-    SYSCTL_RCGCADC_R |= 0x01;
-    while((SYSCTL_PRADC_R & 0x01) == 0){}
+    
 
     GPIO_PORTD_AHB_DEN_R = 0x02;
     GPIO_PORTD_AHB_AFSEL_R |= 0x01;
@@ -51,10 +51,13 @@ void init_port(void){
     
     GPIO_PORTL_DEN_R = 0x07;
     GPIO_PORTL_DIR_R = 0x07;
+    GPIO_PORTL_DATA_R = 0x00;
 }
 
 
 void init_adc(void){
+    SYSCTL_RCGCADC_R |= 0x01;
+    while((SYSCTL_PRADC_R & 0x01) == 0){}
     ADC0_ACTSS_R &= ~0x0F;
     ADC0_SSMUX0_R |= 0x0F;
     ADC0_SSCTL0_R |= 0x02;
