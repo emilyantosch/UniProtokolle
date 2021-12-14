@@ -1,0 +1,754 @@
+\documentclass{article}
+
+
+\usepackage{circuitikz} %Für die Schaltpläne
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage{color-env}
+\usepackage[ngerman]{babel}
+\input{structure.tex}
+
+
+\usetikzlibrary{shapes}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{arrows.meta,topaths}
+    \usetikzlibrary{bending}
+    \usetikzlibrary{calc}
+\title{Elektrotechnik 1 Praktikum 1}
+
+
+\usepackage[
+  includehead,
+  headheight = 17mm,
+  footskip = \dimexpr\headsep+\ht\strutbox\relax,
+  tmargin = 0mm,
+  bmargin = \dimexpr17mm+2\ht\strutbox\relax,
+]{geometry}
+
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+
+\definecolor{DarkGreenBlue}{HTML}{264653}
+\definecolor{LightGreenBlue}{HTML}{2A9D8F}
+\definecolor{LightOrange}{HTML}{E9C46A}
+\definecolor{DarkOrange}{HTML}{F4A261}
+\definecolor{RedOrange}{HTML}{E76F51}
+\definecolor{BrightRed}{HTML}{D62828}
+\definecolor{DeepBlue}{HTML}{003049}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{code}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=code,escapeinside=$ $}
+\let\origthelstnumber\thelstnumber
+\makeatletter
+\newcommand*\Suppressnumber{%
+  \lst@AddToHook{OnNewLine}{%
+    \let\thelstnumber\relax%
+     \advance\c@lstnumber-\@ne\relax%
+    }%
+}
+
+\newcommand*\Reactivatenumber[1]{%
+  \setcounter{lstnumber}{\numexpr#1-1\relax}
+  \lst@AddToHook{OnNewLine}{%
+   \let\thelstnumber\origthelstnumber%
+   \refstepcounter{lstnumber}
+  }%
+}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=0.2]{haw.jpg}}
+\renewcommand\headrulewidth{0.5pt}
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{tikzpicture}[overlay,remember picture]
+  \thispagestyle{empty}
+  \fill[black!2] (current page.south west) rectangle (current page.north east);
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+
+    \shade[rounded corners=18pt, left color=DarkGreenBlue, right color=LightGreenBlue] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
+
+    \shade[rounded corners=18pt, left color=LightOrange,right color=DarkOrange] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+
+    \shade[rounded corners=8pt, right color=DarkOrange, left color=LightOrange] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+
+    \shade[rounded corners=12pt, left color=DeepBlue!80, right color=DeepBlue!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+
+    \shade[rounded corners=28pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
+
+    \shade[rounded corners=25pt, left color=RedOrange, right color=DarkOrange] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
+
+    \shade[rounded corners=22pt, left color=DeepBlue,right color=DarkGreenBlue] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
+
+    \shade[rounded corners=8pt, left color=DarkOrange] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
+
+    \shade[rounded corners=12pt, left color=RedOrange] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
+
+    \shade[rounded corners=20pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
+
+  \end{scope}
+
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf MP-P2\\[10pt] Gruppe 4}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
+
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Timer und Interrupts}};
+
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen 2519584\\[3pt] Emily Antosch 2519935};
+
+\end{tikzpicture}
+
+\newpage
+
+
+\tableofcontents
+
+\listoffigures
+
+\lstlistoflistings
+
+\newpage
+
+\section{Einführung}
+
+Im zweiten Praktikum wollen wir uns mit der Konfiguration und Verwendung der Timer-Module des Tiva EK-TM4C1294XL LaunchPad vertraut machen. Dabei werden wir im ersten Teil des Labores einen Binärzähler mit Timerfunktion implementieren. Im zweiten Teil geht es um die Implementierung eines Timer-Interrupts. Als IDE zur Ansteuerung des Boards wird die Software Code Composer Studio verwendet.
+
+\section{Aufgabe 1: Binärzähler mit Timer}
+
+Für die zu bewältigende Aufgabe müssen die GPIO-Pins der Register N und F konfiguriert werden, da diese direkt mit den LEDs des Evaluation Boards verbunden sind. 
+Dazu verwenden wir folgenden Programmabschnitt, den wir schon aus Praktikum 1 kennen:
+
+\begin{lstlisting}[language=c, caption={GPIO-Port Konfiguration}, captionpos=b]
+void init() {
+    // Setting the clock to both registers N and F
+    SYSCTL_RCGCGPIO_R = 0x00001020;
+    // Waiting for the clock to be ready
+    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
+    // Setting the direction of the pins to output
+    GPIO_PORTF_AHB_DIR_R = 0x11;
+    GPIO_PORTN_DIR_R = 0x03;
+    // Enabling all of the pins
+    GPIO_PORTN_DEN_R = 0x03;
+    GPIO_PORTF_AHB_DEN_R = 0x11;
+}
+\end{lstlisting}
+
+\subsection{Teilaufgabe B}
+\label{eq:eins}
+Für das Einstellen der Load Value des Timers im 32-bit Modus wollen wir den Befehl
+\begin{verbatim}
+    TIMER0_TAILR_R = 0x00FFFFFF;
+\end{verbatim}
+
+Den einzustellenden Wert errechnen wir aus der Taktfrequenz f des Boards.
+
+\begin{equation}
+    lV = 1s \cdot f = 1s \cdot 16MHz = 16000000_{10}
+\end{equation}
+Aus den Vorlesungsfolien des Kapitels 5 zu dem 32-bit-Timer haben wir dann den Zahlenwert für die Timerperiode von einer Sekunde gefunden, welche dort mit $0\mathrm{x}00FFFFFF \approx 1,048s$ angegeben ist.
+
+\subsection{Teilaufgabe C}
+
+Mit einem 16-bit-Timer ohne Prescaler kann maximal ein Wert von $T = 65536$ erreicht werden. Dieser entspricht, bei einer Taktfrequenz von $16MHz$, einer Periodendauer von $t = 4,096 ms$. Aus $1s >> 4,096ms$ folgt, dass wir einen Prescaler für das Erreichen unseres Zieles brauchen. Daher rechnen wir:
+\begin{equation}
+    T_{p} = \frac{1s}{2^{16}} = 15,3\mu s \implies \frac{1}{15,3 \mu s} = 65,359kHz = f_p
+\end{equation}
+
+\subsection{Teilaufgabe D}
+
+Wir wollen nun den direkten Wert für unseren Prescaler berechnen, daher rechnen wir:
+
+\begin{equation}
+    p = \frac{16MHz}{f_{p}} = 244,8 \approx 245
+\end{equation}
+
+Um nun die Load Value zu berechnen, nutzen wir eine Formel aus der Vorlesung und schreiben:
+
+\begin{equation}
+    \mathrm{ILR} = (\frac{16M}{245} \cdot 1) - 1 = 65306 - 1
+\end{equation}
+
+Wir schreiben also in unseren Code:
+
+\begin{verbatim}
+    TIMER0_TAPR_R = 245;
+    TIMER0_ TAILR_R = 65306-1;
+\end{verbatim}
+
+\section{Programm: Binärzähler mit Timer}
+
+\begin{task}
+UIn dieser Aufgabe wird der Binärzähler mit Timer implementiert. Das Binärmuster wird mit Hilfe der LED´s ausgegeben. Jede Zahl soll eine Sekunde lang ausgegeben werden, ehe dann die nächste Zahl angezeigt wird. 
+\end{task}
+  
+Der umgesetzte Code sieht wie folgt aus:
+  
+\begin{lstlisting}[language=c, caption={timer.c}, captionpos=b]
+/*
+Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
+Aufgabe 2
+Autoren: Emily Antosch, Florian Tietjen
+Beschreibung: Implementierung des Timers als Zeitmessung fuer die Darstellung von Binaerzahlen mithilfe von LEDs auf dem Evaluation Board.
+*/
+
+#include<stdint.h>
+#include "inc\tm4c1294ncpdt.h"
+
+void init();
+void timerInit();
+
+int main(void)
+{
+    // Call to the init function
+    init();
+    // Call to the timerInit function
+    timerInit();
+    // Initialization of the variables for the binary number
+    unsigned short displayedValue = 0;
+    // Infinite loop
+
+    while(1)
+    {
+        // Calculating the binary number
+        GPIO_PORTF_AHB_DATA_R = (displayedValue & 0x02) << 3 
+        | (displayedValue & 0x01);
+        GPIO_PORTN_DATA_R = (displayedValue & 0x0C) >> 2;
+        // Incrementing the displayedValue
+        displayedValue == 15 ? displayedValue = 0 : displayedValue++;
+        //Waiting for the timer to reach timeout
+        while ((TIMER0_RIS_R & (1<<0)) == 0);
+        // Clearing the timer timeout flag
+        TIMER0_ICR_R |= (1<<0);
+    }
+}
+// Function to initialize the registers
+void init(){
+    // Setting the clock to both registers N and F
+    SYSCTL_RCGCGPIO_R = 0x00001020;
+    // Waiting for the clock to be ready
+    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
+    // Setting the direction of the pins to output
+    // and enabling the both registers with the pins
+    GPIO_PORTF_AHB_DEN_R = 0x11;
+    GPIO_PORTF_AHB_DIR_R = 0x11;
+    GPIO_PORTN_DEN_R = 0x03;
+    GPIO_PORTN_DIR_R = 0x03;
+
+}
+// Function to initialize the timer
+void timerInit(){
+    // Setting the clock to the timer
+    SYSCTL_RCGCTIMER_R |= (1<<0);
+    // Waiting for the clock to be ready
+    while((SYSCTL_PRTIMER_R & 0x01) == 0);
+    // Disabling the timer
+    TIMER0_CTL_R &= ~(1<<0);
+    // Setting the timer to be in 32-bit mode
+    TIMER0_CFG_R = 0x00;
+    // Setting the timer to be in periodic mode and match enable
+    TIMER0_TAMR_R = 0x02 | (1<<3);
+    // Setting the load value to be equal to about 1 second
+    TIMER0_TAILR_R = 0x00FFFFFF;
+    // Enabling the timer
+    TIMER0_CTL_R |= (1<<0);
+}
+
+\end{lstlisting}
+
+Dabei schließen wir das Evaluation Board an, führen das Programm aus und setzen das Board in den Run-Modus. Der Binärzähler beginnt von eins bis 15 hochzuzählen. Die LED´s spiegeln das Muster der Binärzahlen perfekt wieder. Die LED´s leuchten jedes Muster für circa eine Sekunde, ehe sie dann das nächste Binärmuster wiederspiegeln. Um den zeitlichen Abstand zwischen jedem Muster zu überprüfen wird das Oszilloskop an einer der LED´s angeschlossen. Dabei ergibt sich folgendes Bild: 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{TEK00010.PNG}
+    \caption{Zeitlicher Spannungsverlauf an der LED}
+\end{figure}
+
+Mithilfe der Measurement-Funktion des Oszilloskop wurde die Länge eines High-Signals ermittelt. Dabei ergab die ermittelte Zeit $\Delta T = 1,04s$ was ziemlich genau dem erwartetem Wert aus [\ref{eq:eins}] entspricht.
+
+\newpage
+
+\section{Programm: Interrupts und Interrupthandler}
+
+
+\begin{task}
+  UIn der zweiten Aufgabe wird nun ein periodischer Interrupt implementiert. Alle zwei Sekunden soll ein Interrupt auslösen, bei jeder Auslösung soll ein beliebiges LED-Muster angezeigt werden.
+\end{task}
+
+Dazu verwenden wir den folgenden Code:
+
+\begin{lstlisting}[language=c, caption={Timer-Interrupt mithilfe des Timers 2 im 32-bit-mode}, captionpos=b]
+/*
+Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
+Aufgabe 2
+Autoren: Emily Antosch, Florian Tietjen
+Beschreibung: Implementierung eines Interrupts durch einen Timer auf der NVIC-Ebene. Darstellung eines Laufmusters mithilfe der LEDs. */
+
+#include<stdio.h>
+#include<stdint.h>
+#include "inc\tm4c1294ncpdt.h"
+
+// Function prototypes
+void init();
+void timerInit(unsigned long period);
+void Timer2A_Handler();
+
+
+// main function
+int main(void){
+    // Call init function
+    init();
+    // Call timerInit function
+    timerInit(0x01EFFFFF);
+    // Enable timer
+    TIMER2_CTL_R |= 0x00000001;
+    // Empty while loop
+    while(1)
+    {
+
+    }
+}
+// Function to initialize the GPIO pins
+void init(){
+    SYSCTL_RCGCGPIO_R |= 0x00001020;
+    while((SYSCTL_PRGPIO_R & 0x00001020)==0);
+    // Initialization of ports by enabling and setting them to output
+    GPIO_PORTF_AHB_DEN_R |= 0x11;
+    GPIO_PORTF_AHB_DIR_R |= 0x11;
+    GPIO_PORTN_DEN_R |= 0x03;
+    GPIO_PORTN_DIR_R |= 0x03;
+}
+// Function to initialize the timer
+void timerInit(unsigned long period){
+    // Set clock to timer 2
+    SYSCTL_RCGCTIMER_R |= 0x04;
+    // Wait for clock to be set up
+    while((SYSCTL_PRTIMER_R&0x04)==0);
+    //Disable timer 2
+    TIMER2_CTL_R &= ~0x01;
+    //Set timer to 32-bit mode
+    TIMER2_CFG_R = 0x00;
+    // Enable periodic mode
+    TIMER2_TAMR_R = 0x02;
+    // Set load value to parameter period - 1
+    TIMER2_TAILR_R = period-1;
+    // Clear timeout flag
+    TIMER2_ICR_R = 0x01;
+    // Enable timer to start an interrupt on timeout flag
+    TIMER2_IMR_R = 0x01;
+    // Enable NVIC to timer 2 to send an interrupt to CPU
+    NVIC_EN0_R |= (1<<23);
+}
+
+// Function to handle the interrupt
+void Timer2A_Handler(){
+    // Create i for delay
+    int i = 0;
+    // Clear timeout flag
+    TIMER2_ICR_R |= 0x01;
+    // Set LED pattern to light up all LEDs
+    GPIO_PORTN_DATA_R = 0x03;
+    GPIO_PORTF_AHB_DATA_R = 0x11;
+    for(i = 0; i < 600000; i++)
+        ;
+    // Clear LEDs to wait for next interrupt
+    GPIO_PORTN_DATA_R = 0x00;
+    GPIO_PORTF_AHB_DATA_R = 0x00;
+}
+\end{lstlisting}
+
+Für die Interruptbehandlung nutzen wir das Vorlagenprogramm startup$\textunderscore $ccs.c, welches wir im voreingestellten Arbeitsverzeichnis finden und in das Projekt einbinden. Der komplette Code befindet sich im Anhang [\ref{eq:zwei}]. Das Programm beinhaltet die Interrupt-Vector-Tabelle. Wir fügen lediglich den Prototypen des Interrupthandlers aus der Main ein: 
+
+\begin{verbatim}
+    extern void Timer2A_Handler(void);      // Functionprototype
+\end{verbatim}
+
+Und rufen wir diesen an dem richtigen IVT-Eintrag wieder auf: 
+
+\begin{verbatim}
+    Timer2A_Handler,                        // Timer 2 subtimer A
+\end{verbatim}
+
+\newpage
+
+Um nun zu überprüfen, ob der Interrupt wirklich alle zwei Sekunden ausgelöst wird, messen wir mithilfe des Oszilloskop das Signal an der LED:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{TEK00011.PNG}
+    \caption{Zeitlicher Spannungsverlauf an der LED}
+\end{figure}
+
+Da das Aufleuchten der LED zeitlich gesehen ein Teil des nächsten periodischen Interrupts ist, messen wir die Zeit zwischen dem ersten und zweiten Einschalten der LED. Es ergibt sich eine Zeit von $\Delta T = 2,02s$. Also genau die gewünschten zwei Sekunden.
+
+\section{Konklusion}
+
+Die Implementierung von Timern und Interrupts ist gelungen. Bei den Messungen mit dem Oszilloskop konnte erneut der Umgang geübt und vertieft werden. Die Messungen stellen ein wichtiges Instrument zur Analyse und Bewertungen von Signalen dar. So können auch kleinste Ungenauigkeiten festgestellt und interpretiert werden.\\
+Das zweite Praktikum erwies sich als logische Fortsetzung des ersten Praktikums. Dadurch konnten viele Inhalte aus dem ersten Praktikum wiederverwendet werden. Das Programmieren in CCS wird immer vertrauter.
+
+\newpage
+
+\appendix
+
+\section{Anhang}
+
+\subsection*{startup-File}
+\label{eq:zwei}
+\begin{lstlisting}[language=c, caption={startup$\textunderscore$ccs.c}, captionpos=b]
+//*****************************************************************************
+//
+// Startup code for use with TI's Code Composer Studio.
+//
+// Copyright (c) 2011-2014 Texas Instruments Incorporated.  All rights reserved.
+// Software License Agreement
+// 
+// Software License Agreement
+//
+// Texas Instruments (TI) is supplying this software for use solely and
+// exclusively on TI's microcontroller products. The software is owned by
+// TI and/or its suppliers, and is protected under applicable copyright
+// laws. You may not combine this software with "viral" open-source
+// software in order to form a larger program.
+//
+// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
+// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
+// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
+// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+// DAMAGES, FOR ANY REASON WHATSOEVER.
+//
+//*****************************************************************************
+
+#include <stdint.h>
+
+//*****************************************************************************
+//
+// Forward declaration of the default fault handlers.
+//
+//*****************************************************************************
+void ResetISR(void);
+static void NmiSR(void);
+static void FaultISR(void);
+static void IntDefaultHandler(void);
+extern void Timer2A_Handler(void);
+
+//*****************************************************************************
+//
+// External declaration for the reset handler that is to be called when the
+// processor is started
+//
+//*****************************************************************************
+extern void _c_int00(void);
+
+//*****************************************************************************
+//
+// Linker variable that marks the top of the stack.
+//
+//*****************************************************************************
+extern uint32_t __STACK_TOP;
+
+//*****************************************************************************
+//
+// External declarations for the interrupt handlers used by the application.
+//
+//*****************************************************************************
+// To be added by user
+
+//*****************************************************************************
+//
+// The vector table.  Note that the proper constructs must be placed on this to
+// ensure that it ends up at physical address 0x0000.0000 or at the start of
+// the program if located at a start address other than 0.
+//
+//*****************************************************************************
+#pragma DATA_SECTION(g_pfnVectors, ".intvecs")
+void (* const g_pfnVectors[])(void) =
+{
+    (void (*)(void))((uint32_t)&__STACK_TOP),
+                                            // The initial stack pointer
+    ResetISR,                               // The reset handler
+    NmiSR,                                  // The NMI handler
+    FaultISR,                               // The hard fault handler
+    IntDefaultHandler,                      // The MPU fault handler
+    IntDefaultHandler,                      // The bus fault handler
+    IntDefaultHandler,                      // The usage fault handler
+    0,                                      // Reserved
+    0,                                      // Reserved
+    0,                                      // Reserved
+    0,                                      // Reserved
+    IntDefaultHandler,                      // SVCall handler
+    IntDefaultHandler,                      // Debug monitor handler
+    0,                                      // Reserved
+    IntDefaultHandler,                      // The PendSV handler
+    IntDefaultHandler,                      // The SysTick handler
+    IntDefaultHandler,                      // GPIO Port A
+    IntDefaultHandler,                      // GPIO Port B
+    IntDefaultHandler,                      // GPIO Port C
+    IntDefaultHandler,                      // GPIO Port D
+    IntDefaultHandler,                      // GPIO Port E
+    IntDefaultHandler,                      // UART0 Rx and Tx
+    IntDefaultHandler,                      // UART1 Rx and Tx
+    IntDefaultHandler,                      // SSI0 Rx and Tx
+    IntDefaultHandler,                      // I2C0 Master and Slave
+    IntDefaultHandler,                      // PWM Fault
+    IntDefaultHandler,                      // PWM Generator 0
+    IntDefaultHandler,                      // PWM Generator 1
+    IntDefaultHandler,                      // PWM Generator 2
+    IntDefaultHandler,                      // Quadrature Encoder 0
+    IntDefaultHandler,                      // ADC Sequence 0
+    IntDefaultHandler,                      // ADC Sequence 1
+    IntDefaultHandler,                      // ADC Sequence 2
+    IntDefaultHandler,                      // ADC Sequence 3
+    IntDefaultHandler,                      // Watchdog timer
+    IntDefaultHandler,                      // Timer 0 subtimer A
+    IntDefaultHandler,                      // Timer 0 subtimer B
+    IntDefaultHandler,                      // Timer 1 subtimer A
+    IntDefaultHandler,                      // Timer 1 subtimer B
+    Timer2A_Handler,                        // Timer 2 subtimer A
+    IntDefaultHandler,                      // Timer 2 subtimer B
+    IntDefaultHandler,                      // Analog Comparator 0
+    IntDefaultHandler,                      // Analog Comparator 1
+    IntDefaultHandler,                      // Analog Comparator 2
+    IntDefaultHandler,                      // System Control (PLL, OSC, BO)
+    IntDefaultHandler,                      // FLASH Control
+    IntDefaultHandler,                      // GPIO Port F
+    IntDefaultHandler,                      // GPIO Port G
+    IntDefaultHandler,                      // GPIO Port H
+    IntDefaultHandler,                      // UART2 Rx and Tx
+    IntDefaultHandler,                      // SSI1 Rx and Tx
+    IntDefaultHandler,                      // Timer 3 subtimer A
+    IntDefaultHandler,                      // Timer 3 subtimer B
+    IntDefaultHandler,                      // I2C1 Master and Slave
+    IntDefaultHandler,                      // CAN0
+    IntDefaultHandler,                      // CAN1
+    IntDefaultHandler,                      // Ethernet
+    IntDefaultHandler,                      // Hibernate
+    IntDefaultHandler,                      // USB0
+    IntDefaultHandler,                      // PWM Generator 3
+    IntDefaultHandler,                      // uDMA Software Transfer
+    IntDefaultHandler,                      // uDMA Error
+    IntDefaultHandler,                      // ADC1 Sequence 0
+    IntDefaultHandler,                      // ADC1 Sequence 1
+    IntDefaultHandler,                      // ADC1 Sequence 2
+    IntDefaultHandler,                      // ADC1 Sequence 3
+    IntDefaultHandler,                      // External Bus Interface 0
+    IntDefaultHandler,                      // GPIO Port J
+    IntDefaultHandler,                      // GPIO Port K
+    IntDefaultHandler,                      // GPIO Port L
+    IntDefaultHandler,                      // SSI2 Rx and Tx
+    IntDefaultHandler,                      // SSI3 Rx and Tx
+    IntDefaultHandler,                      // UART3 Rx and Tx
+    IntDefaultHandler,                      // UART4 Rx and Tx
+    IntDefaultHandler,                      // UART5 Rx and Tx
+    IntDefaultHandler,                      // UART6 Rx and Tx
+    IntDefaultHandler,                      // UART7 Rx and Tx
+    IntDefaultHandler,                      // I2C2 Master and Slave
+    IntDefaultHandler,                      // I2C3 Master and Slave
+    IntDefaultHandler,                      // Timer 4 subtimer A
+    IntDefaultHandler,                      // Timer 4 subtimer B
+    IntDefaultHandler,                      // Timer 5 subtimer A
+    IntDefaultHandler,                      // Timer 5 subtimer B
+    IntDefaultHandler,                      // FPU
+    0,                                      // Reserved
+    0,                                      // Reserved
+    IntDefaultHandler,                      // I2C4 Master and Slave
+    IntDefaultHandler,                      // I2C5 Master and Slave
+    IntDefaultHandler,                      // GPIO Port M
+    IntDefaultHandler,                      // GPIO Port N
+    0,                                      // Reserved
+    IntDefaultHandler,                      // Tamper
+    IntDefaultHandler,                      // GPIO Port P (Summary or P0)
+    IntDefaultHandler,                      // GPIO Port P1
+    IntDefaultHandler,                      // GPIO Port P2
+    IntDefaultHandler,                      // GPIO Port P3
+    IntDefaultHandler,                      // GPIO Port P4
+    IntDefaultHandler,                      // GPIO Port P5
+    IntDefaultHandler,                      // GPIO Port P6
+    IntDefaultHandler,                      // GPIO Port P7
+    IntDefaultHandler,                      // GPIO Port Q (Summary or Q0)
+    IntDefaultHandler,                      // GPIO Port Q1
+    IntDefaultHandler,                      // GPIO Port Q2
+    IntDefaultHandler,                      // GPIO Port Q3
+    IntDefaultHandler,                      // GPIO Port Q4
+    IntDefaultHandler,                      // GPIO Port Q5
+    IntDefaultHandler,                      // GPIO Port Q6
+    IntDefaultHandler,                      // GPIO Port Q7
+    IntDefaultHandler,                      // GPIO Port R
+    IntDefaultHandler,                      // GPIO Port S
+    IntDefaultHandler,                      // SHA/MD5 0
+    IntDefaultHandler,                      // AES 0
+    IntDefaultHandler,                      // DES3DES 0
+    IntDefaultHandler,                      // LCD Controller 0
+    IntDefaultHandler,                      // Timer 6 subtimer A
+    IntDefaultHandler,                      // Timer 6 subtimer B
+    IntDefaultHandler,                      // Timer 7 subtimer A
+    IntDefaultHandler,                      // Timer 7 subtimer B
+    IntDefaultHandler,                      // I2C6 Master and Slave
+    IntDefaultHandler,                      // I2C7 Master and Slave
+    IntDefaultHandler,                      // HIM Scan Matrix Keyboard 0
+    IntDefaultHandler,                      // One Wire 0
+    IntDefaultHandler,                      // HIM PS/2 0
+    IntDefaultHandler,                      // HIM LED Sequencer 0
+    IntDefaultHandler,                      // HIM Consumer IR 0
+    IntDefaultHandler,                      // I2C8 Master and Slave
+    IntDefaultHandler,                      // I2C9 Master and Slave
+    IntDefaultHandler,                      // GPIO Port T
+    IntDefaultHandler,                      // Fan 1
+    0,                                      // Reserved
+};
+
+//*****************************************************************************
+//
+// This is the code that gets called when the processor first starts execution
+// following a reset event.  Only the absolutely necessary set is performed,
+// after which the application supplied entry() routine is called.  Any fancy
+// actions (such as making decisions based on the reset cause register, and
+// resetting the bits in that register) are left solely in the hands of the
+// application.
+//
+//*****************************************************************************
+void
+ResetISR(void)
+{
+    //
+    // Jump to the CCS C initialization routine.  This will enable the
+    // floating-point unit as well, so that does not need to be done here.
+    //
+    __asm("    .global _c_int00\n"
+          "    b.w     _c_int00");
+}
+
+//*****************************************************************************
+//
+// This is the code that gets called when the processor receives a NMI.  This
+// simply enters an infinite loop, preserving the system state for examination
+// by a debugger.
+//
+//*****************************************************************************
+static void
+NmiSR(void)
+{
+    //
+    // Enter an infinite loop.
+    //
+    while(1)
+    {
+    }
+}
+
+//*****************************************************************************
+//
+// This is the code that gets called when the processor receives a fault
+// interrupt.  This simply enters an infinite loop, preserving the system state
+// for examination by a debugger.
+//
+//*****************************************************************************
+static void
+FaultISR(void)
+{
+    //
+    // Enter an infinite loop.
+    //
+    while(1)
+    {
+    }
+}
+
+//*****************************************************************************
+//
+// This is the code that gets called when the processor receives an unexpected
+// interrupt.  This simply enters an infinite loop, preserving the system state
+// for examination by a debugger.
+//
+//*****************************************************************************
+static void
+IntDefaultHandler(void)
+{
+    //
+    // Go into an infinite loop.
+    //
+    while(1)
+    {
+    }
+}
+
+\end{lstlisting}
+
+\end{document}
