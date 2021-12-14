@@ -10,13 +10,12 @@ int main(void){
     
     unsigned short int da_shift = 6;
     unsigned int adc_value = 0;
-    unsigned int last_adc_value = 0;
+
     GPIO_PORTK_DATA_R = 0x80;
     while (1)
     {
         if(GPIO_PORTD_AHB_DATA_R & 0x02 == 0){
             ADC0_PSSI_R = 0x0001;
-            last_adc_value = adc_value;
             adc_value = read_adc();
             if(adc_value == 0){
                 GPIO_PORTK_DATA_R &= ~(1 << da_shift+1);
@@ -24,8 +23,10 @@ int main(void){
                 GPIO_PORTK_DATA_R |= (1 << da_shift);
             da_shift--;
             if(da_shift == -1){
-                GPIO_PORTM_DATA_R = (adc_value % 10) | (((adc_value / 10) % 10) << 4);
-                GPIO_PORTL_DATA_R = ((adc_value / 100) % 10) & 0x03;
+                GPIO_PORTM_DATA_R = ((int)(GPIO_PORTK_DATA_R * 19.53125) % 10) | ((((int)(GPIO_PORTK_DATA_R * 19.53125) / 10) % 10) << 4);
+                GPIO_PORTL_DATA_R = (((int)(GPIO_PORTK_DATA_R * 19.53125) / 100) % 10) & 0x03;
+                //GPIO_PORTM_DATA_R = (adc_value % 10) | (((adc_value / 10) % 10) << 4);
+                //GPIO_PORTL_DATA_R = ((adc_value / 100) % 10) & 0x03;
             }
         }
     }
