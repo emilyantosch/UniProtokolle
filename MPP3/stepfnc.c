@@ -25,7 +25,7 @@ int main(void){
         ADC0_PSSI_R = 0x0001;
         // Save last value
         adc_value = read_adc();
-        //delay(480);
+        delay(480);
         // If adc detectes a near zero value
         if(adc_value <= 0.1){
             //GPIO_PORTM_DATA_R = (last_adc_value % 10) | (((last_adc_value / 10) % 10) << 4);
@@ -92,4 +92,9 @@ unsigned int read_adc(){
 
     result = (unsigned int)ADC0_SSFIFO0_R * 5000 / 4095;
     return result;
+}
+
+void delay(unsigned int time){
+    unsigned int i = 0;
+    for(i = 0; i < time; i++){}
 }
