@@ -14,9 +14,9 @@
 \usepackage{cite}
 \usepackage{listings}
 \usepackage[nottoc, numbib]{tocbibind}
-\usepackage{color-env}
+\usepackage{../assets/scripts/tex/color-env}
 \usepackage[ngerman]{babel}
-\input{structure.tex}
+\input{../assets/scripts/tex/structure.tex}
 
 
 \usetikzlibrary{shapes}
@@ -96,7 +96,7 @@
 \fancyhead[R]{}
 \fancyfoot[L]{}
 \fancyfoot[C]{\thepage}
-\fancyfoot[R]{\includegraphics[scale=0.2]{haw.jpg}}
+\fancyfoot[R]{\includegraphics[scale=0.2]{../assets/images/haw.jpg}}
 \renewcommand\headrulewidth{0.5pt}
 
 
@@ -189,11 +189,13 @@
 
 \section{Einführung}
 
-Im zweiten Praktikum wollen wir uns mit der Konfiguration und Verwendung der Timer-Module des Tiva EK-TM4C1294XL LaunchPad vertraut machen. Dabei werden wir im ersten Teil des Labores einen Binärzähler mit Timerfunktion implementieren. Im zweiten Teil geht es um die Implementierung eines Timer-Interrupts. Als IDE zur Ansteuerung des Boards wird die Software Code Composer Studio verwendet.
+Im dritten Praktikum wollen wir uns mit dem A/D-Wandler des TivaWare-Boards auseinandersetzen. Dabei wollen wir sowohl herausfinden, wie man mit externen Peripheriegeräten arbeiten kann, als auch das interne A/D-Modul effektiv nutzen. Darüberhinaus interessiert uns auch der PWM-Modus des Timers als mögliche Dimmung einer LED basierend auf dem analogen Signal eines Sensors.(
+In unserem Beispiel verwenden wir einen Joystick
+)
 
-\section{Aufgabe 1: Binärzähler mit Timer}
+\section{Aufgabe 1: Externe D/A-Wandler mit Treppenverfahren}
 
-Für die zu bewältigende Aufgabe müssen die GPIO-Pins der Register N und F konfiguriert werden, da diese direkt mit den LEDs des Evaluation Boards verbunden sind. 
+Für die zu bewältigende Aufgabe müssen die GPIO-Pins der Register N und F konfiguriert werden, da diese direkt mit den LEDs des Evaluation Boards verbunden sind.
 Dazu verwenden wir folgenden Programmabschnitt, den wir schon aus Praktikum 1 kennen:
 
 \begin{lstlisting}[language=c, caption={GPIO-Port Konfiguration}, captionpos=b]
@@ -337,7 +339,6 @@ Dabei schließen wir das Evaluation Board an, führen das Programm aus und setze
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=1]{TEK00010.PNG}
     \caption{Zeitlicher Spannungsverlauf an der LED}
 \end{figure}
 
@@ -452,7 +453,6 @@ Um nun zu überprüfen, ob der Interrupt wirklich alle zwei Sekunden ausgelöst 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=1]{TEK00011.PNG}
     \caption{Zeitlicher Spannungsverlauf an der LED}
 \end{figure}
 
