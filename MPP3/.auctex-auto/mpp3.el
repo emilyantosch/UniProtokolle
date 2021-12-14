@@ -41,7 +41,6 @@
     "origthelstnumber"
     "thelstnumber")
    (LaTeX-add-labels
-    "eq:eins"
     "eq:zwei")
    (LaTeX-add-xcolor-definecolors
     "DarkGreenBlue"

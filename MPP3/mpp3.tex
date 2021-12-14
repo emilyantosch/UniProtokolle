@@ -189,71 +189,112 @@
 
 \section{Einführung}
 
-Im dritten Praktikum wollen wir uns mit dem A/D-Wandler des TivaWare-Boards auseinandersetzen. Dabei wollen wir sowohl herausfinden, wie man mit externen Peripheriegeräten arbeiten kann, als auch das interne A/D-Modul effektiv nutzen. Darüberhinaus interessiert uns auch der PWM-Modus des Timers als mögliche Dimmung einer LED basierend auf dem analogen Signal eines Sensors.(
-In unserem Beispiel verwenden wir einen Joystick
-)
+Im dritten Praktikum wollen wir uns mit dem A/D-Wandler des TivaWare-Boards auseinandersetzen. Dabei wollen wir sowohl herausfinden, wie man mit externen Peripheriegeräten arbeiten kann, als auch das interne A/D-Modul effektiv nutzen. Darüberhinaus interessiert uns auch der PWM-Modus des Timers als mögliche Dimmung einer LED basierend auf dem analogen Signal eines Sensors (in unserem Beispiel verwenden wir einen Joystick).
 
 \section{Aufgabe 1: Externe D/A-Wandler mit Treppenverfahren}
 
-Für die zu bewältigende Aufgabe müssen die GPIO-Pins der Register N und F konfiguriert werden, da diese direkt mit den LEDs des Evaluation Boards verbunden sind.
-Dazu verwenden wir folgenden Programmabschnitt, den wir schon aus Praktikum 1 kennen:
+In unserer ersten Aufgabe benutzen wir das in der Vorlesung behandelte Treppenverfahren, um den Spannungswert eines Komparators zu ermitteln und diesen mittels BCD-Code auf einem Display auszugeben. Wir möchten zudem dann die Richtigkeit unseres Ergebnisses überprüfen, indem wir die verschiedenen Spannungen auf dem Oszilloskop anzeigen lassen. Die Triggerspannung erhalten wir dabei von Pin $PL(2)$.
 
-\begin{lstlisting}[language=c, caption={GPIO-Port Konfiguration}, captionpos=b]
-void init() {
-    // Setting the clock to both registers N and F
-    SYSCTL_RCGCGPIO_R = 0x00001020;
-    // Waiting for the clock to be ready
-    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
-    // Setting the direction of the pins to output
-    GPIO_PORTF_AHB_DIR_R = 0x11;
-    GPIO_PORTN_DIR_R = 0x03;
-    // Enabling all of the pins
-    GPIO_PORTN_DEN_R = 0x03;
-    GPIO_PORTF_AHB_DEN_R = 0x11;
+Wir verwenden dabei folgenden Code:
+
+\begin{lstlisting}[language=c, caption{stepfnc.c zur Approximation der Spannung $U_{E}$ mit dem Treppenverfahren}, captionpos=b]
+/*
+Mikroprozessortechnik P3 - Aufgabe 1
+Autoren: Emily Antosch, Florian Tietjen
+Beschreibung: Dieses Programm approximiert den Spannungswert der Spannung UE vom Komparator durch das Treppenverfahren.
+*/
+#include<stdio.h>
+#include<stdint.h>
+#include "/home/akku/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c1294ncpdt.h"
+
+// Prototypes
+void init_port(void);
+void init_adc(void);
+unsigned int read_adc();
+
+
+int main(void){
+    // Initilization of the varibales
+    unsigned short int da_increase = 0;
+    unsigned int adc_value = 0;
+    unsigned int last_adc_value = da_increase-1;
+
+    while (1)
+    {
+        // ADC start
+        ADC0_PSSI_R = 0x0001;
+        // Save last value
+        adc_value = read_adc();
+        //delay(480);
+        // If adc detectes a near zero value
+        if(adc_value <= 0.1){
+            //GPIO_PORTM_DATA_R = (last_adc_value % 10) | (((last_adc_value / 10) % 10) << 4);
+            //GPIO_PORTL_DATA_R = ((last_adc_value / 100) % 10) & 0x03;
+            GPIO_PORTL_DATA_R |= 0x04;
+            GPIO_PORTL_DATA_R = 0x02;
+            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 1000 % 10) << 4 | ((((int)(last_adc_value * 19.53125) / 100) % 10));
+            GPIO_PORTL_DATA_R = 0x01;
+            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 10 % 10) << 4;
+        }
+        // If the button is not pressed
+        if(GPIO_PORTD_AHB_DATA_R & 0x02 == 1){
+            // Continue operation
+            GPIO_PORTK_DATA_R = da_increase;
+            da_increase++;
+        }
+        GPIO_PORTL_DATA_R = 0x00;
+    }
+}
+
+
+void init_port(void){
+    // Wait for clock for GPIO to be ready
+    SYSCTL_RCGCGPIO_R |= 0x0E08;
+    while((SYSCTL_PRGPIO_R & 0x0E08) == 0){}
+
+    // Initilization of the port D with ADC
+    GPIO_PORTD_AHB_DEN_R = 0x02;
+    GPIO_PORTD_AHB_AFSEL_R |= 0x01;
+    GPIO_PORTD_AHB_DEN_R &= ~0x01;
+    GPIO_PORTD_AHB_AMSEL_R |= 0x01;
+    GPIO_PORTD_AHB_PUR_R = 0x02;
+
+    // Initilization of the port K with the output
+    GPIO_PORTK_DEN_R = 0xFF;
+    GPIO_PORTK_DIR_R = 0xFF;
+    // Initilization of the port M for the BCD display
+    GPIO_PORTM_DEN_R = 0xFF;
+    GPIO_PORTM_DIR_R = 0xFF;
+    // Initilization of the port L for the BCD display and trigger pulse
+    GPIO_PORTL_DEN_R = 0x07;
+    GPIO_PORTL_DIR_R = 0x07;
+    GPIO_PORTL_DATA_R = 0x00;
+}
+
+
+void init_adc(void){
+    // Wait for clock for ADC to be ready
+    SYSCTL_RCGCADC_R |= 0x01;
+    while((SYSCTL_PRADC_R & 0x01) == 0){}
+    // Disable the ADC
+    ADC0_ACTSS_R &= ~0x0F;
+    // Set the corresponding Sequencer
+    ADC0_SSMUX0_R |= 0x0F;
+    // Set the corresponding Sequencer 0, length = 1
+    ADC0_SSCTL0_R |= 0x02;
+    // Enable the ADC
+    ADC0_ACTSS_R |= 0x01;
+}
+// Unused function for now
+unsigned int read_adc(){
+    unsigned int result = 0;
+    while((ADC0_SSFSTAT0_R & (1<<8)) == 0){}
+
+    result = (unsigned int)ADC0_SSFIFO0_R * 5000 / 4095;
+    return result;
 }
 \end{lstlisting}
 
-\subsection{Teilaufgabe B}
-\label{eq:eins}
-Für das Einstellen der Load Value des Timers im 32-bit Modus wollen wir den Befehl
-\begin{verbatim}
-    TIMER0_TAILR_R = 0x00FFFFFF;
-\end{verbatim}
-
-Den einzustellenden Wert errechnen wir aus der Taktfrequenz f des Boards.
-
-\begin{equation}
-    lV = 1s \cdot f = 1s \cdot 16MHz = 16000000_{10}
-\end{equation}
-Aus den Vorlesungsfolien des Kapitels 5 zu dem 32-bit-Timer haben wir dann den Zahlenwert für die Timerperiode von einer Sekunde gefunden, welche dort mit $0\mathrm{x}00FFFFFF \approx 1,048s$ angegeben ist.
-
-\subsection{Teilaufgabe C}
-
-Mit einem 16-bit-Timer ohne Prescaler kann maximal ein Wert von $T = 65536$ erreicht werden. Dieser entspricht, bei einer Taktfrequenz von $16MHz$, einer Periodendauer von $t = 4,096 ms$. Aus $1s >> 4,096ms$ folgt, dass wir einen Prescaler für das Erreichen unseres Zieles brauchen. Daher rechnen wir:
-\begin{equation}
-    T_{p} = \frac{1s}{2^{16}} = 15,3\mu s \implies \frac{1}{15,3 \mu s} = 65,359kHz = f_p
-\end{equation}
-
-\subsection{Teilaufgabe D}
-
-Wir wollen nun den direkten Wert für unseren Prescaler berechnen, daher rechnen wir:
-
-\begin{equation}
-    p = \frac{16MHz}{f_{p}} = 244,8 \approx 245
-\end{equation}
-
-Um nun die Load Value zu berechnen, nutzen wir eine Formel aus der Vorlesung und schreiben:
-
-\begin{equation}
-    \mathrm{ILR} = (\frac{16M}{245} \cdot 1) - 1 = 65306 - 1
-\end{equation}
-
-Wir schreiben also in unseren Code:
-
-\begin{verbatim}
-    TIMER0_TAPR_R = 245;
-    TIMER0_ TAILR_R = 65306-1;
-\end{verbatim}
 
 \section{Programm: Binärzähler mit Timer}
 
