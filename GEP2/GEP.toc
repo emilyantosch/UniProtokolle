@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {3.3}Messung von verschiedenen Kenndaten der B6-Brücke bei ohmsch-induktiver Last}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Auswertung}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Kennlinie von Steuerspannung zu Zündwinkel}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}{8}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmsch-induktiver Last}{10}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Scheinleistung und Leistungsfaktor}{10}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Konklusion}{11}{section.5}%
+\contentsline {section}{\numberline {5}Konklusion}{12}{section.5}%
