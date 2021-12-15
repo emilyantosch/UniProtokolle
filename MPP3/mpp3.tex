@@ -198,6 +198,14 @@ In unserer ersten Aufgabe benutzen wir das in der Vorlesung behandelte Treppenve
 Wir verwenden dabei folgenden Code:
 
 \begin{lstlisting}[language=c, caption={stepfnc.c zur Approximation der Spannung $U_{E}$ mit dem Treppenverfahren}, captionpos=b]
+\end{lstlisting}
+
+
+\section{Aufgabe 3: Dimmen einer LED mithilfe des internen A/D-Wandlers}
+
+In der nächsten Aufgabe wollen wir uns mit dem internen A/D-Wandler befassen. Mit diesem messen wir die Ausgangsspannung eines Joysticks in der Y-Achse. Einen Pin des Ports M verbinden wir dann mit einer LED, um diese mit einem der Timer im PWM-Modus zu dimmen. Eine Bewegung führt daher zu einer Erhöhung oder Verringerung der Helligkeit der LED. Dafür verwenden wir den folgenden Code:
+
+\begin{lstlisting}[language=c, caption={Das Programm dim.c zum Dimmen von einer LED mithilfe eines Joysticks in Y-Richtung}, captionpos=b]
 #include<stdio.h>
 #include<stdint.h>
 #include "inc/tm4c1294ncpdt.h"
@@ -209,7 +217,7 @@ unsigned int read_adc();
 
 int main(void){
 
-    unsigned int adc_value = 0; // ADC value variable
+    int adc_value = 0; // ADC value variable
     unsigned short int minmax = 0; // If 0 then min, if 1 then max
     init_port();
     init_timer();
@@ -219,16 +227,16 @@ int main(void){
     {
         ADC0_PSSI_R = 0x0001; // enable ADC0 SS0
         adc_value = read_adc(); // Read ADC value
-        printf("Spannung: %d\n",adc_value); // Print ADC value
+        printf("Spannung: \%d\n",adc_value); // Print ADC value
 
         if(!(GPIO_PORTM_DATA_R &= (1<<1))){
             // If the button is not pressed
-            TIMER2_TAMATCHR_R = 8000 + (2000 - adc_value) * 4 * (95.0 / 100.0); // Set the match value for PWM from 95% to 5%
+            TIMER2_TAMATCHR_R = 8000 + (2000 - adc_value) * 4 * 0.95; // Set the match value for PWM from 95\% to 5\%
         }
         else{
             // If the button is pressed
             minmax = !minmax;
-            TIMER2_TAMATCHR_R = 8000 + (2 - (minmax ? 0x04 : 0x00)) * 4000 * (95.0 / 100.0); // Set the match value for PWM for either min or max
+            TIMER2_TAMATCHR_R = 8000 + (2 - (minmax ? 0x04 : 0x00)) * 4000 * 0.95; // Set the match value for PWM for either min or max
             while(GPIO_PORTM_DATA_R &= (1<<1)); // Wait until the button is released
         }
     }
@@ -297,11 +305,44 @@ unsigned int read_adc(){
     return result;
 }
 
+
 \end{lstlisting}
 
+Dabei stellen wir die Initial Load Value des Timer 2, den wir mit unserem Output auf die LED verbinden (PM0), auf $16000$. Aus
+\[ T_{0} = \frac{1}{f_{0}} = \frac{1}{1kHz} = 1ms \]
+\[ L_{ILR} = T_{0} \cdot f_{TIVA} = 1ms \cdot 16MHz = 16000\]
+können wir dann also die volle Periodenweite berechnen, die wir als ILR einstellen müssen. Für die Ruhestellung des Joysticks bekommen wir also einen Wert von $8000$. Die Pulsweite des Timersignals soll zwischen den beiden Extrema 95\% und 5\% HIGH pro Periode variieren. Wir rechnen:
 
-\section{Aufgabe 3: Dimmen einer LED mithilfe des internen A/D-Wandlers}
+\[m = 8000 + (2000 - u_{adc}) \cdot 4 \cdot 0,95\]
 
-In der nächsten Aufgabe wollen wir uns mit dem internen A/D-Wandler befassen. Mit diesem messen wir die Ausgangsspannung eines Joysticks in der Y-Achse. Einen Pin des Ports M verbinden wir dann mit einer LED, um diese mit einem der Timer im PWM-Modus zu dimmen. Eine Bewegung führt daher zu einer Erhöhung oder Verringerung der Helligkeit der LED. Dafür verwenden wir den
+Dabei ist $m$ die zu berechnende Match-Value, ab welchem Punkt das Signal auf LOW schaltet, und $u_{adc}$ die Spannung, die wir aus dem internen AD-Wandler bekommen in Milivolt, in einem Bereich von $u_{adc} \in [0mV, 4000mV]$. Im Labor haben wir das Programm auf den Mikrocontroller übertragen und gestartet. Mit dem Oszilloskop haben wir dann folgende Bilder bekommen, wenn wir uns den Ausgang des PWM-Timers anschauen:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{normal_better.png}
+  \caption{PWM im Verhältnis 1:1}
+  \label{fig:normal}
+\end{figure}
+
+Im ersten Beispiel können wir sehr gut erkennen, dass wir unseren Timer richtig konfiguriert haben und unser Verhältnis sowohl im Bereich von ca. $1ms$ liegt, als auch jeweils die Hälfte der Periode ein HIGH- bzw. LOW-Signal anliegt.
+
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{brightest.png}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $96,2^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{darkest.png}
+    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $114,2^{\circ}$}
+  \end{subfigure}
+  \label{fig:bright_dark}
+  \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
+\end{figure}
+
+An diesen beiden Bildern ist sehr gut erkennbar, dass auch der Rest des Programms gut ineinander greift. Beim Bewegen des Joysticks in die entsprechende Richtung verschiebt sich der Anteil der HIGH-Signale drastisch. Bei maximaler Helligkeit ist nur noch ein kleiner Anteil einer Periode LOW. Bei minimaler Helligkeit nimmt das Signal pulsförmige Gestalt an und lässt wenig Gesamtleistung zur LED fließen.
 
 \end{document}

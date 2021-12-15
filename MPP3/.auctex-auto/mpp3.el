@@ -39,6 +39,9 @@
     '("Reactivatenumber" 1)
     "Suppressnumber"
     "origthelstnumber"
-    "thelstnumber"))
+    "thelstnumber")
+   (LaTeX-add-labels
+    "fig:normal"
+    "fig:bright_dark"))
  :latex)
 
