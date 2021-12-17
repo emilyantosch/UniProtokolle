@@ -332,17 +332,21 @@ Im ersten Beispiel können wir sehr gut erkennen, dass wir unseren Timer richtig
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{brightest.png}
-    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $96,2^{\circ}$}
+    \caption{Oszillogramm zur hellsten Einstellung}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{darkest.png}
-    \caption{Oszilloskopbild zur Messung 3.3 für den Winkel $114,2^{\circ}$}
+    \caption{Oszillogramm zur dunkelsten Einstellung}
   \end{subfigure}
   \label{fig:bright_dark}
-  \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
+  \caption{Darstellung der PWM-Dimmung der LED vom maximalen zum minimalen Grenzwert}
 \end{figure}
 
 An diesen beiden Bildern ist sehr gut erkennbar, dass auch der Rest des Programms gut ineinander greift. Beim Bewegen des Joysticks in die entsprechende Richtung verschiebt sich der Anteil der HIGH-Signale drastisch. Bei maximaler Helligkeit ist nur noch ein kleiner Anteil einer Periode LOW. Bei minimaler Helligkeit nimmt das Signal pulsförmige Gestalt an und lässt wenig Gesamtleistung zur LED fließen.
 
+\section{Konklusion}
+\label{sec:konklusion}
+
+Aus diesem Labor konnte viele wichtige Dinge für das weitere Arbeiten mit Mikrocontrollern gelernt werden. Sowohl der Umgang mit analogen Eingängen mit externen und internen AD-Wandlern, als auch das ausgeben eines analogen Signals über den PWM-Modus des Timers konnte geübt und verinnerlicht werden. Das Treppenverfahren, um aus digitalen Werten eine analoge Spannung anzunähern enthält einen hohen praktischen Wert für spätere Projekte und Module.
 \end{document}
