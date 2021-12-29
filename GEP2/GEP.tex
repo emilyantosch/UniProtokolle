@@ -198,6 +198,9 @@ berechnen. Um nun eine ohmsche Last zu berechnen, die die Schaltung in diesen We
 
 \subsection{Messung der Steuerspannung und der gleichgerichteten Spannung}
 
+Wir bauen nun also entsprechend der im Labor erklärten Einrichtung und der Vorbereitung entsprechend die Messschaltung auf. Dabei ist besonders auf eine korrekte Einstellung der Spannungswerte als auch auf eine korrekte Verdrahtung der sechs Thyristoren zu achten, damit diese auch in den richtigen Momenten schalten.
+
+\noindent
 Wir wollen zunächst unseren Offset bei der Einstellung unseres Zündverzögerungswinkels ermitteln. Dabei stellen wir unsere Steuerspannung $U_{St} = 10V$ auf das Maximum ein und messen vom Nulldurchgang der Spannung $U_{21}$ zur ersten Zündung. Wir erhalten eine Verzögerung von $\Delta t = 3.68ms$, damit rechnen wir
 
 \begin{equation*}
@@ -263,11 +266,12 @@ Beispielhaft wollen wir uns dann auch das Oszilloskopbild mit den Spannungen $U_
   \caption{Beispielhafte Bilder vom Oszilloskop}
 \end{figure}
 
+Besonders deutlich wird bei diesen beiden Bildern, wie eine Erhöhung des Zündverzögerungswinkels sich auf die Form der gleichgerichteten Spannung $U_{di\alpha}$ auswirkt. Die Spannung wirkt immer abgeschnittener. Dieses Verhalten und den Einfluss auf den Effektivwert des Spannung wollen wir uns im Folgenden einmal genauer anschauen.
 
 \subsection{Messung von verschiedenen Kenndaten der B6-Brücke bei ohmscher Last}
 
-Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, also eine Zusammenschaltung von drei $100\Omega$-Widerständen, verschiedene Kenndaten der B6-Brücke anschauen. Auch hier schauen wir uns die Werte in Abhängigkeit von dem Zündverzögerungswinkel $\alpha$ ausgehend von unserem Offset in $18^{\circ}$-Schritten an. Dabei entsprechen $18^{\circ}$ genau einer Milisekunde Verzögerung.
-
+Im nächsten Schritt wollen wir uns unter der vorher berechneten ohmschen Last, also eine Zusammenschaltung von drei $100\Omega$-Widerständen, verschiedene Kenndaten der B6-Brücke anschauen. Auch hier schauen wir uns die Werte in Abhängigkeit von dem Zündverzögerungswinkel $\alpha$ ausgehend von unserem Offset in $18^{\circ}$-Schritten an. Dabei entsprechen $18^{\circ}$ genau einem Kästchen auf dem Oszilloskopbild nach entsprechender Skalierung, was uns die Messung der verschiedenen Werte stark erleichtert.
+\newpage
 \begin{table}[h]
   \centering
   \begin{tabular}{|c|c|c|c|c|c|}
@@ -397,6 +401,8 @@ Wir erkennen eine leichte Veränderung bei den Werten zum ohmschen Versuch. Inte
   \caption{Zur Messung 3.3: Bilder vom Oszilloskop}
 \end{figure}
 
+\noindent
+Besonders deutlich auf diesen Darstellungen des Oszilloskops im Vergleich zu der ohmschen Last aus Messung 3.2 wird hier die Glättung der gleichgerichteten Spannung. Anstatt von zwar klar getrennten Peaks entsteht nun ein weitaus fließenderer Übergang. Dies bestätigt die in der Vorlesung gelernten Inhalte.
 \newpage
 \section{Auswertung}
 
@@ -419,7 +425,7 @@ Wir erkennen einen anti-proportionalen Zusammenhang zwischen der Steuerspannung 
 \end{equation*}
 
 ermitteln können.
-
+\newpage
 \subsection{Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}
 \label{sec:kennlinie-von-winkel}
 
@@ -456,6 +462,8 @@ Wir wiederholen die Analyse jedoch diesmal bei ohmsch-induktiver Last. Die Kennl
   \caption{Gemessene zur theoretischen Kennlinie bei ohmsch-induktiver Last}
   \label{fig:udiaalphainduk}
 \end{figure}
+
+\pagebreak[4]
 Auch hier berechnen wir die theoretische Steuerkennlinie über
 
 \begin{equation*}
@@ -467,6 +475,7 @@ Auch hier berechnen wir die theoretische Steuerkennlinie über
 
 mit der Gleichung (\ref{eq:3}).
 
+\noindent
 Diese Kennlinien sind am Beginn der Messung ziemlich nah beieinander, driften jedoch ab einem Winkel von ca. $\alpha = 78,2^{\circ}$ stark voneinader ab. Die theoretische Kennlinie geht dabei auch weit in den negativen Bereich über. Dies lässt sich auf die Speichereigenschaft der Spule zurückführen. In der mathematischen Berechnung erreicht der $cos(\alpha)$ für $\alpha > 90^{\circ}$ den negativen Bereich, weshalb die berechnete Kennlinie hier in den negativen Bereich übergeht.
 
 \subsection{Scheinleistung und Leistungsfaktor}
@@ -487,7 +496,7 @@ Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 
 
 \begin{table}[h]
   \centering
-  \begin{subtable}{.45\linewidth}
+  \begin{subtable}{.4\linewidth}
     \centering
     \caption{bei ohmscher Last}
     \begin{tabular}{|c|c|c|}
@@ -512,7 +521,7 @@ Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 
       \hline
     \end{tabular}
   \end{subtable}
-  \begin{subtable}{.45\linewidth}
+  \begin{subtable}{.4\linewidth}
     \centering
     \caption{bei ohmsch-induktiver Last}
     \begin{tabular}{|c|c|c|}
@@ -541,18 +550,27 @@ Die Größen für die Berechnung der beiden Werte können wir aus den Messungen 
   \label{tab:scheinfak}
 \end{table}
 
-\begin{figure}[h]
+
+\pagebreak[4]
+
+Mit diesen Werten möchten wir nun eine neue Kennlinie für den Leistungsfaktor plotten.
+%\pagebreak[4]
+
+\begin{figure}[!h]
   \centering
   \includegraphics[width=.75\textwidth]{../assets/images/GEP2/lambda_alpha.png}
   \caption{Kennlinie der gemessenen und theoretischen Leistungsfaktoren}
   \label{fig:lambda}
 \end{figure}
 
+
 Wir können hier erkennen, dass die theoretische Kennlinie sehr der Kennlinie entspricht, die wir auch bei der gleichgerichteten Spannung beobachtet haben. Dadurch, dass die Schaltung nicht rückspeisefähig ist, können wir an der realen Kennlinie zum Leistungsfaktor bei ohmsch-induktiver Last einen Peak gegen Ende der Kennlinie erkennen, die im Gegensatz zu der theoretischen Kennlinie steht, bei die Rückspeisefähigkeit vorausgesetzt wird. Abgesehen davon sind die reale und theoretische Kennlinie sehr nah beieinander und verlaufen mit einem kleinen Offset nebeneinander.
+
+
 \section{Konklusion}
 \label{sec:konklusion}
 
-Aus dem Labor konnten wir das Verhalten der B6-Brücke besser verstehen, indem wir verschiedene Schaltvorgänge und Verhalten der Schaltung genauer untersucht haben und selbst mit der Schaltung arbeiten konnten. Wir haben viele Zusammenhänge, die wir in der Vorlesung bereits behandelt haben, besser verinnerlichen können.
+Aus dem Labor konnten wir das Verhalten der B6-Brücke besser verstehen, indem wir verschiedene Schaltvorgänge und Verhalten der Schaltung genauer untersucht haben und selbst mit der Schaltung arbeiten konnten. Wir haben viele Zusammenhänge, die wir in der Vorlesung bereits behandelt haben, besser verinnerlichen können. Auch ein konzentrierter sorgfältiger Aufbau einer Messschaltung mit vielen verschiedenen Bauelement und Einstellmöglichkeiten wurde geübt. Viele grundlegende Handgriffe und Arbeitsweisen in einem elektrotechnischen Labor sind viel klarer geworden. Besonders durch die Corona-Pandemie fehlte es vorher an Routine und Praxierfahrung im Labor.
 
 
 \end{document}

@@ -11,5 +11,5 @@
 \contentsline {subsection}{\numberline {4.1}Kennlinie von Steuerspannung zu Zündwinkel}{8}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Kennlinie von Winkel zu gleichgerichteten Spannung bei ohmscher Last}{9}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Kennlinie von Winkel zu gleichgerichteter Spannung bei ohmsch-induktiver Last}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Scheinleistung und Leistungsfaktor}{10}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Konklusion}{11}{section.5}%
+\contentsline {subsection}{\numberline {4.4}Scheinleistung und Leistungsfaktor}{11}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Konklusion}{12}{section.5}%

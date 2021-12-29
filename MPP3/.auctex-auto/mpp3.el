@@ -41,20 +41,8 @@
     "origthelstnumber"
     "thelstnumber")
    (LaTeX-add-labels
-    "eq:zwei")
-   (LaTeX-add-xcolor-definecolors
-    "DarkGreenBlue"
-    "LightGreenBlue"
-    "LightOrange"
-    "DarkOrange"
-    "RedOrange"
-    "BrightRed"
-    "DeepBlue"
-    "codegreen"
-    "codegray"
-    "codepurple"
-    "backcolour")
-   (LaTeX-add-listings-lstdefinestyles
-    "code"))
+    "fig:normal"
+    "fig:bright_dark"
+    "sec:konklusion"))
  :latex)
 

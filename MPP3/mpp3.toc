@@ -2,10 +2,4 @@
 \contentsline {section}{Abbildungsverzeichnis}{2}{section*.2}%
 \contentsline {section}{\numberline {1}Einführung}{3}{section.1}%
 \contentsline {section}{\numberline {2}Aufgabe 1: Externe D/A-Wandler mit Treppenverfahren}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Teilaufgabe B}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Teilaufgabe C}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Teilaufgabe D}{3}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Programm: Binärzähler mit Timer}{4}{section.3}%
-\contentsline {section}{\numberline {4}Programm: Interrupts und Interrupthandler}{6}{section.4}%
-\contentsline {section}{\numberline {5}Konklusion}{8}{section.5}%
-\contentsline {section}{\numberline {A}Anhang}{9}{appendix.A}%
+\contentsline {section}{\numberline {3}Aufgabe 3: Dimmen einer LED mithilfe des internen A/D-Wandlers}{3}{section.3}%

@@ -1,0 +1,193 @@
+\documentclass{article}
+
+
+\usepackage{circuitikz} %Für die Schaltpläne
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage{../assets/scripts/tex/color-env}
+\usepackage[ngerman]{babel}
+%\input{../assets/scripts/tex/structure.tex}
+
+
+\usetikzlibrary{shapes}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{arrows.meta,topaths}
+    \usetikzlibrary{bending}
+    \usetikzlibrary{calc}
+\title{Elektrotechnik 1 Praktikum 1}
+
+
+\usepackage[
+  includehead,
+  headheight = 17mm,
+  footskip = \dimexpr\headsep+\ht\strutbox\relax,
+  tmargin = 0mm,
+  bmargin = \dimexpr17mm+2\ht\strutbox\relax,
+]{geometry}
+
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+
+\definecolor{DarkGreenBlue}{HTML}{264653}
+\definecolor{LightGreenBlue}{HTML}{2A9D8F}
+\definecolor{LightOrange}{HTML}{E9C46A}
+\definecolor{DarkOrange}{HTML}{F4A261}
+\definecolor{RedOrange}{HTML}{E76F51}
+\definecolor{BrightRed}{HTML}{D62828}
+\definecolor{DeepBlue}{HTML}{003049}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{code}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=code}
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=0.2]{../assets/images/haw.jpg}}
+\renewcommand\headrulewidth{0.5pt}
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{tikzpicture}[overlay,remember picture]
+  \thispagestyle{empty}
+  \fill[black!2] (current page.south west) rectangle (current page.north east);
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+
+    \shade[rounded corners=18pt, left color=DarkGreenBlue, right color=LightGreenBlue] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
+
+    \shade[rounded corners=18pt, left color=LightOrange,right color=DarkOrange] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+
+    \shade[rounded corners=8pt, right color=DarkOrange, left color=LightOrange] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+
+    \shade[rounded corners=12pt, left color=DeepBlue!80, right color=DeepBlue!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+
+    \shade[rounded corners=28pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
+
+    \shade[rounded corners=25pt, left color=RedOrange, right color=DarkOrange] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
+
+    \shade[rounded corners=22pt, left color=DeepBlue,right color=DarkGreenBlue] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
+
+    \shade[rounded corners=8pt, left color=DarkOrange] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
+
+    \shade[rounded corners=12pt, left color=RedOrange] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
+
+    \shade[rounded corners=20pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
+
+  \end{scope}
+
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf GEP\\[10pt] Praktikum 2}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
+
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont B6-Brücke}};
+
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf 4. Januar}} \\[3pt] Emily Antosch 2519935 \\[3pt] Florian Tietjen \\[3pt] Karl Döring};
+
+\end{tikzpicture}
+
+\newpage
+
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+
+\newpage
+
+\section{Einführung}
+
+Dieser Laborbericht zum dritten Praktikum in Grundlagen der Energietechnik befasst sich  mit den Eigenschaften von Transformatoren im Kontext der Energietechnik. Dabei wird ein Einphasentransformator untersucht und die Parameter des Ersatzschaltbildes ermittelt.
+
+Im Allgemeinen nutzt man Transformatoren zur Änderung des Spannungspegels von Wechselspannungen. Die Änderung der Spannung von der Primärseite zur Sekundärseite ist dabei direkt proportional zum Übersetzungsverhältnis. Dieses wird durch die Menge an Wicklungen um einen gemeinsamen Eisenkern bestimmt. Dieser zur Verbesserung der Induktion, was zu einem besseren Wirkungsfaktor führt. Über die Eigenschaft von elektrischen Strömen in Leitern Magnetfelder zu erzeugen wird von der Primärseite eine Spannung in der Sekundärseite induziert, welche dem vorher genannten Übersetzungsverhältnis entspricht.
+
+Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der Spannung entstehen, besser im elektrotechnischen Kontext beschreiben zu können, wird ein allgemeines Ersatzschaltbild verwendet. Dabei beziehen sich die verschiedenen Größen auf die Primärseite. Alle Bauteile mit einer $1$ im Index ist auf der Primärseite, alle Bauteile mit einer $2$ sind hingegen auf der Sekundärseite.
+
+
+Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die wir vom Typenschild im Labor ablesen:
+
+
+
+
+\section{Konklusion}
+\label{sec:konklusion}
+
+
+
+\end{document}

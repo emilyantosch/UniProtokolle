@@ -197,599 +197,156 @@ In unserer ersten Aufgabe benutzen wir das in der Vorlesung behandelte Treppenve
 
 Wir verwenden dabei folgenden Code:
 
-\begin{lstlisting}[language=c, caption{stepfnc.c zur Approximation der Spannung $U_{E}$ mit dem Treppenverfahren}, captionpos=b]
-/*
-Mikroprozessortechnik P3 - Aufgabe 1
-Autoren: Emily Antosch, Florian Tietjen
-Beschreibung: Dieses Programm approximiert den Spannungswert der Spannung UE vom Komparator durch das Treppenverfahren.
-*/
+\begin{lstlisting}[language=c, caption={stepfnc.c zur Approximation der Spannung $U_{E}$ mit dem Treppenverfahren}, captionpos=b]
+\end{lstlisting}
+
+
+\section{Aufgabe 3: Dimmen einer LED mithilfe des internen A/D-Wandlers}
+
+In der nächsten Aufgabe wollen wir uns mit dem internen A/D-Wandler befassen. Mit diesem messen wir die Ausgangsspannung eines Joysticks in der Y-Achse. Einen Pin des Ports M verbinden wir dann mit einer LED, um diese mit einem der Timer im PWM-Modus zu dimmen. Eine Bewegung führt daher zu einer Erhöhung oder Verringerung der Helligkeit der LED. Dafür verwenden wir den folgenden Code:
+
+\begin{lstlisting}[language=c, caption={Das Programm dim.c zum Dimmen von einer LED mithilfe eines Joysticks in Y-Richtung}, captionpos=b]
 #include<stdio.h>
 #include<stdint.h>
-#include "/home/akku/ti/TivaWare_C_Series-2.2.0.295/inc/tm4c1294ncpdt.h"
+#include "inc/tm4c1294ncpdt.h"
 
-// Prototypes
 void init_port(void);
+void init_timer(void);
 void init_adc(void);
 unsigned int read_adc();
 
-
 int main(void){
-    // Initilization of the varibales
-    unsigned short int da_increase = 0;
-    unsigned int adc_value = 0;
-    unsigned int last_adc_value = da_increase-1;
+
+    int adc_value = 0; // ADC value variable
+    unsigned short int minmax = 0; // If 0 then min, if 1 then max
+    init_port();
+    init_timer();
+    init_adc();
 
     while (1)
     {
-        // ADC start
-        ADC0_PSSI_R = 0x0001;
-        // Save last value
-        adc_value = read_adc();
-        //delay(480);
-        // If adc detectes a near zero value
-        if(adc_value <= 0.1){
-            //GPIO_PORTM_DATA_R = (last_adc_value % 10) | (((last_adc_value / 10) % 10) << 4);
-            //GPIO_PORTL_DATA_R = ((last_adc_value / 100) % 10) & 0x03;
-            GPIO_PORTL_DATA_R |= 0x04;
-            GPIO_PORTL_DATA_R = 0x02;
-            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 1000 % 10) << 4 | ((((int)(last_adc_value * 19.53125) / 100) % 10));
-            GPIO_PORTL_DATA_R = 0x01;
-            GPIO_PORTM_DATA_R = ((int)(last_adc_value * 19.53125) / 10 % 10) << 4;
+        ADC0_PSSI_R = 0x0001; // enable ADC0 SS0
+        adc_value = read_adc(); // Read ADC value
+        printf("Spannung: \%d\n",adc_value); // Print ADC value
+
+        if(!(GPIO_PORTM_DATA_R &= (1<<1))){
+            // If the button is not pressed
+            TIMER2_TAMATCHR_R = 8000 + (2000 - adc_value) * 4 * 0.95; // Set the match value for PWM from 95\% to 5\%
         }
-        // If the button is not pressed
-        if(GPIO_PORTD_AHB_DATA_R & 0x02 == 1){
-            // Continue operation
-            GPIO_PORTK_DATA_R = da_increase;
-            da_increase++;
+        else{
+            // If the button is pressed
+            minmax = !minmax;
+            TIMER2_TAMATCHR_R = 8000 + (2 - (minmax ? 0x04 : 0x00)) * 4000 * 0.95; // Set the match value for PWM for either min or max
+            while(GPIO_PORTM_DATA_R &= (1<<1)); // Wait until the button is released
         }
-        GPIO_PORTL_DATA_R = 0x00;
     }
 }
 
-
+// Initialize the port
 void init_port(void){
-    // Wait for clock for GPIO to be ready
-    SYSCTL_RCGCGPIO_R |= 0x0E08;
-    while((SYSCTL_PRGPIO_R & 0x0E08) == 0){}
-
-    // Initilization of the port D with ADC
-    GPIO_PORTD_AHB_DEN_R = 0x02;
-    GPIO_PORTD_AHB_AFSEL_R |= 0x01;
-    GPIO_PORTD_AHB_DEN_R &= ~0x01;
-    GPIO_PORTD_AHB_AMSEL_R |= 0x01;
-    GPIO_PORTD_AHB_PUR_R = 0x02;
-
-    // Initilization of the port K with the output
-    GPIO_PORTK_DEN_R = 0xFF;
-    GPIO_PORTK_DIR_R = 0xFF;
-    // Initilization of the port M for the BCD display
-    GPIO_PORTM_DEN_R = 0xFF;
-    GPIO_PORTM_DIR_R = 0xFF;
-    // Initilization of the port L for the BCD display and trigger pulse
-    GPIO_PORTL_DEN_R = 0x07;
-    GPIO_PORTL_DIR_R = 0x07;
-    GPIO_PORTL_DATA_R = 0x00;
-}
-
-
-void init_adc(void){
-    // Wait for clock for ADC to be ready
+    // Enable clock for port M and Port E
+    SYSCTL_RCGCGPIO_R |= (1 << 4) | (1 << 11);
+    // Ready?
+    while(!(SYSCTL_PRGPIO_R & ((1<<4)|(1<<11))));
+    // Enable clock for ADC0
     SYSCTL_RCGCADC_R |= 0x01;
-    while((SYSCTL_PRADC_R & 0x01) == 0){}
-    // Disable the ADC
+    // Ready?
+    while(!(SYSCTL_PRADC_R & 0x01));
+    // Port E setup
+    GPIO_PORTE_AHB_AFSEL_R |= 0x01;
+    GPIO_PORTE_AHB_DEN_R &= ~0x01;
+    GPIO_PORTE_AHB_AMSEL_R |= 0x01;
+    // Port M setup
+    GPIO_PORTM_DEN_R = 0x03;
+    GPIO_PORTM_DIR_R = 0x01;
+    GPIO_PORTM_DATA_R &= ~(1<<0);
+    GPIO_PORTM_AFSEL_R = 0x01;
+    GPIO_PORTM_PCTL_R = 0x03;
+    GPIO_PORTM_PUR_R = 0x02;
+}
+// Initialize the timer
+void init_timer(void){
+    // Enable clock for timer 2
+    SYSCTL_RCGCTIMER_R |= (1<<2);
+    // Ready?
+    while (!(SYSCTL_PRTIMER_R & (1<<2)));
+    // Timer 2 setup
+    TIMER2_CTL_R &= ~(1<<0);
+    TIMER2_CFG_R = 0x04;
+    TIMER2_TAMR_R = (1<<3) | 0x02;
+    TIMER2_TAILR_R = 16000-1;
+    TIMER2_TAMATCHR_R = 16000/2 - 1;
+    GPIO_PORTM_DATA_R |= (1<<0);
+    TIMER2_CTL_R |= (1<<0);
+}
+// Initialize the ADC
+void init_adc(void){
+
+    unsigned int waitcycle = 0;
+    // Disable ADC0 SS0
     ADC0_ACTSS_R &= ~0x0F;
-    // Set the corresponding Sequencer
-    ADC0_SSMUX0_R |= 0x0F;
-    // Set the corresponding Sequencer 0, length = 1
+    // Magic code
+    SYSCTL_PLLFREQ0_R |= (1<<23);
+    while(!(SYSCTL_PLLSTAT_R & 0x01));
+    ADC0_CC_R |= 0x01;
+    waitcycle++;
+    SYSCTL_PLLFREQ0_R &= ~(1<<23);
+    // Set Sequencer 0 to sample channel 0, AIN3
+    ADC0_SSMUX0_R |= 0x03;
     ADC0_SSCTL0_R |= 0x02;
-    // Enable the ADC
+    // Enable ADC0 SS0
     ADC0_ACTSS_R |= 0x01;
 }
-// Unused function for now
+// Read the ADC
 unsigned int read_adc(){
     unsigned int result = 0;
-    while((ADC0_SSFSTAT0_R & (1<<8)) == 0){}
-
+    while(ADC0_SSFSTAT0_R & (1<<8));
     result = (unsigned int)ADC0_SSFIFO0_R * 5000 / 4095;
     return result;
 }
-\end{lstlisting}
 
-
-\section{Programm: Binärzähler mit Timer}
-
-\begin{task}
-UIn dieser Aufgabe wird der Binärzähler mit Timer implementiert. Das Binärmuster wird mit Hilfe der LED´s ausgegeben. Jede Zahl soll eine Sekunde lang ausgegeben werden, ehe dann die nächste Zahl angezeigt wird. 
-\end{task}
-  
-Der umgesetzte Code sieht wie folgt aus:
-  
-\begin{lstlisting}[language=c, caption={timer.c}, captionpos=b]
-/*
-Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
-Aufgabe 2
-Autoren: Emily Antosch, Florian Tietjen
-Beschreibung: Implementierung des Timers als Zeitmessung fuer die Darstellung von Binaerzahlen mithilfe von LEDs auf dem Evaluation Board.
-*/
-
-#include<stdint.h>
-#include "inc\tm4c1294ncpdt.h"
-
-void init();
-void timerInit();
-
-int main(void)
-{
-    // Call to the init function
-    init();
-    // Call to the timerInit function
-    timerInit();
-    // Initialization of the variables for the binary number
-    unsigned short displayedValue = 0;
-    // Infinite loop
-
-    while(1)
-    {
-        // Calculating the binary number
-        GPIO_PORTF_AHB_DATA_R = (displayedValue & 0x02) << 3 
-        | (displayedValue & 0x01);
-        GPIO_PORTN_DATA_R = (displayedValue & 0x0C) >> 2;
-        // Incrementing the displayedValue
-        displayedValue == 15 ? displayedValue = 0 : displayedValue++;
-        //Waiting for the timer to reach timeout
-        while ((TIMER0_RIS_R & (1<<0)) == 0);
-        // Clearing the timer timeout flag
-        TIMER0_ICR_R |= (1<<0);
-    }
-}
-// Function to initialize the registers
-void init(){
-    // Setting the clock to both registers N and F
-    SYSCTL_RCGCGPIO_R = 0x00001020;
-    // Waiting for the clock to be ready
-    while ((SYSCTL_PRGPIO_R & 0x00001020) == 0);
-    // Setting the direction of the pins to output
-    // and enabling the both registers with the pins
-    GPIO_PORTF_AHB_DEN_R = 0x11;
-    GPIO_PORTF_AHB_DIR_R = 0x11;
-    GPIO_PORTN_DEN_R = 0x03;
-    GPIO_PORTN_DIR_R = 0x03;
-
-}
-// Function to initialize the timer
-void timerInit(){
-    // Setting the clock to the timer
-    SYSCTL_RCGCTIMER_R |= (1<<0);
-    // Waiting for the clock to be ready
-    while((SYSCTL_PRTIMER_R & 0x01) == 0);
-    // Disabling the timer
-    TIMER0_CTL_R &= ~(1<<0);
-    // Setting the timer to be in 32-bit mode
-    TIMER0_CFG_R = 0x00;
-    // Setting the timer to be in periodic mode and match enable
-    TIMER0_TAMR_R = 0x02 | (1<<3);
-    // Setting the load value to be equal to about 1 second
-    TIMER0_TAILR_R = 0x00FFFFFF;
-    // Enabling the timer
-    TIMER0_CTL_R |= (1<<0);
-}
 
 \end{lstlisting}
 
-Dabei schließen wir das Evaluation Board an, führen das Programm aus und setzen das Board in den Run-Modus. Der Binärzähler beginnt von eins bis 15 hochzuzählen. Die LED´s spiegeln das Muster der Binärzahlen perfekt wieder. Die LED´s leuchten jedes Muster für circa eine Sekunde, ehe sie dann das nächste Binärmuster wiederspiegeln. Um den zeitlichen Abstand zwischen jedem Muster zu überprüfen wird das Oszilloskop an einer der LED´s angeschlossen. Dabei ergibt sich folgendes Bild: 
+Dabei stellen wir die Initial Load Value des Timer 2, den wir mit unserem Output auf die LED verbinden (PM0), auf $16000$. Aus
+\[ T_{0} = \frac{1}{f_{0}} = \frac{1}{1kHz} = 1ms \]
+\[ L_{ILR} = T_{0} \cdot f_{TIVA} = 1ms \cdot 16MHz = 16000\]
+können wir dann also die volle Periodenweite berechnen, die wir als ILR einstellen müssen. Für die Ruhestellung des Joysticks bekommen wir also einen Wert von $8000$. Die Pulsweite des Timersignals soll zwischen den beiden Extrema 95\% und 5\% HIGH pro Periode variieren. Wir rechnen:
+
+\[m = 8000 + (2000 - u_{adc}) \cdot 4 \cdot 0,95\]
+
+Dabei ist $m$ die zu berechnende Match-Value, ab welchem Punkt das Signal auf LOW schaltet, und $u_{adc}$ die Spannung, die wir aus dem internen AD-Wandler bekommen in Milivolt, in einem Bereich von $u_{adc} \in [0mV, 4000mV]$. Im Labor haben wir das Programm auf den Mikrocontroller übertragen und gestartet. Mit dem Oszilloskop haben wir dann folgende Bilder bekommen, wenn wir uns den Ausgang des PWM-Timers anschauen:
 
 \begin{figure}[h]
-    \centering
-    \caption{Zeitlicher Spannungsverlauf an der LED}
+  \centering
+  \includegraphics[width=\textwidth]{normal_better.png}
+  \caption{PWM im Verhältnis 1:1}
+  \label{fig:normal}
 \end{figure}
 
-Mithilfe der Measurement-Funktion des Oszilloskop wurde die Länge eines High-Signals ermittelt. Dabei ergab die ermittelte Zeit $\Delta T = 1,04s$ was ziemlich genau dem erwartetem Wert aus [\ref{eq:eins}] entspricht.
+Im ersten Beispiel können wir sehr gut erkennen, dass wir unseren Timer richtig konfiguriert haben und unser Verhältnis sowohl im Bereich von ca. $1ms$ liegt, als auch jeweils die Hälfte der Periode ein HIGH- bzw. LOW-Signal anliegt.
 
-\newpage
-
-\section{Programm: Interrupts und Interrupthandler}
-
-
-\begin{task}
-  UIn der zweiten Aufgabe wird nun ein periodischer Interrupt implementiert. Alle zwei Sekunden soll ein Interrupt auslösen, bei jeder Auslösung soll ein beliebiges LED-Muster angezeigt werden.
-\end{task}
-
-Dazu verwenden wir den folgenden Code:
-
-\begin{lstlisting}[language=c, caption={Timer-Interrupt mithilfe des Timers 2 im 32-bit-mode}, captionpos=b]
-/*
-Mikroprozessortechnik 1 - Praktikum 2: Timer und Interrupts
-Aufgabe 2
-Autoren: Emily Antosch, Florian Tietjen
-Beschreibung: Implementierung eines Interrupts durch einen Timer auf der NVIC-Ebene. Darstellung eines Laufmusters mithilfe der LEDs. */
-
-#include<stdio.h>
-#include<stdint.h>
-#include "inc\tm4c1294ncpdt.h"
-
-// Function prototypes
-void init();
-void timerInit(unsigned long period);
-void Timer2A_Handler();
-
-
-// main function
-int main(void){
-    // Call init function
-    init();
-    // Call timerInit function
-    timerInit(0x01EFFFFF);
-    // Enable timer
-    TIMER2_CTL_R |= 0x00000001;
-    // Empty while loop
-    while(1)
-    {
-
-    }
-}
-// Function to initialize the GPIO pins
-void init(){
-    SYSCTL_RCGCGPIO_R |= 0x00001020;
-    while((SYSCTL_PRGPIO_R & 0x00001020)==0);
-    // Initialization of ports by enabling and setting them to output
-    GPIO_PORTF_AHB_DEN_R |= 0x11;
-    GPIO_PORTF_AHB_DIR_R |= 0x11;
-    GPIO_PORTN_DEN_R |= 0x03;
-    GPIO_PORTN_DIR_R |= 0x03;
-}
-// Function to initialize the timer
-void timerInit(unsigned long period){
-    // Set clock to timer 2
-    SYSCTL_RCGCTIMER_R |= 0x04;
-    // Wait for clock to be set up
-    while((SYSCTL_PRTIMER_R&0x04)==0);
-    //Disable timer 2
-    TIMER2_CTL_R &= ~0x01;
-    //Set timer to 32-bit mode
-    TIMER2_CFG_R = 0x00;
-    // Enable periodic mode
-    TIMER2_TAMR_R = 0x02;
-    // Set load value to parameter period - 1
-    TIMER2_TAILR_R = period-1;
-    // Clear timeout flag
-    TIMER2_ICR_R = 0x01;
-    // Enable timer to start an interrupt on timeout flag
-    TIMER2_IMR_R = 0x01;
-    // Enable NVIC to timer 2 to send an interrupt to CPU
-    NVIC_EN0_R |= (1<<23);
-}
-
-// Function to handle the interrupt
-void Timer2A_Handler(){
-    // Create i for delay
-    int i = 0;
-    // Clear timeout flag
-    TIMER2_ICR_R |= 0x01;
-    // Set LED pattern to light up all LEDs
-    GPIO_PORTN_DATA_R = 0x03;
-    GPIO_PORTF_AHB_DATA_R = 0x11;
-    for(i = 0; i < 600000; i++)
-        ;
-    // Clear LEDs to wait for next interrupt
-    GPIO_PORTN_DATA_R = 0x00;
-    GPIO_PORTF_AHB_DATA_R = 0x00;
-}
-\end{lstlisting}
-
-Für die Interruptbehandlung nutzen wir das Vorlagenprogramm startup$\textunderscore $ccs.c, welches wir im voreingestellten Arbeitsverzeichnis finden und in das Projekt einbinden. Der komplette Code befindet sich im Anhang [\ref{eq:zwei}]. Das Programm beinhaltet die Interrupt-Vector-Tabelle. Wir fügen lediglich den Prototypen des Interrupthandlers aus der Main ein: 
-
-\begin{verbatim}
-    extern void Timer2A_Handler(void);      // Functionprototype
-\end{verbatim}
-
-Und rufen wir diesen an dem richtigen IVT-Eintrag wieder auf: 
-
-\begin{verbatim}
-    Timer2A_Handler,                        // Timer 2 subtimer A
-\end{verbatim}
-
-\newpage
-
-Um nun zu überprüfen, ob der Interrupt wirklich alle zwei Sekunden ausgelöst wird, messen wir mithilfe des Oszilloskop das Signal an der LED:
 
 \begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
     \centering
-    \caption{Zeitlicher Spannungsverlauf an der LED}
+    \includegraphics[width=\linewidth]{brightest.png}
+    \caption{Oszillogramm zur hellsten Einstellung}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{darkest.png}
+    \caption{Oszillogramm zur dunkelsten Einstellung}
+  \end{subfigure}
+  \label{fig:bright_dark}
+  \caption{Darstellung der PWM-Dimmung der LED vom maximalen zum minimalen Grenzwert}
 \end{figure}
 
-Da das Aufleuchten der LED zeitlich gesehen ein Teil des nächsten periodischen Interrupts ist, messen wir die Zeit zwischen dem ersten und zweiten Einschalten der LED. Es ergibt sich eine Zeit von $\Delta T = 2,02s$. Also genau die gewünschten zwei Sekunden.
+An diesen beiden Bildern ist sehr gut erkennbar, dass auch der Rest des Programms gut ineinander greift. Beim Bewegen des Joysticks in die entsprechende Richtung verschiebt sich der Anteil der HIGH-Signale drastisch. Bei maximaler Helligkeit ist nur noch ein kleiner Anteil einer Periode LOW. Bei minimaler Helligkeit nimmt das Signal pulsförmige Gestalt an und lässt wenig Gesamtleistung zur LED fließen.
 
 \section{Konklusion}
+\label{sec:konklusion}
 
-Die Implementierung von Timern und Interrupts ist gelungen. Bei den Messungen mit dem Oszilloskop konnte erneut der Umgang geübt und vertieft werden. Die Messungen stellen ein wichtiges Instrument zur Analyse und Bewertungen von Signalen dar. So können auch kleinste Ungenauigkeiten festgestellt und interpretiert werden.\\
-Das zweite Praktikum erwies sich als logische Fortsetzung des ersten Praktikums. Dadurch konnten viele Inhalte aus dem ersten Praktikum wiederverwendet werden. Das Programmieren in CCS wird immer vertrauter.
-
-\newpage
-
-\appendix
-
-\section{Anhang}
-
-\subsection*{startup-File}
-\label{eq:zwei}
-\begin{lstlisting}[language=c, caption={startup$\textunderscore$ccs.c}, captionpos=b]
-//*****************************************************************************
-//
-// Startup code for use with TI's Code Composer Studio.
-//
-// Copyright (c) 2011-2014 Texas Instruments Incorporated.  All rights reserved.
-// Software License Agreement
-// 
-// Software License Agreement
-//
-// Texas Instruments (TI) is supplying this software for use solely and
-// exclusively on TI's microcontroller products. The software is owned by
-// TI and/or its suppliers, and is protected under applicable copyright
-// laws. You may not combine this software with "viral" open-source
-// software in order to form a larger program.
-//
-// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
-// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
-// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
-// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
-// DAMAGES, FOR ANY REASON WHATSOEVER.
-//
-//*****************************************************************************
-
-#include <stdint.h>
-
-//*****************************************************************************
-//
-// Forward declaration of the default fault handlers.
-//
-//*****************************************************************************
-void ResetISR(void);
-static void NmiSR(void);
-static void FaultISR(void);
-static void IntDefaultHandler(void);
-extern void Timer2A_Handler(void);
-
-//*****************************************************************************
-//
-// External declaration for the reset handler that is to be called when the
-// processor is started
-//
-//*****************************************************************************
-extern void _c_int00(void);
-
-//*****************************************************************************
-//
-// Linker variable that marks the top of the stack.
-//
-//*****************************************************************************
-extern uint32_t __STACK_TOP;
-
-//*****************************************************************************
-//
-// External declarations for the interrupt handlers used by the application.
-//
-//*****************************************************************************
-// To be added by user
-
-//*****************************************************************************
-//
-// The vector table.  Note that the proper constructs must be placed on this to
-// ensure that it ends up at physical address 0x0000.0000 or at the start of
-// the program if located at a start address other than 0.
-//
-//*****************************************************************************
-#pragma DATA_SECTION(g_pfnVectors, ".intvecs")
-void (* const g_pfnVectors[])(void) =
-{
-    (void (*)(void))((uint32_t)&__STACK_TOP),
-                                            // The initial stack pointer
-    ResetISR,                               // The reset handler
-    NmiSR,                                  // The NMI handler
-    FaultISR,                               // The hard fault handler
-    IntDefaultHandler,                      // The MPU fault handler
-    IntDefaultHandler,                      // The bus fault handler
-    IntDefaultHandler,                      // The usage fault handler
-    0,                                      // Reserved
-    0,                                      // Reserved
-    0,                                      // Reserved
-    0,                                      // Reserved
-    IntDefaultHandler,                      // SVCall handler
-    IntDefaultHandler,                      // Debug monitor handler
-    0,                                      // Reserved
-    IntDefaultHandler,                      // The PendSV handler
-    IntDefaultHandler,                      // The SysTick handler
-    IntDefaultHandler,                      // GPIO Port A
-    IntDefaultHandler,                      // GPIO Port B
-    IntDefaultHandler,                      // GPIO Port C
-    IntDefaultHandler,                      // GPIO Port D
-    IntDefaultHandler,                      // GPIO Port E
-    IntDefaultHandler,                      // UART0 Rx and Tx
-    IntDefaultHandler,                      // UART1 Rx and Tx
-    IntDefaultHandler,                      // SSI0 Rx and Tx
-    IntDefaultHandler,                      // I2C0 Master and Slave
-    IntDefaultHandler,                      // PWM Fault
-    IntDefaultHandler,                      // PWM Generator 0
-    IntDefaultHandler,                      // PWM Generator 1
-    IntDefaultHandler,                      // PWM Generator 2
-    IntDefaultHandler,                      // Quadrature Encoder 0
-    IntDefaultHandler,                      // ADC Sequence 0
-    IntDefaultHandler,                      // ADC Sequence 1
-    IntDefaultHandler,                      // ADC Sequence 2
-    IntDefaultHandler,                      // ADC Sequence 3
-    IntDefaultHandler,                      // Watchdog timer
-    IntDefaultHandler,                      // Timer 0 subtimer A
-    IntDefaultHandler,                      // Timer 0 subtimer B
-    IntDefaultHandler,                      // Timer 1 subtimer A
-    IntDefaultHandler,                      // Timer 1 subtimer B
-    Timer2A_Handler,                        // Timer 2 subtimer A
-    IntDefaultHandler,                      // Timer 2 subtimer B
-    IntDefaultHandler,                      // Analog Comparator 0
-    IntDefaultHandler,                      // Analog Comparator 1
-    IntDefaultHandler,                      // Analog Comparator 2
-    IntDefaultHandler,                      // System Control (PLL, OSC, BO)
-    IntDefaultHandler,                      // FLASH Control
-    IntDefaultHandler,                      // GPIO Port F
-    IntDefaultHandler,                      // GPIO Port G
-    IntDefaultHandler,                      // GPIO Port H
-    IntDefaultHandler,                      // UART2 Rx and Tx
-    IntDefaultHandler,                      // SSI1 Rx and Tx
-    IntDefaultHandler,                      // Timer 3 subtimer A
-    IntDefaultHandler,                      // Timer 3 subtimer B
-    IntDefaultHandler,                      // I2C1 Master and Slave
-    IntDefaultHandler,                      // CAN0
-    IntDefaultHandler,                      // CAN1
-    IntDefaultHandler,                      // Ethernet
-    IntDefaultHandler,                      // Hibernate
-    IntDefaultHandler,                      // USB0
-    IntDefaultHandler,                      // PWM Generator 3
-    IntDefaultHandler,                      // uDMA Software Transfer
-    IntDefaultHandler,                      // uDMA Error
-    IntDefaultHandler,                      // ADC1 Sequence 0
-    IntDefaultHandler,                      // ADC1 Sequence 1
-    IntDefaultHandler,                      // ADC1 Sequence 2
-    IntDefaultHandler,                      // ADC1 Sequence 3
-    IntDefaultHandler,                      // External Bus Interface 0
-    IntDefaultHandler,                      // GPIO Port J
-    IntDefaultHandler,                      // GPIO Port K
-    IntDefaultHandler,                      // GPIO Port L
-    IntDefaultHandler,                      // SSI2 Rx and Tx
-    IntDefaultHandler,                      // SSI3 Rx and Tx
-    IntDefaultHandler,                      // UART3 Rx and Tx
-    IntDefaultHandler,                      // UART4 Rx and Tx
-    IntDefaultHandler,                      // UART5 Rx and Tx
-    IntDefaultHandler,                      // UART6 Rx and Tx
-    IntDefaultHandler,                      // UART7 Rx and Tx
-    IntDefaultHandler,                      // I2C2 Master and Slave
-    IntDefaultHandler,                      // I2C3 Master and Slave
-    IntDefaultHandler,                      // Timer 4 subtimer A
-    IntDefaultHandler,                      // Timer 4 subtimer B
-    IntDefaultHandler,                      // Timer 5 subtimer A
-    IntDefaultHandler,                      // Timer 5 subtimer B
-    IntDefaultHandler,                      // FPU
-    0,                                      // Reserved
-    0,                                      // Reserved
-    IntDefaultHandler,                      // I2C4 Master and Slave
-    IntDefaultHandler,                      // I2C5 Master and Slave
-    IntDefaultHandler,                      // GPIO Port M
-    IntDefaultHandler,                      // GPIO Port N
-    0,                                      // Reserved
-    IntDefaultHandler,                      // Tamper
-    IntDefaultHandler,                      // GPIO Port P (Summary or P0)
-    IntDefaultHandler,                      // GPIO Port P1
-    IntDefaultHandler,                      // GPIO Port P2
-    IntDefaultHandler,                      // GPIO Port P3
-    IntDefaultHandler,                      // GPIO Port P4
-    IntDefaultHandler,                      // GPIO Port P5
-    IntDefaultHandler,                      // GPIO Port P6
-    IntDefaultHandler,                      // GPIO Port P7
-    IntDefaultHandler,                      // GPIO Port Q (Summary or Q0)
-    IntDefaultHandler,                      // GPIO Port Q1
-    IntDefaultHandler,                      // GPIO Port Q2
-    IntDefaultHandler,                      // GPIO Port Q3
-    IntDefaultHandler,                      // GPIO Port Q4
-    IntDefaultHandler,                      // GPIO Port Q5
-    IntDefaultHandler,                      // GPIO Port Q6
-    IntDefaultHandler,                      // GPIO Port Q7
-    IntDefaultHandler,                      // GPIO Port R
-    IntDefaultHandler,                      // GPIO Port S
-    IntDefaultHandler,                      // SHA/MD5 0
-    IntDefaultHandler,                      // AES 0
-    IntDefaultHandler,                      // DES3DES 0
-    IntDefaultHandler,                      // LCD Controller 0
-    IntDefaultHandler,                      // Timer 6 subtimer A
-    IntDefaultHandler,                      // Timer 6 subtimer B
-    IntDefaultHandler,                      // Timer 7 subtimer A
-    IntDefaultHandler,                      // Timer 7 subtimer B
-    IntDefaultHandler,                      // I2C6 Master and Slave
-    IntDefaultHandler,                      // I2C7 Master and Slave
-    IntDefaultHandler,                      // HIM Scan Matrix Keyboard 0
-    IntDefaultHandler,                      // One Wire 0
-    IntDefaultHandler,                      // HIM PS/2 0
-    IntDefaultHandler,                      // HIM LED Sequencer 0
-    IntDefaultHandler,                      // HIM Consumer IR 0
-    IntDefaultHandler,                      // I2C8 Master and Slave
-    IntDefaultHandler,                      // I2C9 Master and Slave
-    IntDefaultHandler,                      // GPIO Port T
-    IntDefaultHandler,                      // Fan 1
-    0,                                      // Reserved
-};
-
-//*****************************************************************************
-//
-// This is the code that gets called when the processor first starts execution
-// following a reset event.  Only the absolutely necessary set is performed,
-// after which the application supplied entry() routine is called.  Any fancy
-// actions (such as making decisions based on the reset cause register, and
-// resetting the bits in that register) are left solely in the hands of the
-// application.
-//
-//*****************************************************************************
-void
-ResetISR(void)
-{
-    //
-    // Jump to the CCS C initialization routine.  This will enable the
-    // floating-point unit as well, so that does not need to be done here.
-    //
-    __asm("    .global _c_int00\n"
-          "    b.w     _c_int00");
-}
-
-//*****************************************************************************
-//
-// This is the code that gets called when the processor receives a NMI.  This
-// simply enters an infinite loop, preserving the system state for examination
-// by a debugger.
-//
-//*****************************************************************************
-static void
-NmiSR(void)
-{
-    //
-    // Enter an infinite loop.
-    //
-    while(1)
-    {
-    }
-}
-
-//*****************************************************************************
-//
-// This is the code that gets called when the processor receives a fault
-// interrupt.  This simply enters an infinite loop, preserving the system state
-// for examination by a debugger.
-//
-//*****************************************************************************
-static void
-FaultISR(void)
-{
-    //
-    // Enter an infinite loop.
-    //
-    while(1)
-    {
-    }
-}
-
-//*****************************************************************************
-//
-// This is the code that gets called when the processor receives an unexpected
-// interrupt.  This simply enters an infinite loop, preserving the system state
-// for examination by a debugger.
-//
-//*****************************************************************************
-static void
-IntDefaultHandler(void)
-{
-    //
-    // Go into an infinite loop.
-    //
-    while(1)
-    {
-    }
-}
-
-\end{lstlisting}
-
+Aus diesem Labor konnte viele wichtige Dinge für das weitere Arbeiten mit Mikrocontrollern gelernt werden. Sowohl der Umgang mit analogen Eingängen mit externen und internen AD-Wandlern, als auch das ausgeben eines analogen Signals über den PWM-Modus des Timers konnte geübt und verinnerlicht werden. Das Treppenverfahren, um aus digitalen Werten eine analoge Spannung anzunähern enthält einen hohen praktischen Wert für spätere Projekte und Module.
 \end{document}

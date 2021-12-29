@@ -78,6 +78,10 @@ void init_adc(void){
     while((SYSCTL_PRADC_R & 0x01) == 0){}
     // Disable the ADC
     ADC0_ACTSS_R &= ~0x0F;
+    SYSCTL_PLLFREQ0_R |= (1<<23);
+    while(!(SYSCTL_PLLSTAT_R & 0x01));
+    ADC0_CC_R |= 0x01; waitcycle++;
+    SYSCTL_PLLFREQ0_R &= ~(1<<23);
     // Set the corresponding Sequencer
     ADC0_SSMUX0_R |= 0x0F;
     // Set the corresponding Sequencer 0, length = 1
