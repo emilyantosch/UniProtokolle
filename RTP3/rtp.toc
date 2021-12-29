@@ -1,0 +1,6 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}Die Temperaturregelung}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Auswertung}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Evaluation der Genauigkeit des stationären Verhaltens}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Überschwinger der Führungssprungantworten}{5}{subsection.1.1.2}%

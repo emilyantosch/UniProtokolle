@@ -1,0 +1,153 @@
+VAR_INPUT
+    ls1: BOOL; (* Lichtschranke 1 leer *)
+    ls2: BOOL; (* Lichtschranke 2 leer *)
+    ls3: BOOL; (* Lichtschranke 3 leer *)
+    piece_sucked: BOOL; (* Werkstück angesaugt *)
+    storage_empty: BOOL; (* Lagerplatz leer *)
+    piston_extended: BOOL; (* Piston ausgeklappt *)
+    piston_reduced: BOOL; (* Piston eingeklappt *)
+    arm_at_storage: BOOL; (* Arm am Lagerplatz *)
+    arm_at_band: BOOL; (* Arm am Band *)
+END_VAR
+VAR_OUTPUT
+    band_speed: WORD; (* Bandgeschwindigkeit auf Hardware *)
+    extend_piston : BOOL (* Ausschieber auf Hardware ausfahren *)
+    arm_to_lager : BOOL (* Arm zum Lager auf Hardware fahren *)
+    arm_to_band : BOOL (* Arm zum Band auf Hardware fahren *)
+    suck_piece : BOOL (* Werkstück angesaugt *)
+    release_piece : BOOL (* Werkstück loslassen *)
+END_VAR
+VAR
+    S0 : BOOL := TRUE (* Initialisierung des Startzustands*)
+    S1, S2, S3, S4, S5, S6, S7, S8, S9 : BOOL; (* Zustände *)
+    Z1, Z2: CTU := 0; (* Zustandsübergänge *)
+    Z3 : CTUD := 0; (* Zustandsübergänge *)
+    EINAUS: BOOL; (* Ein/Aus *)
+    AUTOMAN: BOOL := 1; (* Automatisch/Manuell *)
+    HAND_BAND_EIN: BOOL; (* Transportband bewegen/stoppen *)
+    HAND_BANDV: WORD; (* Transportband Geschwindigkeit *)
+    HAND_AUSSCHIEBER: BOOL; (* Ausschieber aktiv *)
+    HAND_ARM_ZUM_LAGER: BOOL; (* Arm zum Lager *)
+    HAND_ARM_ZUM_BAND: BOOL; (* Arm zum Band *)
+    HAND_ANSAUGEN: BOOL; (* Werkstück ansaugen *)
+    HAND_LOSLASSEN: BOOL; (* Werkstück loslassen *)
+    reference: BOOL := TRUE; (* Referenzzustand *)
+    T1 : TON; (* Timer für Band *)
+    reference_time : TOF; (* Referenzzeit für Bandgeschwindigkeit *)
+END_VAR
+IF AUTOMAN THEN
+    IF EINAUS THEN
+        IF reference THEN
+            reference := NOT (reference_time.ET = T#5S AND trigger_ls);
+            trigger_ls := ls1 AND ls2 AND ls3;
+            reference_time(IN:=trigger_ls, PT:=T#5S);
+            band_speed := 32500;
+            IF NOT arm_at_band THEN
+                arm_to_band := TRUE;
+                ELSE
+                arm_to_band := FALSE;
+            END_IF;
+        ELSE
+            reference := FALSE;
+            IF (S0 AND NOT S1 AND EINAUS) THEN
+                S1 := TRUE;
+                S0 := FALSE;
+            END_IF;
+            IF (S1 AND NOT S2 AND NOT storage_empty AND piston_reduced) THEN
+                S2 := TRUE;
+                S1 := FALSE;
+            END_IF;
+            IF (S2 AND NOT S3 AND piston_extended AND ls1) THEN
+                S3 := TRUE;
+                S2 := FALSE;
+            END_IF;
+            IF (S3 AND NOT S4 AND arm_at_storage AND piston_reduced) THEN
+                S4 := TRUE;
+                S3 := FALSE;
+            END_IF;
+            IF (S4 AND NOT S5 AND piece_sucked) THEN
+                S5 := TRUE;
+                S4 := FALSE;
+            END_IF;
+            IF (S5 AND NOT S6 AND arm_at_band) THEN
+                S6 := TRUE;
+                S5 := FALSE;
+            END_IF;
+            IF (S6 AND NOT S7 AND NOT piece_sucked) THEN
+                S7 := TRUE;
+                S6 := FALSE;
+            END_IF;
+            IF (S7 AND NOT S8 AND T1.Q) THEN
+                S8 := TRUE;
+                S7 := FALSE;
+                band_speed := 32500;
+            END_IF;
+            IF (S8 AND NOT S9) THEN
+                S9 := TRUE;
+                S8 := FALSE;
+                band_speed := 0;
+            END_IF;
+            IF (S9 AND NOT S0) THEN
+                S0 := TRUE;
+                S9 := FALSE;
+            END_IF;
+            extend_piston := S2;
+            arm_to_lager := S3;
+            suck_piece := S4 OR S5;
+            arm_to_band := S5;
+            release_piece := S6;
+            counter_FP := S7 and NOT counter_FHM;
+            counter_FHM := S7;
+            IF counter_FP THEN
+                counter := counter + 1;
+            END_IF;
+            IF S8 THEN
+                band_speed := 32500;
+            ELSE
+                band_speed := 0;
+            END_IF;
+            Z1(CU:=extend_piston OR NOT ls3, R:=AUTOMAN);
+            Z2(CU:=singeler_open, R:=AUTOMAN);
+            Z3(CU:=NOT ls1, CD:=singeler_open, R:=AUTOMAN);
+            T1(IN:=S7 AND NOT S8, PT:=T#2s);
+        END_IF;
+    END_IF;
+ELSE
+    IF EINAUS THEN
+        IF HAND_BAND_EIN THEN
+            band_speed := HAND_BANDV;
+        ELSE
+            band_speed := 0;
+        END_IF;
+        
+        IF HAND_AUSSCHIEBER THEN
+            extend_piston := TRUE;
+        ELSE
+            extend_piston := FALSE;
+        END_IF;
+
+        IF HAND_ARM_ZUM_LAGER AND NOT HAND_ARM_ZUM_BAND THEN
+            arm_to_lager := TRUE;
+        ELSE
+            arm_to_lager := FALSE;
+        END_IF;
+
+        IF HAND_ARM_ZUM_BAND AND NOT HAND_ARM_ZUM_LAGER THEN
+            arm_to_band := TRUE;
+        ELSE
+            arm_to_band := FALSE;
+        END_IF;  
+
+        IF HAND_ANSAUGEN AND NOT HAND_LOSLASSEN THEN
+            suck_piece := TRUE;
+        ELSE
+            suck_piece := FALSE;  
+        END_IF;
+
+        IF HAND_LOSLASSEN AND NOT HAND_ANSAUGEN THEN
+            release_piece := TRUE;
+        ELSE
+            release_piece := FALSE;
+        END_IF;    
+    END_IF;
+END_IF;
