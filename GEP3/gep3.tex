@@ -187,8 +187,7 @@ Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der
 \end{figure}
 
 
-Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die wir vom Typenschild im Labor ablesen:
-
+Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die wir vom Typenschild im Labor ablesen. Dabei haben wir auf der Primärseite $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$. Mit diesen Angaben können wir nun bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
 
 
 \section{Messung der Wicklungswiderstände beider Seiten}
@@ -197,10 +196,8 @@ Wir messen zunächst die Wicklungswiderstände beider Seiten, indem wir ein Ohmm
 
 \begin{equation*}
   \label{eq:1}
-  R_{1} = , R_{2} =
+  R_{1} = 0,55\Omega, R_{2} = 0,3\Omega
 \end{equation*}
-
-
 
 \section{Leerlaufversuch am Transformator}
 
@@ -213,10 +210,36 @@ Beim Leerlaufversuch am Transformator wollen wir verschiedene Messungen vornehme
   \label{fig:leerlaufaufbau}
 \end{figure}
 
-\subsection{Messung $I_{10}$}
+\subsection{Messung $I_{10}$ und $P_{10}$}
 \label{sec:messung-i_10}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    $22V$ & & \\
+    \hline
+  \end{tabular}
+  \caption{Strom und Leistung in Abhängigkeit von der Spannung $U_{10}$}
+  \label{tab:fifp}
+\end{table}
+
+\subsection{Bestimmung des Spannungsverhätnisses}
+\label{sec:best-des-spann}
+
+Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Die Primärseite weißt dabei eine Spannung von $U_{2} = $ auf, wodurch man mit
+
+\begin{equation*}
+  \label{eq:2}
+  ü = \frac{U_{2}}{U_{1N}} =
+\end{equation*}
+
+einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur gedachten Übertragung liegt an den Herstellungsdifferenzen der Transformatoren. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
 
 
+\subsection{Einschaltmoment der Primärseite}
+\label{sec:einsch-der-prim}
+
+Mithilfe eines Schaltwinkelstellers betrachtet man nun den Einschaltvorgang auf der Primärseite des Transformators. Dabei können wir unseren Schaltwinkelsteller auf einen bestimmten Winkel, eine Dauer in Perioden und die positive oder negative Halbwelle einstellen.
 
 \section{Konklusion}
 \label{sec:konklusion}

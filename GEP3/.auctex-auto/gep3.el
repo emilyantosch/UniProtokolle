@@ -28,6 +28,10 @@
     "eq:1"
     "fig:leerlaufaufbau"
     "sec:messung-i_10"
+    "tab:fifp"
+    "sec:best-des-spann"
+    "eq:2"
+    "sec:einsch-der-prim"
     "sec:konklusion"))
  :latex)
 
