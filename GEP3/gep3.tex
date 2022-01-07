@@ -236,11 +236,36 @@ Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Di
 einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur gedachten Übertragung liegt an den Herstellungsdifferenzen der Transformatoren. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
 
 
+\subsection{Stromverlauf im Nennpunkt}
+\label{sec:stromv-im-nennp}
+
+Im nächsten Schritt wird der Stromverlauf bei Nennspannung und bei halber Nennspannung mithilfe einer Stromzange am Oszilloskop betrachtet:
+
+\begin{figure}[h]
+  \centering
+
+  \caption{Oszillogramm bei voller Nennspannung}
+  \label{fig:vollnennstrom}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+
+  \caption{Ozillogramm bei halber Nennspannung}
+  \label{fig:halbnennstrom}
+\end{figure}
+
+Es fällt ziemlich deutlich auf, dass bei dem Anlegen der vollen Nennspannung eine vollständige Hystereschleife im Eisenkern des Transformators passiert und der Kern schließlich in die Sättigung geht. Bei halber Nennspannung ist der Effekt auch vorhanden jedoch weitaus weniger deutlich als bei voller Nennspannung. Anhang dieses Beispiels lässt sich die Eigenschaft des Transformators, die sich aus dem Aufbau und Wirkungsweise des Eisenkerns ergibt, gut ableiten. Je nach Umpolung der Magnetfeldkennlinien entsteht eine mehr oder weniger deutliche Hystereschleife im Verlauf des Stroms auf der anderen Seite.
+
 \subsection{Einschaltmoment der Primärseite}
 \label{sec:einsch-der-prim}
 
 Mithilfe eines Schaltwinkelstellers betrachtet man nun den Einschaltvorgang auf der Primärseite des Transformators. Dabei können wir unseren Schaltwinkelsteller auf einen bestimmten Winkel, eine Dauer in Perioden und die positive oder negative Halbwelle einstellen.
+Bei einer positiven Halbwelle, welche für diese Oszillogramme gewählt wurde, schlägt der Transformator bei voller Umpolung der Magnetfeldkennlinien für die eingestellten Perioden um. Die folgenden drei Bilder sind jeweils für $0^{\circ}$, $45^{\circ}$, $90^{\circ}$ und $50$ Perioden.
 
+
+
+Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchsten Einschaltströme. Dies lässt sich dadurch erläutern, dass der Kern nach dem Ausschalten vormagnetisiert ist. Beim Einschalten des Transformators bei der positiven Halbwelle und bei einem Winkel von $0^{\circ}$ wird der Eisenkern zum schlechtesten Zeitpunkt ummagnetisiert, welches die höchste Energie bzw. die höchsten Ströme verursacht. Diesen Effekt nennt man auch Rush-Effekt. Bei einem Erhöhen des Winkels verringert sich der Einschaltstrom deutlich. Da durch ein späteres Einschalten in der positiven Halbwelle ein kleiner Effektivwert der Spannung verwendet wird, läuft der Transformator deutlich langsamer und leichter an. Der Rush-Effekt sorgt, ohne Einschaltwinkelsteller, für extrem hohe Einschaltströme die das Netz belasten können. Typischerweise wird daher ein solcher Winkelsteller auf einen Winkel von z.B. $45^{\circ}$ gestellt. Diese Vorkehrung sorgt für geringere Einschaltströme und einen sanften Anlauf, der keine Belastung für das Netz darstellt.
 \section{Konklusion}
 \label{sec:konklusion}
 

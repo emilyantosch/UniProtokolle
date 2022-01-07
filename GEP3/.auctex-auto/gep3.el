@@ -31,6 +31,9 @@
     "tab:fifp"
     "sec:best-des-spann"
     "eq:2"
+    "sec:stromv-im-nennp"
+    "fig:vollnennstrom"
+    "fig:halbnennstrom"
     "sec:einsch-der-prim"
     "sec:konklusion"))
  :latex)
