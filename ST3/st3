@@ -1,44 +1,3 @@
-VAR_INPUT
-    ls1: BOOL; (* Lichtschranke 1 leer *)
-    ls2: BOOL; (* Lichtschranke 2 leer *)
-    ls3: BOOL; (* Lichtschranke 3 leer *)
-    piece_sucked: BOOL; (* Werkstück angesaugt *)
-    storage_empty: BOOL; (* Lagerplatz leer *)
-    piston_extended: BOOL; (* Piston ausgeklappt *)
-    piston_reduced: BOOL; (* Piston eingeklappt *)
-    arm_at_storage: BOOL; (* Arm am Lagerplatz *)
-    arm_at_band: BOOL; (* Arm am Band *)
-END_VAR
-VAR_OUTPUT
-    singeler_open : BOOL;
-    band_speed: WORD; (* Bandgeschwindigkeit auf Hardware *)
-    extend_piston : BOOL (* Ausschieber auf Hardware ausfahren *)
-    arm_to_lager : BOOL (* Arm zum Lager auf Hardware fahren *)
-    arm_to_band : BOOL (* Arm zum Band auf Hardware fahren *)
-    suck_piece : BOOL (* Werkstück angesaugt *)
-    release_piece : BOOL (* Werkstück loslassen *)
-END_VAR
-VAR
-    S0 : BOOL := TRUE (* Initialisierung des Startzustands*)
-    S1, S2, S3, S4, S5, S6, S7, S8, S9 : BOOL;
-    S10, S11, S12, S13, S14, S15, S16, S17 : BOOL;
-    S18, S19, S20, S21, S22, S23, S24, S25, S26 : BOOL;
-    S27, S28, S29, S30, S31, S32, S33 : BOOL; (* Zustände *)
-    Z1, Z2: CTU := 0; (* Zustandsübergänge *)
-    Z3 : CTUD := 0; (* Zustandsübergänge *)
-    EINAUS: BOOL; (* Ein/Aus *)
-    AUTOMAN: BOOL := 1; (* Automatisch/Manuell *)
-    HAND_BAND_EIN: BOOL; (* Transportband bewegen/stoppen *)
-    HAND_BANDV: WORD; (* Transportband Geschwindigkeit *)
-    HAND_AUSSCHIEBER: BOOL; (* Ausschieber aktiv *)
-    HAND_ARM_ZUM_LAGER: BOOL; (* Arm zum Lager *)
-    HAND_ARM_ZUM_BAND: BOOL; (* Arm zum Band *)
-    HAND_ANSAUGEN: BOOL; (* Werkstück ansaugen *)
-    HAND_LOSLASSEN: BOOL; (* Werkstück loslassen *)
-    reference: BOOL; (* Referenzzustand *)
-    T1 : TON; (* Timer für Band *)
-    reference_time : TOF; (* Referenzzeit für Bandgeschwindigkeit *)
-END_VAR
 IF S0 THEN
     S0 := FALSE; (* Initialisierung des Startzustands *)
     S1 := TRUE;
@@ -74,7 +33,9 @@ IF S0 THEN
     S31 := FALSE;
     S32 := FALSE;
     S33 := FALSE;
-    reference := FALSE;
+    referenz := FALSE;
+	vereinzeler_ivoll := FALSE;
+	band_geschw := 0;
 ELSIF S1 THEN
     IF NOT AUTOMAN AND EINAUS THEN
         S1 := FALSE;
@@ -86,138 +47,150 @@ ELSIF S1 THEN
         S3 := TRUE;
     END_IF;
 ELSIF S3 THEN
-    band_speed := 32500;
+    band_geschw := 32500;
     S3 := FALSE;
     S17 := TRUE;
     S20 := TRUE;
 ELSIF S4 THEN
     IF HAND_BAND_EIN THEN
-        band_speed := HAND_BANDV;
+        band_geschw := HAND_BANDV;
     ELSE
-        band_speed := 0;
+        band_geschw := 0;
     END_IF;
-    
+ 
     IF HAND_AUSSCHIEBER THEN
-        extend_piston := TRUE;
+        schieber_ausfahren := TRUE;
     ELSE
-        extend_piston := FALSE;
+        schieber_ausfahren := FALSE;
     END_IF;
-
+ 
     IF HAND_ARM_ZUM_LAGER AND NOT HAND_ARM_ZUM_BAND THEN
-        arm_to_lager := TRUE;
+        transport_zum_lager := TRUE;
     ELSE
-        arm_to_lager := FALSE;
+        transport_zum_lager := FALSE;
     END_IF;
-
+ 
     IF HAND_ARM_ZUM_BAND AND NOT HAND_ARM_ZUM_LAGER THEN
-        arm_to_band := TRUE;
+        transport_zum_band := TRUE;
     ELSE
-        arm_to_band := FALSE;
+        transport_zum_band := FALSE;
     END_IF;  
-
+ 
     IF HAND_ANSAUGEN AND NOT HAND_LOSLASSEN THEN
-        suck_piece := TRUE;
+        werkstueck_ansaugen := TRUE;
     ELSE
-        suck_piece := FALSE;  
+        werkstueck_ansaugen := FALSE;  
     END_IF;
-
+ 
     IF HAND_LOSLASSEN AND NOT HAND_ANSAUGEN THEN
-        release_piece := TRUE;
+        werkstueck_loslassen := TRUE;
     ELSE
-        release_piece := FALSE;
+        werkstueck_loslassen := FALSE;
     END_IF;
     IF AUTOMAN THEN
         S4 := FALSE;
         S1 := TRUE;
     END_IF;   
 END_IF;
-
-IF S2 AND NOT EINAUS AND NOT piece_sucked THEN
+ 
+IF S2 AND NOT EINAUS AND NOT werkstueck_angesaugt THEN
     S2 := FALSE;
     S0 := TRUE;
 END_IF;
-
+ 
 IF S17 AND NOT S18 AND NOT ls2 AND ls3 THEN
     S17 := FALSE;
     S18 := TRUE;
-    singeler_open := TRUE;
+    vereinzeler_auf := TRUE;
 ELSIF S18 AND NOT S19 AND NOT ls3 THEN
     S18 := FALSE;
     S19 := TRUE;
-    singeler_open := FALSE;
-ELSIF S19 AND NOT S17 AND NOT reference THEN
+    vereinzeler_auf := FALSE;
+ELSIF S19 AND NOT S17 AND NOT referenz THEN
     S19 := FALSE;
     S17 := TRUE;
 END_IF;
-
-IF S20 AND NOT S21 AND reference_time.Q THEN
+ 
+IF S20 AND NOT transportarm_band THEN
+	transport_zum_band := TRUE;
+ELSIF S20 AND NOT S21 AND reference_time.Q THEN
     S20 := FALSE;
     S21 := TRUE;
-    BANDV := 0;
-    reference := TRUE;
+	transport_zum_band := FALSE;
+    band_geschw := 0;
+    referenz := TRUE;
 ELSIF S21 THEN
     S22 := TRUE;
     S25 := TRUE;
     S28 := TRUE;
     S21 := FALSE;
-    Z1 := 0;
-    Z2 := 0;
-    Z3 := 0;
 END_IF;
-
-IF S22 AND (NOT LS1 OR (LS3 AND NOT Z3 = 2 AND singeler_open)) THEN
+ 
+IF S22 AND (NOT LS1 OR verf_trig.Q) AND NOT vereinzeler_ivoll  THEN
     S22 := FALSE;
     S23 := TRUE;
-    BANDV := 32500;
-ELSIF S23 AND ((NOT LS3 AND Z3 = 2) OR BAND_TIME.Q) THEN
+    band_geschw := 32500; 
+ELSIF S23 AND NOT S24 AND BAND_TIME.Q OR vereinzeler_ivoll THEN
     S23 := FALSE;
     S24 := TRUE;
-    BANDV := 0;
+    band_geschw := 0;
 ELSIF S24 AND NOT S22 THEN
     S24 := FALSE;
     S22 := TRUE;
 END_IF;
-
+ 
 IF S25 AND NOT S26 AND NOT LS2 AND LS3 THEN
     S25 := FALSE;
     S26 := TRUE;
-    singeler_open := TRUE;
+    vereinzeler_auf := TRUE;
 ELSIF S26 AND NOT S27 AND NOT LS3 THEN
     S26 := FALSE;
     S27 := TRUE;
-    singeler_open := FALSE;
+    vereinzeler_auf := FALSE;
 ELSIF S27 AND NOT S25 THEN
     S27 := FALSE;
     S25 := TRUE;
 END_IF;
-
-IF S28 AND NOT S29 AND NOT storage_empty THEN
+ 
+IF S28 AND NOT S29 AND NOT lager_leer AND NOT vereinzeler_ivoll THEN
     S28 := FALSE;
     S29 := TRUE;
-    extend_piston := TRUE;
-ELSIF S29 AND NOT S30 AND piston_extended AND LS1 THEN
+    schieber_ausfahren := TRUE;
+ELSIF S29 AND NOT S30 AND ausschieber_ausgefahren AND LS1 THEN
     S29 := FALSE;
     S30 := TRUE;
-    extend_piston := FALSE;
-    arm_to_lager := TRUE;
-ELSIF S30 AND NOT S31 AND arm_at_lager THEN
+    schieber_ausfahren := FALSE;
+    transport_zum_lager := TRUE;
+ELSIF S30 AND NOT S31 AND transportarm_lager THEN
     S30 := FALSE;
     S31 := TRUE;
-    arm_to_lager := FALSE;
-    release_piece := FALSE;
-    suck_piece := TRUE;
-ELSIF S31 AND NOT S32 AND piece_sucked THEN
+    transport_zum_lager := FALSE;
+    werkstueck_loslassen := FALSE;
+    werkstueck_ansaugen := TRUE;
+ELSIF S31 AND NOT S32 AND werkstueck_angesaugt THEN
     S31 := FALSE;
     S32 := TRUE;
-    arm_to_band := TRUE;
-ELSIF S32 AND NOT S33 AND arm_at_band THEN
+    transport_zum_band := TRUE;
+ELSIF S32 AND NOT S33 AND transportarm_band THEN
     S32 := FALSE;
     S33 := TRUE;
-    arm_to_band := FALSE;
-    suck_piece := FALSE;
-    release_piece := TRUE;
+    transport_zum_band:= FALSE;
+    werkstueck_ansaugen := FALSE;
+    werkstueck_loslassen := TRUE;
+ELSIF S33 AND NOT S28 THEN
+	S33 := FALSE;
+	S28 := TRUE;
 END_IF;
-
-
-    
-reference_time(IN:=S20 AND NOT ls1 AND NOT ls2 AND NOT ls3, PT:=T#10s);
+ 
+IF Z3.CV >= 2 AND NOT LS3 THEN 
+	vereinzeler_ivoll := TRUE;
+ELSE
+	vereinzeler_ivoll := FALSE;
+END_IF;
+reference_time(IN:=S20 AND ls1 AND ls2 AND ls3, PT:=T#5S);
+BAND_TIME(IN:=S23 AND NOT vereinzeler_ivoll, PT:=T#10S);
+Z1(CU:=S29, RESET:=S21);
+Z2(CU:=S26, RESET:=S21);
+Z3(CU:=S33 AND NOT ls1, CD:=S26, RESET:=S21);
+verf_trig(CLK:=vereinzeler_ivoll);
+lsr_trig(CLK:=NOT ls1);
