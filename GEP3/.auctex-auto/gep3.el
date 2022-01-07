@@ -35,6 +35,8 @@
     "fig:vollnennstrom"
     "fig:halbnennstrom"
     "sec:einsch-der-prim"
+    "sec:kurzschlussversuch"
+    "sec:mess-der-kurzschl"
     "sec:konklusion"))
  :latex)
 
