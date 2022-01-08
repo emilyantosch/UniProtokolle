@@ -173,10 +173,13 @@
 
 \section{Einführung}
 
-Dieser Laborbericht zum dritten Praktikum in Grundlagen der Energietechnik befasst sich  mit den Eigenschaften von Transformatoren im Kontext der Energietechnik. Dabei wird ein Einphasentransformator untersucht und die Parameter des Ersatzschaltbildes ermittelt.
+Dieser Laborbericht zum dritten Praktikum in Grundlagen der Energietechnik befasst sich  mit den Eigenschaften von Transformatoren im Kontext der Energietechnik. Dabei wird ein Einphasentransformator untersucht und die Parameter des Ersatzschaltbildes ermittelt.\\
 
-Im Allgemeinen nutzt man Transformatoren zur Änderung des Spannungspegels von Wechselspannungen. Die Änderung der Spannung von der Primärseite zur Sekundärseite ist dabei direkt proportional zum Übersetzungsverhältnis. Dieses wird durch die Menge an Wicklungen um einen gemeinsamen Eisenkern bestimmt. Dieser zur Verbesserung der Induktion, was zu einem besseren Wirkungsfaktor führt. Über die Eigenschaft von elektrischen Strömen in Leitern Magnetfelder zu erzeugen wird von der Primärseite eine Spannung in der Sekundärseite induziert, welche dem vorher genannten Übersetzungsverhältnis entspricht.
 
+\noindent
+Im Allgemeinen nutzt man Transformatoren zur Änderung des Spannungspegels von Wechselspannungen. Die Änderung der Spannung von der Primärseite zur Sekundärseite ist dabei direkt proportional zum Übersetzungsverhältnis. Dieses wird durch die Menge an Wicklungen um einen gemeinsamen Eisenkern bestimmt. Dieser zur Verbesserung der Induktion, was zu einem besseren Wirkungsfaktor führt. Über die Eigenschaft von elektrischen Strömen in Leitern Magnetfelder zu erzeugen wird von der Primärseite eine Spannung in der Sekundärseite induziert, welche dem vorher genannten Übersetzungsverhältnis entspricht.\\
+
+\noindent
 Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der Spannung entstehen, besser im elektrotechnischen Kontext beschreiben zu können, wird ein allgemeines Ersatzschaltbild verwendet. Dabei beziehen sich die verschiedenen Größen auf die Primärseite. Alle Bauteile mit einer $1$ im Index ist auf der Primärseite, alle Bauteile mit einer $2$ sind hingegen auf der Sekundärseite.
 
 \begin{figure}[h]
@@ -186,10 +189,10 @@ Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der
   \label{fig:esbtrafo}
 \end{figure}
 
-
+\noindent
 Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die wir vom Typenschild im Labor ablesen. Dabei haben wir auf der Primärseite $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$. Mit diesen Angaben können wir nun bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
 
-
+\newpage
 \section{Messung der Wicklungswiderstände beider Seiten}
 
 Wir messen zunächst die Wicklungswiderstände beider Seiten, indem wir ein Ohmmeter an die jeweiligen Klemmen des Transformators anschließen. Die Werte ergeben sich zu:
@@ -245,14 +248,31 @@ Beim Leerlaufversuch am Transformator wollen wir verschiedene Messungen vornehme
   \label{tab:fifp}
 \end{table}
 
+Im Anschluss stellen wir die beiden Werte als Funktion der Spannung $U_{10}$ dar:
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel242.png}
+    \caption{$I_{10} = f(U_{10})$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel962.png}
+    \caption{$P_{10} = f(U_{10}^{2})$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Die beiden Funktionen $I_{10} = f(U_{10})$ und $P_{10} = f(U_{10}^{2})$}
+\end{figure}
+
 \subsection{Bestimmung des Spannungsverhätnisses}
 \label{sec:best-des-spann}
 
-Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Die Primärseite weißt dabei eine Spannung von $U_{2} = $ auf, wodurch man mit
+Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Die Primärseite weißt dabei eine Spannung von $U_{2} = 359V$ auf, wodurch man mit
 
 \begin{equation*}
-  \label{eq:2}
-  ü = \frac{U_{2}}{U_{1N}} =
+  \textnormal{ü} = \frac{U_{2}}{U_{1N}} = \frac{359V}{220V} = 1.6318
 \end{equation*}
 
 einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur gedachten Übertragung liegt an den Herstellungsdifferenzen der Transformatoren. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
@@ -265,16 +285,18 @@ Im nächsten Schritt wird der Stromverlauf bei Nennspannung und bei halber Nenns
 
 \begin{figure}[h]
   \centering
-
-  \caption{Oszillogramm bei voller Nennspannung}
-  \label{fig:vollnennstrom}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-
-  \caption{Ozillogramm bei halber Nennspannung}
-  \label{fig:halbnennstrom}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/gep3/trafostrom_voll.png}
+    \caption{Volle Nennspannung}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/gep3/trafostrom_halb.png}
+    \caption{Halbe Nennspannung}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Der Stromverlauf am Transformator bei voller und halber Nennspannung}
 \end{figure}
 
 Es fällt ziemlich deutlich auf, dass bei dem Anlegen der vollen Nennspannung eine vollständige Hystereschleife im Eisenkern des Transformators passiert und der Kern schließlich in die Sättigung geht. Bei halber Nennspannung ist der Effekt auch vorhanden jedoch weitaus weniger deutlich als bei voller Nennspannung. Anhang dieses Beispiels lässt sich die Eigenschaft des Transformators, die sich aus dem Aufbau und Wirkungsweise des Eisenkerns ergibt, gut ableiten. Je nach Umpolung der Magnetfeldkennlinien entsteht eine mehr oder weniger deutliche Hystereschleife im Verlauf des Stroms auf der anderen Seite.
@@ -285,10 +307,32 @@ Es fällt ziemlich deutlich auf, dass bei dem Anlegen der vollen Nennspannung ei
 Mithilfe eines Schaltwinkelstellers betrachtet man nun den Einschaltvorgang auf der Primärseite des Transformators. Dabei können wir unseren Schaltwinkelsteller auf einen bestimmten Winkel, eine Dauer in Perioden und die positive oder negative Halbwelle einstellen.
 Bei einer positiven Halbwelle, welche für diese Oszillogramme gewählt wurde, schlägt der Transformator bei voller Umpolung der Magnetfeldkennlinien für die eingestellten Perioden um. Die folgenden drei Bilder sind jeweils für $0^{\circ}$, $45^{\circ}$, $90^{\circ}$ und $50$ Perioden.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/gep3/einschalt_0deg.PNG}
+  \caption{Einschaltverhalten am Transformator bei positiver Halbwelle, $\alpha = 0^\circ$ Zündwinkel und 50 Perioden}
+  \label{fig:einschalt_0d}
+\end{figure}
 
+Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchsten Einschaltströme. Dies lässt sich dadurch erläutern, dass der Kern nach dem Ausschalten vormagnetisiert ist. Beim Einschalten des Transformators bei der positiven Halbwelle und bei einem Winkel von $0^{\circ}$ wird der Eisenkern zum schlechtesten Zeitpunkt ummagnetisiert, welches die höchste Energie bzw. die höchsten Ströme verursacht. Diesen Effekt nennt man auch Rush-Effekt.
 
-Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchsten Einschaltströme. Dies lässt sich dadurch erläutern, dass der Kern nach dem Ausschalten vormagnetisiert ist. Beim Einschalten des Transformators bei der positiven Halbwelle und bei einem Winkel von $0^{\circ}$ wird der Eisenkern zum schlechtesten Zeitpunkt ummagnetisiert, welches die höchste Energie bzw. die höchsten Ströme verursacht. Diesen Effekt nennt man auch Rush-Effekt. Bei einem Erhöhen des Winkels verringert sich der Einschaltstrom deutlich. Da durch ein späteres Einschalten in der positiven Halbwelle ein kleiner Effektivwert der Spannung verwendet wird, läuft der Transformator deutlich langsamer und leichter an. Der Rush-Effekt sorgt, ohne Einschaltwinkelsteller, für extrem hohe Einschaltströme die das Netz belasten können. Typischerweise wird daher ein solcher Winkelsteller auf einen Winkel von z.B. $45^{\circ}$ gestellt. Diese Vorkehrung sorgt für geringere Einschaltströme und einen sanften Anlauf, der keine Belastung für das Netz darstellt.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/gep3/einschalt_45deg.png}
+    \caption{$\alpha = 45^{\circ}$}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../assets/images/gep3/einschalt_90deg.png}
+    \caption{$\alpha = 90^{\circ}$}
+  \end{subfigure}
+  \label{fig:31_242}
+  \caption{Einschaltverhalten am Transformator bei positiver Halbwelle, $\alpha \in \{45^{\circ}, 90^{\circ}\}$ und 50 Perioden}
+\end{figure}
 
+ Bei einem Erhöhen des Winkels verringert sich der Einschaltstrom deutlich. Da durch ein späteres Einschalten in der positiven Halbwelle ein kleiner Effektivwert der Spannung verwendet wird, läuft der Transformator deutlich langsamer und leichter an. Der Rush-Effekt sorgt, ohne Einschaltwinkelsteller, für extrem hohe Einschaltströme die das Netz belasten können. Typischerweise wird daher ein solcher Winkelsteller auf einen Winkel von z.B. $45^{\circ}$ gestellt. Diese Vorkehrung sorgt für geringere Einschaltströme und einen sanften Anlauf, der keine Belastung für das Netz darstellt.
 
 \section{Kurzschlussversuch}
 \label{sec:kurzschlussversuch}
@@ -327,7 +371,7 @@ Die Messreihe ergibt folgende Werte:
     $2,4A$ & $3,4V$ & $7W$ \\
     \hline
     $1,4A$ & $1,9V$ & $2,02W$ \\
-    \ḩline
+    \hline
     $0,4A$ & $0,56V$ & $0,178W$\\
     \hline
   \end{tabular}
@@ -394,6 +438,16 @@ Beim Belastungsversuch verbinden wir mit der Sekundärseite des Transformators e
   \caption{Messreihe des Belastungsversuch}
   \label{tab:messbelast}
 \end{table}
+
+Erneut wird nun die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichnet:
+
+\begin{figure}[h]
+  \centering
+
+  \caption{Die Spannung $U_2 = f(I_2)$ als Funktion des Stromes}
+  \label{fig:u2i2}
+\end{figure}
+
 \subsection{Messung der Sekundärspannung bei Wirklast}
 \label{sec:mess-der-sekund}
 
