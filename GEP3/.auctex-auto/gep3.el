@@ -46,7 +46,6 @@
     "sec:einsch-der-prim"
     "fig:einschalt_0d"
     "sec:kurzschlussversuch"
-    "fig:kurzaufbau"
     "sec:mess-der-kurzschl"
     "tab:messkurz"
     "sec:belastungsversuch"

@@ -339,13 +339,6 @@ Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchste
 
 Beim Kurzschluss speisen wir nun von der Primärseite vom Stelltransformator ein und schließen die Sekundärseite kurz. Dabei messsen wir dann sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{../assets/images/gep3/kurzschluss_aufbau.png}
-  \caption{Aufbau des Kurzschlussversuchs}
-  \label{fig:kurzaufbau}
-\end{figure}
-
 \subsection{Messung der Kurzschlussspannung und der Kurzschlussleistung}
 \label{sec:mess-der-kurzschl}
 
@@ -470,12 +463,40 @@ Erneut wird nun die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichn
 \section{Auswertung}
 \label{sec:auswertung}
 
+Im Folgenden werden nun die Ergebnisse der Messungen dahingehend ausgewertet, das Modell zur Beschreibung eines Transformators, also das ESB des Einphasentransformators, mit Parametern zu befüllen.
+
+
 \subsection{Bestimmung der Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$}
 \label{sec:best-der-ersatz}
+
+Aus dem Leerlaufversuch können nun die Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$ bestimmt werden. Zunächst wird der Eisenwirkwiderstand $R_{Fe}$ bestimmt. Dieser wird allein von der Wirkleistung erzeugt, daher ergibt sich im Nennpunkt:
+
+\begin{equation*}
+  R_{Fe} = \frac{U_{10}^{2}}{P_{10}} = \frac{(220V)^{2}}{71,2W} = 679.775280899\Omega
+\end{equation*}
+
+Um nun die die magnetische Hauptreaktanz $X_{1h}$ zu berechnen, betracheten wir das ESB und rechnen dann:
+
+\begin{equation*}
+  X_{1h} = \frac{U_{10}}{I_{\mu}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-I_{Fe}^{2}}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-\left(\frac{U_{1N}}{R_{Fe}}\right)^{2}}} = \frac{220V}{\sqrt{1.61A^{2}-0.323638A^{2}}} = \frac{220V}{1.5771A} = 139,5\Omega
+\end{equation*}
 
 \subsection{Bestimmung der Ersatzimpedanzen $R_{k}$ und $X_{k}$}
 \label{sec:best-der-ersatz-1}
 
+Aus dem Kurzschlussversuch können nun im Anschluss die beiden Impendanzen $R_{k}$ und $X_{k}$ bestimmt werden. Zunächst wird der Kurzschlusswiderstand $R_{k}$ im Nennbetrieb bestimmt über:
+
+\begin{equation*}
+  R_{k} = \frac{P_{k}}{I_{k}^{2}} = \frac{98,5W}{(9,4A)^{2}} = 1.11\Omega
+\end{equation*}
+
+Als nächstes können wir nun auch die Kurzschlussreaktanz über
+
+\begin{equation*}
+  X_{k} = \sqrt{Z_{k}^{2}-R_{k}^{2}} = \sqrt{\left(\frac{U_{k}}{I_{k}}\right)^{2}-R_{k}^{2}} = \sqrt{\left(\frac{13.1V}{9.4A}\right)^{2} - (1.11\Omega)^{2}} = 0.8426\Omega
+\end{equation*}
+
+berechnen.
 \subsection{Ermittlung des Wirkungsgrads für den Nennpunkt}
 \label{sec:ermittl-des-wirk}
 
