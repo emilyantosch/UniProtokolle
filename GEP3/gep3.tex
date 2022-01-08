@@ -254,12 +254,12 @@ Im Anschluss stellen wir die beiden Werte als Funktion der Spannung $U_{10}$ dar
   \centering
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel242.png}
+    \includegraphics[width=\linewidth]{../assets/images/gep3/u10_i10.png}
     \caption{$I_{10} = f(U_{10})$}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel962.png}
+    \includegraphics[width=\linewidth]{../assets/images/gep3/u10_p10.png}
     \caption{$P_{10} = f(U_{10}^{2})$}
   \end{subfigure}
   \label{fig:31_242}
@@ -339,6 +339,13 @@ Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchste
 
 Beim Kurzschluss speisen wir nun von der Primärseite vom Stelltransformator ein und schließen die Sekundärseite kurz. Dabei messsen wir dann sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/gep3/kurzschluss_aufbau.png}
+  \caption{Aufbau des Kurzschlussversuchs}
+  \label{fig:kurzaufbau}
+\end{figure}
+
 \subsection{Messung der Kurzschlussspannung und der Kurzschlussleistung}
 \label{sec:mess-der-kurzschl}
 
@@ -386,12 +393,12 @@ Im Anschluss tragen wir nun die Spannung $U_{k} = f(I_{k})$ als Funktion des Str
   \centering
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel242.png}
+    \includegraphics[width=\linewidth]{../assets/images/gep3/ik_uk.png}
     \caption{Oszilloskopbild zur Messung 3.1 für den Winkel $24,2^{\circ}$}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../assets/images/GEP2/31_Winkel962.png}
+    \includegraphics[width=\linewidth]{../assets/images/gep3/ik_pk.png}
     \caption{Oszilloskopbild zur Messung 3.1 für den Winkel $96,2^{\circ}$}
   \end{subfigure}
   \label{fig:31_242}
@@ -407,6 +414,15 @@ Das Stromübersetzungverhältnis $I_{ü}$ bei $I_{k} \approx I_{n}$ lautet dann
 \label{sec:belastungsversuch}
 
 Beim Belastungsversuch verbinden wir mit der Sekundärseite des Transformators ein Potentiometer mit hoher Leistungsbelastbarkeit und messen dann die Spannung $U_{2} = f(I_{2})$ als Funktion des Stromes. Dies machen wir dann für $U_{1} = U_{1n} = konst.$ und $I_{2} \approx 1,2 \cdot I_{n}$.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/gep3/belastung_aufbau.png}
+  \caption{Aufbau des Belastungsversuchs}
+  \label{fig:belastaufbau}
+\end{figure}
+\subsection{Messung der Spannung, des Stroms und der Leistung mit Wirklast}
+\label{sec:messung-der-spannung}
+
 
 \begin{table}[h]
   \centering
@@ -443,7 +459,7 @@ Erneut wird nun die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichn
 
 \begin{figure}[h]
   \centering
-
+  \includegraphics[width=\textwidth]{../assets/images/gep3/i2_u2.png}
   \caption{Die Spannung $U_2 = f(I_2)$ als Funktion des Stromes}
   \label{fig:u2i2}
 \end{figure}
