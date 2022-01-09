@@ -497,11 +497,25 @@ Als nächstes können wir nun auch die Kurzschlussreaktanz über
 \end{equation*}
 
 berechnen.
+
 \subsection{Ermittlung des Wirkungsgrads für den Nennpunkt}
 \label{sec:ermittl-des-wirk}
 
+Zuletzt wollen wir nun den Wirkungsgrad mit verschiedenen Methoden bestimmen. Dabei nutzen wir sowohl den Belastungsversuch als auch die Ergebnisse der verschiedenen Versuche, um ein Ergebnis zu berechnen. Wir bestimmen den Wirkungsgrad nun zunächst über direkte Messung:
 
+\begin{equation*}
+  \eta_{mess} = \frac{P_{ab}}{P_{zu}} = \frac{U_{2} \cdot I_{2}}{P_{1}} = \frac{224,1V \cdot 18.6A}{4,488kW} = 0,9286 \implies 92,68\%
+\end{equation*}
 
+Zum Vergleich berechnen wir den Wirkungsgrad über die Ergebnisse der anderen Versuche:
+
+\begin{equation*}
+  \eta_{rech} = \frac{P_{ab}}{P_{zu}} = \frac{P_{1} - P_{10} - P_{k}}{P_{1}} = \frac{4,488kW - 98,5W - 71,2W}{4,488kW} = 0,9621 \implies 96,21\%
+\end{equation*}
+
+Wir erkennen eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen.
+
+Im Anschluss bestimmen wir nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmen.
 \section{Konklusion}
 \label{sec:konklusion}
 
