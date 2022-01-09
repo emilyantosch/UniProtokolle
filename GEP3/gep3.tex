@@ -275,7 +275,13 @@ Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Di
   \textnormal{ü} = \frac{U_{2}}{U_{1N}} = \frac{359V}{220V} = 1.6318
 \end{equation*}
 
-einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur gedachten Übertragung liegt an den Herstellungsdifferenzen der Transformatoren. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
+einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur theoretischen Übertragung
+
+\begin{equation*}
+  \label{eq:3}
+  \textnormal{ü} = \frac{U_{2N}}{U_{1N}} = \frac{380V}{220V} = 1.727
+\end{equation*}
+liegt bei $\Delta \textnormal{ü} = 1.727 - 1.6318 = 0.0952 $, was sich über die Herstellungsdifferenzen der Transformatoren erklären lässt. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
 
 
 \subsection{Stromverlauf im Nennpunkt}
@@ -516,6 +522,29 @@ Zum Vergleich berechnen wir den Wirkungsgrad über die Ergebnisse der anderen Ve
 Wir erkennen eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen.
 
 Im Anschluss bestimmen wir nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmen.
+
+Mithilfe des vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ können wir nun den Widerstandswert bei $75^{\circ}C$ berechen:
+
+\begin{equation*}
+  \label{eq:4}
+  R_{k,75^{\circ}C} = R_{k, 20^{\circ}C} \cdot (1+\alpha_{Cu}\Delta\vartheta) = 1,11\Omega \cdot (1+3,93\cdot 10^{-3}K^{-1}\cdot 55K) = 1,3499\Omega
+\end{equation*}
+
+Nun wollen wir noch den Leistungsverlust für diese Erhöhung der Last berechnen:
+
+\begin{equation*}
+  \label{eq:2}
+  \Delta P_{k} = I_{k}^{2} \cdot (R_{k,75^{\circ}C} - R_{k,20^{\circ}C}) = 9.4^{2}A^{2} \cdot 0,2399\Omega = 21,197W
+\end{equation*}
+
+Damit können wir nun unseren angepassten Wirkungsgrad von
+
+\begin{equation*}
+  \label{eq:5}
+  \eta = \frac{P_{N} - P_{10} - P_{k} - \Delta P_{k}}{P_{N}} = \frac{4488W-71,2W-98,5W-21,197W}{4488W} = 0,957 \implies 95,7\%
+\end{equation*}
+Der Wirkungsgrad ist also, wie erwartet, geringer als der theoretische Wirkungsgrad ohne Berücksichtigung der Temperatur, da dadurch noch mehr Widerstand in den Spulen beim Übertragen der Energie entsteht.
+
 \section{Konklusion}
 \label{sec:konklusion}
 
