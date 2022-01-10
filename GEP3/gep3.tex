@@ -153,9 +153,9 @@
 
   \end{scope}
 
-  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf GEP\\[10pt] Praktikum 2}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf GEP\\[10pt] Praktikum 3}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2021}};
 
-  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont B6-Brücke}};
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Einphasentransformator}};
 
   \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf 4. Januar}} \\[3pt] Emily Antosch 2519935 \\[3pt] Florian Tietjen \\[3pt] Karl Döring};
 
@@ -192,12 +192,12 @@ Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der
 \end{figure}
 
 \noindent
-Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die wir vom Typenschild im Labor ablesen. Dabei haben wir auf der Primärseite $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$. Mit diesen Angaben können wir nun bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
+Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die vom Typenschild im Labor abgelesen werdeb. Auf der Primärseite sind $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$ Nennbetrieb. Mit diesen Angaben kann man nun durch bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
 
 \newpage
 \section{Messung der Wicklungswiderstände beider Seiten}
 
-Wir messen zunächst die Wicklungswiderstände beider Seiten, indem wir ein Ohmmeter an die jeweiligen Klemmen des Transformators anschließen. Die Werte ergeben sich zu:
+Zunächst werden die Wicklungswiderstände beider Seiten gemessen, indem ein Ohmmeter an die jeweiligen Klemmen des Transformators angeschloßen wird. Die Werte ergeben sich zu:
 
 \begin{equation*}
   \label{eq:1}
@@ -206,7 +206,7 @@ Wir messen zunächst die Wicklungswiderstände beider Seiten, indem wir ein Ohmm
 
 \section{Leerlaufversuch am Transformator}
 
-Beim Leerlaufversuch am Transformator wollen wir verschiedene Messungen vornehmen, indem wir auf der Sekundärseite des Transformators keine Last zu schalten, sodass die Klemmen offen sind. Lediglich ein Voltmeter zur Spannungsmessung wird hinzugeschaltet.
+Beim Leerlaufversuch am Transformator werden verschiedene Messungen vorgenommen, indem auf der Sekundärseite des Transformators keine Last zugeschaltetet wird, sodass die Klemmen offen sind. Lediglich ein Voltmeter zur Spannungsmessung wird angelegt.
 
 \begin{figure}[h]
   \centering
@@ -249,8 +249,8 @@ Beim Leerlaufversuch am Transformator wollen wir verschiedene Messungen vornehme
   \caption{Strom und Leistung in Abhängigkeit von der Spannung $U_{10}$}
   \label{tab:fifp}
 \end{table}
-
-Im Anschluss stellen wir die beiden Werte als Funktion der Spannung $U_{10}$ dar:
+\newpage
+Im Anschluss stellen werden die beiden Werte als Funktion der Spannung $U_{10}$ aufgetragen:
 
 \begin{figure}[h]
   \centering
@@ -268,10 +268,12 @@ Im Anschluss stellen wir die beiden Werte als Funktion der Spannung $U_{10}$ dar
   \caption{Die beiden Funktionen $I_{10} = f(U_{10})$ und $P_{10} = f(U_{10}^{2})$}
 \end{figure}
 
+Es ist erkenntlich, dass der Strom mit ansteigender Spannung stärker ansteigt. Dies folgt aus der Eigenschaft des Eisenkerns in die Sättigung zu gehen bei hohen Spannungen. Dieser Effekt führt zu besonders hohen Strömen auf der Einspeiseseite (\ref{sec:stromv-im-nennp}). Die Leistung als Funktion der quadrierten Spannung ist ziemlich linear, was der Gleichung $P = \frac{U^{2}}{R}$ entspricht.
+
 \subsection{Bestimmung des Spannungsverhätnisses}
 \label{sec:best-des-spann}
 
-Im Nennpunkt für $U_{1N} = 220V$ messen wir beide Seiten des Transformators. Die Primärseite weißt dabei eine Spannung von $U_{2} = 359V$ auf, wodurch man mit
+Im Nennpunkt für $U_{1N} = 220V$ werden beide Seiten des Transformators gemessen. Die Primärseite weißt dabei eine Spannung von $U_{2} = 359V$ auf, wodurch man mit
 
 \begin{equation*}
   \textnormal{ü} = \frac{U_{2}}{U_{1N}} = \frac{359V}{220V} = 1.6318
@@ -341,11 +343,11 @@ Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchste
 \end{figure}
 
  Bei einem Erhöhen des Winkels verringert sich der Einschaltstrom deutlich. Da durch ein späteres Einschalten in der positiven Halbwelle ein kleiner Effektivwert der Spannung verwendet wird, läuft der Transformator deutlich langsamer und leichter an. Der Rush-Effekt sorgt, ohne Einschaltwinkelsteller, für extrem hohe Einschaltströme die das Netz belasten können. Typischerweise wird daher ein solcher Winkelsteller auf einen Winkel von z.B. $45^{\circ}$ gestellt. Diese Vorkehrung sorgt für geringere Einschaltströme und einen sanften Anlauf, der keine Belastung für das Netz darstellt.
-
+\newpage
 \section{Kurzschlussversuch}
 \label{sec:kurzschlussversuch}
 
-Beim Kurzschluss speisen wir nun von der Primärseite vom Stelltransformator ein und schließen die Sekundärseite kurz. Dabei messsen wir dann sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$.
+Beim Kurzschlussversuch wird nun von der Primärseite vom Stelltransformator eingespeißt und die Sekundärseite kurzgeschlossen. Dabei wird dann sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$ aufgezeichnet.
 
 \subsection{Messung der Kurzschlussspannung und der Kurzschlussleistung}
 \label{sec:mess-der-kurzschl}
@@ -387,7 +389,8 @@ Die Messreihe ergibt folgende Werte:
   \label{tab:messkurz}
 \end{table}
 
-Im Anschluss tragen wir nun die Spannung $U_{k} = f(I_{k})$ als Funktion des Stromes und die Leistung $P_{k} = f(I_{k}^{2})$ als Funktion des quadrierten Stromes auf:
+\newpage
+Im Anschluss wird nun die Spannung $U_{k} = f(I_{k})$ als Funktion des Stromes und die Leistung $P_{k} = f(I_{k}^{2})$ als Funktion des quadrierten Stromes aufgetragen:
 
 
 \begin{figure}[h]
@@ -406,20 +409,22 @@ Im Anschluss tragen wir nun die Spannung $U_{k} = f(I_{k})$ als Funktion des Str
   \caption{Beispielhafte Bilder vom Oszilloskop}
 \end{figure}
 
-\subsection{Bestimmung des Stromübertragungsverhältnisses}
+Beide Funktionen haben ziemlich deutlich einen linearen Zusammenhang, wobei die Kurzschlussspannung linear mit dem Kurzschlussstrom steigt, während die Kurzschlussleistung linear mit dem Quadrat des Kurzschlusstroms wächst. Dies entspricht also einem quadratischen Zusammenhang mit dem einfachen Kurzschlussstrom. Dies folgt aus den bekannten Formeln
 
+\[
+  U_{k} = Z \cdot I_{k} \quad \text{und} \quad P_{k} = I_{k}^{2}\cdot R
+\]
+\subsection{Bestimmung des Stromübersetzungverhältnis}
 Das Stromübersetzungverhältnis $I_{ü}$ bei $I_{k} \approx I_{n}$ lautet dann
 
 \begin{equation*}
-  I_{ü} = \frac{I_{k}}{I'} = \frac{9.4A}{15A} = 0.6266
+  I_{ü} = \frac{I_{k}}{I'} = \frac{9,4A}{15A} = 0.6266
 \end{equation*}
-
 \newpage
-
 \section{Belastungsversuch}
 \label{sec:belastungsversuch}
 
-Beim Belastungsversuch verbinden wir mit der Sekundärseite des Transformators ein Potentiometer mit hoher Leistungsbelastbarkeit und messen dann die Spannung $U_{2} = f(I_{2})$ als Funktion des Stromes. Dies machen wir dann für $U_{1} = U_{1n} = konst.$ und $I_{2} \approx 1,2 \cdot I_{n}$.
+Beim Belastungsversuch wird auf der Sekundärseite des Transformators ein Potentiometer mit hoher Leistungsbelastbarkeit zugeschaltet und dann die Spannung $U_{2} = f(I_{2})$ als Funktion des Stromes gemessen. Die Bedingungen sind $U_{1} = U_{1n} = konst.$ und $I_{2} \approx 1,2 \cdot I_{n}$.
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{../assets/images/gep3/belastung_aufbau.png}
@@ -470,9 +475,8 @@ Erneut wird nun die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichn
   \label{fig:u2i2}
 \end{figure}
 
-\subsection{Messung der Sekundärspannung bei Wirklast}
-\label{sec:mess-der-sekund}
-
+Durch das Nachregeln des Stelltransformators sind einige Sprünge und Ungleichheiten in der Linearität der Abbildung entstanden. Trotzdessen lässt sich gut ablesen, dass der Strom zunimmt, wenn der Lastwiderstand $R$ und die Spannung $U_{2}$ sinken. Es besteht ein beinahe linearer Zusammenhang zwischen Strom und Spannung aus der Formel $I = \frac{U}{R}$.
+\newpage
 \section{Auswertung}
 \label{sec:auswertung}
 
@@ -503,60 +507,60 @@ Aus dem Kurzschlussversuch können nun im Anschluss die beiden Impendanzen $R_{k
   R_{k} = \frac{P_{k}}{I_{k}^{2}} = \frac{98,5W}{(9,4A)^{2}} = 1.11\Omega
 \end{equation*}
 
-Als nächstes können wir nun auch die Kurzschlussreaktanz über
+Als nächstes kann nun auch die Kurzschlussreaktanz über
 
 \begin{equation*}
   X_{k} = \sqrt{Z_{k}^{2}-R_{k}^{2}} = \sqrt{\left(\frac{U_{k}}{I_{k}}\right)^{2}-R_{k}^{2}} = \sqrt{\left(\frac{13.1V}{9.4A}\right)^{2} - (1.11\Omega)^{2}} = 0.8426\Omega
 \end{equation*}
 
-berechnen.
+berechnet werden.
 
-Um nun $R_{k}$ mit dem in Messreihe 2 ermittelten Wicklungswiderständen zu vergleichen, transformieren wir $R_{2}$ auf die Primärseite über:
+Um nun $R_{k}$ mit dem in Messreihe 2 ermittelten Wicklungswiderständen zu vergleichen, wird $R_{2}$ auf die Primärseite transformiert durch:
 \[
   R_{2}' = R_{2}\cdot \textnormal{ü}^{2} = 0.3\Omega \cdot 1,6318^{2} = 0.7988\Omega
 \]
 
-und rechnen dann:
+und dann:
 
 \[
   R_{k} = R_{1} + R_{2}' = 0,55 + 0,7988 = 1.3488
 \]
 
-Die Abweichung des gemessenen $R_{k}$ und des aus der Wicklungswiderstandsmessung ermittelten $R_{k}$ beträgt ca. $23\%$, was ziemlich beachtlich ist. Diese Abweichung lässt sich größtenteils auf Messungenauigkeiten und der Ungenauigkeit des Ohmmeters bei kleinen Messbereichen.
+Die Abweichung des gemessenen $R_{k}$ und des aus der Wicklungswiderstandsmessung ermittelten $R_{k}$ beträgt ca. $23\%$, was ziemlich beachtlich ist. Diese Abweichung lässt sich größtenteils auf Messungenauigkeiten und der Ungenauigkeit des Ohmmeters bei kleinen Messbereichen zurückführen.
 
 
 \subsection{Ermittlung des Wirkungsgrads für den Nennpunkt}
 \label{sec:ermittl-des-wirk}
 
-Zuletzt wollen wir nun den Wirkungsgrad mit verschiedenen Methoden bestimmen. Dabei nutzen wir sowohl den Belastungsversuch als auch die Ergebnisse der verschiedenen Versuche, um ein Ergebnis zu berechnen. Wir bestimmen den Wirkungsgrad nun zunächst über direkte Messung:
+Zuletzt wird nun den Wirkungsgrad mit verschiedenen Methoden bestimmt. Dabei wird sowohl den Belastungsversuch als auch die Ergebnisse der verschiedenen Versuche verwendet, um ein Ergebnis zu berechnen. Zunächst wird der Wirkungsgrad über direkte Messung berechnet:
 
 \begin{equation*}
   \eta_{mess} = \frac{P_{ab}}{P_{zu}} = \frac{U_{2} \cdot I_{2}}{P_{1}} = \frac{224,1V \cdot 18.6A}{4,488kW} = 0,9286 \implies 92,68\%
 \end{equation*}
 
-Zum Vergleich berechnen wir den Wirkungsgrad über die Ergebnisse der anderen Versuche:
+Zum Vergleich wird nun der Wirkungsgrad über die Ergebnisse der anderen Versuche ermittelt:
 
 \begin{equation*}
   \eta_{rech} = \frac{P_{ab}}{P_{zu}} = \frac{P_{1} - P_{10} - P_{k}}{P_{1}} = \frac{4,488kW - 98,5W - 71,2W}{4,488kW} = 0,9621 \implies 96,21\%
 \end{equation*}
 
-Wir erkennen eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen. Im Anschluss bestimmen wir nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmen.
+Es ist eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$ zu erkennen. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen. Im Anschluss wird nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmt.
 
-Mithilfe des vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ können wir nun den Widerstandswert bei $75^{\circ}C$ berechen:
+Mithilfe des vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ kann nun den Widerstandswert bei $75^{\circ}C$ bestimmt werden:
 
 \begin{equation*}
   \label{eq:4}
   R_{k,75^{\circ}C} = R_{k, 20^{\circ}C} \cdot (1+\alpha_{Cu}\Delta\vartheta) = 1,11\Omega \cdot (1+3,93\cdot 10^{-3}K^{-1}\cdot 55K) = 1,3499\Omega
 \end{equation*}
 
-Nun wollen wir noch den Leistungsverlust für diese Erhöhung der Last berechnen:
+Nun wird noch den Leistungsverlust für diese Erhöhung der Last berechnet:
 
 \begin{equation*}
   \label{eq:2}
   \Delta P_{k} = I_{k}^{2} \cdot (R_{k,75^{\circ}C} - R_{k,20^{\circ}C}) = 9.4^{2}A^{2} \cdot 0,2399\Omega = 21,197W
 \end{equation*}
 
-Damit können wir nun unseren angepassten Wirkungsgrad von
+Damit kann nun der angepasste Wirkungsgrad berechnet werden:
 
 \begin{equation*}
   \label{eq:5}

@@ -54,7 +54,6 @@
     "sec:messung-der-spannung"
     "tab:messbelast"
     "fig:u2i2"
-    "sec:mess-der-sekund"
     "sec:auswertung"
     "sec:best-der-ersatz"
     "sec:best-der-ersatz-1"
