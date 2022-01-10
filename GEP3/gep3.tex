@@ -52,6 +52,8 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+\setlength{\parindent}{0pt}
+
 \lstdefinestyle{code}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
@@ -504,6 +506,20 @@ Als nächstes können wir nun auch die Kurzschlussreaktanz über
 
 berechnen.
 
+Um nun $R_{k}$ mit dem in Messreihe 2 ermittelten Wicklungswiderständen zu vergleichen, transformieren wir $R_{2}$ auf die Primärseite über:
+\[
+  R_{2}' = R_{2}\cdot \textnormal{ü}^{2} = 0.3\Omega \cdot 1,6318^{2} = 0.7988\Omega
+\]
+
+und rechnen dann:
+
+\[
+  R_{k} = R_{1} + R_{2}' = 0,55 + 0,7988 = 1.3488
+\]
+
+Die Abweichung des gemessenen $R_{k}$ und des aus der Wicklungswiderstandsmessung ermittelten $R_{k}$ beträgt ca. $23\%$, was ziemlich beachtlich ist. Diese Abweichung lässt sich größtenteils auf Messungenauigkeiten und der Ungenauigkeit des Ohmmeters bei kleinen Messbereichen.
+
+
 \subsection{Ermittlung des Wirkungsgrads für den Nennpunkt}
 \label{sec:ermittl-des-wirk}
 
@@ -519,9 +535,7 @@ Zum Vergleich berechnen wir den Wirkungsgrad über die Ergebnisse der anderen Ve
   \eta_{rech} = \frac{P_{ab}}{P_{zu}} = \frac{P_{1} - P_{10} - P_{k}}{P_{1}} = \frac{4,488kW - 98,5W - 71,2W}{4,488kW} = 0,9621 \implies 96,21\%
 \end{equation*}
 
-Wir erkennen eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen.
-
-Im Anschluss bestimmen wir nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmen.
+Wir erkennen eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen. Im Anschluss bestimmen wir nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmen.
 
 Mithilfe des vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ können wir nun den Widerstandswert bei $75^{\circ}C$ berechen:
 
@@ -548,6 +562,6 @@ Der Wirkungsgrad ist also, wie erwartet, geringer als der theoretische Wirkungsg
 \section{Konklusion}
 \label{sec:konklusion}
 
-
+Wir haben in diesem Praktikum sehr viele Eigenschaften des Einphasentransformators verinnerlichen können. Auch das Berechnen der wichtigen Eckdaten des Ersatzschaltbildes des Transformators konnte geübt werden. Das strukturierte Messen von Transformatoren wurde durchgeführt, weshalb man nun die Eigenarten bekannt sind. Auch das Nutzen von verschiedenen Analysemöglickeiten wie zum Beispiel das graphische Darstellen von Messdaten stellte sich als sehr sinnvoll heraus. Besonders interessant war das Verwenden des Stellwinkelstellers zur genauen Untersuchung des Einschaltverhaltens des Transformators.
 
 \end{document}
