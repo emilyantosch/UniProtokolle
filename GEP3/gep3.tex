@@ -179,10 +179,10 @@ Dieser Laborbericht zum dritten Praktikum in Grundlagen der Energietechnik befas
 
 
 \noindent
-Im Allgemeinen nutzt man Transformatoren zur Änderung des Spannungspegels von Wechselspannungen. Die Änderung der Spannung von der Primärseite zur Sekundärseite ist dabei direkt proportional zum Übersetzungsverhältnis. Dieses wird durch die Menge an Wicklungen um einen gemeinsamen Eisenkern bestimmt. Dieser zur Verbesserung der Induktion, was zu einem besseren Wirkungsfaktor führt. Über die Eigenschaft von elektrischen Strömen in Leitern Magnetfelder zu erzeugen wird von der Primärseite eine Spannung in der Sekundärseite induziert, welche dem vorher genannten Übersetzungsverhältnis entspricht.\\
+Im Allgemeinen nutzt man Transformatoren zur Änderung des Spannungspegels von Wechselspannungen. Die Änderung der Spannung von der Primärseite zur Sekundärseite ist dabei direkt proportional zum Übersetzungsverhältnis. Dieses wird durch die Menge an Wicklungen um einen gemeinsamen Eisenkern bestimmt. Dieser führt zu einer Verbesserung der Induktion, was zu einem besseren Wirkungsfaktor führt. Über die Eigenschaft von elektrischen Strömen in Leitern Magnetfelder zu erzeugen wird von der Primärseite eine Spannung in der Sekundärseite induziert, welche dem vorher genannten Übersetzungsverhältnis entspricht.\\
 
 \noindent
-Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der Spannung entstehen, besser im elektrotechnischen Kontext beschreiben zu können, wird ein allgemeines Ersatzschaltbild verwendet. Dabei beziehen sich die verschiedenen Größen auf die Primärseite. Alle Bauteile mit einer $1$ im Index ist auf der Primärseite, alle Bauteile mit einer $2$ sind hingegen auf der Sekundärseite.
+Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der Spannung entstehen, besser im elektrotechnischen Kontext beschreiben zu können, wird ein allgemeines Ersatzschaltbild verwendet. Dabei beziehen sich die verschiedenen Größen auf die Primärseite. Alle Bauteile mit einer $1$ im Index sind auf der Primärseite, alle Bauteile mit einer $2$ sind hingegen auf der Sekundärseite.
 
 \begin{figure}[h]
   \centering
@@ -192,8 +192,8 @@ Um bestimmte physikalische Prozesse, die zu Verlusten bei der Transformation der
 \end{figure}
 
 \noindent
-Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die vom Typenschild im Labor abgelesen werdeb. Auf der Primärseite sind $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$ Nennbetrieb. Mit diesen Angaben kann man nun durch bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
-
+Die Messungen an unserem Transformator werden maßgeblich von seinen Kenndaten beeinflusst, die vom Typenschild im Labor abgelesen werden. Auf der Primärseite sind $U_{N} = 380V$ und $I_{N} = 9,5A$ und auf der Sekundärseite $U'_{N} = 220V$ und $I'_{N} = 16A$ Nennbetrieb. Mit diesen Angaben kann man nun durch bestimmte Messungen die Parameter des ESB Stück für Stück bestimmen.
+Zu bemerken ist, dass dieses Gerät ziemlich alt ist, weshalb die Kenndaten nicht mehr den heutigen Netzbedingungen genügt.
 \newpage
 \section{Messung der Wicklungswiderstände beider Seiten}
 
@@ -201,12 +201,12 @@ Zunächst werden die Wicklungswiderstände beider Seiten gemessen, indem ein Ohm
 
 \begin{equation*}
   \label{eq:1}
-  R_{1} = 0,55\Omega, R_{2} = 0,3\Omega
+  R_{1} = 0,55\Omega \quad R_{2} = 0,3\Omega
 \end{equation*}
 
 \section{Leerlaufversuch am Transformator}
 
-Beim Leerlaufversuch am Transformator werden verschiedene Messungen vorgenommen, indem auf der Sekundärseite des Transformators keine Last zugeschaltetet wird, sodass die Klemmen offen sind. Lediglich ein Voltmeter zur Spannungsmessung wird angelegt.
+Beim Leerlaufversuch am Transformator werden verschiedene Messungen vorgenommen, indem auf der Sekundärseite des Transformators keine Last zugeschaltetet wird, sodass die Klemmen offen sind. Es wird lediglich ein Voltmeter zur Spannungsmessung angelegt.
 
 \begin{figure}[h]
   \centering
@@ -249,8 +249,9 @@ Beim Leerlaufversuch am Transformator werden verschiedene Messungen vorgenommen,
   \caption{Strom und Leistung in Abhängigkeit von der Spannung $U_{10}$}
   \label{tab:fifp}
 \end{table}
+In der Tabelle sind die Messdaten der Messreihe zu sehen. Ein Anstieg der Spannung ist direkt mit einem Anstieg des Stroms und damit auch der Leistung verbunden.
 \newpage
-Im Anschluss stellen werden die beiden Werte als Funktion der Spannung $U_{10}$ aufgetragen:
+Im Anschluss stellen werden die beiden Werte als Funktion der Spannung $U_{10}$ dar:
 
 \begin{figure}[h]
   \centering
@@ -268,7 +269,7 @@ Im Anschluss stellen werden die beiden Werte als Funktion der Spannung $U_{10}$ 
   \caption{Die beiden Funktionen $I_{10} = f(U_{10})$ und $P_{10} = f(U_{10}^{2})$}
 \end{figure}
 
-Es ist erkenntlich, dass der Strom mit ansteigender Spannung stärker ansteigt. Dies folgt aus der Eigenschaft des Eisenkerns in die Sättigung zu gehen bei hohen Spannungen. Dieser Effekt führt zu besonders hohen Strömen auf der Einspeiseseite (\ref{sec:stromv-im-nennp}). Die Leistung als Funktion der quadrierten Spannung ist ziemlich linear, was der Gleichung $P = \frac{U^{2}}{R}$ entspricht.
+Es ist erkenntlich, dass der Strom mit ansteigender Spannung ebenfalls stärker ansteigt. Dies folgt aus der Eigenschaft des Eisenkerns bei hohen Spannungen in die Sättigung zu gehen. Dieser Effekt führt zu besonders hohen Strömen auf der Einspeiseseite (\ref{sec:stromv-im-nennp}). Die Leistung als Funktion der quadrierten Spannung ist ziemlich linear, was der Gleichung $P = \frac{U^{2}}{R}$ entspricht.
 
 \subsection{Bestimmung des Spannungsverhätnisses}
 \label{sec:best-des-spann}
@@ -279,15 +280,15 @@ Im Nennpunkt für $U_{1N} = 220V$ werden beide Seiten des Transformators gemesse
   \textnormal{ü} = \frac{U_{2}}{U_{1N}} = \frac{359V}{220V} = 1.6318
 \end{equation*}
 
-einen Spannungsübertragungsverhältnis berechnen. Die Differenz zur theoretischen Übertragung
+einen Spannungsübertragungsverhältnis berechnen kann. Die Differenz zur theoretischen Übertragung
 
 \begin{equation*}
   \label{eq:3}
   \textnormal{ü} = \frac{U_{2N}}{U_{1N}} = \frac{380V}{220V} = 1.727
 \end{equation*}
-liegt bei $\Delta \textnormal{ü} = 1.727 - 1.6318 = 0.0952 $, was sich über die Herstellungsdifferenzen der Transformatoren erklären lässt. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklung entstanden sein könnten.
+liegt bei $\Delta \textnormal{ü} = 1.727 - 1.6318 = 0.0952 $, was sich über die Herstellungsdifferenzen der Transformatoren erklären lässt. Gleichzeitig ist zu bemerken, dass der im Labor verwendete Transformator schon relativ alt ist, wodurch möglicherweise bereits Schäden an der Wicklungen entstanden sein könnten.
 
-
+\newpage
 \subsection{Stromverlauf im Nennpunkt}
 \label{sec:stromv-im-nennp}
 
@@ -309,7 +310,7 @@ Im nächsten Schritt wird der Stromverlauf bei Nennspannung und bei halber Nenns
   \caption{Der Stromverlauf am Transformator bei voller und halber Nennspannung}
 \end{figure}
 
-Es fällt ziemlich deutlich auf, dass bei dem Anlegen der vollen Nennspannung eine vollständige Hystereschleife im Eisenkern des Transformators passiert und der Kern schließlich in die Sättigung geht. Bei halber Nennspannung ist der Effekt auch vorhanden jedoch weitaus weniger deutlich als bei voller Nennspannung. Anhang dieses Beispiels lässt sich die Eigenschaft des Transformators, die sich aus dem Aufbau und Wirkungsweise des Eisenkerns ergibt, gut ableiten. Je nach Umpolung der Magnetfeldkennlinien entsteht eine mehr oder weniger deutliche Hystereschleife im Verlauf des Stroms auf der anderen Seite.
+Es fällt ziemlich deutlich auf, dass bei dem Anlegen der vollen Nennspannung eine vollständige Hystereschleife im Eisenkern des Transformators passiert und der Kern schließlich in die Sättigung geht. Bei halber Nennspannung ist der Effekt auch vorhanden jedoch weitaus weniger deutlich als bei voller Nennspannung. Anhand dieses Beispiels lässt sich die Eigenschaft des Transformators, die sich aus dem Aufbau und Wirkungsweise des Eisenkerns ergibt, gut ableiten. Je nach Umpolung der Magnetfeldkennlinien entsteht eine mehr oder weniger deutliche Hystereschleife im Verlauf des Stroms auf der anderen Seite.
 
 \subsection{Einschaltmoment der Primärseite}
 \label{sec:einsch-der-prim}
@@ -324,7 +325,7 @@ Bei einer positiven Halbwelle, welche für diese Oszillogramme gewählt wurde, s
   \label{fig:einschalt_0d}
 \end{figure}
 
-Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchsten Einschaltströme. Dies lässt sich dadurch erläutern, dass der Kern nach dem Ausschalten vormagnetisiert ist. Beim Einschalten des Transformators bei der positiven Halbwelle und bei einem Winkel von $0^{\circ}$ wird der Eisenkern zum schlechtesten Zeitpunkt ummagnetisiert, welches die höchste Energie bzw. die höchsten Ströme verursacht. Diesen Effekt nennt man auch Rush-Effekt.
+Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchsten Einschaltströme. Dies lässt sich dadurch erläutern, dass der Kern nach dem Ausschalten vormagnetisiert ist. Beim Einschalten des Transformators zur Zeit der positiven Halbwelle und bei einem Winkel von $0^{\circ}$ wird der Eisenkern zum schlechtesten Zeitpunkt ummagnetisiert, welches die höchste Energie bzw. die höchsten Ströme verursacht. Diesen Effekt nennt man auch Rush-Effekt.
 
 \begin{figure}[h]
   \centering
@@ -347,7 +348,7 @@ Bei einem Einschaltwinkel von $0^{\circ}$ entstehen augenscheinlich die höchste
 \section{Kurzschlussversuch}
 \label{sec:kurzschlussversuch}
 
-Beim Kurzschlussversuch wird nun von der Primärseite vom Stelltransformator eingespeißt und die Sekundärseite kurzgeschlossen. Dabei wird dann sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$ aufgezeichnet.
+Beim Kurzschlussversuch wird nun von der Primärseite vom Stelltransformator eingespeißt und die Sekundärseite kurzgeschlossen. Dabei wird sowohl $U_{k} = f(I_{k})$ und $P_{k} = f(I_{k})$ aufgezeichnet.
 
 \subsection{Messung der Kurzschlussspannung und der Kurzschlussleistung}
 \label{sec:mess-der-kurzschl}
@@ -434,6 +435,12 @@ Beim Belastungsversuch wird auf der Sekundärseite des Transformators ein Potent
 \subsection{Messung der Spannung, des Stroms und der Leistung mit Wirklast}
 \label{sec:messung-der-spannung}
 
+In der folgenden Tabelle sind die Daten der Messung des Transformators beim Zuschalten einer Wirklast aufgezeigt. Es ist ein deutlicher Anstieg des Stroms und Leistung bei kleinen Wirklasten im Vergleich zu verhältnismäßig großen Wirklasten zu vermerken. Um die Strombelastbarkeit des Stromkreises nicht zu überladen, rechnen wir:
+
+\[
+  R_{min} = \frac{U_{N}}{I_{N}\cdot 1,2} = \frac{220V}{19,2A} = 11,45\Omega
+\]
+
 
 \begin{table}[h]
   \centering
@@ -466,7 +473,7 @@ Beim Belastungsversuch wird auf der Sekundärseite des Transformators ein Potent
   \label{tab:messbelast}
 \end{table}
 \newpage
-Erneut wird nun die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichnet:
+Wie in den Aufgaben davor wird die Spannung $U_{2} = f(I_{2})$ als Funktion des Stroms gezeichnet:
 
 \begin{figure}[h]
   \centering
@@ -480,7 +487,7 @@ Durch das Nachregeln des Stelltransformators sind einige Sprünge und Ungleichhe
 \section{Auswertung}
 \label{sec:auswertung}
 
-Im Folgenden werden nun die Ergebnisse der Messungen dahingehend ausgewertet, das Modell zur Beschreibung eines Transformators, also das ESB des Einphasentransformators, mit Parametern zu befüllen.
+Im Folgenden werden die Ergebnisse der Messungen dahingehend ausgewertet, das Modell zur Beschreibung eines Transformators, das ESB des Einphasentransformators, mit Parametern zu befüllen.
 
 
 \subsection{Bestimmung der Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$}
@@ -489,13 +496,13 @@ Im Folgenden werden nun die Ergebnisse der Messungen dahingehend ausgewertet, da
 Aus dem Leerlaufversuch können nun die Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$ bestimmt werden. Zunächst wird der Eisenwirkwiderstand $R_{Fe}$ bestimmt. Dieser wird allein von der Wirkleistung erzeugt, daher ergibt sich im Nennpunkt:
 
 \begin{equation*}
-  R_{Fe} = \frac{U_{10}^{2}}{P_{10}} = \frac{(220V)^{2}}{71,2W} = 679.775280899\Omega
+  R_{Fe} = \frac{U_{10}^{2}}{P_{10}} = \frac{(220V)^{2}}{71,2W} = 679.77\Omega
 \end{equation*}
 
 Um nun die die magnetische Hauptreaktanz $X_{1h}$ zu berechnen, betracheten wir das ESB und rechnen dann:
 
 \begin{equation*}
-  X_{1h} = \frac{U_{10}}{I_{\mu}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-I_{Fe}^{2}}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-\left(\frac{U_{1N}}{R_{Fe}}\right)^{2}}} = \frac{220V}{\sqrt{1.61A^{2}-0.323638A^{2}}} = \frac{220V}{1.5771A} = 139,5\Omega
+  X_{1h} = \frac{U_{10}}{I_{\mu}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-I_{Fe}^{2}}} = \frac{U_{10}}{\sqrt{I_{10}^{2}-\left(\frac{U_{1N}}{R_{Fe}}\right)^{2}}} = \frac{220V}{\sqrt{1.61A^{2}-0.323A^{2}}} = \frac{220V}{1.5771A} = 139,5\Omega
 \end{equation*}
 
 \subsection{Bestimmung der Ersatzimpedanzen $R_{k}$ und $X_{k}$}
@@ -504,26 +511,26 @@ Um nun die die magnetische Hauptreaktanz $X_{1h}$ zu berechnen, betracheten wir 
 Aus dem Kurzschlussversuch können nun im Anschluss die beiden Impendanzen $R_{k}$ und $X_{k}$ bestimmt werden. Zunächst wird der Kurzschlusswiderstand $R_{k}$ im Nennbetrieb bestimmt über:
 
 \begin{equation*}
-  R_{k} = \frac{P_{k}}{I_{k}^{2}} = \frac{98,5W}{(9,4A)^{2}} = 1.11\Omega
+  R_{k} = \frac{P_{k}}{I_{k}^{2}} = \frac{98,5W}{(9,4A)^{2}} = 1,11\Omega
 \end{equation*}
 
 Als nächstes kann nun auch die Kurzschlussreaktanz über
 
 \begin{equation*}
-  X_{k} = \sqrt{Z_{k}^{2}-R_{k}^{2}} = \sqrt{\left(\frac{U_{k}}{I_{k}}\right)^{2}-R_{k}^{2}} = \sqrt{\left(\frac{13.1V}{9.4A}\right)^{2} - (1.11\Omega)^{2}} = 0.8426\Omega
+  X_{k} = \sqrt{Z_{k}^{2}-R_{k}^{2}} = \sqrt{\left(\frac{U_{k}}{I_{k}}\right)^{2}-R_{k}^{2}} = \sqrt{\left(\frac{13.1V}{9.4A}\right)^{2} - (1,11\Omega)^{2}} = 0.8426\Omega
 \end{equation*}
 
 berechnet werden.
 
 Um nun $R_{k}$ mit dem in Messreihe 2 ermittelten Wicklungswiderständen zu vergleichen, wird $R_{2}$ auf die Primärseite transformiert durch:
 \[
-  R_{2}' = R_{2}\cdot \textnormal{ü}^{2} = 0.3\Omega \cdot 1,6318^{2} = 0.7988\Omega
+  R_{2}' = R_{2}\cdot \textnormal{ü}^{2} = 0.3\Omega \cdot 1,6318^{2} = 0,79\Omega
 \]
 
 und dann:
 
 \[
-  R_{k} = R_{1} + R_{2}' = 0,55 + 0,7988 = 1.3488
+  R_{k} = R_{1} + R_{2}' = 0,55 + 0,7988 = 1,3488
 \]
 
 Die Abweichung des gemessenen $R_{k}$ und des aus der Wicklungswiderstandsmessung ermittelten $R_{k}$ beträgt ca. $23\%$, was ziemlich beachtlich ist. Diese Abweichung lässt sich größtenteils auf Messungenauigkeiten und der Ungenauigkeit des Ohmmeters bei kleinen Messbereichen zurückführen.
@@ -532,7 +539,7 @@ Die Abweichung des gemessenen $R_{k}$ und des aus der Wicklungswiderstandsmessun
 \subsection{Ermittlung des Wirkungsgrads für den Nennpunkt}
 \label{sec:ermittl-des-wirk}
 
-Zuletzt wird nun den Wirkungsgrad mit verschiedenen Methoden bestimmt. Dabei wird sowohl den Belastungsversuch als auch die Ergebnisse der verschiedenen Versuche verwendet, um ein Ergebnis zu berechnen. Zunächst wird der Wirkungsgrad über direkte Messung berechnet:
+Zuletzt wird der Wirkungsgrad mit verschiedenen Methoden bestimmt. Dabei wird sowohl der Belastungsversuch als auch die Ergebnisse der verschiedenen Versuche verwendet, um ein Ergebnis zu berechnen. Zunächst wird der Wirkungsgrad über direkte Messung berechnet:
 
 \begin{equation*}
   \eta_{mess} = \frac{P_{ab}}{P_{zu}} = \frac{U_{2} \cdot I_{2}}{P_{1}} = \frac{224,1V \cdot 18.6A}{4,488kW} = 0,9286 \implies 92,68\%
@@ -544,16 +551,16 @@ Zum Vergleich wird nun der Wirkungsgrad über die Ergebnisse der anderen Versuch
   \eta_{rech} = \frac{P_{ab}}{P_{zu}} = \frac{P_{1} - P_{10} - P_{k}}{P_{1}} = \frac{4,488kW - 98,5W - 71,2W}{4,488kW} = 0,9621 \implies 96,21\%
 \end{equation*}
 
-Es ist eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$ zu erkennen. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen. Im Anschluss wird nun auch den Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmt.
+Es ist eine Abweichung von ca. $\Delta \eta = \eta_{rech} - \eta_{mess} = 0,9621 - 0,9286 = 0.335$, also $3,35\%$ zu erkennen. Dies lässt sich anhand von Messungenauigkeiten und auch Ungenauigkeiten in den Messgeräten erklären, die über die verschiedenen Versuche zum Einsatz kamen. Im Anschluss wird auch der Wirkungsgrad bei einer Temperatur von $75^{\circ}C$ bestimmt.
 
-Mithilfe des vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ kann nun den Widerstandswert bei $75^{\circ}C$ bestimmt werden:
+Mithilfe der vorher bestimmten Werte $R_{k,20^{\circ}C} = 1,11\Omega$ und dem Temperaturkoeffizienten von Kuper $\alpha_{Cu} = 3,93 \cdot 10^{-3}K^{-1}$ kann nun der Widerstandswert bei $75^{\circ}C$ bestimmt werden:
 
 \begin{equation*}
   \label{eq:4}
   R_{k,75^{\circ}C} = R_{k, 20^{\circ}C} \cdot (1+\alpha_{Cu}\Delta\vartheta) = 1,11\Omega \cdot (1+3,93\cdot 10^{-3}K^{-1}\cdot 55K) = 1,3499\Omega
 \end{equation*}
 
-Nun wird noch den Leistungsverlust für diese Erhöhung der Last berechnet:
+Nun wird noch der Leistungsverlust für diese Erhöhung der Last berechnet:
 
 \begin{equation*}
   \label{eq:2}
@@ -571,6 +578,6 @@ Der Wirkungsgrad ist also, wie erwartet, geringer als der theoretische Wirkungsg
 \section{Konklusion}
 \label{sec:konklusion}
 
-Wir haben in diesem Praktikum sehr viele Eigenschaften des Einphasentransformators verinnerlichen können. Auch das Berechnen der wichtigen Eckdaten des Ersatzschaltbildes des Transformators konnte geübt werden. Das strukturierte Messen von Transformatoren wurde durchgeführt, weshalb man nun die Eigenarten bekannt sind. Auch das Nutzen von verschiedenen Analysemöglickeiten wie zum Beispiel das graphische Darstellen von Messdaten stellte sich als sehr sinnvoll heraus. Besonders interessant war das Verwenden des Stellwinkelstellers zur genauen Untersuchung des Einschaltverhaltens des Transformators.
+Wir haben in diesem Praktikum sehr viele Eigenschaften des Einphasentransformators verinnerlichen können. Auch das Berechnen der wichtigen Eckdaten des Ersatzschaltbildes des Transformators konnte geübt werden. Das strukturierte Messen von Transformatoren wurde durchgeführt, weshalb man nun die Eigenarten kennengelernt hat. Auch das Nutzen von verschiedenen Analysemöglickeiten wie zum Beispiel das graphische Darstellen von Messdaten stellte sich als sehr sinnvoll heraus. Besonders interessant war das Verwenden des Stellwinkelstellers zur genauen Untersuchung des Einschaltverhaltens des Transformators.
 
 \end{document}

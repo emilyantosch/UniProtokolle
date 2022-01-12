@@ -6,8 +6,8 @@
 \contentsline {section}{\numberline {3}Leerlaufversuch am Transformator}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Messung $I_{10}$ und $P_{10}$}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Bestimmung des Spannungsverhätnisses}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Stromverlauf im Nennpunkt}{5}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Einschaltmoment der Primärseite}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.3}Stromverlauf im Nennpunkt}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Einschaltmoment der Primärseite}{6}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Kurzschlussversuch}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Messung der Kurzschlussspannung und der Kurzschlussleistung}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Bestimmung des Stromübersetzungverhältnis}{8}{subsection.4.2}%
