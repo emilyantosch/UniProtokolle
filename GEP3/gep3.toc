@@ -7,14 +7,14 @@
 \contentsline {subsection}{\numberline {3.1}Messung $I_{10}$ und $P_{10}$}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Bestimmung des Spannungsverhätnisses}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Stromverlauf im Nennpunkt}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Einschaltmoment der Primärseite}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Kurzschlussversuch}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Messung der Kurzschlussspannung und der Kurzschlussleistung}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Bestimmung des Stromübersetzungverhältnis}{8}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Belastungsversuch}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Messung der Spannung, des Stroms und der Leistung mit Wirklast}{9}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Auswertung}{11}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Bestimmung der Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$}{11}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Bestimmung der Ersatzimpedanzen $R_{k}$ und $X_{k}$}{11}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Ermittlung des Wirkungsgrads für den Nennpunkt}{11}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Konklusion}{12}{section.7}%
+\contentsline {subsection}{\numberline {3.4}Einschaltmoment der Primärseite}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Kurzschlussversuch}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Messung der Kurzschlussspannung und der Kurzschlussleistung}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Bestimmung des Stromübersetzungverhältnis}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Belastungsversuch}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Messung der Spannung, des Stroms und der Leistung mit Wirklast}{10}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Auswertung}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Bestimmung der Ersatzimpendanzen $R_{Fe}$ und $X_{1h}$}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Bestimmung der Ersatzimpedanzen $R_{k}$ und $X_{k}$}{12}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Ermittlung des Wirkungsgrads für den Nennpunkt}{12}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Konklusion}{13}{section.7}%

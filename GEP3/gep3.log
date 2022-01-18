@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Homebrew) (preloaded format=pdflatex 2021.9.30)  12 JAN 2022 12:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Homebrew) (preloaded format=pdflatex 2021.9.30)  12 JAN 2022 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1381,35 +1381,11 @@ File: ../assets/images/gep3/trafostrom_halb.png Graphic file (type png)
 Package pdftex.def Info: ../assets/images/gep3/trafostrom_halb.png  used on inp
 ut line 306.
 (pdftex.def)             Requested size: 193.50076pt x 101.94302pt.
-<../assets/images/gep3/einschalt_0deg.PNG, id=197, 603.0028pt x 318.43968pt>
-File: ../assets/images/gep3/einschalt_0deg.PNG Graphic file (type png)
-<use ../assets/images/gep3/einschalt_0deg.PNG>
-Package pdftex.def Info: ../assets/images/gep3/einschalt_0deg.PNG  used on inpu
-t line 323.
-(pdftex.def)             Requested size: 430.00462pt x 227.08012pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../assets/images/gep3/einschalt_45deg.png, id=198, 601.4972pt x 318.43968pt>
-File: ../assets/images/gep3/einschalt_45deg.png Graphic file (type png)
-<use ../assets/images/gep3/einschalt_45deg.png>
-Package pdftex.def Info: ../assets/images/gep3/einschalt_45deg.png  used on inp
-ut line 334.
-(pdftex.def)             Requested size: 193.50076pt x 102.44212pt.
-<../assets/images/gep3/einschalt_90deg.png, id=199, 601.4972pt x 316.93407pt>
-File: ../assets/images/gep3/einschalt_90deg.png Graphic file (type png)
-<use ../assets/images/gep3/einschalt_90deg.png>
-Package pdftex.def Info: ../assets/images/gep3/einschalt_90deg.png  used on inp
-ut line 339.
-(pdftex.def)             Requested size: 193.50076pt x 101.95776pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 347.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 314.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
@@ -1417,13 +1393,29 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 
 [6 <../assets/images/gep3/trafostrom_voll.png> <../assets/images/gep3/trafostro
 m_halb.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+<../assets/images/gep3/einschalt_0deg.PNG, id=203, 603.0028pt x 318.43968pt>
+File: ../assets/images/gep3/einschalt_0deg.PNG Graphic file (type png)
+<use ../assets/images/gep3/einschalt_0deg.PNG>
+Package pdftex.def Info: ../assets/images/gep3/einschalt_0deg.PNG  used on inpu
+t line 323.
+(pdftex.def)             Requested size: 430.00462pt x 227.08012pt.
+<../assets/images/gep3/einschalt_45deg.png, id=204, 601.4972pt x 318.43968pt>
+File: ../assets/images/gep3/einschalt_45deg.png Graphic file (type png)
+<use ../assets/images/gep3/einschalt_45deg.png>
+Package pdftex.def Info: ../assets/images/gep3/einschalt_45deg.png  used on inp
+ut line 334.
+(pdftex.def)             Requested size: 193.50076pt x 102.44212pt.
+<../assets/images/gep3/einschalt_90deg.png, id=205, 601.4972pt x 316.93407pt>
+File: ../assets/images/gep3/einschalt_90deg.png Graphic file (type png)
+<use ../assets/images/gep3/einschalt_90deg.png>
+Package pdftex.def Info: ../assets/images/gep3/einschalt_90deg.png  used on inp
+ut line 339.
+(pdftex.def)             Requested size: 193.50076pt x 101.95776pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 393.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 347.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
@@ -1431,13 +1423,24 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 
 [7 <../assets/images/gep3/einschalt_0deg.PNG> <../assets/images/gep3/einschalt_
 45deg.png> <../assets/images/gep3/einschalt_90deg.png>]
-<../assets/images/gep3/ik_uk.png, id=215, 422.67pt x 317.55pt>
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 347.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[8]
+<../assets/images/gep3/ik_uk.png, id=219, 422.67pt x 317.55pt>
 File: ../assets/images/gep3/ik_uk.png Graphic file (type png)
 <use ../assets/images/gep3/ik_uk.png>
 Package pdftex.def Info: ../assets/images/gep3/ik_uk.png  used on input line 40
 1.
 (pdftex.def)             Requested size: 193.50076pt x 145.37703pt.
-<../assets/images/gep3/ik_pk.png, id=216, 422.67pt x 317.55pt>
+<../assets/images/gep3/ik_pk.png, id=220, 422.67pt x 317.55pt>
 File: ../assets/images/gep3/ik_pk.png Graphic file (type png)
 <use ../assets/images/gep3/ik_pk.png>
 Package pdftex.def Info: ../assets/images/gep3/ik_pk.png  used on input line 40
@@ -1454,16 +1457,16 @@ LaTeX Warning: Command \" invalid in math mode on input line 422.
 Missing character: There is no ü in font cmr7!
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 424.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 423.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[8 <../assets/images/gep3/ik_uk.png (PNG copy)> <../assets/images/gep3/ik_pk.pn
+[9 <../assets/images/gep3/ik_uk.png (PNG copy)> <../assets/images/gep3/ik_pk.pn
 g (PNG copy)>]
-<../assets/images/gep3/belastung_aufbau.png, id=221, 1181.41376pt x 333.245pt>
+<../assets/images/gep3/belastung_aufbau.png, id=225, 1181.41376pt x 333.245pt>
 File: ../assets/images/gep3/belastung_aufbau.png Graphic file (type png)
 <use ../assets/images/gep3/belastung_aufbau.png>
 Package pdftex.def Info: ../assets/images/gep3/belastung_aufbau.png  used on in
@@ -1471,7 +1474,7 @@ put line 431.
 (pdftex.def)             Requested size: 430.00462pt x 121.29018pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 469.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 475.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1479,16 +1482,16 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[9 <../assets/images/gep3/belastung_aufbau.png>]
-<../assets/images/gep3/i2_u2.png, id=227, 421.21pt x 316.09pt>
+[10 <../assets/images/gep3/belastung_aufbau.png>]
+<../assets/images/gep3/i2_u2.png, id=231, 421.21pt x 316.09pt>
 File: ../assets/images/gep3/i2_u2.png Graphic file (type png)
 <use ../assets/images/gep3/i2_u2.png>
-Package pdftex.def Info: ../assets/images/gep3/i2_u2.png  used on input line 47
-4.
+Package pdftex.def Info: ../assets/images/gep3/i2_u2.png  used on input line 48
+0.
 (pdftex.def)             Requested size: 430.00462pt x 322.70172pt.
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 480.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 486.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1496,68 +1499,68 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[10 <../assets/images/gep3/i2_u2.png (PNG copy)>]
+[11 <../assets/images/gep3/i2_u2.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 487.
+(hyperref)                removing `math shift' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
+(hyperref)                removing `subscript' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
+(hyperref)                removing `math shift' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 487.
+(hyperref)                removing `math shift' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
+(hyperref)                removing `subscript' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 502.
+(hyperref)                removing `math shift' on input line 493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 502.
+(hyperref)                removing `math shift' on input line 508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 502.
+(hyperref)                removing `subscript' on input line 508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 502.
+(hyperref)                removing `math shift' on input line 508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 502.
+(hyperref)                removing `math shift' on input line 508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 502.
+(hyperref)                removing `subscript' on input line 508.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 508.
 
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 546.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 552.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 Package fancyhdr Warning: \footskip is too small (33.39996pt): 
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[11]
+[12]
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 577.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 583.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -1565,7 +1568,7 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[12] (./gep3.aux)
+[13] (./gep3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1573,9 +1576,9 @@ Package rerunfilecheck Info: File `gep3.out' has not changed.
 (rerunfilecheck)             Checksum: 6A56D790D3034ED427DAF4E7E4ECDFD0;4063.
  ) 
 Here is how much of TeX's memory you used:
- 40765 strings out of 478994
- 927975 string characters out of 5849630
- 1481188 words of memory out of 5000000
+ 40766 strings out of 478994
+ 927982 string characters out of 5849630
+ 1481192 words of memory out of 5000000
  57627 multiletter control sequences out of 15000+600000
  419981 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1611,10 +1614,10 @@ r/sfbx1728.pfb></opt/homebrew/Cellar/texlive/58837/share/texmf-dist/fonts/type1
 ist/fonts/type1/public/cm-super/sfrm0900.pfb></opt/homebrew/Cellar/texlive/5883
 7/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cell
 ar/texlive/58837/share/texmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb>
-Output written on gep3.pdf (12 pages, 693976 bytes).
+Output written on gep3.pdf (13 pages, 697576 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 266 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
  283 words of extra memory for PDF output out of 10000 (max. 10000000)
 
