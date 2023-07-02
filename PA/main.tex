@@ -230,14 +230,31 @@ Das Programm ist in der Lage, die Funktion einer Lackiereinrichtung mit Transpor
 
 Werkstücke können nur vorwärts durch die Anlage mit einem Transportarm bewegt werden. Es gibt, in der Version der Anlage, zwei Werkstücke, die in einem Durchlauf verarbeitet werden können. Ein Transport von einer Station zur nächsten dauert zwei Sekunden und jede Bearbeitung eines Werkstückes an einer Station dauert 5 Sekunden. Der Stand der Bearbeitung wird über eine Ampelanzeige erreicht. Die Ampel zeigt an, ob die Station frei ist, ob ein Werkstück bearbeitet wird oder ob ein Werkstück fertig bearbeitet worden ist. Dabei bedeutet Grün, dass die Station frei ist, Gelb, dass die Station die Arbeit abgeschlossen hat und Rot, dass die Bearbeitung des Werkstücks noch nicht beendet ist. Nur ein Werkstück kann gleichzeitig an einer Station liegen. Die Ampelanzeigen an den Bändern haben nur die Zustände Grün und Rot. Grün an der Station \textit{E} bedeutet, dass ein Werkstück zur Abholung bereit ist, während Rot bedeutet, dass das Band leer ist. Umgekehrt heißt Grün an der Station \textit{A}, dass die Station frei zur Abgabe eines Werkstücks ist und Rot, dass die Station noch nicht bereit für eine weitere Annahme ist (Band voll).
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{assets/img/visu_v1.png}
+  \caption{Visualisierung der Lackieranlage}
+  \label{fig:visu}
+\end{figure}
+
 \subsection{Softwarekonzept}
 
-Die Steuerung nimmt für die Visualisierung des Prozesses einen objektorientierten Ansatz. Der FB \textit{ArmModel} stellt dabei das Herz der Anwendung dar und managet die Bewegung des Arm innerhalb der Laufzeit des Programms. Der Status der Anlage wird über die ENUM \textit{ArmModelState} geregelt. In \textit{ArmModel} werden beim Start zunächst alle Werte zurückgesetzt und dann wird direkt in den Zustand \textit{NormalOperation} gewechselt. Dort wird fortlaufend überprüft, ob eine der Trigger gesetzt wurden, die das Bewegen von einem Werkstück von A nach B einleiten. Ist dies der Fall, werden zunächst verschiedene Informationen über den Transport gesammelt, um die richtige Bewegung ausführen zu können. Dazu gehören die Ausgangsposition des Werkstücks und das Ziel. Dann wird eine Animation ausgeführt, die in dem FB \textit{ProductionObject} definiert ist, ausgeführt. Jede weiterer Transport wird gesperrt, sodass sich immer nur ein Werkstück im Transport befinden kann. Am Ende des Transports werden die jeweiligen Zustände des Werkstücks, wie zum Beispiel die derzeitige Position, aktualisiert und die entsprechenden Stationen werden darüber informiert, dass sie entweder ein Werkstück verloren haben oder ein neues dazugewonnen haben. Gleichzeitig führt die neue Station des Werkstücks ihre jeweilige Funktion aus. Zurzeit muss ein solcher Bewegungsbefehl über die Force-Tabelle erfolgen. Eine Steuerung könnte also nun über die Visualisierung gelegt werden, die diesen Prozess steuert und auch automatisiert.
+Die Steuerung nimmt für die Visualisierung des Prozesses einen objektorientierten Ansatz. Der FB \textit{ArmModel} stellt dabei das Herz der Anwendung dar und managet die Bewegung des Arm innerhalb der Laufzeit des Programms. Der Status der Anlage wird über die ENUM \textit{ArmModelState} geregelt. In \textit{ArmModel} werden beim Start zunächst alle Werte zurückgesetzt und dann wird direkt in den Zustand \textit{NormalOperation} gewechselt. Dort wird fortlaufend überprüft, ob eine der Trigger gesetzt wurden, die das Bewegen von einem Werkstück von A nach B einleiten. Ist dies der Fall, werden zunächst verschiedene Informationen über den Transport gesammelt, um die richtige Bewegung ausführen zu können. Dazu gehören die Ausgangsposition des Werkstücks und das Ziel. Dann wird eine Animation ausgeführt, die in dem FB \textit{ProductionObject} definiert ist, ausgeführt. Jede weiterer Transport wird gesperrt, sodass sich immer nur ein Werkstück im Transport befinden kann. Am Ende des Transports werden die jeweiligen Zustände des Werkstücks, wie zum Beispiel die derzeitige Position, aktualisiert und die entsprechenden Stationen (\textit{ProductionStation}) werden darüber informiert, dass sie entweder ein Werkstück verloren haben oder ein neues dazugewonnen haben. Gleichzeitig führt die neue Station des Werkstücks ihre jeweilige Funktion aus. Ein Öffnen der Klammern um ein Objekt ist nicht notwendig um einen Transport zu veranlassen. Das könnte jedoch durch eine Erweiterung hinzugefügt werden. Zurzeit muss ein solcher Bewegungsbefehl über die Force-Tabelle erfolgen. Eine Steuerung könnte also nun über die Visualisierung gelegt werden, die diesen Prozess steuert und auch automatisiert.
+
+Die Variablen, die gesetzt werden können, um einen Transport von einer Station zur nächsten zu veranlassen, sind:
+
+\begin{itemize}
+  \item \textit{ArmModel.MoveToL1}
+  \item \textit{ArmModel.MoveToL2}
+  \item \textit{ArmModel.MoveToKfromL1}
+  \item \textit{ArmModel.MoveToKfromL2}
+  \item \textit{ArmModel.MoveToE}
+\end{itemize}
 
 Bestimmte Konzepte zum Ablauf des Prozess sind bereits implementiert. So wird ein Bewegungsbefehl nicht ausgeführt, wenn dieser zu einer Kollision von zwei Werkstücken führen würde.
 
 \subsection{Weitere Hinweise}
 
-Sollte es ein Problem mit dem Programm geben, erreichen Sie mich unter: emilylucia.antosch@haw-hamburg.de. 
+Sollte es ein Problem mit dem Programm und Unklarheiten bei der Bedienung geben, erreichen Sie mich unter: emilylucia.antosch@haw-hamburg.de. 
 
 \end{document}
