@@ -1,6 +1,7 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Der Aufbau der Schaltung mit Messstellen\relax }}{5}{figure.caption.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Die Eingangstraces für den Tiefsetzsteller. $U_e$ (grün), $PWM$ (blau), $I_e$ (rot)\relax }}{5}{figure.caption.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Die Tiefsetzsteller-Strecke mit den Strömen und Spannungen über die Bauteile. $I_C$ (rot), $I_L$ (blau), $I_D$ (gelb), $U_L$ (grün)\relax }}{6}{figure.caption.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Der Ausgang des Tiefsetzstellers mit der Ausgangsspannung und dem Ausgangsstrom. $I_a$ (rot), $U_a$ (blau)\relax }}{6}{figure.caption.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Der Aufbau des PWM-Generators\relax }}{7}{figure.caption.5}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Der Aufbau der Schaltung mit Messstellen\relax }}{5}{figure.caption.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Die Eingangstraces für den Tiefsetzsteller. $U_e$ (grün), $PWM$ (blau), $I_e$ (rot)\relax }}{6}{figure.caption.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Die Tiefsetzsteller-Strecke mit den Strömen und Spannungen über die Bauteile. $I_C$ (rot), $I_L$ (blau), $I_D$ (gelb), $U_L$ (grün)\relax }}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Der Ausgang des Tiefsetzstellers mit der Ausgangsspannung und dem Ausgangsstrom. $I_a$ (rot), $U_a$ (blau)\relax }}{7}{figure.caption.4}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Der Aufbau des PWM-Generators\relax }}{7}{figure.caption.5}%
