@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{Doc-Start}%
+\contentsline {section}{\numberline {0.1}Einleitung}{4}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Aufgabe 1}{4}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Berechnung}{4}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}Aufbau und Simulation}{4}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.2.3}Auswertung}{4}{subsection.0.2.3}%
+\contentsline {section}{\numberline {0.3}Aufgabe 2}{7}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}Aufbau und Simulation}{7}{subsection.0.3.1}%
