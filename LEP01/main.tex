@@ -258,7 +258,7 @@ Zunächst wird der PWM-Generator aufgebaut:
 
 \begin{figure}
   \begin{center}
-   % \includegraphics[width=0.95\textwidth]{assets/img/aufg2_aufbau_pwm.png}
+  \includegraphics[width=0.95\textwidth]{assets/img/aufg2_aufbau_pwm.png}
   \end{center}
   \caption{Der Aufbau des PWM-Generators}
   \label{fig:aufg2_aufbau_pwm}
@@ -267,7 +267,55 @@ Zunächst wird der PWM-Generator aufgebaut:
 
 Wichtig zu bemerken ist hier die Möglichkeit, den PWM-Generator zwischen einem konstanten Duty Cycle und eines Sinus-Signals ($0\% - 100\%$, $f=50Hz$) umzuschalten. Im Betrieb mit einem konstanten Duty Cycle entspricht dieser PWM-Generator dem PWM-Generator, der auch in Aufgabe 1 verwendet wurde. Eine dynamische Änderung des Duty Cycles mittels des Sinus-Signales wird im folgenden untersucht.
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_pwm_c.png}
+  \end{center}
+  \caption{Das PWM-Signal durch ein konstantes Gate-Signal gesteuert. Duty Cycle bei $D=0.5$}
+  \label{fig:aufg2_pwm_c}
+\end{figure}
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_pwm_sin.png}
+  \end{center}
+  \caption{Das PWM-Signal durch einen Sinus-Oszillator gesteuert (50Hz)}
+  \label{fig:aufg2_pwm_sin}
+\end{figure}
 
+In Abbildung ~\ref{fig:aufg2_pwm} ist das PWM-Signal zu erkennen, welches auch in Aufgabe 1 verwendet wurde. Durch ein konstantes Signal am nicht-invertierenden Eingang wird aus dem Sägezahn-Carriersignal ein PWM-Signal, bei dem das Tastverhältnis genau ausgeglichen ist.
+In Abbildung~\ref{fig:aufg2_pwm_sin} wird nun die selbe Schaltung mit einem Sinus-Steuersignal gezeigt. Ein Wert unter 0 führt in dieser Schaltung zu einem Ausschalten des Signals, da der OpAmp keinen Grund hat, die ungleiche Spannung auszugleichen. Ist das Sinusignal über 0, dann steigt das Tastverhätlnis proportional zu dem Anstieg der Sinuskurve. 
+
+Der Tiefsetzsteller mit entsprechender Brückenschaltung kann in Abbildung~\ref{fig:aufgb2_aufbau} gesehen werden.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_aufbau.png}
+  \end{center}
+  \caption{Aufbau der Tiefsetzsteller-Schaltung für die zweite Aufgabe}
+  \label{fig:aufg2_aufbau}
+\end{figure}
+
+Hier wird das PWM-Signal über ein GOTO-Block an die beiden IGBTs gegeben. Dabei wird ein Signal nicht-invertierend und das andere invertierend auf die Schaltung gegeben. Im Folgenden werden die Ein- und Ausgänge als Traces mit und ohne Kondensator betrachtet. Die Bauteile sind genau so dimensioniert wie in der ersten Aufgabe.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_c_wc.png}
+  \end{center}
+  \caption{Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und konstantem PWM}
+  \label{fig:aufg2_eingang_ausgang_c_wc}
+\end{figure}
+
+In Abbildung~\ref{fig:aufg2_eingang_ausgang_c_wc} ist der Betrieb gezeigt, der am nächsten an Aufgabe 1 dran ist. Mit einem konstanten PWM und einem Duty-Cycle von 0.5 sehen die Verläufe von Strom und Spannung am ähnlichsten zu Aufgabe 1 aus. 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_c_nc.png}
+  \end{center}
+  \caption{Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und mit konstantem PWM}
+  \label{fig:aufg2_eingang_ausgang_c_nc}
+\end{figure}
+
+Die Abbildung~\ref{fig:aufg2_eingang_ausgang_c_nc} 
 
 \end{document}
