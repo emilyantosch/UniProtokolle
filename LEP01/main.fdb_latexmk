@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1699015150 "/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex" "main.pdf" "main" 1699015152 0
+["pdflatex"] 1699190022 "/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex" "main.pdf" "main" 1699190024 0
   "../assets/images/haw.jpg" 1687793457 20525 86a9e04ee5dfa4a9e6f72438591f22af ""
-  "/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex" 1699015148 9945 660c0bbb0c3417937a75097fb3ad226b ""
+  "/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex" 1699022489 9945 660c0bbb0c3417937a75097fb3ad226b ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1678549815 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1678549815 4609045 74543da1ab9350ba886fce0af49a2cfd ""
@@ -206,15 +206,15 @@
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884066 8197b5e86c7bf6d7352283907f10d5c2 ""
   "assets/img/HAW_logo.png" 1687959324 53412 d8402a21f732d48ee3c35d7f2a1bf7b3 ""
-  "assets/img/aufg1_aufbau.png" 1698845632 533454 dc275ea4d697d6fa0935afbe0a987bfc ""
+  "assets/img/aufg1_aufbau.png" 1698846560 542086 f2bf5ebbe19bf797f8097b56bfe7d6ca ""
   "assets/img/aufg1_ausgang.png" 1698845723 546043 deaca4589b80edcb9944159c50452d7e ""
-  "assets/img/aufg1_eingang.png" 1698845674 473407 b1e4af8a247299a11f7e5e18aaab821e ""
+  "assets/img/aufg1_eingang.png" 1698846591 462833 f660b1ca6516c1591d40ecc846ed493c ""
   "assets/img/aufg1_strecke.png" 1698845693 569401 3729f1236eab36e62b5248fee9603af0 ""
-  "main.aux" 1699015152 3865 c029b624cc427db1e74c80b043be987e "pdflatex"
-  "main.lof" 1699015152 879 d3738da76c9931adb2f870b0df7ab7f1 "pdflatex"
-  "main.out" 1699015152 1239 b3b912b37f932da33d02427852d84f9d "pdflatex"
-  "main.tex" 1699015148 9945 660c0bbb0c3417937a75097fb3ad226b ""
-  "main.toc" 1699015152 731 44d341d0020011a124cea8b75d89b152 "pdflatex"
+  "main.aux" 1699190024 3865 c029b624cc427db1e74c80b043be987e "pdflatex"
+  "main.lof" 1699190024 879 d3738da76c9931adb2f870b0df7ab7f1 "pdflatex"
+  "main.out" 1699190024 1239 b3b912b37f932da33d02427852d84f9d "pdflatex"
+  "main.tex" 1699022489 9945 660c0bbb0c3417937a75097fb3ad226b ""
+  "main.toc" 1699190024 731 44d341d0020011a124cea8b75d89b152 "pdflatex"
   (generated)
   "main.aux"
   "main.lof"
