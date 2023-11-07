@@ -267,7 +267,7 @@ Zunächst wird der PWM-Generator aufgebaut:
 
 Wichtig zu bemerken ist hier die Möglichkeit, den PWM-Generator zwischen einem konstanten Duty Cycle und eines Sinus-Signals ($0\% - 100\%$, $f=50Hz$) umzuschalten. Im Betrieb mit einem konstanten Duty Cycle entspricht dieser PWM-Generator dem PWM-Generator, der auch in Aufgabe 1 verwendet wurde. Eine dynamische Änderung des Duty Cycles mittels des Sinus-Signales wird im folgenden untersucht.
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{assets/img/aufg2_pwm_c.png}
   \end{center}
@@ -275,7 +275,7 @@ Wichtig zu bemerken ist hier die Möglichkeit, den PWM-Generator zwischen einem 
   \label{fig:aufg2_pwm_c}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{assets/img/aufg2_pwm_sin.png}
   \end{center}
@@ -288,7 +288,7 @@ In Abbildung~\ref{fig:aufg2_pwm_sin} wird nun die selbe Schaltung mit einem Sinu
 
 Der Tiefsetzsteller mit entsprechender Brückenschaltung kann in Abbildung~\ref{fig:aufgb2_aufbau} gesehen werden.
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{assets/img/aufg2_aufbau.png}
   \end{center}
@@ -298,7 +298,7 @@ Der Tiefsetzsteller mit entsprechender Brückenschaltung kann in Abbildung~\ref{
 
 Hier wird das PWM-Signal über ein GOTO-Block an die beiden IGBTs gegeben. Dabei wird ein Signal nicht-invertierend und das andere invertierend auf die Schaltung gegeben. Im Folgenden werden die Ein- und Ausgänge als Traces mit und ohne Kondensator betrachtet. Die Bauteile sind genau so dimensioniert wie in der ersten Aufgabe.
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_c_wc.png}
   \end{center}
@@ -308,7 +308,7 @@ Hier wird das PWM-Signal über ein GOTO-Block an die beiden IGBTs gegeben. Dabei
 
 In Abbildung~\ref{fig:aufg2_eingang_ausgang_c_wc} ist der Betrieb gezeigt, der am nächsten an Aufgabe 1 dran ist. Mit einem konstanten PWM und einem Duty-Cycle von 0.5 sehen die Verläufe von Strom und Spannung am ähnlichsten zu Aufgabe 1 aus. 
 
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_c_nc.png}
   \end{center}
@@ -316,6 +316,25 @@ In Abbildung~\ref{fig:aufg2_eingang_ausgang_c_wc} ist der Betrieb gezeigt, der a
   \label{fig:aufg2_eingang_ausgang_c_nc}
 \end{figure}
 
-Die Abbildung~\ref{fig:aufg2_eingang_ausgang_c_nc} 
+Die Abbildung~\ref{fig:aufg2_eingang_ausgang_c_nc} ist zu sehen, dass der Strom durch die Spule und durch den Ausgangswiderstand identisch sind. Das liegt daran, dass nun die Verbindung zum Kondensator offen ist und deshalb Spule und Ausganswiderstand in einer Masche liegen. Darüber hinaus ist deutlich zu erkennen, dass dadurch der Strom durch den Ausgangswiderstand deutlich stärker schwingt, da er nicht mehr durch den Kondensator geglättet wird. 
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_sin_wc.png}
+  \end{center}
+  \caption{Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und Sinus-Signal als PWM}
+  \label{fig:aufg2_eingang_ausgang_sin_wc}
+\end{figure}
+
+Im Betrieb mit Kondensator und mit Sinus-PWM-Signal, wie in Abbildung~\ref{fig:aufg2_eingang_ausgang_sin_wc} zu sehen ist, steigt der Strom und die Spannung, die die Schaltung auf den Ausgangswiderstand gibt mit steigendem Sinussignal proportional an. Sobald die Sinuswelle im Negativen ist, ist das Bauteil unbelastet, da hier auch kein PWM-Signal durch die PWM-Schaltung bereitgestellt wird. 
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{assets/img/aufg2_eingang_ausgang_sin_nc.png}
+  \end{center}
+  \caption{Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und Sinus-Signal als PWM}
+  \label{fig:aufg2_eingang_ausgang_sin_nc}
+\end{figure}
+
 
 \end{document}
