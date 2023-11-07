@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  6 NOV 2023 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  7 NOV 2023 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex
-(/Users/emmi/projects/coding/UniProtokolle/LEP01/main.tex
+**/Users/emmi/projects/coding/UniProtokolle/RYP01/main.tex
+(/Users/emmi/projects/coding/UniProtokolle/RYP01/main.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -96,6 +96,8 @@ LaTeX Info: Redefining \] on input line 2954.
 ) (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks23
+) (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/trfsigns/trfsigns.sty
+Package: trfsigns 
 ) (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/graphics/keyval.sty
@@ -554,8 +556,6 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pyy=\skip68
 \pxx=\skip69
 \backskip=\skip70
-) (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/trfsigns/trfsigns.sty
-Package: trfsigns 
 ) (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -725,7 +725,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 88.
- (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -787,11 +786,29 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./assets/img/HAW_logo.png, id=59, 2569.6pt x 692.5875pt>
-File: ./assets/img/HAW_logo.png Graphic file (type png)
-<use ./assets/img/HAW_logo.png>
-Package pdftex.def Info: ./assets/img/HAW_logo.png  used on input line 156.
-(pdftex.def)             Requested size: 142.26378pt x 38.34077pt.
+
+LaTeX Warning: File `./assets/img/HAW_logo.png' not found on input line 156.
+
+
+/Users/emmi/projects/coding/UniProtokolle/RYP01/main.tex:156: Package pdftex.def Error: File `./assets/img/HAW_logo.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.156 ...th=\textwidth]{./assets/img/HAW_logo.png}
+                                                  }} node[midway,right=0.25c...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 156.
+(/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
 Underfull \hbox (badness 10000) in paragraph at lines 156--156
  [][][]
@@ -799,17 +816,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--156
 
 [1
 
-{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./assets/img/HAW_logo.png>] (./main.toc)
+{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+No file main.toc.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2
+[2
 
-] (./main.lof)
+]
+No file main.lof.
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [3
+[3
 
 ]
 Kapitel 1.
@@ -821,38 +840,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [4
+
+
+LaTeX Warning: Reference `eq:ersetz_i' on page 4 undefined on input line 192.
+
+[4
 
 ]
-<assets/img/aufg1_aufbau.png, id=128, 1198.4775pt x 836.12375pt>
-File: assets/img/aufg1_aufbau.png Graphic file (type png)
-<use assets/img/aufg1_aufbau.png>
-Package pdftex.def Info: assets/img/aufg1_aufbau.png  used on input line 211.
-(pdftex.def)             Requested size: 408.50307pt x 284.99277pt.
-<./assets/img/aufg1_eingang.png, id=129, 1135.24126pt x 657.45625pt>
-File: ./assets/img/aufg1_eingang.png Graphic file (type png)
-<use ./assets/img/aufg1_eingang.png>
-Package pdftex.def Info: ./assets/img/aufg1_eingang.png  used on input line 221.
-(pdftex.def)             Requested size: 408.50307pt x 236.57372pt.
-<assets/img/aufg1_strecke.png, id=130, 1135.24126pt x 783.92876pt>
-File: assets/img/aufg1_strecke.png Graphic file (type png)
-<use assets/img/aufg1_strecke.png>
-Package pdftex.def Info: assets/img/aufg1_strecke.png  used on input line 231.
-(pdftex.def)             Requested size: 408.50307pt x 282.08255pt.
-<assets/img/aufg1_ausgang.png, id=131, 1135.24126pt x 783.92876pt>
-File: assets/img/aufg1_ausgang.png Graphic file (type png)
-<use assets/img/aufg1_ausgang.png>
-Package pdftex.def Info: assets/img/aufg1_ausgang.png  used on input line 241.
-(pdftex.def)             Requested size: 408.50307pt x 282.08255pt.
-<assets/img/aufg2_aufbau_pwm.png, id=132, 1133.23375pt x 796.9775pt>
-File: assets/img/aufg2_aufbau_pwm.png Graphic file (type png)
-<use assets/img/aufg2_aufbau_pwm.png>
-Package pdftex.def Info: assets/img/aufg2_aufbau_pwm.png  used on input line 261.
-(pdftex.def)             Requested size: 408.50307pt x 287.28867pt.
-<../assets/images/haw.jpg, id=133, 401.5pt x 281.05pt>
+
+LaTeX Warning: Reference `fig:step_resp' on page 5 undefined on input line 221.
+
+<assets/img/step_response.png, id=65, 1124.2pt x 843.15pt>
+File: assets/img/step_response.png Graphic file (type png)
+<use assets/img/step_response.png>
+Package pdftex.def Info: assets/img/step_response.png  used on input line 225.
+(pdftex.def)             Requested size: 408.50307pt x 306.37701pt.
+<../assets/images/haw.jpg, id=66, 401.5pt x 281.05pt>
 File: ../assets/images/haw.jpg Graphic file (type jpg)
 <use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 265.
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 244.
+(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
+
+Package fancyhdr Warning: \footskip is too small (33.39996pt): 
+(fancyhdr)                Make it at least 59.80904pt, for example:
+(fancyhdr)                \setlength{\footskip}{59.80904pt}.
+
+[5 <./assets/img/step_response.png (PNG copy)> <../assets/images/haw.jpg>]
+File: ../assets/images/haw.jpg Graphic file (type jpg)
+<use ../assets/images/haw.jpg>
+Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 248.
 (pdftex.def)             Requested size: 80.29857pt x 56.209pt.
 
 
@@ -860,112 +876,35 @@ Package fancyhdr Warning: \footskip is too small (33.39996pt):
 (fancyhdr)                Make it at least 59.80904pt, for example:
 (fancyhdr)                \setlength{\footskip}{59.80904pt}.
 
-[5 <./assets/img/aufg1_aufbau.png> <../assets/images/haw.jpg>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 265.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[6 <./assets/img/aufg1_eingang.png> <./assets/img/aufg1_strecke.png>]
-<assets/img/aufg2_pwm_c.png, id=145, 1158.3275pt x 834.11626pt>
-File: assets/img/aufg2_pwm_c.png Graphic file (type png)
-<use assets/img/aufg2_pwm_c.png>
-Package pdftex.def Info: assets/img/aufg2_pwm_c.png  used on input line 272.
-(pdftex.def)             Requested size: 408.50307pt x 294.15967pt.
-<assets/img/aufg2_pwm_sin.png, id=146, 1158.3275pt x 834.11626pt>
-File: assets/img/aufg2_pwm_sin.png Graphic file (type png)
-<use assets/img/aufg2_pwm_sin.png>
-Package pdftex.def Info: assets/img/aufg2_pwm_sin.png  used on input line 280.
-(pdftex.def)             Requested size: 408.50307pt x 294.15967pt.
-
-
-LaTeX Warning: Reference `fig:aufg2_pwm' on page 7 undefined on input line 286.
-
-
-LaTeX Warning: Reference `fig:aufgb2_aufbau' on page 7 undefined on input line 289.
-
-<assets/img/aufg2_aufbau.png, id=148, 1221.56375pt x 707.64375pt>
-File: assets/img/aufg2_aufbau.png Graphic file (type png)
-<use assets/img/aufg2_aufbau.png>
-Package pdftex.def Info: assets/img/aufg2_aufbau.png  used on input line 293.
-(pdftex.def)             Requested size: 408.50307pt x 236.6437pt.
-<assets/img/aufg2_eingang_ausgang_c_wc.png, id=149, 1630.09pt x 1059.96pt>
-File: assets/img/aufg2_eingang_ausgang_c_wc.png Graphic file (type png)
-<use assets/img/aufg2_eingang_ausgang_c_wc.png>
-Package pdftex.def Info: assets/img/aufg2_eingang_ausgang_c_wc.png  used on input line 303.
-(pdftex.def)             Requested size: 408.50307pt x 265.62012pt.
-<assets/img/aufg2_eingang_ausgang_c_nc.png, id=151, 1630.09pt x 1059.96pt>
-File: assets/img/aufg2_eingang_ausgang_c_nc.png Graphic file (type png)
-<use assets/img/aufg2_eingang_ausgang_c_nc.png>
-Package pdftex.def Info: assets/img/aufg2_eingang_ausgang_c_nc.png  used on input line 313.
-(pdftex.def)             Requested size: 408.50307pt x 265.62012pt.
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 321.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[7 <./assets/img/aufg1_ausgang.png>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 321.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[8 <./assets/img/aufg2_aufbau_pwm.png> <./assets/img/aufg2_pwm_c.png>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 321.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[9 <./assets/img/aufg2_pwm_sin.png> <./assets/img/aufg2_aufbau.png>]
-File: ../assets/images/haw.jpg Graphic file (type jpg)
-<use ../assets/images/haw.jpg>
-Package pdftex.def Info: ../assets/images/haw.jpg  used on input line 321.
-(pdftex.def)             Requested size: 80.29857pt x 56.209pt.
-
-
-Package fancyhdr Warning: \footskip is too small (33.39996pt): 
-(fancyhdr)                Make it at least 59.80904pt, for example:
-(fancyhdr)                \setlength{\footskip}{59.80904pt}.
-
-[10 <./assets/img/aufg2_eingang_ausgang_c_wc.png> <./assets/img/aufg2_eingang_ausgang_c_nc.png>] (./main.aux)
+[6] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B3B912B37F932DA33D02427852D84F9D;1239.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  44463B0EE4E9F9E756BADD82091DFFF0;888.
  ) 
 Here is how much of TeX's memory you used:
- 30569 strings out of 476025
- 599715 string characters out of 5779036
- 1861388 words of memory out of 5000000
- 50357 multiletter control sequences out of 15000+600000
- 527865 words of font info for 105 fonts, out of 8000000 for 9000
+ 30503 strings out of 476025
+ 598443 string characters out of 5779036
+ 1860388 words of memory out of 5000000
+ 50334 multiletter control sequences out of 15000+600000
+ 525754 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,131p,1049b,799s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb>
-Output written on main.pdf (10 pages, 3601590 bytes).
+ 84i,16n,131p,1049b,896s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm3583.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sftt2488.pfb>
+Output written on main.pdf (6 pages, 253828 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 37057 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 159 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 33351 words of extra memory for PDF output out of 35830 (max. 10000000)
 
