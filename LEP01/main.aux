@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -28,29 +31,35 @@
 \newlabel{eq:Lastwiderstand}{{1.1}{4}{Berechnung}{equation.1.2.1}{}}
 \newlabel{eq:induk}{{1.2}{4}{Berechnung}{equation.1.2.2}{}}
 \newlabel{eq:capa}{{1.3}{4}{Berechnung}{equation.1.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Aufbau und Simulation}{5}{subsection.1.2.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Der Aufbau der Schaltung mit Messstellen\relax }}{5}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:aufg1_aufbau}{{1.1}{5}{Der Aufbau der Schaltung mit Messstellen\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Aufbau und Simulation}{5}{subsection.1.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Auswertung}{5}{subsection.1.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Aufgabe 2}{5}{section.1.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Die Eingangstraces für den Tiefsetzsteller. $U_e$ (grün), $PWM$ (blau), $I_e$ (rot)\relax }}{6}{figure.caption.2}\protected@file@percent }
 \newlabel{fig:aufg1_eingang}{{1.2}{6}{Die Eingangstraces für den Tiefsetzsteller. $U_e$ (grün), $PWM$ (blau), $I_e$ (rot)\relax }{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Die Tiefsetzsteller-Strecke mit den Strömen und Spannungen über die Bauteile. $I_C$ (rot), $I_L$ (blau), $I_D$ (gelb), $U_L$ (grün)\relax }}{6}{figure.caption.3}\protected@file@percent }
 \newlabel{fig:aufg1_strecke}{{1.3}{6}{Die Tiefsetzsteller-Strecke mit den Strömen und Spannungen über die Bauteile. $I_C$ (rot), $I_L$ (blau), $I_D$ (gelb), $U_L$ (grün)\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Aufgabe 2}{6}{section.1.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Der Ausgang des Tiefsetzstellers mit der Ausgangsspannung und dem Ausgangsstrom. $I_a$ (rot), $U_a$ (blau)\relax }}{7}{figure.caption.4}\protected@file@percent }
 \newlabel{fig:aufg1_ausgang}{{1.4}{7}{Der Ausgang des Tiefsetzstellers mit der Ausgangsspannung und dem Ausgangsstrom. $I_a$ (rot), $U_a$ (blau)\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Aufbau und Simulation}{7}{subsection.1.3.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Der Aufbau des PWM-Generators\relax }}{8}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:aufg2_aufbau_pwm}{{1.5}{8}{Der Aufbau des PWM-Generators\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Das PWM-Signal durch ein konstantes Gate-Signal gesteuert. Duty Cycle bei $D=0.5$\relax }}{8}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:aufg2_pwm_c}{{1.6}{8}{Das PWM-Signal durch ein konstantes Gate-Signal gesteuert. Duty Cycle bei $D=0.5$\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Fazit}{8}{subsection.1.3.2}\protected@file@percent }
+\newlabel{sec:fazit}{{1.3.2}{8}{Fazit}{subsection.1.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Das PWM-Signal durch ein konstantes Gate-Signal gesteuert. Duty Cycle bei $D=0.5$\relax }}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:aufg2_pwm_c}{{1.6}{9}{Das PWM-Signal durch ein konstantes Gate-Signal gesteuert. Duty Cycle bei $D=0.5$\relax }{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Das PWM-Signal durch einen Sinus-Oszillator gesteuert (50Hz)\relax }}{9}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:aufg2_pwm_sin}{{1.7}{9}{Das PWM-Signal durch einen Sinus-Oszillator gesteuert (50Hz)\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Aufbau der Tiefsetzsteller-Schaltung für die zweite Aufgabe\relax }}{9}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:aufg2_aufbau}{{1.8}{9}{Aufbau der Tiefsetzsteller-Schaltung für die zweite Aufgabe\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Aufbau der Tiefsetzsteller-Schaltung für die zweite Aufgabe\relax }}{10}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:aufg2_aufbau}{{1.8}{10}{Aufbau der Tiefsetzsteller-Schaltung für die zweite Aufgabe\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und konstantem PWM\relax }}{10}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:aufg2_eingang_ausgang_c_wc}{{1.9}{10}{Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und konstantem PWM\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und mit konstantem PWM\relax }}{10}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:aufg2_eingang_ausgang_c_nc}{{1.10}{10}{Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und mit konstantem PWM\relax }{figure.caption.10}{}}
-\gdef \@abspage@last{10}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und mit konstantem PWM\relax }}{11}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:aufg2_eingang_ausgang_c_nc}{{1.10}{11}{Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und mit konstantem PWM\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und Sinus-Signal als PWM\relax }}{11}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:aufg2_eingang_ausgang_sin_wc}{{1.11}{11}{Die Ein- und Ausgänge der Schaltung im Betrieb mit Kondensator und Sinus-Signal als PWM\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und Sinus-Signal als PWM\relax }}{12}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:aufg2_eingang_ausgang_sin_nc}{{1.12}{12}{Die Ein- und Ausgänge der Schaltung im Betrieb ohne Kondensator und Sinus-Signal als PWM\relax }{figure.caption.12}{}}
+\gdef \@abspage@last{12}
