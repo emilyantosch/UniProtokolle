@@ -157,7 +157,7 @@
 
   \node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Leistungselektronik}};
 
-  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Steffen Reimers 2540209\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Timo Türk 2545824\\[3pt]};
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Domenic Heidemann XXX\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Kevin Petri XXX\\[3pt]};
 
 \end{tikzpicture}
 
@@ -236,13 +236,24 @@ Aus dem Fitting kann ein Wert für $k_p = 0.718$ und für $T = 0.2918s$ bestimmt
 
 \begin{equation}
   k_p = \frac{R_M}{R_M + R}\\
-  R_M = \frac{-k_p\cdot R}{k_p-1} = \frac{-0,718 \cdot 390k\Omega}{0,718-1} = 
+  R_M = \frac{-k_p\cdot R}{k_p-1} = \frac{-0,718 \cdot 390k\Omega}{0,718-1} = 992,978k\Omega
   \label{eq:rm}
 \end{equation}
-Nun kann auch mit der Zeitkonstante noch die Angabe des Kondensator von $C = 1nF$ überprüft werden:
+Dieses Ergebnis ergibt im Kontext vom Labor auch Sinn. Der Wert ist sehr nah an $1M\Omega$, was als Eingangswiderstand für so ein Gerät häufig anzutreffen ist.
 
-\begin{equation}
-  T = \frac{}{} 
+Nun kann auch mit der Zeitkonstante noch die Angabe des Kondensator von $C = 1\mu F$ überprüft werden:
+
+\begin{eqnarray}
+  T &= \frac{R\cdot R_M}{R+R_M}\cdot C  \\
+  C &= \frac{R+R_M}{R\cdot R_M}\cdot T = \frac{390k\Omega + 992,978k\Omega}{390k\Omega \cdot 992,978k\Omega} \cdot 0,2918s = 1,042\mu F\\
   \label{eq:kondensator_ueberpruefen}
-\end{equation}
+\end{eqnarray}
+
+Auch dieser Wert, der sich aus den ermittelten Werten des Curve Fitters errechnet hat, ist an dem angegeben Wert des Kondensators sehr nah dran. Der Unterschied zwischen dem gegebenen Wert und dem erechneten Wert ergibt sich aus Messungenauigkeiten, Bauteilunterschiede und die Berechnung der Kurve zur Anpassung an die Sprungantwort.
+
+\section{Fazit}
+\label{sec:fazit}
+
+Dieses Labor hat gezeigt, dass man mit den vorhandenen Anlagen, die im Labor zur Verfügung stehen, eine genau Analyse von bestehenden Systemen erstellen kann und dass Messergebnisse mit ein wenig Vorsicht und Gewissenhaftigkeit, eine gute Qualität haben können. Über MatLab lassen sich viele wichtige Funktionen und Analysen machen und ein korrekter Umgang mit der Software ist essentiell für die Arbeit mit Reglern und deren Auslegung.
+
 \end{document}

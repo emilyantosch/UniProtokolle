@@ -155,9 +155,9 @@
 
 	\draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \includegraphics[width=\textwidth]{./assets/img/HAW_logo.png}}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2023}};
 
-	\node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Leistungselektronik}};
+	\node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Energietechnik - Synchronmaschine}};
 
-	\node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Steffen Reimers 2540209\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Timo Türk 2545824\\[3pt]};
+	\node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Kevin Petri\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Tim Taeger\\[3pt]};
 
 \end{tikzpicture}
 
@@ -168,6 +168,10 @@
 \listoffigures
 
 \newpage
+
+\listoftables
+
+
 \chapter{Energietechnik - Praktikum 2 - Synchronmaschine}
 \section{Einleitung}
 
@@ -197,6 +201,13 @@ Und für die Gleichstrommaschine:
 
 \subsection{Leerlaufversuch}
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./assets/img/leerlauf_aufbau.png}
+  \caption{Aufbau des Leerlaufversuchs im Labor}
+  \label{fig:leerlauf_aufbau}
+\end{figure}
+
 In diesem Teil des Versuchs wird die Leerlaufkennlinie, also die Funktion $U_{str} = f(I_{Err})$, aufgenommen. Dazu wird die Gleichstrommaschine auf die Nenndrehzahl $n_{N} = 1500min^{-1}$ gebracht, wobei Synchronmachine keine Erregung erfährt. Darauf hin wird der Erregerstrom langsam hoch gedreht und die entsprechende Leiter-Sternpunkt-Spannung $U_{str}$ wird aufgenommen. Es ist interessant zu sehen, dass selbst bei ausgeschalteter Erregung eine kleine Spannung im Läufer der Synchronmaschine zu messen ist. Das liegt an der Restmagnetisierung des Läufers, die durch die Drehbewegung eine Spannung induziert. Im Labor ist diese Spannung zwar sehr geringfügig, in großen Kraftwerken kann eine solche Spannung schon bereits gefährlich sein. Eine nicht erregte, aber bewegte Synchronmachine kann also schon gefährlich sein und unter Spannung stehen. Sobald die Frequenz der induzierten Spannung bei $50Hz$ angekommen ist, kann die Messung durchgeführt werden. Dabei sind die Werte aus Tabelle \ref{tab:leerlaufversuch} entstanden.
 
 \begin{table}[!ht]
@@ -222,6 +233,15 @@ In diesem Teil des Versuchs wird die Leerlaufkennlinie, also die Funktion $U_{st
 \end{table}
 
 \subsection{Kurzschlussversuch}
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{./assets/img/kurzschluss_aufbau.png}
+  \caption{Aufbau des Kurzschlussversuchs im Labor}
+  \label{fig:kurzschluss_aufbau}
+\end{figure}
+
 Die obere Messreihe wird wiederholt. Allerdings werden nun die Klemmen der Synchronmaschine kurzgeschlossen und der Kurzschlussstrom wird gemessen und aufgetragen. Zusammen mit den Messungen aus dem Leerlaufversuch kann so das Ersatzschaltbild der Synchronmaschine ermittelt werden.
 \begin{table}[!ht]
 	\centering
@@ -299,10 +319,17 @@ Zum Schluss wird dann noch aus der Strangspannung $U_{N,Str}$ und dem Nennstrom 
 \label{sec:inselbetrieb}
 
 
-Im Inselbetrieb ist die Synchronmaschine nicht mit dem Versorgungsnetz verbunden. Stattdessen fungiert sie als Generator, der die angeschlossenen Verbraucher mit elektrischer Energie versorgt. Im Experiment wird die Synchronmaschine mithilfe der Gleichstrommaschine auf ihre Nenndrehzahl (1500 min^−1) gebracht und anschließend durch ohmsche oder induktive Lasten belastet.
+Im Inselbetrieb ist die Synchronmaschine nicht mit dem Versorgungsnetz verbunden. Stattdessen fungiert sie als Generator, der die angeschlossenen Verbraucher mit elektrischer Energie versorgt. Im Experiment wird die Synchronmaschine mithilfe der Gleichstrommaschine auf ihre Nenndrehzahl ($1500 min^{-1}$) gebracht und anschließend durch ohmsche oder induktive Lasten belastet.
 
 \subsection{Ohmsche Verbraucher}
 \label{sec:ohmsche-verbraucher}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./assets/img/inselbetrieb_ohmaufbau.png}
+  \caption{Aufbau des Inselbetrieb mit ohmschen Verbraucher im Labor}
+  \label{fig:insel_ohmaufbau}
+\end{figure}
 
 In dem ersten Versuch zum Inselbetrieb werden rein-ohmsche Verbraucher an die Synchronmachine angeschlossen. Dazu wird ein Lastwiderstand im Stern an die Klemmen der Synchronmaschine verschaltet. Der Lastwiderstand kann dann über einen Mechanismus verstellt werden. Die Last ist dabei immer symmetrisch. Wichtig dabei zu bedenken, ist es, die Belastungsgrenzen der Synchronmachine im Auge zu behalten. Um einer Beschädigung der Anlage vorzubeugen ist hier also Vorsicht geboten. Begonnen wird mit dem höchstmöglichen Widerstand.
 
@@ -321,12 +348,13 @@ In dem ersten Versuch zum Inselbetrieb werden rein-ohmsche Verbraucher an die Sy
 		$31,6$       & $219,7$       & $380,3$     & $6,7$         & $6,7$       & $4,375$  & $272$     & $4,38$    \\
 		$29,1$       & $219,8$       & $380,4$     & $7,24$        & $7,24$      & $4,743$  & $275$     & $4,731$   \\ \hline
 	\end{tabular}
+	\caption{Die Messreihe für $U_{N} = konst.$ und rein-ohmscher Verbraucher}
 	\label{tab:ohm_messreihe_1}
 \end{table}
 
 Nach einem Widerstandswert von $29,1\Omega$ wurde die Messreihe abgebrochen, da die Leistungs- und Stromwerte schon sehr nah an der Grenze für den Betrieb der Synchronmachine waren.
 
-In der zweiten Messreihe wird der Erregerstrom konstant auf einen Wert von $I_{Err} = 1,1A$ gehalten. Daher können auch alle Widerstandswerte aufgenommen werden. Die aufgenommenen Werte der Messung sind in Tabelle \ref{tab:ohm_messreihe_2} aufgeführt.
+In der zweiten Messreihe wird der Erregerstrom konstant auf einen Wert von $I_{Err} = 1,1A$ gehalten. Daher können auch alle Widerstandswerte aufgenommen werden. Die aufgenommenen Werte der Messung sind in Tabelle~\ref{tab:ohm_messreihe_2} aufgeführt.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{llllllll}
@@ -349,15 +377,15 @@ In der zweiten Messreihe wird der Erregerstrom konstant auf einen Wert von $I_{E
 		$20,1$       & $137$         & $240$       & $6,67$        & $6,67$      & $2,776$  & $132,4$   & $2,778$   \\
 		$19,0$       & $131$         & $230$       & $6,77$        & $6,77$      & $2,704$  & $129,5$   & $2,707$   \\ \hline
 	\end{tabular}
-	\label{tab:ohm_messreihe_2}
 	\caption{Die Messreihe für $I_{Err} = 1,1A$ und rein-ohmscher Verbraucher}
+	\label{tab:ohm_messreihe_2}
 \end{table}
 
 Es ist deutlich zu erkennen, dass bei dieser Messreihe die Leistung mit sinkenden Widerstandswert zunächst steigt, bei $29,1\Omega$ ihren Höhepunkt hat und dann ab dem Punkt wieder sinkt. Mit dieser Messung lässt sich nun auch ein Zeigerdiagramm zeichnen. Da es sich hier um einen rein-ohmschen Verbraucher handelt, stehen die Strangspannung ($U_{str}$) und die Spannung über die Reaktanz ($U_{Xd}$) rechtwinklig aufeinander.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./assets/img/Inselbetrieb378IE.png}
+	\includegraphics[width=0.9\textwidth]{./assets/img/Inselbetrieb378IE11.png}
 	\caption{Der zeitliche Verlauf von Strom und Spannung bei $I_{Err} = 1,1A$ und rein-ohmschen Verbraucher bei $R=37,8\Omega$}
 	\label{fig:inselbetrieb_ohm_oszi}
 \end{figure}
@@ -387,6 +415,13 @@ Für $U_{P}$ folgt:
 Zusätzlich zu der Betrachtung eines rein-ohmschen Verbrauchers soll nun auch ein rein induktiver Verbraucher analysiert werden. Dazu stehen im Labor auch Lastinduktivitäten bereit, die auch wieder im Stern verschaltet werden.
 
 
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./assets/img/inselbetrieb_indukaufbau.png}
+  \caption{Aufbau des Inselbetrieb mit induktiven Verbraucher im Labor}
+  \label{fig:insel_indukaufbau}
+\end{figure}
+
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{llllllll}
@@ -399,7 +434,7 @@ Zusätzlich zu der Betrachtung eines rein-ohmschen Verbrauchers soll nun auch ei
 	\caption{Messreihe für den rein induktiven Verbraucher bei $U_{N} = U = konst.$}
 \end{table}
 
-Aufgrund der Belastungsgrenzen der Maschine und von zeitlichen Einschränkungen wurde die Messung der induktiven Last bei konstanter Spannung $U_{N}$ auf zwei Messpunkte beschränkt. Es ist zu erkennen, dass die Messreihe in Tabelle \ref{tab:induk_messreihe_1} analog zu der in Tabelle \ref{tab:ohm_messreihe_1} ist. Allerdings ist natürlich jetzt hauptsächlich Blindleistung zu messen, die durch die Induktivitäten verbraucht wird.
+Aufgrund der Belastungsgrenzen der Maschine und von zeitlichen Einschränkungen wurde die Messung der induktiven Last bei konstanter Spannung $U_{N}$ auf zwei Messpunkte beschränkt. Es ist zu erkennen, dass die Messreihe in Tabelle~\ref{tab:induk_messreihe_1:w} analog zu der in Tabelle~\ref{tab:ohm_messreihe_1} ist. Allerdings ist natürlich jetzt hauptsächlich Blindleistung zu messen, die durch die Induktivitäten verbraucht wird.
 
 
 \begin{table}[!ht]
@@ -412,11 +447,11 @@ Aufgrund der Belastungsgrenzen der Maschine und von zeitlichen Einschränkungen 
 		$114$ & $153$  & $265$ & $3,92$ & $3,92$ & $151$   & $1787$ & $1792$ \\
 		$42$  & $83$   & $145$ & $5,8$  & $5,8$  & $143$   & $1459$ & $1465$ \\ \hline
 	\end{tabular}
-	\label{tab:induk_messreihe_2}
 	\caption{Messreihe für den rein induktiven Verbraucher bei $I_{Err} = 1,1A$}
+	\label{tab:induk_messreihe_2}
 \end{table}
 
-Für die zweite Messreihe ergibt sich, wie auch schon im ersten Versuch zum Inselbetrieb (vgl. Tabelle \ref{tab:ohm_messreihe_2}), dass bei $L=114mH$ die Blindleistung und Scheinleistung der Schaltung am höchsten ist. Für alle anderen Werte für die Induktivitäten ergibt sich ein niedrigerer Wert.
+Für die zweite Messreihe ergibt sich, wie auch schon im ersten Versuch zum Inselbetrieb (vgl. Tabelle~\ref{tab:ohm_messreihe_2}), dass bei $L=114mH$ die Blindleistung und Scheinleistung der Schaltung am höchsten ist. Für alle anderen Werte für die Induktivitäten ergibt sich ein niedrigerer Wert.
 
 \begin{figure}[!ht]
 	\centering
@@ -457,11 +492,11 @@ Um einen Generator mit dem starren Synchronisation zu synchronisieren, müssen d
 	\item Die Drehfeldrichtung des Generators müssen mit dem Drehfeld des Netzes passen.
 \end{itemize}
 
-Sollte einer dieser Punkte nicht erfüllt sein, kann es beim Synchronisieren im schlechtesten Fall einen elektrischen Kurzschluss geben. Um das zu verhindern, können mithilfe einer Dunkelschaltung (vgl. Abbildung \ref{fig:dunkelschaltung_aufbai}) die Übereinstimmung zwischen Netz und Einspeisung überprüft werden. Diese besteht einfach zwei Leuchtmittel pro Phase, die in Reihe geschaltet sind. Es sind zwei Leuchtmittel, da im schlechtesten Fall bei der Synchronisation $2\cdot \hat{u} = 2\cdot 325V = 650V$ auf einer Phase liegen. Da es sich um baugleiche Leuchtmittel handelt, wird die Spannung auf beide Leuchtmittel gleichmäßig aufgeteilt und es kommt nicht zu einer Überbelastung der Lampen.
+Sollte einer dieser Punkte nicht erfüllt sein, kann es beim Synchronisieren im schlechtesten Fall einen elektrischen Kurzschluss geben. Um das zu verhindern, können mithilfe einer Dunkelschaltung (vgl. Abbildung~\ref{fig:dunkelschaltung_aufbau}) die Übereinstimmung zwischen Netz und Einspeisung überprüft werden. Diese besteht einfach zwei Leuchtmittel pro Phase, die in Reihe geschaltet sind. Es sind zwei Leuchtmittel, da im schlechtesten Fall bei der Synchronisation $2\cdot \hat{u} = 2\cdot 325V = 650V$ auf einer Phase liegen. Da es sich um baugleiche Leuchtmittel handelt, wird die Spannung auf beide Leuchtmittel gleichmäßig aufgeteilt und es kommt nicht zu einer Überbelastung der Lampen.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./assets/img/dunkelschaltung_aufbau.png}
+	\includegraphics[width=0.8\textwidth]{./assets/img/dunkelschaltung_aufbau.png}
 	\caption{Aufbau der Synchronisationsschaltung als Dunkelschaltung}
 	\label{fig:dunkelschaltung_aufbau}
 \end{figure}
@@ -485,7 +520,7 @@ Alle folgenden Abbildung sind im Verbraucherzählsystem aufgenommen, da eine Än
 	\label{fig:sngn}
 \end{figure}
 
-Die Abbildung \ref{fig:sngn} zeigt Strom und Spannung auf der Netzseite im normalerregten, generatorischen Zustand. Strom und Spannung liegen fast perfekt in Phase und das Netz nimmt annährend reine Wirkleistung auf. Das Netz verhält sich wie ein rein-ohmscher Verbraucher.
+Die Abbildung~\ref{fig:sngn} zeigt Strom und Spannung auf der Netzseite im normalerregten, generatorischen Zustand. Strom und Spannung liegen fast perfekt in Phase und das Netz nimmt annährend reine Wirkleistung auf. Das Netz verhält sich wie ein rein-ohmscher Verbraucher.
 
 \begin{figure}[!ht]
 	\centering
@@ -494,7 +529,7 @@ Die Abbildung \ref{fig:sngn} zeigt Strom und Spannung auf der Netzseite im norma
 	\label{fig:smgn}
 \end{figure}
 
-In Abbildung \ref{fig:smgn} ist der Strom und die Spannung auf der Maschinenseite im normalerregten, generatorischen Zustand zu sehen. Strom und Spannung liegen fast perfekt phasenverschoben um $180°$ vor. Das Produkt aus Strom und Spannung ist negativ, im Verbraucherzählsystem entspricht dies einer Abgabe von fast reiner Wirkleistung an das Netz.
+In Abbildung~\ref{fig:smgn} ist der Strom und die Spannung auf der Maschinenseite im normalerregten, generatorischen Zustand zu sehen. Strom und Spannung liegen fast perfekt phasenverschoben um $180°$ vor. Das Produkt aus Strom und Spannung ist negativ, im Verbraucherzählsystem entspricht dies einer Abgabe von fast reiner Wirkleistung an das Netz.
 
 \begin{figure}[!ht]
 	\centering
@@ -503,7 +538,7 @@ In Abbildung \ref{fig:smgn} ist der Strom und die Spannung auf der Maschinenseit
 	\label{fig:sngue}
 \end{figure}
 
-In der nächsten Abbildung \ref{fig:sngue} ist der Verlauf von Strom und Spannung auf der Netzseite im übererregten, generatorischen Betrieb erkennbar. Der Strom eilt der Spannung ein wenig nach. Das Netz nimmt hier also nicht nur Wirkleistung, sondern auch induktive Blindleistung auf.
+In der nächsten Abbildung~\ref{fig:sngue} ist der Verlauf von Strom und Spannung auf der Netzseite im übererregten, generatorischen Betrieb erkennbar. Der Strom eilt der Spannung ein wenig nach. Das Netz nimmt hier also nicht nur Wirkleistung, sondern auch induktive Blindleistung auf.
 
 \begin{figure}[!ht]
 	\centering
@@ -512,7 +547,7 @@ In der nächsten Abbildung \ref{fig:sngue} ist der Verlauf von Strom und Spannun
 	\label{fig:smgue}
 \end{figure}
 
-Die Abbildung \ref{fig:smgue} zeigt Strom und Spannung auf der Maschinenseite im übererregten Zustand im Generatorbetrieb. Das Produkt aus Strom und Spannung ist hier wieder negativ. Der Strom eilt der Spannung ein wenig vor. Die Maschine gibt also Wirk- und induktive Blindleistung ab. Man könnte auch sagen, dass die Maschine kapazitive Blindleistung aus dem Netz aufnimmt.
+Die Abbildung~\ref{fig:smgue} zeigt Strom und Spannung auf der Maschinenseite im übererregten Zustand im Generatorbetrieb. Das Produkt aus Strom und Spannung ist hier wieder negativ. Der Strom eilt der Spannung ein wenig vor. Die Maschine gibt also Wirk- und induktive Blindleistung ab. Man könnte auch sagen, dass die Maschine kapazitive Blindleistung aus dem Netz aufnimmt.
 
 \begin{figure}[!ht]
 	\centering
@@ -521,7 +556,7 @@ Die Abbildung \ref{fig:smgue} zeigt Strom und Spannung auf der Maschinenseite im
 	\label{fig:sngu}
 \end{figure}
 
-In der nächsten Abbildung \ref{fig:sngu} ist der Verlauf von Strom und Spannung auf der Netzseite im untererregten, generatorischen Betrieb erkennbar. Der Strom eilt der Spannung ein wenig vorraus. Das Netz nimmt hier also nicht nur Wirkleistung, sondern auch kapazitive Blindleistung auf.
+In der nächsten Abbildung~\ref{fig:sngu} ist der Verlauf von Strom und Spannung auf der Netzseite im untererregten, generatorischen Betrieb erkennbar. Der Strom eilt der Spannung ein wenig vorraus. Das Netz nimmt hier also nicht nur Wirkleistung, sondern auch kapazitive Blindleistung auf.
 
 \begin{figure}[!ht]
 	\centering
@@ -530,12 +565,17 @@ In der nächsten Abbildung \ref{fig:sngu} ist der Verlauf von Strom und Spannung
 	\label{fig:smgu}
 \end{figure}
 
-In der letzten Abbildung \ref{fig:smgu} ist der Verlauf von Strom und Spannung auf der Maschinenseite im untererregten, generatorischen Betrieb zu sehen. Der Strom eilt der Spannung ein wenig nach und das Produkt aus Strom und Spannung sit negativ. Die Maschine gibt hier also sowohl Wirk- als auch kapazitive Blindleistung ab.
+In der letzten Abbildung~\ref{fig:smgu} ist der Verlauf von Strom und Spannung auf der Maschinenseite im untererregten, generatorischen Betrieb zu sehen. Der Strom eilt der Spannung ein wenig nach und das Produkt aus Strom und Spannung sit negativ. Die Maschine gibt hier also sowohl Wirk- als auch kapazitive Blindleistung ab.
 
 \subsection{Motorbetrieb}
 \label{sec:motorbetrieb}
 
 Für den Motorbetrieb wird die Frequenz, die durch die Gleichstrommaschine eingestellt wird, auf ca. $49,9Hz$ eingestellt. Da die Frequenz der Spannung vom Netz vorgegeben wird, führt eine Verringerung der Frequenz an der Maschine lediglich dazu, dass die Synchronmachine nun im Motorbetrieb läuft.
 
-Aus Zeitgründen und dem geringen Mehrwert der Messungen wurden diese nicht mit Bildern begleitet.
+Aus Zeitgründen und dem geringen Mehrwert der Messungen wurden diese nicht mit Bildern begleitet. Allerdings lässt sich erkennen, dass die Bilder einen sehr ähnlichen Verlauf zu den Bildern zum generatischen Betrieb zeigen, wobei hier die Maschine im Verbraucherzählpfeilsystem natürlich Wirk- bzw Blindleistung aufnimmt.
+
+\section{Fazit}
+\label{sec:fazit}
+
+Dieses Experiment zeigt deutlich, wie der Betrieb einer Synchronmaschine in verschiedenen Zuständen ablaufen kann. Mithilfe von gezielten Messungen konnten die wichtigen Kenndaten einer Synchronmaschine ermittelt werden. Auch ist der Inselbetrieb zur Versorgung von elektrischen Verbrauchern ohne starres Versorgungsnetz klarer geworden. Es wurde zudem erkannt, dass es von großer Bedeutung ist, dass die Netzeinspeisung in möglichst normalerregtem Zustand erfolgt, da andernfalls das Netz mit Blindleistungen belastet wird. Auf der anderen Seite verdeutlicht es auch, dass der Betrieb von Maschinen am Netz zur Erzeugung von Blindleistung führt, die durch entsprechende Kompensation ausgeglichen werden muss. Dies lässt sich einfach durch den Einsatz einer Synchronmaschine realisieren, die durch gezielten Betrieb im über- oder untererregten Zustand kapazitive bzw. induktive Blindleistung erzeugt.
 \end{document}

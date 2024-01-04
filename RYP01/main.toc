@@ -6,3 +6,4 @@
 \contentsline {section}{\numberline {1.3}Durchführung}{5}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Beobachtung}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Auswertung}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Fazit}{6}{section.1.6}%
