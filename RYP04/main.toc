@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{Doc-Start}%
+\contentsline {chapter}{Tabellenverzeichnis}{4}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}Reglersynthese - Praktikum 4 - Quasi-Stetige und digitale Regler}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Einleitung}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Vorbereitung}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Diskretisierung von I-Reglern}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Koeffizienten für I- und PI-Regler bestimmen}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Simulation der digitalen Regler}{6}{subsection.1.2.3}%

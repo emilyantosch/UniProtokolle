@@ -157,7 +157,7 @@
 
 	\node at ($(current page.center)+(0,-4)$) {{\fontsize{40}{72} \selectfont Leistungselektronik}};
 
-	\node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Steffen Reimers 2540209\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Timo Türk 2545824\\[3pt]};
+	\node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Fynn Beck\\[3pt] PF: Emily Antosch 2519935 \\[3pt] Lara Böhme\\[3pt]};
 
 \end{tikzpicture}
 
@@ -168,6 +168,11 @@
 \listoffigures
 
 \newpage
+
+\listoftables
+
+\newpage
+
 \chapter{Regenerative Energien - Windkraftanlage}
 \section{Einleitung}
 
@@ -178,6 +183,7 @@ In diesem Praktikum wird eine Windkraftanlage anhand ihrer Eigenschaften untersu
 
 Die folgenden Daten wurden dem Typenschild der Windkraftanlage entnommen:
 
+% FIXME: Daten vom Typenschild übernehmen
 \begin{itemize}
 	\item Nennleistung: $P_{N} = 2,5MW$
 	\item Nennspannung: $U_{N} = 690V$
@@ -191,5 +197,152 @@ Die folgenden Daten wurden dem Typenschild der Windkraftanlage entnommen:
 \section{Drehzahl-Drehmoment-Kennlinie der Windkraftanlage}
 
 Im ersten Teil der Versuchsreihe wird die Drehzahl-Drehmoment-Kennlinie der Windkraftanlage ermittelt. Dazu wird die Windkraftanlage mit einem Gleichstrommotor verbunden, der die Windkraftanlage mit einer variablen Drehzahl versorgt. Die Drehzahl-Drehmoment-Kennlinie wird dann durch Messung der Drehzahl und des Drehmoments bei verschiedenen Windgeschwindigkeiten ermittelt. Alle Messungen, die zu einer Windgeschwindigkeit gehören, werden in einem Graphen und alle Graphen werden in einem Diagramm zusammengefasst (siehe dazu Abbildung \ref{fig:zahl_moment}).
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./assets/images/zahl_moment.png}
+	\caption{Drehzahl-Drehmoment-Kennlinien der Windkraftanlage}
+	\label{fig:zahl_moment}
+\end{figure}
+
+\section{Drehzahl-Leistungs-Kennlinie der Windkraftanlage}
+
+Im zweiten Teil der Versuchsreihe wird die Drehzahl-Leistungs-Kennlinie der Windkraftanlage ermittelt. Dazu werden die Messungen aus dem vorherigen Versuch analysiert und zu jeder Kennlinie wird eine entsprechende Drehzahl-Leistungskennlinie erzeugt. Alle Ergebnisse, die zu einer Windgeschwindigkeit gehören, werden in einem Graphen und alle Graphen werden in einem Diagramm zusammengefasst (siehe dazu Abbildung \ref{fig:zahl_leistung}).
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./assets/images/zahl_leistung.png}
+	\caption{Drehzahl-Leistungs-Kennlinien der Windkraftanlage}
+	\label{fig:zahl_leistung}
+\end{figure}
+
+\section{Windkraftanlage mit direkter Netzkopplung}
+
+\subsection{Stationäres Verhalten}
+
+In diesem Teil des Labor wird das stationäre Verhalten, also das Verhalten bei konstanter Windgeschwindigkeit, der Windkraftanlage mit direkter Netzkopplung untersucht. Dazu wird die Windkraftanlage mit einem Gleichstrommotor verbunden, der die Windkraftanlage mit einer konstanten Drehzahl versorgt. Da es sich hier um eine direkte Kopplung mit dem Netz handelt, wird zusätzlich eine Blindleistungskompensationsanlage eingebaut, die einen Teil der Blindleistung kompensiert. Eine Steuerung von diesem Prozess ist also nur indirekt möglich.
+
+% FIXME: Bild fehlt - Aufbau aus Laboranleitung übernehmen
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./assets/images/aufbau_direkt.png}
+	\caption{Leistung der Windkraftanlage als Funktion der Windgeschwindigkeit}
+	\label{fig:aufbau_direkt}
+\end{figure}
+
+Es wird die abgegebene Leistung $P_{el}$ als Funktion der Windgeschwindigkeit $v_{\mathrm{wind}}$ gemessen. Außerdem soll das Wertetripel $(n, M, \theta)$ notiert werden. Die Ergebnisse dieser Messung im Verhältnis zur Windgeschwindigkeit $v_{\mathrm{wing}}$ im Bereich $4m/s\leq v_{\mathrm{wind}} \leq 17m/s$ finden sich in Tabelle~\ref{tab:direkt_pel}.
+% TODO: Tabelle mit Messwerten aus der direkten Netzeinspeisung
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{}
+
+  \end{tabular}
+  \caption{Messwerte aus der Messung der Windkraftanlage mit direkter Netzkopplung}
+  \label{tab:direkt_pel}
+\end{table}
+
+Bei der Windgeschwindigkeit $v_{\mathrm{wind}} = 11 \frac{m}{s}$ wird nun mit dem Oszilloskop die Netz-Sternspannung $u_{2N}(t)$ und der zugehörige Netz-Leiterstrom $i_{2}(t)$ gemessen. Darüber hinaus soll auch der Ständerstrom $i_{S2}(t)$ und der Rotorstrom $u_{R2}(t)$ aufgezeichnet werden. Die Messung wird in Abbildung \ref{fig:netz} dargestellt.
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./assets/images/oszi_direkt_spannung.png}
+	\caption{Messung der Netz-Sternspannung $u_{2N}(t)$ und des Netz-Leiterstroms $i_{2}(t)$ bei $v_{\mathrm{wind}} = 11 \frac{m}{s}$}
+	\label{fig:oszi_direkt_spannung}
+\end{figure}
+
+
+
+\subsection{Dynamisches Verhalten}
+
+Bei dem dynamischen Verhalten der Windkraftanlage wird die Windkraftanlage wieder über die Gleichstrommaschine betrieben. Dabei wird die Voreinstellung allerdings auf \textit{turbulent} gestellt und der Einfluss einer Windböe auf die Leistung der Windkraftanlage wird untersucht. Die Messung wird in Abbildung \ref{fig:oszi_direkt_turbulent} dargestellt.
+
+
+Insbesondere soll hier der Leistungsfluss innerhalb der Windkraftanlage, die eingespeiste Leistung und die Drehzahl betrachtet werden.
+
+% TODO: Einfluss der turbulenten Windströmung auf die WEA darstellen und erörtern
+
+Im Anschluss wird die Leistung, die von der Windkraftanlage ins Netz gespeist wird, auf $1500$W begrenzt.
+
+% TODO: Verhalten beschreiben im Bezug auf Drehzahl und Pitchwinkel
+
+Es werden nun erneut die Netz-Sternspannung $u_{2N}(t)$, der Netz-Leiterstrom $i_{2}(t)$, der Ständerstrom $i_{S2}(t)$ und der Rotorstrom $u_{R2}(t)$ gemessen. Die Messungen sind in Abbildung~\ref{fig:oszi_direkt_dynamisch}
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./assets/images/oszi_direkt_dynamisch.png}
+	\caption{Messung der Netz-Sternspannung $u_{2N}(t)$ und des Netz-Leiterstroms $i_{2}(t)$ bei $v_{\mathrm{wind}} = 11 \frac{m}{s}$}
+	\label{fig:oszi_direkt_dynamisch}
+\end{figure}
+
+\section{Windkraftanlage mit Vollumrichter}
+
+Im nächsten Teil der Versuchsreihe wird die Windkraftanlage mit einem Vollumrichter betrieben. Dazu wird die Anlage wie in Abbildung \ref{fig:umrichter_aufbau} verschaltet.
+
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+  \centering
+
+  \caption{Aufbau der Windkraftanlage mit Umrichter}
+  \label{fig:aufbau_umrichter}
+\end{figure}
+
+Wie im vorherigen Versuch wird auch hier die Leistung der Windkraftanlage als Funktion der Windgeschwindigkeit $v_{\mathrm{wind}}$ gemessen. Auch hier soll das Wertetripel $(n, M, \theta)$ wieder mitaufgezeichnet werden. Die Messungen sind in Tabelle~\ref{tab:umrichter_pel} dargestellt.
+
+\section{Windkraftanlage mit doppelter Einspeisung}
+\label{sec:windkr-mit-dopp}
+
+Im letzten Teil der Versuchsreihe wird die Windkraftanlage mit doppelter Einspeisung betrieben. Dazu wird die Anlage wie in Abbildung \ref{fig:aufbau_dopp} verschaltet. Wie im vorherigen Versuch wird auch hier die Leistung der Windkraftanlage als Funktion der Windgeschwindigkeit $v_{\mathrm{wind}}$ gemessen. Die Messung wird in Abbildung \ref{fig:leistung_dopp} dargestellt.
+
+
+\section{Auswertung}
+\label{sec:auswertung}
+
+Die drei Kurven $P_{el}(v_{\mathrm{wind}})$ für die direkte Netzkopplung, die Asynchronmaschine mit Umrichter und die doppeltgespeiste Asynchronmaschine sind in Abbildung~\ref{fig:auswertung_pel} zu sehen.
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+  \centering
+
+  \caption{Die Windgeschwindigkeit-Leistungs-Graphen für alle drei Anschlussarten in einem Plot}
+  \label{fig:auswertung_pel}
+\end{figure}
+
+% TODO: Auswertung für das Bild schreiben und im Hinblick auf Kosten und Effizienz
+
+Im Anschluss an die Messungen kann außerdem der Wirkungsgrad $\eta(v_{\mathrm{wind}}) = \frac{P_{\mathrm{el}}{P_{\mathrm{mech}}$ für jedes der Generatorsysteme erstellt werden. Alle drei Graphen in einem Plot sind in Abbildung~\ref{fig:auswertung_eta} dargestellt.
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+	\centering
+
+	\caption{Die Leistungs-Wirkungsgrad-Graphen für alle drei Generatorsysteme in einem Plot}
+	\label{fig:auswertung_eta}
+\end{figure}
+
+% TODO: Ergebnis dieser Messung erläutern
+
+Für das Verständis der doppelt gespeisten Asynchronmaschine werden nun die Ergebnisse aus der Messung nochmal genauer analysiert. Dafür werden die drei Funktionen $P_{el}(v_{\mathrm{wind}})$, $P_{R}(v_{\mathrm{wind}})$ und $P_{S}(v_{\mathrm{wind}})$ in einem Diagramm gemeinsam dargestellt.
+
+% FIXME: Bild fehlt
+\begin{figure}[!ht]
+  \centering
+
+  \caption{Die elektrische Leistung und die Ständer- und Rotorleistung in Abhängigkeit der Windgeschwindigkeit in einem Plot}
+  \label{fig:auswertung_leistung}
+\end{figure}
+
+% TODO: Auswertung im Bezug auf die Theorie der doppelt gespeisten Asynchronmaschine schreiben
+
+\section{Fazit}
+\label{sec:fazit}
+
+Dieses Praktikum hat deutlich gezeigt, wie wichtig die richtige Verschaltung der Windkraftanlage ist. Die Windkraftanlage mit direkter Netzkopplung ist zwar die einfachste Verschaltung, allerdings ist sie auch die ineffizienteste. Außerdem sind die Möglichkeiten zur Einstellungen eines Arbeitspunktes stark begrenzt. Die Windkraftanlage mit Vollumrichter bietet hier mehr Möglichkeiten und ist auch effizienter, ist im Aufbau allerdings auch teurer und komplizierter. Da die komplette Leistung über den Umrichter gesteuert wird, ist dieser natürlich groß auszulegen, wobei eigentlich nur in einem kleinen Drehzahlbereich eine Veränderung/Steuerung stattfindet. Ein doppelt gespeister Asynchronmotor vereint hier die Vorteile beider Schaltungen, da hier nur ein Bruchteil der Leistung tatsächlich über den Umrichter fließt. Dieser kann daher entsprechend kleiner ausgelegt werden. Allerdings sollte auch bedacht werden, dass für diese Schaltung mehr Aufwand von Nöten ist. Außerdem muss ein Transformator den Zwischenkreis speisen. Diese Auslegungsart lohnt sich nur für Windkraftanlagen ab $800$kW.
+
+
 
 \end{document}
